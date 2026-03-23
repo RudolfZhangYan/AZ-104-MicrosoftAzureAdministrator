@@ -1,0 +1,52 @@
+name: Run scan from repo About URL
+
+on:
+  workflow_dispatch:
+
+jobs:
+  scan:
+    runs-on: [self-hosted, windows]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get homepage URL from repo About
+        id: repo_info
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          $headers = @{
+            Authorization = "Bearer $env:GH_TOKEN"
+            Accept        = "application/vnd.github+json"
+            "X-GitHub-Api-Version" = "2022-11-28"
+          }
+
+          $apiUrl = "https://api.github.com/repos/$env:REPO"
+          $repo = Invoke-RestMethod -Uri $apiUrl -Headers $headers -Method Get
+
+          $homepage = $repo.homepage
+
+          if ([string]::IsNullOrWhiteSpace($homepage)) {
+            Write-Error "Repository About/Homepage URL is empty."
+            exit 1
+          }
+
+          Write-Host "Homepage URL: $homepage"
+          "homepage=$homepage" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        shell: pwsh
+        run: npm ci
+
+      - name: Run scan
+        shell: cmd
+        run: |
+          npx tsx src/cli/index.ts scan "${{ steps.repo_info.outputs.homepage }}"
