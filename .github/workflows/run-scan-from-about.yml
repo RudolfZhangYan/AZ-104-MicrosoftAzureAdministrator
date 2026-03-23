@@ -6,6 +6,8 @@ on:
 jobs:
   scan:
     runs-on: [self-hosted, windows]
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
       - name: Checkout repository
@@ -13,39 +15,55 @@ jobs:
 
       - name: Get homepage URL from repo About
         id: repo_info
-        shell: pwsh
+        shell: powershell
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
         run: |
           $ErrorActionPreference = "Stop"
 
-          $headers = @{
-            Authorization = "Bearer $env:GH_TOKEN"
-            Accept        = "application/vnd.github+json"
-            "X-GitHub-Api-Version" = "2022-11-28"
+          try {
+            $apiUrl = "https://api.github.com/repos/$env:REPO"
+            Write-Host "Calling GitHub API: $apiUrl"
+
+            $headers = @{
+              Accept = "application/vnd.github+json"
+              "User-Agent" = "github-actions"
+              "X-GitHub-Api-Version" = "2022-11-28"
+            }
+
+            $repo = Invoke-RestMethod -Uri $apiUrl -Headers $headers -Method Get
+            $homepage = $repo.homepage
+
+            Write-Host "Homepage from API: [$homepage]"
+            Write-Host "GITHUB_OUTPUT: [$env:GITHUB_OUTPUT]"
+
+            if ([string]::IsNullOrWhiteSpace($homepage)) {
+              throw "Repository About/Homepage URL is empty."
+            }
+
+            if ([string]::IsNullOrWhiteSpace($env:GITHUB_OUTPUT)) {
+              throw "GITHUB_OUTPUT is empty."
+            }
+
+            Add-Content -Path $env:GITHUB_OUTPUT -Value "homepage=$homepage"
+            Write-Host "Homepage output written successfully."
+          }
+          catch {
+            Write-Host "ERROR MESSAGE:"
+            Write-Host $_.Exception.Message
+
+            if ($_.Exception.Response -ne $null) {
+              Write-Host "HTTP STATUS:"
+              Write-Host $_.Exception.Response.StatusCode.value__
+            }
+
+            throw
           }
 
-          $apiUrl = "https://api.github.com/repos/$env:REPO"
-          Write-Host "Calling GitHub API: $apiUrl"
-
-          $repo = Invoke-RestMethod -Uri $apiUrl -Headers $headers -Method Get
-          $homepage = $repo.homepage
-
-          Write-Host "Homepage URL from repo: $homepage"
-          Write-Host "GITHUB_OUTPUT path: $env:GITHUB_OUTPUT"
-
-          if ([string]::IsNullOrWhiteSpace($homepage)) {
-            Write-Error "Repository About/Homepage URL is empty."
-            exit 1
-          }
-
-          if ([string]::IsNullOrWhiteSpace($env:GITHUB_OUTPUT)) {
-            Write-Error "GITHUB_OUTPUT is empty or not available."
-            exit 1
-          }
-
-          Add-Content -Path $env:GITHUB_OUTPUT -Value "homepage=$homepage"
+      - name: Show captured homepage
+        shell: powershell
+        run: |
+          Write-Host "Captured homepage = [${{ steps.repo_info.outputs.homepage }}]"
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -53,13 +71,13 @@ jobs:
           node-version: '20'
 
       - name: Show Node and npm versions
-        shell: pwsh
+        shell: powershell
         run: |
           node -v
           npm -v
 
       - name: Install dependencies
-        shell: pwsh
+        shell: powershell
         run: |
           $ErrorActionPreference = "Stop"
 
