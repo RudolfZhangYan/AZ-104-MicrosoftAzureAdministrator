@@ -18,6 +18,8 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
         run: |
+          $ErrorActionPreference = "Stop"
+
           $headers = @{
             Authorization = "Bearer $env:GH_TOKEN"
             Accept        = "application/vnd.github+json"
@@ -25,28 +27,51 @@ jobs:
           }
 
           $apiUrl = "https://api.github.com/repos/$env:REPO"
-          $repo = Invoke-RestMethod -Uri $apiUrl -Headers $headers -Method Get
+          Write-Host "Calling GitHub API: $apiUrl"
 
+          $repo = Invoke-RestMethod -Uri $apiUrl -Headers $headers -Method Get
           $homepage = $repo.homepage
+
+          Write-Host "Homepage URL from repo: $homepage"
+          Write-Host "GITHUB_OUTPUT path: $env:GITHUB_OUTPUT"
 
           if ([string]::IsNullOrWhiteSpace($homepage)) {
             Write-Error "Repository About/Homepage URL is empty."
             exit 1
           }
 
-          Write-Host "Homepage URL: $homepage"
-          "homepage=$homepage" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
+          if ([string]::IsNullOrWhiteSpace($env:GITHUB_OUTPUT)) {
+            Write-Error "GITHUB_OUTPUT is empty or not available."
+            exit 1
+          }
+
+          Add-Content -Path $env:GITHUB_OUTPUT -Value "homepage=$homepage"
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
+      - name: Show Node and npm versions
+        shell: pwsh
+        run: |
+          node -v
+          npm -v
+
       - name: Install dependencies
         shell: pwsh
-        run: npm ci
+        run: |
+          $ErrorActionPreference = "Stop"
+
+          if (Test-Path "package-lock.json") {
+            npm ci
+          } else {
+            Write-Host "package-lock.json not found, using npm install instead."
+            npm install
+          }
 
       - name: Run scan
         shell: cmd
         run: |
+          echo Using URL: ${{ steps.repo_info.outputs.homepage }}
           npx tsx src/cli/index.ts scan "${{ steps.repo_info.outputs.homepage }}"
