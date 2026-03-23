@@ -1,0 +1,8 @@
+⛔ **Blocked** — pwsh.exe not installed.
+
+```
+STEP_COMPLETED: NO
+BLOCKING_ISSUES: PowerShell 6+ (pwsh.exe) not installed.
+SCREENSHOT_BEFORE: SKIPPED
+SCREENSHOT_AFTER: SKIPPED
+```

@@ -1,0 +1,16 @@
+Same blocker as Step 1 — **PowerShell 6+ (pwsh.exe) is not installed**, so I cannot launch a browser or interact with Azure portal.
+
+```
+ACTIONS_TAKEN: None — shell unavailable
+STEP_COMPLETED: NO
+ELEMENT_FOUND: N/A
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: Install PowerShell 6+ (pwsh.exe)
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: PowerShell 6+ (pwsh.exe) is not installed. Cannot execute any commands or launch browser.
+CURRENT_STATE: Blocked — no command execution capability
+SCREENSHOT_BEFORE: SKIPPED
+SCREENSHOT_AFTER: SKIPPED
+```
+
+**All subsequent lab steps will fail with this same blocker.** Please install pwsh from https://aka.ms/powershell first, then retry.

@@ -1,0 +1,11 @@
+Same blocker — **no pwsh.exe available**. Cannot execute any browser-based lab steps.
+
+```
+ACTIONS_TAKEN: None — shell unavailable
+STEP_COMPLETED: NO
+BLOCKING_ISSUES: PowerShell 6+ (pwsh.exe) not installed. All browser interaction blocked.
+SCREENSHOT_BEFORE: SKIPPED
+SCREENSHOT_AFTER: SKIPPED
+```
+
+⛔ **Recommendation:** Please stop sending further lab steps until the environment issue is resolved. Every step will return the same failure. Install PowerShell 6+ from https://aka.ms/powershell, then restart this session.
