@@ -1,14 +1,11 @@
 name: Run scan from repo About URL
-
 on:
   workflow_dispatch:
-
 jobs:
   scan:
     runs-on: [self-hosted, windows]
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
     steps:
       - name: Get homepage URL from repo About
         id: repo_info
@@ -38,7 +35,7 @@ jobs:
 
           Add-Content -Path $env:GITHUB_OUTPUT -Value "homepage=$homepage"
 
-      - name: Set repo name and timestamp
+      - name: Set scan meta (timestamp only output path)
         id: scan_meta
         shell: powershell
         run: |
@@ -52,7 +49,7 @@ jobs:
 
           Add-Content -Path $env:GITHUB_OUTPUT -Value "repo_name=$repoName"
           Add-Content -Path $env:GITHUB_OUTPUT -Value "timestamp=$timestamp"
-          Add-Content -Path $env:GITHUB_OUTPUT -Value "relative_output=$repoName/$timestamp"
+          Add-Content -Path $env:GITHUB_OUTPUT -Value "relative_output=$timestamp"
 
       - name: Checkout current repository
         uses: actions/checkout@v4
@@ -63,6 +60,7 @@ jobs:
       - name: Check lab runner folder
         shell: powershell
         run: |
+          $ErrorActionPreference = "Stop"
           $runnerPath = "C:\lab-drift-runner"
 
           if (-not (Test-Path $runnerPath)) {
@@ -83,20 +81,20 @@ jobs:
           npm -v
           npx tsx --version
 
-      - name: Ensure output parent folder exists
+      - name: Ensure output parent folder exists (timestamp only)
         shell: powershell
         working-directory: C:\lab-drift-runner
         run: |
           $ErrorActionPreference = "Stop"
 
-          $repoName = "${{ steps.scan_meta.outputs.repo_name }}"
-          $repoRoot = Join-Path (Get-Location) $repoName
+          $timestamp = "${{ steps.scan_meta.outputs.timestamp }}"
+          $outDir = Join-Path (Get-Location) $timestamp
 
-          if (-not (Test-Path $repoRoot)) {
-            Write-Host "Creating repo output root: $repoRoot"
-            New-Item -ItemType Directory -Path $repoRoot -Force | Out-Null
+          if (-not (Test-Path $outDir)) {
+            Write-Host "Creating output root: $outDir"
+            New-Item -ItemType Directory -Path $outDir -Force | Out-Null
           } else {
-            Write-Host "Repo output root already exists: $repoRoot"
+            Write-Host "Output root already exists: $outDir"
           }
 
       - name: Run scan
@@ -112,20 +110,21 @@ jobs:
         run: |
           $ErrorActionPreference = "Stop"
 
-          $repoName = "${{ steps.scan_meta.outputs.repo_name }}"
+          $repoName  = "${{ steps.scan_meta.outputs.repo_name }}"
           $timestamp = "${{ steps.scan_meta.outputs.timestamp }}"
 
-          $sourceDir = "C:\lab-drift-runner\$repoName\$timestamp"
+          # 输出改为：C:\lab-drift-runner\<timestamp>
+          $sourceDir = "C:\lab-drift-runner\$timestamp"
+
+          # 目标改为：<workspace>\LabDrift\<timestamp> （扁平化）
           $targetRoot = Join-Path $env:GITHUB_WORKSPACE "LabDrift"
-          $targetRepoDir = Join-Path $targetRoot $repoName
-          $targetDir = Join-Path $targetRepoDir $timestamp
+          $targetDir  = Join-Path $targetRoot $timestamp
 
           if (-not (Test-Path $sourceDir)) {
             throw "Scan output folder not found: $sourceDir"
           }
 
           New-Item -ItemType Directory -Path $targetRoot -Force | Out-Null
-          New-Item -ItemType Directory -Path $targetRepoDir -Force | Out-Null
 
           if (Test-Path $targetDir) {
             Write-Host "Removing existing timestamp folder: $targetDir"
@@ -133,7 +132,11 @@ jobs:
           }
 
           Write-Host "Copying from $sourceDir to $targetDir"
+          Write-Host "Source length: $($sourceDir.Length)  Target length: $($targetDir.Length)"
+
           Copy-Item -Path $sourceDir -Destination $targetDir -Recurse -Force
+          $metaFile = Join-Path $targetDir "_meta.txt"
+          "repo=$repoName`ntimestamp=$timestamp`nurl=${{ steps.repo_info.outputs.homepage }}" | Set-Content -Path $metaFile -Encoding UTF8
 
       - name: Commit and push LabDrift results
         shell: powershell
@@ -159,9 +162,8 @@ jobs:
         run: |
           $ErrorActionPreference = "Stop"
 
-          $repoName = "${{ steps.scan_meta.outputs.repo_name }}"
           $timestamp = "${{ steps.scan_meta.outputs.timestamp }}"
-          $sourceDir = "C:\lab-drift-runner\$repoName\$timestamp"
+          $sourceDir = "C:\lab-drift-runner\$timestamp"
 
           if (Test-Path $sourceDir) {
             Write-Host "Removing local output folder: $sourceDir"
