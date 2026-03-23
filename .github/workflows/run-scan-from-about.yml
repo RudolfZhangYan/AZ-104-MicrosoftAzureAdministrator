@@ -38,10 +38,19 @@ jobs:
 
           Add-Content -Path $env:GITHUB_OUTPUT -Value "homepage=$homepage"
 
-      - name: Show captured homepage
+      - name: Set repo name
+        id: repo_name
         shell: powershell
         run: |
-          Write-Host "Captured homepage = [${{ steps.repo_info.outputs.homepage }}]"
+          $repoName = "${{ github.event.repository.name }}"
+          Write-Host "Repo name: $repoName"
+          Add-Content -Path $env:GITHUB_OUTPUT -Value "repo_name=$repoName"
+
+      - name: Checkout current repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
 
       - name: Check lab runner folder
         shell: powershell
@@ -66,9 +75,78 @@ jobs:
           npm -v
           npx tsx --version
 
+      - name: Clean previous output folder in lab runner
+        shell: powershell
+        working-directory: C:\lab-drift-runner
+        run: |
+          $outputDir = "${{ steps.repo_name.outputs.repo_name }}"
+          if (Test-Path $outputDir) {
+            Write-Host "Removing old output folder: $outputDir"
+            Remove-Item -Recurse -Force $outputDir
+          }
+
       - name: Run scan
         shell: cmd
         working-directory: C:\lab-drift-runner
         run: |
           echo Using URL: ${{ steps.repo_info.outputs.homepage }}
-          npx tsx src/cli/index.ts scan "${{ steps.repo_info.outputs.homepage }}"
+          echo Output folder: ${{ steps.repo_name.outputs.repo_name }}
+          npx tsx src/cli/index.ts scan "${{ steps.repo_info.outputs.homepage }}" --browser=msedge --headless --auth=azure-portal --output="./${{ steps.repo_name.outputs.repo_name }}" --fail-fast
+
+      - name: Copy scan output back to repo LabDrift folder
+        shell: powershell
+        run: |
+          $ErrorActionPreference = "Stop"
+
+          $repoName = "${{ steps.repo_name.outputs.repo_name }}"
+          $sourceDir = "C:\lab-drift-runner\$repoName"
+          $targetRoot = Join-Path $env:GITHUB_WORKSPACE "LabDrift"
+          $targetDir = Join-Path $targetRoot $repoName
+
+          if (-not (Test-Path $sourceDir)) {
+            throw "Scan output folder not found: $sourceDir"
+          }
+
+          New-Item -ItemType Directory -Path $targetRoot -Force | Out-Null
+
+          if (Test-Path $targetDir) {
+            Write-Host "Removing old target folder: $targetDir"
+            Remove-Item -Recurse -Force $targetDir
+          }
+
+          Write-Host "Copying from $sourceDir to $targetDir"
+          Copy-Item -Path $sourceDir -Destination $targetDir -Recurse -Force
+
+      - name: Commit and push LabDrift results
+        shell: powershell
+        run: |
+          $ErrorActionPreference = "Stop"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add LabDrift
+
+          $changes = git status --porcelain
+          if (-not $changes) {
+            Write-Host "No changes to commit."
+            exit 0
+          }
+
+          git commit -m "Add lab drift results for ${{ steps.repo_name.outputs.repo_name }}"
+          git push
+
+      - name: Remove local scan output from lab runner
+        shell: powershell
+        run: |
+          $ErrorActionPreference = "Stop"
+
+          $repoName = "${{ steps.repo_name.outputs.repo_name }}"
+          $sourceDir = "C:\lab-drift-runner\$repoName"
+
+          if (Test-Path $sourceDir) {
+            Write-Host "Removing local output folder: $sourceDir"
+            Remove-Item -Recurse -Force $sourceDir
+          } else {
+            Write-Host "Local output folder does not exist: $sourceDir"
+          }
