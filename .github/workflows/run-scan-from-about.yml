@@ -10,9 +10,6 @@ jobs:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
       - name: Get homepage URL from repo About
         id: repo_info
         shell: powershell
@@ -21,75 +18,57 @@ jobs:
         run: |
           $ErrorActionPreference = "Stop"
 
-          try {
-            $apiUrl = "https://api.github.com/repos/$env:REPO"
-            Write-Host "Calling GitHub API: $apiUrl"
+          $apiUrl = "https://api.github.com/repos/$env:REPO"
+          Write-Host "Calling GitHub API: $apiUrl"
 
-            $headers = @{
-              Accept = "application/vnd.github+json"
-              "User-Agent" = "github-actions"
-              "X-GitHub-Api-Version" = "2022-11-28"
-            }
-
-            $repo = Invoke-RestMethod -Uri $apiUrl -Headers $headers -Method Get
-            $homepage = $repo.homepage
-
-            Write-Host "Homepage from API: [$homepage]"
-            Write-Host "GITHUB_OUTPUT: [$env:GITHUB_OUTPUT]"
-
-            if ([string]::IsNullOrWhiteSpace($homepage)) {
-              throw "Repository About/Homepage URL is empty."
-            }
-
-            if ([string]::IsNullOrWhiteSpace($env:GITHUB_OUTPUT)) {
-              throw "GITHUB_OUTPUT is empty."
-            }
-
-            Add-Content -Path $env:GITHUB_OUTPUT -Value "homepage=$homepage"
-            Write-Host "Homepage output written successfully."
+          $headers = @{
+            Accept = "application/vnd.github+json"
+            "User-Agent" = "github-actions"
+            "X-GitHub-Api-Version" = "2022-11-28"
           }
-          catch {
-            Write-Host "ERROR MESSAGE:"
-            Write-Host $_.Exception.Message
 
-            if ($_.Exception.Response -ne $null) {
-              Write-Host "HTTP STATUS:"
-              Write-Host $_.Exception.Response.StatusCode.value__
-            }
+          $repo = Invoke-RestMethod -Uri $apiUrl -Headers $headers -Method Get
+          $homepage = $repo.homepage
 
-            throw
+          Write-Host "Homepage from API: [$homepage]"
+
+          if ([string]::IsNullOrWhiteSpace($homepage)) {
+            throw "Repository About/Homepage URL is empty."
           }
+
+          Add-Content -Path $env:GITHUB_OUTPUT -Value "homepage=$homepage"
 
       - name: Show captured homepage
         shell: powershell
         run: |
           Write-Host "Captured homepage = [${{ steps.repo_info.outputs.homepage }}]"
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
+      - name: Check lab runner folder
+        shell: powershell
+        run: |
+          $runnerPath = "C:\lab-drift-runner"
+
+          if (-not (Test-Path $runnerPath)) {
+            throw "Lab runner folder not found: $runnerPath"
+          }
+
+          if (-not (Test-Path "$runnerPath\src\cli\index.ts")) {
+            throw "CLI entry not found: $runnerPath\src\cli\index.ts"
+          }
+
+          Write-Host "Lab runner folder exists: $runnerPath"
 
       - name: Show Node and npm versions
         shell: powershell
+        working-directory: C:\lab-drift-runner
         run: |
           node -v
           npm -v
-
-      - name: Install dependencies
-        shell: powershell
-        run: |
-          $ErrorActionPreference = "Stop"
-
-          if (Test-Path "package-lock.json") {
-            npm ci
-          } else {
-            Write-Host "package-lock.json not found, using npm install instead."
-            npm install
-          }
+          npx tsx --version
 
       - name: Run scan
         shell: cmd
+        working-directory: C:\lab-drift-runner
         run: |
           echo Using URL: ${{ steps.repo_info.outputs.homepage }}
           npx tsx src/cli/index.ts scan "${{ steps.repo_info.outputs.homepage }}"
