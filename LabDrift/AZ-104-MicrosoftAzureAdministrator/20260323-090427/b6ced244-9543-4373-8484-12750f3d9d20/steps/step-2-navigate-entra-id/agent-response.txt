@@ -1,0 +1,20 @@
+Same blocker as previous steps — **PowerShell 6+ (pwsh) is not installed**, so I cannot execute any commands, launch a browser, or perform automation.
+
+```
+ACTIONS_TAKEN: None — shell unavailable (pwsh not installed)
+STEP_COMPLETED: NO
+ELEMENT_FOUND: N/A
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: PowerShell 6+ (pwsh.exe) is not installed. All tool execution is blocked — no browser, no CLI, no screenshots. Install from https://aka.ms/powershell then retry.
+CURRENT_STATE: No browser launched — cannot execute any commands
+SCREENSHOT_BEFORE: SKIPPED
+SCREENSHOT_AFTER: SKIPPED
+```
+
+This will continue to block **every subsequent step**. Please install pwsh before sending more steps:
+
+```cmd
+winget install Microsoft.PowerShell
+```

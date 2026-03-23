@@ -1,0 +1,27 @@
+I'm unable to execute this step. The environment has no working shell — **PowerShell 6+ (pwsh) is not installed**, which blocks all command execution including:
+
+- Launching the Playwright MCP browser
+- Navigating to the Azure portal
+- Taking screenshots
+- Any browser automation whatsoever
+
+```
+ACTIONS_TAKEN: None — shell unavailable (pwsh not installed)
+STEP_COMPLETED: NO
+ELEMENT_FOUND: N/A
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: PowerShell 6+ (pwsh.exe) is not installed. All tool execution is blocked. Install from https://aka.ms/powershell then retry.
+CURRENT_STATE: No browser launched — cannot execute any commands
+SCREENSHOT_BEFORE: SKIPPED
+SCREENSHOT_AFTER: SKIPPED
+```
+
+**To unblock**, install PowerShell 7 on this machine. From an admin command prompt:
+
+```cmd
+winget install Microsoft.PowerShell
+```
+
+Or download the MSI from https://aka.ms/powershell. After install, retry this step.

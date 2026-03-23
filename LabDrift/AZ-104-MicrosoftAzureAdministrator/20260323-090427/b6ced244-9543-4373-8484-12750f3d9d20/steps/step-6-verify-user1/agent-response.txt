@@ -1,0 +1,14 @@
+```
+ACTIONS_TAKEN: None — pwsh not installed
+STEP_COMPLETED: NO
+ELEMENT_FOUND: N/A
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: PowerShell 6+ (pwsh.exe) not installed. All execution blocked.
+CURRENT_STATE: No browser
+SCREENSHOT_BEFORE: SKIPPED
+SCREENSHOT_AFTER: SKIPPED
+```
+
+🛑 **Environment is broken — no steps can execute.** This is step 6 with the same failure. I strongly recommend stopping the lab run and fixing the environment before continuing. Every remaining step will produce this identical result.

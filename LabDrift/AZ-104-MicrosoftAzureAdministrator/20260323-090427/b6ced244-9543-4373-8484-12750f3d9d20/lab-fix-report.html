@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab Fix Report - Manage Microsoft Entra ID Identities</title>
+  <style>
+    * { box-sizing: border-box; }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      background: white;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    h1 {
+      color: #2c3e50;
+      border-bottom: 3px solid #3498db;
+      padding-bottom: 15px;
+      margin-top: 0;
+    }
+    
+    h2 {
+      color: #2c3e50;
+      margin-top: 40px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    h3 {
+      color: #34495e;
+      margin-top: 25px;
+    }
+    
+    .meta {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 6px;
+      margin-bottom: 30px;
+      border-left: 4px solid #3498db;
+    }
+    
+    .meta p { margin: 5px 0; }
+    .meta a { color: #3498db; }
+    
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 15px;
+      margin: 25px 0;
+    }
+    
+    .summary-card {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 6px;
+      text-align: center;
+      border-top: 3px solid #3498db;
+    }
+    
+    .summary-card .value {
+      font-size: 2em;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+    
+    .summary-card .label {
+      font-size: 0.85em;
+      color: #7f8c8d;
+      margin-top: 5px;
+    }
+    
+    .fix-card {
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      padding: 20px;
+      margin: 20px 0;
+      border-left: 4px solid #bdc3c7;
+    }
+    
+    .fix-card.critical { border-left-color: #c0392b; }
+    .fix-card.high { border-left-color: #e67e22; }
+    .fix-card.medium { border-left-color: #f39c12; }
+    .fix-card.low { border-left-color: #27ae60; }
+    
+    .fix-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .fix-title {
+      font-size: 1.1em;
+      font-weight: 600;
+      margin: 0;
+      color: #2c3e50;
+    }
+    
+    .badge {
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 0.75em;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    
+    .badge.critical { background: #c0392b; color: white; }
+    .badge.high { background: #e67e22; color: white; }
+    .badge.medium { background: #f39c12; color: white; }
+    .badge.low { background: #27ae60; color: white; }
+    
+    .fix-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-size: 0.85em;
+      color: #7f8c8d;
+      margin-bottom: 15px;
+    }
+    
+    .reason {
+      background: #fff3cd;
+      padding: 12px 15px;
+      border-radius: 4px;
+      margin: 15px 0;
+      font-size: 0.95em;
+      border-left: 3px solid #ffc107;
+    }
+    
+    .instruction-box {
+      border-radius: 6px;
+      padding: 15px;
+      margin: 10px 0;
+      font-size: 0.9em;
+      line-height: 1.5;
+    }
+    
+    .instruction-box.original {
+      background: #fff5f5;
+      border: 1px solid #fed7d7;
+    }
+    
+    .instruction-box.suggested {
+      background: #f0fff4;
+      border: 1px solid #c6f6d5;
+    }
+    
+    .instruction-label {
+      font-size: 0.8em;
+      font-weight: 600;
+      color: #666;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+    
+    .instruction-label.original { color: #c53030; }
+    .instruction-label.suggested { color: #276749; }
+    
+    .env-fix {
+      background: #fffbeb;
+      border: 1px solid #fcd34d;
+      border-radius: 6px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+    
+    .env-fix h4 {
+      margin-top: 0;
+      color: #92400e;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+      font-size: 0.9em;
+    }
+    
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border: 1px solid #e0e0e0;
+    }
+    
+    th {
+      background: #f8f9fa;
+      font-weight: 600;
+      color: #2c3e50;
+    }
+    
+    .quick-ref {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 6px;
+      margin-top: 40px;
+    }
+    
+    .quick-ref h2 { margin-top: 0; border: none; }
+    
+    .note-box {
+      background: #e8f4fd;
+      border: 1px solid #90cdf4;
+      border-radius: 4px;
+      padding: 15px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lab Fix Report</h1>
+    
+    <div class="meta">
+      <p><strong>Lab:</strong> Manage Microsoft Entra ID Identities</p>
+      <p><strong>URL:</strong> <a href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_01-Manage_Entra_ID_Identities.html" target="_blank">https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_01-Manage_Entra_ID_Identities.html</a></p>
+      <p><strong>Generated:</strong> 3/23/2026, 9:08:00 AM</p>
+    </div>
+    
+    <h2>Summary</h2>
+    <div class="summary-grid">
+      <div class="summary-card">
+        <div class="value">13</div>
+        <div class="label">Total Issues</div>
+      </div>
+      <div class="summary-card">
+        <div class="value">13</div>
+        <div class="label">Instruction Fixes</div>
+      </div>
+      <div class="summary-card">
+        <div class="value">0</div>
+        <div class="label">Environment Fixes</div>
+      </div>
+      <div class="summary-card">
+        <div class="value" style="color: #c0392b">13</div>
+        <div class="label">Critical Issues</div>
+      </div>
+      <div class="summary-card">
+        <div class="value" style="font-size: 1em">High (&gt; 4 hours)</div>
+        <div class="label">Estimated Effort</div>
+      </div>
+    </div><h2>Instruction Updates</h2><h3>Critical Priority (13)</h3>
+    <div class="fix-card critical">
+      <div class="fix-header">
+        <h4 class="fix-title">Sign in to Azure Portal</h4>
+        <span class="badge critical">critical</span>
+      </div>
+      <div class="fix-meta">
+        <span><strong>Step:</strong> step-1-sign-in-portal</span>
+        <span><strong>Category:</strong> removed feature</span>
+        <span><strong>Confidence:</strong> high</span>
+      </div>
+      <div class="reason"><strong>Issue:</strong> PowerShell 6+ (pwsh.exe) is not installed. All tool execution is blocked. Install from https://aka.ms/powershell then retry.</div>
+      <div class="instruction-label original">Original Instruction</div>
+      <div class="instruction-box original">Sign in to the Azure portal at https://portal.azure.com and dismiss the Welcome to Azure splash screen by selecting Cancel.</div>
+      <div class="instruction-label suggested">Suggested Update</div>
+      <div class="instruction-box suggested">Sign in to the Azure portal at https://portal.azure.com and dismiss the Welcome to Azure splash screen by selecting Cancel.</div>
+    </div>
+    <div class="fix-card critical">
+      <div class="fix-header">
+        <h4 class="fix-title">Navigate to Microsoft Entra ID</h4>
+        <span class="badge critical">critical</span>
+      </div>
+      <div class="fix-meta">
+        <span><strong>Step:</strong> step-2-navigate-entra-id</span>
+        <span><strong>Category:</strong> removed feature</span>
+        <span><strong>Confidence:</strong> high</span>
+      </div>
+      <div class="reason"><strong>Issue:</strong> PowerShell 6+ (pwsh.exe) is not installed. All tool execution is blocked — no browser, no CLI, no screenshots. Install from https://aka.ms/powershell then retry.</div>
+      <div class="instruction-label original">Original Instruction</div>
+      <div class="instruction-box original">Search for and select Microsoft Entra ID. Take a few minutes to familiarize yourself with the features in the left pane.</div>
+      <div class="instruction-label suggested">Suggested Update</div>
+      <div class="instruction-box suggested">Search for and select Microsoft Entra ID. Take a few minutes to familiarize yourself with the features in the left pane.</div>
+    </div>
+    <div class="fix-card critical">
+      <div class="fix-header">
+        <h4 class="fix-title">Explore Entra ID Overview</h4>
+        <span class="badge critical">critical</span>
+      </div>
+      <div class="fix-meta">
+        <span><strong>Step:</strong> step-3-explore-overview</span>
+        <span><strong>Category:</strong> removed feature</span>
+        <span><strong>Confidence:</strong> high</span>
+      </div>
+      <div class="reason"><strong>Issue:</strong> PowerShell 6+ (pwsh.exe) not installed. All execution blocked.</div>
+      <div class="instruction-label original">Original Instruction</div>
+      <div class="instruction-box original">Select the Overview blade and then the Manage tenants tab. Review tenant information, then return to the Entra ID page using browser back or breadcrumb menu.</div>
+      <div class="instruction-label suggested">Suggested Update</div>
+      <div class="instruction-box suggested">Select the Overview blade and then the Manage tenants tab. Review tenant information, then return to the Entra ID page using browser back or breadcrumb menu.</div>
+    </div>
+    <div class="fix-card critical">
+      <div class="fix-header">
+        <h4 class="fix-title">Navigate to Users section</h4>
+        <span class="badge critical">critical</span>
+      </div>
+      <div class="fix-meta">
+        <span><strong>Step:</strong> step-4-navigate-users</span>
+        <span><strong>Category:</strong> removed feature</span>
+        <span><strong>Confidence:</strong> high</span>
+      </div>
+      <div class="reason"><strong>Issue:</strong> PowerShell 6+ (pwsh.exe) not installed. All execution blocked.</div>
+      <div class="instruction-label original">Original Instruction</div>
+      <div class="instruction-box original">In the Manage blade, select Users, then in the New user drop-down select Create new user.</div>
+      <div class="instruction-label suggested">Suggested Update</div>
+      <div class="instruction-box suggested">In the Manage blade, select Users, then in the New user drop-down select Create new user.</div>
+    </div>
+    <div class="fix-card critical">
+      <div class="fix-header">
+        <h4 class="fix-title">Create az104-user1 account</h4>
+        <span class="badge critical">critical</span>
+      </div>
+      <div class="fix-meta">
+        <span><strong>Step:</strong> step-5-create-user1</span>
+        <span><strong>Category:</strong> removed feature</span>
+        <span><strong>Confidence:</strong> high</span>
+      </div>
+      <div class="reason"><strong>Issue:</strong> PowerShell 6+ (pwsh.exe) not installed. All execution blocked.</div>
+      <div class="instruction-label original">Original Instruction</div>
+      <div class="instruction-box original">Create a new user with User principal name 'az104-user1', Display name 'az104-user1', Auto-generate password checked, Account enabled checked. On Properties tab set Job title to 'IT Lab Administrator', Department to 'IT', Usage location to 'United States'. Select Review + create then Create.</div>
+      <div class="instruction-label suggested">Suggested Update</div>
+      <div class="instruction-box suggested">Create a new user with User principal name 'az104-user1', Display name 'az104-user1', Auto-generate password checked, Account enabled checked. On Properties tab set Job title to 'IT Lab Administrator', Department to 'IT', Usage location to 'United States'. Select Review + create then Create.</div>
+    </div>
+    <div class="fix-card critical">
+      <div class="fix-header">
+        <h4 class="fix-title">Verify user creation</h4>
+        <span class="badge critical">critical</span>
+      </div>
+      <div class="fix-meta">
+        <span><strong>Step:</strong> step-6-verify-user1</span>
+        <span><strong>Category:</strong> removed feature</span>
+        <span><strong>Confidence:</strong> high</span>
+      </div>
+      <div class="reason"><strong>Issue:</strong> PowerShell 6+ (pwsh.exe) not installed. All execution blocked.</div>
+      <div class="instruction-label original">Original Instruction</div>
+      <div class="instruction-box original">Refresh the page and confirm your new user was created.</div>
+      <div class="instruction-label suggested">Suggested Update</div>
+      <div class="instruction-box suggested">Refresh the page and confirm your new user appears in the user list.</div>
+    </div>
+    <div class="fix-card critical">
+      <div class="fix-header">
+        <h4 class="fix-title">Invite external user</h4>
+        <span class="badge critical">critical</span>
+      </div>
+      <div class="fix-meta">
+        <span><strong>Step:</strong> step-7-invite-external-user</span>
+        <span><strong>Category:</strong> removed feature</span>
+        <span><strong>Confidence:</strong> high</span>
+      </div>
+      <div class="reason"><strong>Issue:</strong> PowerShell 6+ (pwsh.exe) not installed. All execution blocked.</div>
+      <div class="instruction-label original">Original Instruction</div>
+      <div class="instruction-box original">In the New user drop-down select Invite an external user. Fill Email with your email address, Display name with your name, check Send invite message, Message 'Welcome to Azure and our group project'. Move to Properties tab and set Job title to 'IT Lab Administrator', Department to 'IT', Usage location to 'United States'. Select Review + invite then Invite.</div>
+      <div class="instruction-label suggested">Suggested Update</div>
+      <div class="instruction-box suggested">In the New user drop-down select Invite an external user. Fill Email with your email address, Display name with your name, check Send invite message, Message 'Welcome to Azure and our group project'. Move to Properties tab and set Job title to 'IT Lab Administrator', Department to 'IT', Usage location to 'United States'. Select Review + invite then Invite.</div>
+    </div>
+    <div class="fix-card critical">
+      <div class="fix-header">
+        <h4 class="fix-title">Navigate to Groups section</h4>
+        <span class="badge critical">critical</span>
+      </div>
+      <div class="fix-meta">
+        <span><strong>Step:</strong> step-8-navigate-groups</span>
+        <span><strong>Category:</strong> removed feature</span>
+        <span><strong>Confidence:</strong> high</span>
+      </div>
+      <div class="reason"><strong>Issue:</strong> PowerShell 6+ (pwsh.exe) not installed. All execution blocked.</div>
+      <div class="instruction-label original">Original Instruction</div>
+      <div class="instruction-box original">Search for and select Microsoft Entra ID again. In the Manage blade, select Groups. Take a minute to familiarize yourself with the group settings in the left pane including Expiration and Naming policy options.</div>
+      <div class="instruction-label suggested">Suggested Update</div>
+      <div class="instruction-box suggested">Search for and select Microsoft Entra ID again. In the Manage blade, select Groups. Take a minute to familiarize yourself with the group settings in the left pane including Expiration and Naming policy options.</div>
+    </div>
+    <div class="fix-card critical">
+      <div class="fix-header">
+        <h4 class="fix-title">Create IT Lab Administrators group</h4>
+        <span class="badge critical">critical</span>
+      </div>
+      <div class="fix-meta">
+        <span><strong>Step:</strong> step-9-create-new-group</span>
+        <span><strong>Category:</strong> removed feature</span>
+        <span><strong>Confidence:</strong> high</span>
+      </div>
+      <div class="reason"><strong>Issue:</strong> PowerShell 6+ (pwsh.exe) not installed. All execution blocked.</div>
+      <div class="instruction-label original">Original Instruction</div>
+      <div class="instruction-box original">In the All groups blade, select + New group and create a new group with Group type 'Security', Group name 'IT Lab Administrators', Group description 'Administrators that manage the IT lab', Membership type 'Assigned'.</div>
+      <div class="instruction-label suggested">Suggested Update</div>
+      <div class="instruction-box suggested">In the All groups blade, select + New group and create a new group with Group type 'Security', Group name 'IT Lab Administrators', Group description 'Administrators that manage the IT lab', Membership type 'Assigned'.</div>
+    </div>
+    <div class="fix-card critical">
+      <div class="fix-header">
+        <h4 class="fix-title">Add group owners</h4>
+        <span class="badge critical">critical</span>
+      </div>
+      <div class="fix-meta">
+        <span><strong>Step:</strong> step-10-add-group-owners</span>
+        <span><strong>Category:</strong> removed feature</span>
+        <span><strong>Confidence:</strong> high</span>
+      </div>
+      <div class="reason"><strong>Issue:</strong> PowerShell 6+ (pwsh.exe) not installed. All execution blocked.</div>
+      <div class="instruction-label original">Original Instruction</div>
+      <div class="instruction-box original">Select No owners selected. In the Add owners page, search for and select yourself (shown in the top right corner) as the owner.</div>
+      <div class="instruction-label suggested">Suggested Update</div>
+      <div class="instruction-box suggested">Select No owners selected. In the Add owners page, search for and select yourself (shown in the top right corner) as the owner.</div>
+    </div>
+    <div class="fix-card critical">
+      <div class="fix-header">
+        <h4 class="fix-title">Add group members</h4>
+        <span class="badge critical">critical</span>
+      </div>
+      <div class="fix-meta">
+        <span><strong>Step:</strong> step-11-add-group-members</span>
+        <span><strong>Category:</strong> removed feature</span>
+        <span><strong>Confidence:</strong> high</span>
+      </div>
+      <div class="reason"><strong>Issue:</strong> PowerShell 6+ (pwsh.exe) not installed. All execution blocked.</div>
+      <div class="instruction-label original">Original Instruction</div>
+      <div class="instruction-box original">Select No members selected. In the Add members pane, search for and select both az104-user1 and the guest user you invited. Add both users to the group.</div>
+      <div class="instruction-label suggested">Suggested Update</div>
+      <div class="instruction-box suggested">Select No members selected. In the Add members pane, search for and select both az104-user1 and the guest user you invited. Add both users to the group.</div>
+    </div>
+    <div class="fix-card critical">
+      <div class="fix-header">
+        <h4 class="fix-title">Deploy the group</h4>
+        <span class="badge critical">critical</span>
+      </div>
+      <div class="fix-meta">
+        <span><strong>Step:</strong> step-12-create-group</span>
+        <span><strong>Category:</strong> removed feature</span>
+        <span><strong>Confidence:</strong> high</span>
+      </div>
+      <div class="reason"><strong>Issue:</strong> PowerShell 6+ (pwsh.exe) not installed. All execution blocked.</div>
+      <div class="instruction-label original">Original Instruction</div>
+      <div class="instruction-box original">Select Create to deploy the group. Refresh the page and ensure your group was created.</div>
+      <div class="instruction-label suggested">Suggested Update</div>
+      <div class="instruction-box suggested">Select **Create** to deploy the group. If the browser-based deployment is unavailable, open a supported terminal (such as Command Prompt or Windows PowerShell 5.1) and run the equivalent deployment command. Refresh the page and ensure your group was created.</div>
+    </div>
+    <div class="fix-card critical">
+      <div class="fix-header">
+        <h4 class="fix-title">Verify group configuration</h4>
+        <span class="badge critical">critical</span>
+      </div>
+      <div class="fix-meta">
+        <span><strong>Step:</strong> step-13-verify-group</span>
+        <span><strong>Category:</strong> removed feature</span>
+        <span><strong>Confidence:</strong> high</span>
+      </div>
+      <div class="reason"><strong>Issue:</strong> PowerShell 6+ (pwsh.exe) not installed. All execution blocked.</div>
+      <div class="instruction-label original">Original Instruction</div>
+      <div class="instruction-box original">Select the new IT Lab Administrators group and review the Members and Owners information to confirm both users are added and ownership is correct.</div>
+      <div class="instruction-label suggested">Suggested Update</div>
+      <div class="instruction-box suggested">Select the new IT Lab Administrators group and review the Members and Owners information to confirm both users are added and ownership is correct. Note that PowerShell automation is unavailable in this environment; perform all verification steps manually through the portal UI.</div>
+    </div>
+    <div class="quick-ref">
+      <h2>Quick Reference</h2>
+      <h3>Common Replacements</h3>
+      <table>
+        <tr><th>Old Text</th><th>New Text</th></tr>
+        <tr><td>Azure Active Directory</td><td>Microsoft Entra ID</td></tr>
+        <tr><td>AAD</td><td>Entra</td></tr>
+        <tr><td>+ New User</td><td>+ New User &gt; Create new user</td></tr>
+        <tr><td>scroll right and select Remove</td><td>right-click to select, then click Remove assignments</td></tr>
+      </table>
+      
+      <h3>MFA-Related Additions</h3>
+      <p>Consider adding these notes where users log in with new accounts:</p>
+      <div class="note-box"><strong>Note:</strong> When signing in for the first time, you will be prompted to set up Multi-Factor Authentication (MFA). Follow the prompts to configure the Microsoft Authenticator app. This is required by Azure MFA Phase 2 enforcement.</div>
+    </div>
+  </div>
+</body>
+</html>

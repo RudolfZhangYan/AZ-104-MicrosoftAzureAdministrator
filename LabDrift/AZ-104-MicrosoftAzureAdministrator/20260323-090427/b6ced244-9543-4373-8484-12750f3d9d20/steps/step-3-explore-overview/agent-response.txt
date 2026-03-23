@@ -1,0 +1,21 @@
+Same blocker — **pwsh is not installed**. No commands can run.
+
+```
+ACTIONS_TAKEN: None — shell unavailable (pwsh not installed)
+STEP_COMPLETED: NO
+ELEMENT_FOUND: N/A
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: PowerShell 6+ (pwsh.exe) not installed. All execution blocked.
+CURRENT_STATE: No browser — cannot execute any commands
+SCREENSHOT_BEFORE: SKIPPED
+SCREENSHOT_AFTER: SKIPPED
+```
+
+⚠️ **Every step will fail with this same error until pwsh is installed.** Please either:
+
+1. **Install pwsh**: `winget install Microsoft.PowerShell` (from an admin cmd prompt)
+2. **Or pause sending steps** until the environment is fixed
+
+I'll keep reporting the same blocker otherwise.

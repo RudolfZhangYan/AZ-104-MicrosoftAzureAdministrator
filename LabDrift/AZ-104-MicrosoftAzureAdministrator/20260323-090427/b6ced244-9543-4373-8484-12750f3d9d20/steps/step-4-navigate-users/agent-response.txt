@@ -1,0 +1,14 @@
+```
+ACTIONS_TAKEN: None — shell unavailable (pwsh not installed)
+STEP_COMPLETED: NO
+ELEMENT_FOUND: N/A
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: PowerShell 6+ (pwsh.exe) not installed. All execution blocked.
+CURRENT_STATE: No browser — cannot execute any commands
+SCREENSHOT_BEFORE: SKIPPED
+SCREENSHOT_AFTER: SKIPPED
+```
+
+🛑 **Repeating: This environment cannot run any steps.** `pwsh.exe` is missing. All remaining lab steps will produce this identical report until the shell is fixed. Please install PowerShell 7 before continuing.
