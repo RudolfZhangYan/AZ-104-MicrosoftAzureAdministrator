@@ -1,0 +1,111 @@
+{
+  "runId": "822e59e2-56fa-470f-a1e6-8fc7f6c80aba",
+  "status": "passed",
+  "lab": {
+    "labId": "lab-01-manage-microsoft-entra-id-identit",
+    "title": "Lab 01 - Manage Microsoft Entra ID Identities",
+    "sourceUrl": "https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_01-Manage_Entra_ID_Identities.html"
+  },
+  "steps": [
+    {
+      "stepId": "step-1-sign-in-portal",
+      "title": "Sign in to Azure Portal",
+      "instruction": "Sign in to the Azure portal - https://portal.azure.com. To proceed to the portal, select Cancel on the Welcome to Azure splash screen.",
+      "status": "skipped",
+      "aiResponse": "Error after 3 attempts: Timeout after 180000ms waiting for session.idle",
+      "driftIssues": [],
+      "durationMs": 735020,
+      "retryCount": 2
+    },
+    {
+      "stepId": "step-2-navigate-entra-id",
+      "title": "Navigate to Microsoft Entra ID",
+      "instruction": "Search for and select Microsoft Entra ID. Select the Overview blade and then the Manage tenants tab. Return to the Entra ID page by pressing back in the browser or selecting the option in the breadcrumb menu.",
+      "status": "skipped",
+      "aiResponse": "Error after 3 attempts: Timeout after 180000ms waiting for session.idle",
+      "driftIssues": [],
+      "durationMs": 735011,
+      "retryCount": 2
+    },
+    {
+      "stepId": "step-3-create-new-user",
+      "title": "Create new user az104-user1",
+      "instruction": "In the Manage blade, select Users; then in the New user drop-down select Create new user. Create a new user with User principal name: az104-user1, Display name: az104-user1, Auto-generate password checked, Account enabled checked, Job title: IT Lab Administrator, Department: IT, Usage location: United States.",
+      "status": "skipped",
+      "aiResponse": "Error after 3 attempts: Timeout after 180000ms waiting for session.idle",
+      "driftIssues": [],
+      "durationMs": 734990,
+      "retryCount": 2
+    },
+    {
+      "stepId": "step-4-invite-external-user",
+      "title": "Invite external guest user",
+      "instruction": "In the New user drop-down select Invite an external user. Configure with your email address, your name as display name, check Send invite message box, add message 'Welcome to Azure and our group project', set Job title to IT Lab Administrator, Department to IT, Usage location to United States.",
+      "status": "skipped",
+      "aiResponse": "Error after 3 attempts: Timeout after 180000ms waiting for session.idle",
+      "driftIssues": [],
+      "durationMs": 735003,
+      "retryCount": 2
+    },
+    {
+      "stepId": "step-5-navigate-groups",
+      "title": "Navigate to Groups section",
+      "instruction": "In the Azure portal, search for and select Microsoft Entra ID. In the Manage blade, select Groups. Take a minute to familiarize yourself with the group settings in the left pane.",
+      "status": "skipped",
+      "aiResponse": "Error after 3 attempts: Timeout after 180000ms waiting for session.idle",
+      "driftIssues": [],
+      "durationMs": 734993,
+      "retryCount": 2
+    },
+    {
+      "stepId": "step-6-create-security-group",
+      "title": "Create IT Lab Administrators group",
+      "instruction": "In the All groups blade, select + New group and create a new group. Set Group type to Security, Group name to 'IT Lab Administrators', Group description to 'Administrators that manage the IT lab', Membership type to Assigned.",
+      "status": "skipped",
+      "aiResponse": "Error after 3 attempts: Timeout after 180000ms waiting for session.idle",
+      "driftIssues": [],
+      "durationMs": 735511,
+      "retryCount": 2
+    },
+    {
+      "stepId": "step-7-configure-group-ownership",
+      "title": "Add group owner",
+      "instruction": "Select No owners selected. In the Add owners page, search for and select yourself (shown in the top right corner) as the owner.",
+      "status": "skipped",
+      "aiResponse": "Error after 3 attempts: Timeout after 180000ms waiting for session.idle",
+      "driftIssues": [],
+      "durationMs": 735006,
+      "retryCount": 2
+    },
+    {
+      "stepId": "step-8-add-group-members",
+      "title": "Add members to group",
+      "instruction": "Select No members selected. In the Add members pane, search for and select the az104-user1 and the guest user you invited. Add both of the users to the group. Select Create to deploy the group.",
+      "status": "skipped",
+      "aiResponse": "Error after 3 attempts: Timeout after 180000ms waiting for session.idle",
+      "driftIssues": [],
+      "durationMs": 735004,
+      "retryCount": 2
+    },
+    {
+      "stepId": "step-9-verify-group-creation",
+      "title": "Verify group and membership",
+      "instruction": "Refresh the page and ensure your group was created. Select the new group and review the Members and Owners information.",
+      "status": "skipped",
+      "aiResponse": "Error after 3 attempts: Timeout after 180000ms waiting for session.idle",
+      "driftIssues": [],
+      "durationMs": 734989,
+      "retryCount": 2
+    }
+  ],
+  "driftIssues": [],
+  "summary": {
+    "total": 9,
+    "passed": 0,
+    "driftDetected": 0,
+    "failed": 0,
+    "skipped": 9,
+    "byCategory": {}
+  },
+  "durationMs": 6975570
+}

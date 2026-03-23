@@ -1,0 +1,309 @@
+# High-level lab spec generated from: https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_01-Manage_Entra_ID_Identities.html
+# Generated at: 2026-03-23T13:18:48.816Z
+# This spec uses natural language instructions for MCP-based execution.
+# Steps are intentionally high-level (10-15 max) for AI agent execution.
+
+"labId": "lab-01-manage-microsoft-entra-id-identit"
+"title": "Lab 01 - Manage Microsoft Entra ID Identities"
+"version": "1.0"
+"source": "https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_01-Manage_Entra\
+  _ID_Identities.html"
+"estimatedMinutes": 30
+"steps":
+  - "id": "step-1-sign-in-portal"
+    "title": "Sign in to Azure Portal"
+    "type": "ui"
+    "driver": "ui"
+    "environment": "browser"
+    "originalInstruction": "Sign in to the Azure portal - https://portal.azure.com. To proceed to the portal, select Cancel
+      on the Welcome to Azure splash screen."
+    "expected": "Successfully logged into Azure Portal with main dashboard visible"
+    "actions":
+      - "action": "navigate"
+        "params":
+          "url": "https://portal.azure.com"
+      - "action": "click"
+        "params":
+          "selector": "Cancel"
+    "assertions":
+      - "type": "containsText"
+        "params":
+          "text": "Successfully logged into"
+        "severity": "soft"
+    "evidence":
+      "screenshots": true
+  - "id": "step-2-navigate-entra-id"
+    "title": "Navigate to Microsoft Entra ID"
+    "type": "ui"
+    "driver": "ui"
+    "environment": "browser"
+    "originalInstruction": "Search for and select Microsoft Entra ID. Select the Overview blade and then the Manage tenants
+      tab. Return to the Entra ID page by pressing back in the browser or selecting the option in the breadcrumb menu."
+    "expected": "Microsoft Entra ID overview page is displayed with navigation options visible"
+    "actions":
+      - "action": "search"
+        "params":
+          "selector": "Microsoft Entra ID"
+      - "action": "click"
+        "params":
+          "selector": "Overview"
+      - "action": "click"
+        "params":
+          "selector": "Manage tenants"
+      - "action": "navigate"
+        "params":
+          "selector": "back to Entra ID"
+    "assertions":
+      - "type": "containsText"
+        "params":
+          "text": "Microsoft Entra overview"
+        "severity": "soft"
+    "evidence":
+      "screenshots": true
+  - "id": "step-3-create-new-user"
+    "title": "Create new user az104-user1"
+    "type": "ui"
+    "driver": "ui"
+    "environment": "browser"
+    "originalInstruction": "In the Manage blade, select Users; then in the New user drop-down select Create new user. Create
+      a new user with User principal name: az104-user1, Display name: az104-user1, Auto-generate password checked,
+      Account enabled checked, Job title: IT Lab Administrator, Department: IT, Usage location: United States."
+    "expected": "New user az104-user1 created successfully and appears in users list"
+    "actions":
+      - "action": "click"
+        "params":
+          "selector": "Users"
+      - "action": "click"
+        "params":
+          "selector": "New user"
+      - "action": "click"
+        "params":
+          "selector": "Create new user"
+      - "action": "fill_form"
+        "params":
+          "fields":
+            - "label": "User principal name"
+              "value": "az104-user1"
+            - "label": "Display name"
+              "value": "az104-user1"
+            - "label": "Auto-generate password"
+              "value": "checked"
+            - "label": "Account enabled"
+              "value": "checked"
+      - "action": "click"
+        "params":
+          "selector": "Properties"
+      - "action": "fill_form"
+        "params":
+          "fields":
+            - "label": "Job title"
+              "value": "IT Lab Administrator"
+            - "label": "Department"
+              "value": "IT"
+            - "label": "Usage location"
+              "value": "United States"
+      - "action": "click"
+        "params":
+          "selector": "Review + create"
+      - "action": "click"
+        "params":
+          "selector": "Create"
+    "assertions":
+      - "type": "containsText"
+        "params":
+          "text": "user az104-user1 created"
+        "severity": "soft"
+    "evidence":
+      "screenshots": true
+  - "id": "step-4-invite-external-user"
+    "title": "Invite external guest user"
+    "type": "ui"
+    "driver": "ui"
+    "environment": "browser"
+    "originalInstruction": "In the New user drop-down select Invite an external user. Configure with your email address,
+      your name as display name, check Send invite message box, add message 'Welcome to Azure and our group project',
+      set Job title to IT Lab Administrator, Department to IT, Usage location to United States."
+    "expected": "External user invitation sent successfully and guest user appears in users list"
+    "actions":
+      - "action": "click"
+        "params":
+          "selector": "New user"
+      - "action": "click"
+        "params":
+          "selector": "Invite an external user"
+      - "action": "fill_form"
+        "params":
+          "fields":
+            - "label": "Email"
+              "value": "your email address"
+            - "label": "Display name"
+              "value": "your name"
+            - "label": "Send invite message"
+              "value": "checked"
+            - "label": "Message"
+              "value": "Welcome to Azure and our group project"
+      - "action": "click"
+        "params":
+          "selector": "Properties"
+      - "action": "fill_form"
+        "params":
+          "fields":
+            - "label": "Job title"
+              "value": "IT Lab Administrator"
+            - "label": "Department"
+              "value": "IT"
+            - "label": "Usage location"
+              "value": "United States"
+      - "action": "click"
+        "params":
+          "selector": "Review + invite"
+      - "action": "click"
+        "params":
+          "selector": "Invite"
+    "assertions":
+      - "type": "containsText"
+        "params":
+          "text": "External user invitation"
+        "severity": "soft"
+    "evidence":
+      "screenshots": true
+  - "id": "step-5-navigate-groups"
+    "title": "Navigate to Groups section"
+    "type": "ui"
+    "driver": "ui"
+    "environment": "browser"
+    "originalInstruction": "In the Azure portal, search for and select Microsoft Entra ID. In the Manage blade, select
+      Groups. Take a minute to familiarize yourself with the group settings in the left pane."
+    "expected": "Groups management page is displayed with group settings and options visible"
+    "actions":
+      - "action": "search"
+        "params":
+          "selector": "Microsoft Entra ID"
+      - "action": "click"
+        "params":
+          "selector": "Groups"
+    "assertions":
+      - "type": "containsText"
+        "params":
+          "text": "Groups management page"
+        "severity": "soft"
+    "evidence":
+      "screenshots": true
+  - "id": "step-6-create-security-group"
+    "title": "Create IT Lab Administrators group"
+    "type": "ui"
+    "driver": "ui"
+    "environment": "browser"
+    "originalInstruction": "In the All groups blade, select + New group and create a new group. Set Group type to Security,
+      Group name to 'IT Lab Administrators', Group description to 'Administrators that manage the IT lab', Membership
+      type to Assigned."
+    "expected": "New security group 'IT Lab Administrators' created with assigned membership type"
+    "actions":
+      - "action": "click"
+        "params":
+          "selector": "+ New group"
+      - "action": "fill_form"
+        "params":
+          "fields":
+            - "label": "Group type"
+              "value": "Security"
+            - "label": "Group name"
+              "value": "IT Lab Administrators"
+            - "label": "Group description"
+              "value": "Administrators that manage the IT lab"
+            - "label": "Membership type"
+              "value": "Assigned"
+    "assertions":
+      - "type": "containsText"
+        "params":
+          "text": "security group Administrators'"
+        "severity": "soft"
+    "evidence":
+      "screenshots": true
+  - "id": "step-7-configure-group-ownership"
+    "title": "Add group owner"
+    "type": "ui"
+    "driver": "ui"
+    "environment": "browser"
+    "originalInstruction": "Select No owners selected. In the Add owners page, search for and select yourself (shown in the
+      top right corner) as the owner."
+    "expected": "Current user added as group owner"
+    "actions":
+      - "action": "click"
+        "params":
+          "selector": "No owners selected"
+      - "action": "search"
+        "params":
+          "selector": "yourself"
+      - "action": "click"
+        "params":
+          "selector": "yourself"
+    "assertions":
+      - "type": "containsText"
+        "params":
+          "text": "Current user added"
+        "severity": "soft"
+    "evidence":
+      "screenshots": true
+  - "id": "step-8-add-group-members"
+    "title": "Add members to group"
+    "type": "ui"
+    "driver": "ui"
+    "environment": "browser"
+    "originalInstruction": "Select No members selected. In the Add members pane, search for and select the az104-user1 and
+      the guest user you invited. Add both of the users to the group. Select Create to deploy the group."
+    "expected": "Both az104-user1 and guest user added as group members, group created successfully"
+    "actions":
+      - "action": "click"
+        "params":
+          "selector": "No members selected"
+      - "action": "search"
+        "params":
+          "selector": "az104-user1"
+      - "action": "click"
+        "params":
+          "selector": "az104-user1"
+      - "action": "search"
+        "params":
+          "selector": "guest user"
+      - "action": "click"
+        "params":
+          "selector": "guest user"
+      - "action": "click"
+        "params":
+          "selector": "Create"
+    "assertions":
+      - "type": "containsText"
+        "params":
+          "text": "Both az104-user1 guest"
+        "severity": "soft"
+    "evidence":
+      "screenshots": true
+  - "id": "step-9-verify-group-creation"
+    "title": "Verify group and membership"
+    "type": "ui"
+    "driver": "ui"
+    "environment": "browser"
+    "originalInstruction": "Refresh the page and ensure your group was created. Select the new group and review the Members
+      and Owners information."
+    "expected": "IT Lab Administrators group visible in groups list with correct members and owners"
+    "actions":
+      - "action": "click"
+        "params":
+          "selector": "Refresh"
+      - "action": "click"
+        "params":
+          "selector": "IT Lab Administrators"
+      - "action": "click"
+        "params":
+          "selector": "Members"
+      - "action": "click"
+        "params":
+          "selector": "Owners"
+    "assertions":
+      - "type": "containsText"
+        "params":
+          "text": "Administrators group visible"
+        "severity": "soft"
+    "evidence":
+      "screenshots": true
