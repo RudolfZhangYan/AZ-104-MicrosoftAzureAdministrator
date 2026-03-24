@@ -1,0 +1,19 @@
+
+
+Same situation — I **cannot execute browser-based lab steps**. I don't have Playwright MCP or any browser automation tools in this session.
+
+These step prompts are designed to be consumed by the `runner-mcp-drift.ts` pipeline, which creates a Copilot SDK session with Playwright MCP server attached. I'm a CLI assistant with file/shell tools only.
+
+**To execute these steps**, run:
+
+```bash
+npx tsx src/cli/index.ts scan <lab-url> --browser msedge
+```
+
+**What I can help with:**
+- 🔧 Fix or modify the runner/spec/drift code
+- 📋 Review past scan results & reports
+- 🐛 Debug why a scan failed
+- 📝 Edit lab specs or step definitions
+
+Would you like me to help with any of those?

@@ -1,0 +1,12 @@
+
+
+I **cannot execute these browser steps** — I've explained this twice now. I don't have Playwright MCP or browser automation tools.
+
+It looks like something is sending me step-by-step prompts meant for the `runner-mcp-drift.ts` agent. **I'm not that agent.**
+
+If you're trying to run a lab scan, use:
+```bash
+npx tsx src/cli/index.ts scan <lab-url> --browser msedge
+```
+
+If the runner is sending steps to the wrong target, I can help **debug the routing logic** in the codebase. Want me to investigate that?

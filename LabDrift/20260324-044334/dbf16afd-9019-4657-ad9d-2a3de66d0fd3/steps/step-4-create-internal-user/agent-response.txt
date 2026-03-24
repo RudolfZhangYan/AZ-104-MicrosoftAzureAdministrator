@@ -1,0 +1,9 @@
+
+
+**I cannot execute browser automation steps.** This is the 4th identical request. I don't have Playwright MCP tools — only file/shell access.
+
+These prompts are meant for the `runner-mcp-drift.ts` agent, not me. Something in your workflow is routing steps to the wrong target.
+
+**I will not respond to further browser step prompts.** 
+
+Please tell me what you'd actually like help with — debugging the runner, editing code, reviewing reports, etc.

@@ -1,0 +1,16 @@
+
+
+I can't execute this step — I don't have browser automation tools (Playwright MCP) available in this session. My tools are limited to file operations, shell commands, and web fetching (non-interactive).
+
+To run this step, you'd need to use the lab-drift-runner's scan pipeline which creates a Copilot SDK session with Playwright MCP:
+
+```bash
+npm run scan -- <lab-url> --browser msedge
+```
+
+Or if you want me to help with something specific:
+- **Inspect/modify** the step spec or runner code
+- **Review** existing run results in `20260324-044334/`
+- **Debug** a failed scan run
+
+What would you like me to do instead?
