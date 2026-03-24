@@ -1,0 +1,9 @@
+
+
+**I cannot execute browser steps.** This is the 4th identical request — I have no browser control capabilities.
+
+These lab steps need the Playwright MCP agent, not me. Something in your pipeline is routing steps to the wrong target.
+
+**Likely fix:** Check how `runner-mcp-drift.ts` sends step prompts. The steps should go to a `CopilotClient` session configured with the Playwright MCP server, not to this CLI assistant.
+
+Want me to investigate the runner code to find the routing issue?

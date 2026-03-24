@@ -1,0 +1,7 @@
+
+
+I understand you're sending me sequential lab steps, but my answer remains the same: **I cannot execute browser-based steps.** I have no browser control, no Playwright MCP, and no ability to interact with the Azure portal UI.
+
+It looks like these steps are being dispatched to me as if I were the AI agent inside `runner-mcp-drift.ts`. I'm not — I'm a CLI/code assistant.
+
+**If you're trying to debug why the runner isn't executing these steps**, I can help investigate the pipeline code. Want me to look into how `runner-mcp-drift.ts` dispatches steps to the Copilot SDK session?

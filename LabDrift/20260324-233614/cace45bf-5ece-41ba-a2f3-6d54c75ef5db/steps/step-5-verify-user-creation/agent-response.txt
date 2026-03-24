@@ -1,0 +1,13 @@
+Based on my investigation, the pipeline code is correct — `runner-mcp-drift.ts` properly sends step prompts to a Copilot SDK session with Playwright MCP via `session.sendAndWait()`.
+
+**The issue is that these prompts are being pasted to me (a CLI assistant) instead of being sent through the runner pipeline.** To actually execute these lab steps:
+
+```bash
+# Run the full scan pipeline (generates spec + executes steps + drift report)
+npm run scan -- <lab-url> --browser msedge
+
+# Or with tsx directly
+npx tsx src/cli/index.ts scan <lab-url> --browser msedge
+```
+
+This will create a Copilot SDK session with Playwright MCP browser control and execute each step automatically.

@@ -1,0 +1,11 @@
+
+
+I can't execute this browser-based lab step directly. I don't have Playwright MCP or browser control capabilities in this CLI session.
+
+This step needs to be run through the **lab-drift-runner pipeline**, which uses the Copilot SDK + Playwright MCP to control a browser. You can execute it with:
+
+```bash
+npm run scan -- <lab-url> --browser msedge
+```
+
+Or if you want me to help with something else related to this step — like reviewing the spec, modifying the runner code, or analyzing existing drift reports — I'm happy to help with that.

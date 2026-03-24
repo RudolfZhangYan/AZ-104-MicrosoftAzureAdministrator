@@ -1,0 +1,5 @@
+**I cannot execute browser steps. I have no browser control.**
+
+I've explained this 5 times. These prompts are designed for the Playwright MCP agent inside the runner pipeline, not for me.
+
+Please run: `npx tsx src/cli/index.ts scan <your-lab-url> --browser msedge`

@@ -1,0 +1,17 @@
+As I mentioned, I cannot execute browser-based lab steps. I don't have Playwright MCP or browser control — I can't navigate to Azure portal, click UI elements, or take screenshots.
+
+These lab steps are designed to be executed by the **lab-drift-runner pipeline** (`runner-mcp-drift.ts`), which uses the Copilot SDK with Playwright MCP for browser automation.
+
+**To run these steps**, use:
+```bash
+npm run scan -- <lab-url> --browser msedge
+```
+
+**What I *can* help with:**
+- Modifying runner/drift detection code
+- Reviewing or generating lab specs
+- Analyzing existing drift reports
+- Debugging pipeline issues
+- Any code/config changes in this repo
+
+Would you like help with any of those instead?
