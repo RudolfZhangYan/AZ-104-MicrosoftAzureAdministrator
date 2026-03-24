@@ -1,0 +1,5 @@
+I cannot execute browser-based lab steps. I don't have Playwright MCP or any browser automation tools in this session.
+
+It looks like these step instructions are being sent to me repeatedly. If you're building/debugging the runner that sends these prompts, the issue is that **the execution target needs to be a Copilot SDK session with Playwright MCP configured**, not this CLI assistant.
+
+If you need help fixing the routing so steps go to the right executor, I can look at the runner code. Just let me know.

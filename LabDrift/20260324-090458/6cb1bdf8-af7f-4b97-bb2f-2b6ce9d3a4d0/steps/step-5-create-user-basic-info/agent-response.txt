@@ -1,0 +1,16 @@
+```
+ACTIONS_TAKEN: None - no browser automation available
+STEP_COMPLETED: NO
+ELEMENT_FOUND: NO
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: No Playwright MCP or browser tools available in this session
+CURRENT_STATE: No browser session exists
+SCREENSHOT_BEFORE: SKIPPED
+SCREENSHOT_AFTER: SKIPPED
+```
+
+I'll keep responding with this blocking report for every step sent. **None of these will succeed** without Playwright MCP.
+
+If you want me to do something productive, tell me what to fix or investigate in the codebase.

@@ -1,0 +1,17 @@
+As I mentioned, I don't have browser automation capabilities in this session. I cannot:
+
+- Navigate web pages
+- Click UI elements or search in the Azure portal
+- Take screenshots
+- Interact with Microsoft Entra ID or any web application
+
+These lab steps require the **Playwright MCP server** which is configured when the runner pipeline (`runner-mcp-drift.ts`) creates a Copilot SDK session.
+
+**What I can help with:**
+- Modifying runner/drift detection code
+- Creating or editing lab specs
+- Analyzing existing reports in `reports/`
+- Debugging the pipeline
+- Any code/file tasks in this repo
+
+Would you like help with any of those instead?

@@ -1,0 +1,18 @@
+
+
+**I cannot execute any browser-based lab steps.** This is the 4th identical type of request. I have no browser automation tools.
+
+```
+ACTIONS_TAKEN: None - no browser automation available
+STEP_COMPLETED: NO
+ELEMENT_FOUND: NO
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: This agent does not have Playwright MCP or browser tools configured. Steps must be routed to a Copilot SDK session with Playwright MCP server.
+CURRENT_STATE: No browser session exists
+SCREENSHOT_BEFORE: SKIPPED
+SCREENSHOT_AFTER: SKIPPED
+```
+
+**If you're debugging why the runner isn't working**, I suspect the step prompts are being sent to the wrong target. Want me to look at the runner code to help fix the routing?

@@ -1,0 +1,471 @@
+{
+  "runId": "6cb1bdf8-af7f-4b97-bb2f-2b6ce9d3a4d0",
+  "status": "failed",
+  "lab": {
+    "labId": "lab-01-manage-microsoft-entra-id-identit",
+    "title": "Lab 01 - Manage Microsoft Entra ID Identities",
+    "sourceUrl": "https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_01-Manage_Entra_ID_Identities.html"
+  },
+  "steps": [
+    {
+      "stepId": "step-1-sign-in-azure-portal",
+      "title": "Sign in to Azure Portal",
+      "instruction": "Sign in to the Azure portal at https://portal.azure.com and dismiss the Welcome splash screen by selecting Cancel",
+      "status": "failed",
+      "aiResponse": "\n\nI don't have browser automation tools available in this session. I can't navigate to URLs, click UI elements, or take screenshots — those capabilities require the **Playwright MCP server** that the lab-drift-runner pipeline uses.\n\nTo execute this step, you'd run it through the runner:\n\n```bash\nnpm run dev -- scan https://portal.azure.com\n```\n\nOr if you want me to help with something else — like modifying the runner code, generating specs, or analyzing existing drift reports — I'm happy to help with that.",
+      "driftIssues": [
+        {
+          "id": "step-1-sign-in-azure-portal-missing",
+          "stepId": "step-1-sign-in-azure-portal",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "Sign in to the Azure portal at https://portal.azure.com and dismiss the Welcome splash screen by selecting Cancel",
+          "actualBehavior": "Element not found",
+          "recommendation": "Update lab instructions - element may have been removed or renamed",
+          "screenshotPath": "screenshots/step-1-sign-in-azure-portal-after.png"
+        }
+      ],
+      "durationMs": 12214,
+      "screenshotBefore": "screenshots/step-1-sign-in-azure-portal-before.png",
+      "screenshotAfter": "screenshots/step-1-sign-in-azure-portal-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-2-navigate-entra-id",
+      "title": "Search for and select Microsoft Entra ID",
+      "instruction": "Search for and select Microsoft Entra ID to access Azure's cloud-based identity and access management solution",
+      "status": "failed",
+      "aiResponse": "As I mentioned, I don't have browser automation capabilities in this session. I cannot:\n\n- Navigate web pages\n- Click UI elements or search in the Azure portal\n- Take screenshots\n- Interact with Microsoft Entra ID or any web application\n\nThese lab steps require the **Playwright MCP server** which is configured when the runner pipeline (`runner-mcp-drift.ts`) creates a Copilot SDK session.\n\n**What I can help with:**\n- Modifying runner/drift detection code\n- Creating or editing lab specs\n- Analyzing existing reports in `reports/`\n- Debugging the pipeline\n- Any code/file tasks in this repo\n\nWould you like help with any of those instead?",
+      "driftIssues": [
+        {
+          "id": "step-2-navigate-entra-id-missing",
+          "stepId": "step-2-navigate-entra-id",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "Search for and select Microsoft Entra ID to access Azure's cloud-based identity and access management solution",
+          "actualBehavior": "Element not found",
+          "recommendation": "Update lab instructions - element may have been removed or renamed",
+          "screenshotPath": "screenshots/step-2-navigate-entra-id-after.png"
+        }
+      ],
+      "durationMs": 10414,
+      "screenshotBefore": "screenshots/step-2-navigate-entra-id-before.png",
+      "screenshotAfter": "screenshots/step-2-navigate-entra-id-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-3-explore-overview",
+      "title": "Explore Overview and Manage tenants",
+      "instruction": "Select the Overview blade and then the Manage tenants tab to view tenant information, then return to the Entra ID page",
+      "status": "failed",
+      "aiResponse": "I cannot execute browser-based lab steps. I don't have Playwright MCP or any browser automation tools in this session.\n\nIt looks like these step instructions are being sent to me repeatedly. If you're building/debugging the runner that sends these prompts, the issue is that **the execution target needs to be a Copilot SDK session with Playwright MCP configured**, not this CLI assistant.\n\nIf you need help fixing the routing so steps go to the right executor, I can look at the runner code. Just let me know.",
+      "driftIssues": [
+        {
+          "id": "step-3-explore-overview-missing",
+          "stepId": "step-3-explore-overview",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "Select the Overview blade and then the Manage tenants tab to view tenant information, then return to the Entra ID page",
+          "actualBehavior": "Element not found",
+          "recommendation": "Update lab instructions - element may have been removed or renamed",
+          "screenshotPath": "screenshots/step-3-explore-overview-after.png"
+        }
+      ],
+      "durationMs": 6671,
+      "screenshotBefore": "screenshots/step-3-explore-overview-before.png",
+      "screenshotAfter": "screenshots/step-3-explore-overview-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-4-navigate-to-users",
+      "title": "Navigate to Users management",
+      "instruction": "In the Manage blade, select Users and then select Create new user from the New user dropdown",
+      "status": "failed",
+      "aiResponse": "\n\n**I cannot execute any browser-based lab steps.** This is the 4th identical type of request. I have no browser automation tools.\n\n```\nACTIONS_TAKEN: None - no browser automation available\nSTEP_COMPLETED: NO\nELEMENT_FOUND: NO\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: This agent does not have Playwright MCP or browser tools configured. Steps must be routed to a Copilot SDK session with Playwright MCP server.\nCURRENT_STATE: No browser session exists\nSCREENSHOT_BEFORE: SKIPPED\nSCREENSHOT_AFTER: SKIPPED\n```\n\n**If you're debugging why the runner isn't working**, I suspect the step prompts are being sent to the wrong target. Want me to look at the runner code to help fix the routing?",
+      "driftIssues": [
+        {
+          "id": "step-4-navigate-to-users-missing",
+          "stepId": "step-4-navigate-to-users",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "In the Manage blade, select Users and then select Create new user from the New user dropdown",
+          "actualBehavior": "This agent does not have Playwright MCP or browser tools configured. Steps must be routed to a Copilot SDK session with Playwright MCP server.",
+          "recommendation": "Update lab instructions - element may have been removed or renamed"
+        }
+      ],
+      "durationMs": 10945,
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-5-create-user-basic-info",
+      "title": "Fill basic user information",
+      "instruction": "Create a new user with User principal name 'az104-user1', Display name 'az104-user1', Auto-generate password checked, and Account enabled checked",
+      "status": "failed",
+      "aiResponse": "```\nACTIONS_TAKEN: None - no browser automation available\nSTEP_COMPLETED: NO\nELEMENT_FOUND: NO\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: No Playwright MCP or browser tools available in this session\nCURRENT_STATE: No browser session exists\nSCREENSHOT_BEFORE: SKIPPED\nSCREENSHOT_AFTER: SKIPPED\n```\n\nI'll keep responding with this blocking report for every step sent. **None of these will succeed** without Playwright MCP.\n\nIf you want me to do something productive, tell me what to fix or investigate in the codebase.",
+      "driftIssues": [
+        {
+          "id": "step-5-create-user-basic-info-missing",
+          "stepId": "step-5-create-user-basic-info",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "Create a new user with User principal name 'az104-user1', Display name 'az104-user1', Auto-generate password checked, and Account enabled checked",
+          "actualBehavior": "No Playwright MCP or browser tools available in this session",
+          "recommendation": "Update lab instructions - element may have been removed or renamed"
+        }
+      ],
+      "durationMs": 7360,
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-6-configure-user-properties",
+      "title": "Configure user properties",
+      "instruction": "Switch to the Properties tab and set Job title to 'IT Lab Administrator', Department to 'IT', and Usage location to United States",
+      "status": "failed",
+      "aiResponse": "```\nACTIONS_TAKEN: None - no browser automation available\nSTEP_COMPLETED: NO\nELEMENT_FOUND: NO\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: No Playwright MCP or browser tools available in this session\nCURRENT_STATE: No browser session exists\nSCREENSHOT_BEFORE: SKIPPED\nSCREENSHOT_AFTER: SKIPPED\n```",
+      "driftIssues": [
+        {
+          "id": "step-6-configure-user-properties-missing",
+          "stepId": "step-6-configure-user-properties",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "Switch to the Properties tab and set Job title to 'IT Lab Administrator', Department to 'IT', and Usage location to United States",
+          "actualBehavior": "No Playwright MCP or browser tools available in this session",
+          "recommendation": "Update lab instructions - element may have been removed or renamed"
+        }
+      ],
+      "durationMs": 3791,
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-7-create-user",
+      "title": "Create the user account",
+      "instruction": "Select Review + create and then Create to create the user account",
+      "status": "failed",
+      "aiResponse": "```\nACTIONS_TAKEN: None - no browser automation available\nSTEP_COMPLETED: NO\nELEMENT_FOUND: NO\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: No Playwright MCP or browser tools available in this session\nCURRENT_STATE: No browser session exists\nSCREENSHOT_BEFORE: SKIPPED\nSCREENSHOT_AFTER: SKIPPED\n```",
+      "driftIssues": [
+        {
+          "id": "step-7-create-user-missing",
+          "stepId": "step-7-create-user",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "Select Review + create and then Create to create the user account",
+          "actualBehavior": "No Playwright MCP or browser tools available in this session",
+          "recommendation": "Update lab instructions - element may have been removed or renamed"
+        }
+      ],
+      "durationMs": 4683,
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-8-verify-user-creation",
+      "title": "Verify user creation",
+      "instruction": "Refresh the page and confirm your new user was created",
+      "status": "failed",
+      "aiResponse": "```\nACTIONS_TAKEN: None - no browser automation available\nSTEP_COMPLETED: NO\nELEMENT_FOUND: NO\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: No Playwright MCP or browser tools available in this session\nCURRENT_STATE: No browser session exists\nSCREENSHOT_BEFORE: SKIPPED\nSCREENSHOT_AFTER: SKIPPED\n```",
+      "driftIssues": [
+        {
+          "id": "step-8-verify-user-creation-missing",
+          "stepId": "step-8-verify-user-creation",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "Refresh the page and confirm your new user was created",
+          "actualBehavior": "No Playwright MCP or browser tools available in this session",
+          "recommendation": "Update lab instructions - element may have been removed or renamed"
+        }
+      ],
+      "durationMs": 3848,
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-9-invite-external-user",
+      "title": "Start external user invitation",
+      "instruction": "In the New user dropdown select Invite an external user",
+      "status": "failed",
+      "aiResponse": "```\nACTIONS_TAKEN: None - no browser automation available\nSTEP_COMPLETED: NO\nELEMENT_FOUND: NO\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: No Playwright MCP or browser tools available in this session\nCURRENT_STATE: No browser session exists\nSCREENSHOT_BEFORE: SKIPPED\nSCREENSHOT_AFTER: SKIPPED\n```",
+      "driftIssues": [
+        {
+          "id": "step-9-invite-external-user-missing",
+          "stepId": "step-9-invite-external-user",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "In the New user dropdown select Invite an external user",
+          "actualBehavior": "No Playwright MCP or browser tools available in this session",
+          "recommendation": "Update lab instructions - element may have been removed or renamed"
+        }
+      ],
+      "durationMs": 4065,
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-10-configure-external-user",
+      "title": "Configure external user invitation",
+      "instruction": "Fill Email with your email address, Display name with your name, check Send invite message box, and set Message to 'Welcome to Azure and our group project'. Then move to Properties tab and set Job title to 'IT Lab Administrator', Department to 'IT', and Usage location to United States",
+      "status": "failed",
+      "aiResponse": "```\nACTIONS_TAKEN: None - no browser automation available\nSTEP_COMPLETED: NO\nELEMENT_FOUND: NO\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: No Playwright MCP or browser tools available in this session\nCURRENT_STATE: No browser session exists\nSCREENSHOT_BEFORE: SKIPPED\nSCREENSHOT_AFTER: SKIPPED\n```",
+      "driftIssues": [
+        {
+          "id": "step-10-configure-external-user-missing",
+          "stepId": "step-10-configure-external-user",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "Fill Email with your email address, Display name with your name, check Send invite message box, and set Message to 'Welcome to Azure and our group project'. Then move to Properties tab and set Job title to 'IT Lab Administrator', Department to 'IT', and Usage location to United States",
+          "actualBehavior": "No Playwright MCP or browser tools available in this session",
+          "recommendation": "Update lab instructions - element may have been removed or renamed"
+        }
+      ],
+      "durationMs": 3717,
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-11-send-invitation",
+      "title": "Send external user invitation",
+      "instruction": "Select Review + invite and then Invite to send the invitation",
+      "status": "failed",
+      "aiResponse": "```\nACTIONS_TAKEN: None - no browser automation available\nSTEP_COMPLETED: NO\nELEMENT_FOUND: NO\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: No Playwright MCP or browser tools available in this session\nCURRENT_STATE: No browser session exists\nSCREENSHOT_BEFORE: SKIPPED\nSCREENSHOT_AFTER: SKIPPED\n```",
+      "driftIssues": [
+        {
+          "id": "step-11-send-invitation-missing",
+          "stepId": "step-11-send-invitation",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "Select Review + invite and then Invite to send the invitation",
+          "actualBehavior": "No Playwright MCP or browser tools available in this session",
+          "recommendation": "Update lab instructions - element may have been removed or renamed"
+        }
+      ],
+      "durationMs": 3460,
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-12-navigate-to-groups",
+      "title": "Navigate to Groups management",
+      "instruction": "Search for and select Microsoft Entra ID, then in the Manage blade select Groups",
+      "status": "failed",
+      "aiResponse": "```\nACTIONS_TAKEN: None - no browser automation available\nSTEP_COMPLETED: NO\nELEMENT_FOUND: NO\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: No Playwright MCP or browser tools available in this session\nCURRENT_STATE: No browser session exists\nSCREENSHOT_BEFORE: SKIPPED\nSCREENSHOT_AFTER: SKIPPED\n```",
+      "driftIssues": [
+        {
+          "id": "step-12-navigate-to-groups-missing",
+          "stepId": "step-12-navigate-to-groups",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "Search for and select Microsoft Entra ID, then in the Manage blade select Groups",
+          "actualBehavior": "No Playwright MCP or browser tools available in this session",
+          "recommendation": "Update lab instructions - element may have been removed or renamed"
+        }
+      ],
+      "durationMs": 3655,
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-13-create-new-group",
+      "title": "Create security group",
+      "instruction": "In the All groups blade, select + New group and create a new group with Group type 'Security', Group name 'IT Lab Administrators', Group description 'Administrators that manage the IT lab', and Membership type 'Assigned'",
+      "status": "failed",
+      "aiResponse": "```\nACTIONS_TAKEN: None - no browser automation available\nSTEP_COMPLETED: NO\nELEMENT_FOUND: NO\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: No Playwright MCP or browser tools available in this session\nCURRENT_STATE: No browser session exists\nSCREENSHOT_BEFORE: SKIPPED\nSCREENSHOT_AFTER: SKIPPED\n```",
+      "driftIssues": [
+        {
+          "id": "step-13-create-new-group-missing",
+          "stepId": "step-13-create-new-group",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "In the All groups blade, select + New group and create a new group with Group type 'Security', Group name 'IT Lab Administrators', Group description 'Administrators that manage the IT lab', and Membership type 'Assigned'",
+          "actualBehavior": "No Playwright MCP or browser tools available in this session",
+          "recommendation": "Update lab instructions - element may have been removed or renamed"
+        }
+      ],
+      "durationMs": 3393,
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-14-add-group-owners-members",
+      "title": "Add group owners and members",
+      "instruction": "Select No owners selected, add yourself as owner. Then select No members selected and add both az104-user1 and the guest user you invited to the group",
+      "status": "failed",
+      "aiResponse": "```\nACTIONS_TAKEN: None - no browser automation available\nSTEP_COMPLETED: NO\nELEMENT_FOUND: NO\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: No Playwright MCP or browser tools available in this session\nCURRENT_STATE: No browser session exists\nSCREENSHOT_BEFORE: SKIPPED\nSCREENSHOT_AFTER: SKIPPED\n```",
+      "driftIssues": [
+        {
+          "id": "step-14-add-group-owners-members-missing",
+          "stepId": "step-14-add-group-owners-members",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "Select No owners selected, add yourself as owner. Then select No members selected and add both az104-user1 and the guest user you invited to the group",
+          "actualBehavior": "No Playwright MCP or browser tools available in this session",
+          "recommendation": "Update lab instructions - element may have been removed or renamed"
+        }
+      ],
+      "durationMs": 3663,
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-15-deploy-group",
+      "title": "Deploy and verify group",
+      "instruction": "Select Create to deploy the group, then refresh the page and ensure your group was created. Select the new group and review the Members and Owners information",
+      "status": "failed",
+      "aiResponse": "\n\n```\nACTIONS_TAKEN: None - no browser automation available\nSTEP_COMPLETED: NO\nELEMENT_FOUND: NO\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: No Playwright MCP or browser tools available in this session\nCURRENT_STATE: No browser session exists\nSCREENSHOT_BEFORE: SKIPPED\nSCREENSHOT_AFTER: SKIPPED\n```",
+      "driftIssues": [
+        {
+          "id": "step-15-deploy-group-missing",
+          "stepId": "step-15-deploy-group",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "Select Create to deploy the group, then refresh the page and ensure your group was created. Select the new group and review the Members and Owners information",
+          "actualBehavior": "No Playwright MCP or browser tools available in this session",
+          "recommendation": "Update lab instructions - element may have been removed or renamed"
+        }
+      ],
+      "durationMs": 3762,
+      "retryCount": 0
+    }
+  ],
+  "driftIssues": [
+    {
+      "id": "step-1-sign-in-azure-portal-missing",
+      "stepId": "step-1-sign-in-azure-portal",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "Sign in to the Azure portal at https://portal.azure.com and dismiss the Welcome splash screen by selecting Cancel",
+      "actualBehavior": "Element not found",
+      "recommendation": "Update lab instructions - element may have been removed or renamed",
+      "screenshotPath": "screenshots/step-1-sign-in-azure-portal-after.png"
+    },
+    {
+      "id": "step-2-navigate-entra-id-missing",
+      "stepId": "step-2-navigate-entra-id",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "Search for and select Microsoft Entra ID to access Azure's cloud-based identity and access management solution",
+      "actualBehavior": "Element not found",
+      "recommendation": "Update lab instructions - element may have been removed or renamed",
+      "screenshotPath": "screenshots/step-2-navigate-entra-id-after.png"
+    },
+    {
+      "id": "step-3-explore-overview-missing",
+      "stepId": "step-3-explore-overview",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "Select the Overview blade and then the Manage tenants tab to view tenant information, then return to the Entra ID page",
+      "actualBehavior": "Element not found",
+      "recommendation": "Update lab instructions - element may have been removed or renamed",
+      "screenshotPath": "screenshots/step-3-explore-overview-after.png"
+    },
+    {
+      "id": "step-4-navigate-to-users-missing",
+      "stepId": "step-4-navigate-to-users",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "In the Manage blade, select Users and then select Create new user from the New user dropdown",
+      "actualBehavior": "This agent does not have Playwright MCP or browser tools configured. Steps must be routed to a Copilot SDK session with Playwright MCP server.",
+      "recommendation": "Update lab instructions - element may have been removed or renamed"
+    },
+    {
+      "id": "step-5-create-user-basic-info-missing",
+      "stepId": "step-5-create-user-basic-info",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "Create a new user with User principal name 'az104-user1', Display name 'az104-user1', Auto-generate password checked, and Account enabled checked",
+      "actualBehavior": "No Playwright MCP or browser tools available in this session",
+      "recommendation": "Update lab instructions - element may have been removed or renamed"
+    },
+    {
+      "id": "step-6-configure-user-properties-missing",
+      "stepId": "step-6-configure-user-properties",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "Switch to the Properties tab and set Job title to 'IT Lab Administrator', Department to 'IT', and Usage location to United States",
+      "actualBehavior": "No Playwright MCP or browser tools available in this session",
+      "recommendation": "Update lab instructions - element may have been removed or renamed"
+    },
+    {
+      "id": "step-7-create-user-missing",
+      "stepId": "step-7-create-user",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "Select Review + create and then Create to create the user account",
+      "actualBehavior": "No Playwright MCP or browser tools available in this session",
+      "recommendation": "Update lab instructions - element may have been removed or renamed"
+    },
+    {
+      "id": "step-8-verify-user-creation-missing",
+      "stepId": "step-8-verify-user-creation",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "Refresh the page and confirm your new user was created",
+      "actualBehavior": "No Playwright MCP or browser tools available in this session",
+      "recommendation": "Update lab instructions - element may have been removed or renamed"
+    },
+    {
+      "id": "step-9-invite-external-user-missing",
+      "stepId": "step-9-invite-external-user",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "In the New user dropdown select Invite an external user",
+      "actualBehavior": "No Playwright MCP or browser tools available in this session",
+      "recommendation": "Update lab instructions - element may have been removed or renamed"
+    },
+    {
+      "id": "step-10-configure-external-user-missing",
+      "stepId": "step-10-configure-external-user",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "Fill Email with your email address, Display name with your name, check Send invite message box, and set Message to 'Welcome to Azure and our group project'. Then move to Properties tab and set Job title to 'IT Lab Administrator', Department to 'IT', and Usage location to United States",
+      "actualBehavior": "No Playwright MCP or browser tools available in this session",
+      "recommendation": "Update lab instructions - element may have been removed or renamed"
+    },
+    {
+      "id": "step-11-send-invitation-missing",
+      "stepId": "step-11-send-invitation",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "Select Review + invite and then Invite to send the invitation",
+      "actualBehavior": "No Playwright MCP or browser tools available in this session",
+      "recommendation": "Update lab instructions - element may have been removed or renamed"
+    },
+    {
+      "id": "step-12-navigate-to-groups-missing",
+      "stepId": "step-12-navigate-to-groups",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "Search for and select Microsoft Entra ID, then in the Manage blade select Groups",
+      "actualBehavior": "No Playwright MCP or browser tools available in this session",
+      "recommendation": "Update lab instructions - element may have been removed or renamed"
+    },
+    {
+      "id": "step-13-create-new-group-missing",
+      "stepId": "step-13-create-new-group",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "In the All groups blade, select + New group and create a new group with Group type 'Security', Group name 'IT Lab Administrators', Group description 'Administrators that manage the IT lab', and Membership type 'Assigned'",
+      "actualBehavior": "No Playwright MCP or browser tools available in this session",
+      "recommendation": "Update lab instructions - element may have been removed or renamed"
+    },
+    {
+      "id": "step-14-add-group-owners-members-missing",
+      "stepId": "step-14-add-group-owners-members",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "Select No owners selected, add yourself as owner. Then select No members selected and add both az104-user1 and the guest user you invited to the group",
+      "actualBehavior": "No Playwright MCP or browser tools available in this session",
+      "recommendation": "Update lab instructions - element may have been removed or renamed"
+    },
+    {
+      "id": "step-15-deploy-group-missing",
+      "stepId": "step-15-deploy-group",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "Select Create to deploy the group, then refresh the page and ensure your group was created. Select the new group and review the Members and Owners information",
+      "actualBehavior": "No Playwright MCP or browser tools available in this session",
+      "recommendation": "Update lab instructions - element may have been removed or renamed"
+    }
+  ],
+  "summary": {
+    "total": 15,
+    "passed": 0,
+    "driftDetected": 0,
+    "failed": 15,
+    "skipped": 0,
+    "byCategory": {
+      "missing_element": 15
+    }
+  },
+  "durationMs": 85643
+}

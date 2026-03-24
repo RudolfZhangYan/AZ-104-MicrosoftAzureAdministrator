@@ -1,0 +1,11 @@
+
+
+I don't have browser automation tools available in this session. I can't navigate to URLs, click UI elements, or take screenshots — those capabilities require the **Playwright MCP server** that the lab-drift-runner pipeline uses.
+
+To execute this step, you'd run it through the runner:
+
+```bash
+npm run dev -- scan https://portal.azure.com
+```
+
+Or if you want me to help with something else — like modifying the runner code, generating specs, or analyzing existing drift reports — I'm happy to help with that.
