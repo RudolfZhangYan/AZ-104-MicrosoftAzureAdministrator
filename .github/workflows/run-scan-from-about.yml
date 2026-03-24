@@ -211,7 +211,7 @@ jobs:
           echo Headless requested: true
           echo Auth profile: azure-portal
           echo =======================
-          npx tsx src/cli/index.ts scan "${{ steps.repo_info.outputs.homepage }}" --browser=msedge --executable-path="C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --auth=azure-portal --output="./${{ steps.scan_meta.outputs.relative_output }}" --verbose
+          npx tsx src/cli/index.ts scan "${{ steps.repo_info.outputs.homepage }}" --browser=msedge --executable-path="C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --auth=azure-portal --output="./${{ steps.scan_meta.outputs.relative_output }}" --verbose --skip-cleanup
 
       - name: Debug output files after scan
         if: always()
