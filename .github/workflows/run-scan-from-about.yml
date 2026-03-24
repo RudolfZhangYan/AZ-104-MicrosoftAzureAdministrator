@@ -38,7 +38,7 @@ jobs:
 
           Add-Content -Path $env:GITHUB_OUTPUT -Value "homepage=$homepage"
 
-      - name: Set scan meta (timestamp only output path)
+      - name: Set scan meta
         id: scan_meta
         shell: powershell
         run: |
@@ -122,6 +122,24 @@ jobs:
             Write-Host "Auth root not found"
           }
 
+      - name: Check Edge standard install paths
+        shell: powershell
+        run: |
+          $ErrorActionPreference = "Continue"
+
+          $paths = @(
+            "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe",
+            "C:\Program Files\Microsoft\Edge\Application\msedge.exe"
+          )
+
+          foreach ($p in $paths) {
+            if (Test-Path $p) {
+              Write-Host "FOUND: $p"
+            } else {
+              Write-Host "MISSING: $p"
+            }
+          }
+
       - name: Show Node npm and browser details
         shell: powershell
         working-directory: C:\lab-drift-runner
@@ -148,7 +166,24 @@ jobs:
           Write-Host "`n=== playwright / mcp packages ==="
           npm ls @playwright/mcp playwright --depth=0
 
-      - name: Ensure output parent folder exists (timestamp only)
+          Write-Host "`n=== playwright installed browsers ==="
+          npx playwright install --list
+
+      - name: Install Playwright browsers
+        shell: cmd
+        working-directory: C:\lab-drift-runner
+        run: |
+          npm install
+          npx playwright install chromium
+
+      - name: Show Playwright browsers after install
+        shell: powershell
+        working-directory: C:\lab-drift-runner
+        run: |
+          $ErrorActionPreference = "Continue"
+          npx playwright install --list
+
+      - name: Ensure output parent folder exists
         shell: powershell
         working-directory: C:\lab-drift-runner
         run: |
@@ -172,10 +207,11 @@ jobs:
           echo URL: ${{ steps.repo_info.outputs.homepage }}
           echo Output folder: ${{ steps.scan_meta.outputs.relative_output }}
           echo Browser: msedge
+          echo Executable path: C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe
           echo Headless requested: true
           echo Auth profile: azure-portal
           echo =======================
-          npx tsx src/cli/index.ts scan "${{ steps.repo_info.outputs.homepage }}" --browser=msedge --headless --auth=azure-portal --output="./${{ steps.scan_meta.outputs.relative_output }}" --verbose
+          npx tsx src/cli/index.ts scan "${{ steps.repo_info.outputs.homepage }}" --browser=msedge --executable-path="C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --headless --auth=azure-portal --output="./${{ steps.scan_meta.outputs.relative_output }}" --verbose
 
       - name: Debug output files after scan
         if: always()
@@ -195,7 +231,7 @@ jobs:
             Write-Host "Output dir not found."
           }
 
-      - name: Show recent text/json/md files from output
+      - name: Show recent text json md files from output
         if: always()
         shell: powershell
         run: |
@@ -209,7 +245,7 @@ jobs:
             exit 0
           }
 
-          $files = Get-ChildItem -Recurse $sourceDir -Include *.txt, *.json, *.md -File | Select-Object -First 20
+          $files = Get-ChildItem -Recurse $sourceDir -Include *.txt, *.json, *.md -File | Select-Object -First 30
 
           foreach ($file in $files) {
             Write-Host "`n================ FILE: $($file.FullName) ================"
@@ -244,8 +280,6 @@ jobs:
           }
 
           Write-Host "Copying from $sourceDir to $targetDir"
-          Write-Host "Source length: $($sourceDir.Length)  Target length: $($targetDir.Length)"
-
           Copy-Item -Path $sourceDir -Destination $targetDir -Recurse -Force
 
           $metaFile = Join-Path $targetDir "_meta.txt"
