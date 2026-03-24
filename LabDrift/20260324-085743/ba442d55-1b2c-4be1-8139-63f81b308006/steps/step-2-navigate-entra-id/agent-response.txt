@@ -1,0 +1,16 @@
+As I mentioned, I don't have browser control capabilities in this session. I'm a terminal-based assistant without access to Playwright MCP or any browser automation tools.
+
+These lab steps require the **Lab Drift Runner pipeline** to execute. You can run the full scan with:
+
+```bash
+npm run dev -- scan <lab-url> --browser msedge
+```
+
+Or if you're building/debugging the runner itself, I can help with:
+
+- **Reviewing/editing** `runner-mcp-drift.ts`, `drift.ts`, `spec-generator.ts`
+- **Creating/modifying** lab spec YAML files
+- **Fixing bugs** in the CLI or pipeline code
+- **Analyzing** existing drift reports
+
+What are you actually trying to accomplish?

@@ -1,0 +1,11 @@
+
+
+I don't have browser control or Playwright MCP tools available in this session — I can only work in the terminal. This step requires navigating to `https://portal.azure.com` and interacting with the UI, which needs the Lab Drift Runner's execution pipeline.
+
+To execute this step, you'd run it through the runner:
+
+```bash
+npm run dev -- scan https://portal.azure.com
+```
+
+Or if you want me to help in another way — like reviewing the runner code, preparing a spec file for this step, or troubleshooting the pipeline — I'm happy to assist. What would you like?

@@ -1,0 +1,12 @@
+```
+ACTIONS_TAKEN: None - no browser control available
+STEP_COMPLETED: NO
+ELEMENT_FOUND: NO
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: Agent lacks Playwright MCP browser tools. Cannot execute browser-based steps.
+CURRENT_STATE: Terminal session only - no browser
+SCREENSHOT_BEFORE: SKIPPED
+SCREENSHOT_AFTER: SKIPPED
+```

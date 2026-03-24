@@ -1,0 +1,34 @@
+## Lab Step: Add Group Members
+
+### Instruction
+Select No members selected. In the Add members pane, search for and select the az104-user1 and the guest user you invited. Add both of the users to the group.
+
+### Actions to Perform
+- click: {"selector":"No members selected"}
+- search: {"selector":"az104-user1"}
+- click: {"selector":"az104-user1 to select"}
+- search: {"selector":"guest user"}
+- click: {"selector":"guest user to select"}
+
+### Expected Outcome
+Both az104-user1 and guest user are added as group members
+
+### Screenshot Requirement
+BEFORE executing the step, take a screenshot and save it as: C:\lab-drift-runner\20260324-085743\ba442d55-1b2c-4be1-8139-63f81b308006\screenshots/step-11-add-group-members-before.png
+AFTER completing the step, take a screenshot and save it as: C:\lab-drift-runner\20260324-085743\ba442d55-1b2c-4be1-8139-63f81b308006\screenshots/step-11-add-group-members-after.png
+
+### IMPORTANT: Drift Detection Report
+After completing this step, report the following in your response:
+
+```
+ACTIONS_TAKEN: [Describe exactly what you did]
+STEP_COMPLETED: YES or NO
+ELEMENT_FOUND: YES or NO (was the expected element/button/field found?)
+ELEMENT_DIFFERENT: [ONLY if element was different - describe how. Write "None" if no differences]
+EXTRA_STEPS_NEEDED: [ONLY if you had to take extra steps not in instructions AND those steps would also be needed by a human following the instructions. Write "None" if not]
+UNEXPECTED_UI: [ONLY if unexpected popups/modals/banners appeared that a human user would also encounter - describe what and whether it blocked progress or was just informational. Write "None" if not]
+BLOCKING_ISSUES: [ONLY if something prevented completion. Write "None" if not]
+CURRENT_STATE: [Brief description of what the screen shows now]
+SCREENSHOT_BEFORE: [filename of before screenshot or SKIPPED]
+SCREENSHOT_AFTER: [filename of after screenshot or SKIPPED]
+```

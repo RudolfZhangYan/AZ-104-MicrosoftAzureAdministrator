@@ -1,0 +1,25 @@
+
+
+```
+ACTIONS_TAKEN: None - no browser control available
+STEP_COMPLETED: NO
+ELEMENT_FOUND: NO
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: This agent does not have Playwright MCP or browser control tools. These lab steps require the runner-mcp-drift.ts pipeline with Playwright MCP configured. Steps cannot be executed from a terminal-only session.
+CURRENT_STATE: Terminal session only - no browser open
+SCREENSHOT_BEFORE: SKIPPED
+SCREENSHOT_AFTER: SKIPPED
+```
+
+**To whoever/whatever is dispatching these steps**: This agent session lacks browser tools. The step prompts need to go to a Copilot SDK session configured with Playwright MCP server. Check `runner-mcp-drift.ts` — the session must include:
+
+```ts
+mcpServers: [{
+  command: 'node',
+  args: ['node_modules/@playwright/mcp/cli.js'],
+  type: 'local',
+  tools: ['*']
+}]
+```

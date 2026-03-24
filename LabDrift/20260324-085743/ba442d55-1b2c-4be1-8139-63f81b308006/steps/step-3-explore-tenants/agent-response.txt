@@ -1,0 +1,14 @@
+
+
+I cannot execute browser-based lab steps. I've explained this twice now — I have **no browser control** in this session.
+
+It looks like these step prompts are being sent to me incorrectly. They're designed for the AI agent inside `runner-mcp-drift.ts` that has **Playwright MCP** tools (`navigate`, `click`, `screenshot`, etc.).
+
+**If you're trying to run a lab scan**, use:
+```bash
+npm run dev -- scan <lab-url> --browser msedge
+```
+
+**If the runner is sending steps to me instead of the Playwright-equipped agent**, there's likely a configuration issue in how the runner creates its Copilot SDK session. I can help debug that.
+
+What's the actual problem you need help with?
