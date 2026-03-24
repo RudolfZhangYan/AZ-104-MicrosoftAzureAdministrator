@@ -1,11 +1,14 @@
 name: Run scan from repo About URL
+
 on:
   workflow_dispatch:
+
 jobs:
   scan:
     runs-on: [self-hosted, windows]
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
     steps:
       - name: Get homepage URL from repo About
         id: repo_info
@@ -73,13 +76,77 @@ jobs:
 
           Write-Host "Lab runner folder exists: $runnerPath"
 
-      - name: Show Node and npm versions
+      - name: Debug runner identity and session
+        shell: powershell
+        run: |
+          $ErrorActionPreference = "Continue"
+
+          Write-Host "=== whoami ==="
+          whoami
+
+          Write-Host "`n=== hostname ==="
+          hostname
+
+          Write-Host "`n=== USERPROFILE ==="
+          Write-Host $env:USERPROFILE
+
+          Write-Host "`n=== HOMEDRIVE/HOMEPATH ==="
+          Write-Host "$env:HOMEDRIVE$env:HOMEPATH"
+
+          Write-Host "`n=== current location ==="
+          Get-Location
+
+          Write-Host "`n=== query session ==="
+          query session
+
+          Write-Host "`n=== explorer process ==="
+          tasklist | findstr /I explorer.exe
+
+          Write-Host "`n=== runner services ==="
+          Get-Service | Where-Object { $_.Name -like "actions.runner*" } | Format-Table -AutoSize
+
+          Write-Host "`n=== runner service account ==="
+          Get-WmiObject Win32_Service | Where-Object { $_.Name -like "actions.runner*" } | Select-Object Name, StartName, State | Format-Table -AutoSize
+
+      - name: Debug auth profile files
+        shell: powershell
+        run: |
+          $ErrorActionPreference = "Continue"
+
+          $authRoot = Join-Path $env:USERPROFILE ".copilot-lab-runner\auth"
+          Write-Host "Auth root: $authRoot"
+
+          if (Test-Path $authRoot) {
+            Get-ChildItem -Recurse $authRoot | Select-Object FullName, Length, LastWriteTime | Format-Table -AutoSize
+          } else {
+            Write-Host "Auth root not found"
+          }
+
+      - name: Show Node npm and browser details
         shell: powershell
         working-directory: C:\lab-drift-runner
         run: |
+          $ErrorActionPreference = "Continue"
+
+          Write-Host "=== where node ==="
+          where.exe node
+
+          Write-Host "`n=== where npm ==="
+          where.exe npm
+
+          Write-Host "`n=== where npx ==="
+          where.exe npx
+
+          Write-Host "`n=== where msedge ==="
+          where.exe msedge
+
+          Write-Host "`n=== versions ==="
           node -v
           npm -v
           npx tsx --version
+
+          Write-Host "`n=== playwright / mcp packages ==="
+          npm ls @playwright/mcp playwright --depth=0
 
       - name: Ensure output parent folder exists (timestamp only)
         shell: powershell
@@ -101,9 +168,57 @@ jobs:
         shell: cmd
         working-directory: C:\lab-drift-runner
         run: |
-          echo Using URL: ${{ steps.repo_info.outputs.homepage }}
+          echo ===== SCAN INPUTS =====
+          echo URL: ${{ steps.repo_info.outputs.homepage }}
           echo Output folder: ${{ steps.scan_meta.outputs.relative_output }}
-          npx tsx src/cli/index.ts scan "${{ steps.repo_info.outputs.homepage }}" --browser=msedge --headless --auth=azure-portal --output="./${{ steps.scan_meta.outputs.relative_output }}" --fail-fast
+          echo Browser: msedge
+          echo Headless requested: true
+          echo Auth profile: azure-portal
+          echo =======================
+          npx tsx src/cli/index.ts scan "${{ steps.repo_info.outputs.homepage }}" --browser=msedge --headless --auth=azure-portal --output="./${{ steps.scan_meta.outputs.relative_output }}" --verbose
+
+      - name: Debug output files after scan
+        if: always()
+        shell: powershell
+        run: |
+          $ErrorActionPreference = "Continue"
+
+          $timestamp = "${{ steps.scan_meta.outputs.timestamp }}"
+          $sourceDir = "C:\lab-drift-runner\$timestamp"
+
+          Write-Host "Expected output dir: $sourceDir"
+
+          if (Test-Path $sourceDir) {
+            Write-Host "`n=== output tree ==="
+            Get-ChildItem -Recurse $sourceDir | Select-Object FullName, Length, LastWriteTime | Format-Table -AutoSize
+          } else {
+            Write-Host "Output dir not found."
+          }
+
+      - name: Show recent text/json/md files from output
+        if: always()
+        shell: powershell
+        run: |
+          $ErrorActionPreference = "Continue"
+
+          $timestamp = "${{ steps.scan_meta.outputs.timestamp }}"
+          $sourceDir = "C:\lab-drift-runner\$timestamp"
+
+          if (-not (Test-Path $sourceDir)) {
+            Write-Host "Output dir not found, skipping file preview."
+            exit 0
+          }
+
+          $files = Get-ChildItem -Recurse $sourceDir -Include *.txt, *.json, *.md -File | Select-Object -First 20
+
+          foreach ($file in $files) {
+            Write-Host "`n================ FILE: $($file.FullName) ================"
+            try {
+              Get-Content $file.FullName -TotalCount 120
+            } catch {
+              Write-Host "Failed to read file: $($_.Exception.Message)"
+            }
+          }
 
       - name: Copy scan output back to repo LabDrift folder
         shell: powershell
@@ -113,10 +228,7 @@ jobs:
           $repoName  = "${{ steps.scan_meta.outputs.repo_name }}"
           $timestamp = "${{ steps.scan_meta.outputs.timestamp }}"
 
-          # 输出改为：C:\lab-drift-runner\<timestamp>
           $sourceDir = "C:\lab-drift-runner\$timestamp"
-
-          # 目标改为：<workspace>\LabDrift\<timestamp> （扁平化）
           $targetRoot = Join-Path $env:GITHUB_WORKSPACE "LabDrift"
           $targetDir  = Join-Path $targetRoot $timestamp
 
@@ -135,6 +247,7 @@ jobs:
           Write-Host "Source length: $($sourceDir.Length)  Target length: $($targetDir.Length)"
 
           Copy-Item -Path $sourceDir -Destination $targetDir -Recurse -Force
+
           $metaFile = Join-Path $targetDir "_meta.txt"
           "repo=$repoName`ntimestamp=$timestamp`nurl=${{ steps.repo_info.outputs.homepage }}" | Set-Content -Path $metaFile -Encoding UTF8
 
@@ -158,6 +271,7 @@ jobs:
           git push
 
       - name: Remove local scan output from lab runner
+        if: always()
         shell: powershell
         run: |
           $ErrorActionPreference = "Stop"
