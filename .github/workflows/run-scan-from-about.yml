@@ -168,21 +168,8 @@ jobs:
 
           Write-Host "`n=== playwright installed browsers ==="
           npx playwright install --list
-
-      - name: Install Playwright browsers
-        shell: cmd
-        working-directory: C:\lab-drift-runner
-        run: |
-          npm install
-          npx playwright install chromium
-
-      - name: Show Playwright browsers after install
-        shell: powershell
-        working-directory: C:\lab-drift-runner
-        run: |
-          $ErrorActionPreference = "Continue"
-          npx playwright install --list
-
+      
+      
       - name: Ensure output parent folder exists
         shell: powershell
         working-directory: C:\lab-drift-runner
