@@ -1,0 +1,22 @@
+I **cannot execute this step** — it requires live browser automation (Playwright MCP) which isn't available in my toolset.
+
+**To run this step, use the Lab Drift Runner CLI:**
+
+```powershell
+# Full scan (includes this step):
+npm run scan -- <lab-url>
+
+# Or via tsx directly:
+npx tsx src/cli/index.ts scan <lab-url> --browser msedge
+```
+
+The runner will:
+- Launch a browser via Playwright MCP
+- Navigate to `portal.azure.com`
+- Dismiss the Welcome splash
+- Take before/after screenshots
+- Report drift detection results
+
+There's no single-step CLI command — the runner executes all steps from a spec sequentially. If you want to test just this step, you could create a minimal spec YAML with only this one step and pass it to the runner.
+
+Want me to create a single-step spec file for this, or help with something else?

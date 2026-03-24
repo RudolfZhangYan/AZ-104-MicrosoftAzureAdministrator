@@ -1,0 +1,8 @@
+I cannot execute browser steps — no browser automation tools are available to me. This is the 4th such request; my answer remains the same.
+
+**Run the lab scanner instead:**
+```powershell
+npx tsx src/cli/index.ts scan <lab-url> --browser msedge
+```
+
+Or tell me what **code/config task** you need help with.

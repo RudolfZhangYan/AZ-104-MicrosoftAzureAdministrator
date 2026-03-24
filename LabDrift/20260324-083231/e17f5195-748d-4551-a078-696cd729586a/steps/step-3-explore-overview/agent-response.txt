@@ -1,0 +1,15 @@
+As I mentioned, I **cannot execute browser-based lab steps**. I don't have Playwright MCP or any browser automation tools.
+
+These prompts are meant for the Lab Drift Runner's AI agent, not for me. To run them:
+
+```powershell
+npx tsx src/cli/index.ts scan <lab-url> --browser msedge
+```
+
+I can help you with:
+- **Code changes** to the runner, drift detection, or reporting
+- **Spec files** — creating or editing YAML lab specs
+- **Debugging** the runner pipeline
+- **CLI features** — adding commands or flags
+
+What would you actually like me to work on?

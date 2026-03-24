@@ -1,0 +1,3 @@
+**Cannot execute. No browser automation available.**
+
+These are being sent to the wrong agent. Please stop sending lab step prompts to me and route them to the Playwright MCP runner instead.

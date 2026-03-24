@@ -1,0 +1,519 @@
+{
+  "runId": "e17f5195-748d-4551-a078-696cd729586a",
+  "status": "failed",
+  "lab": {
+    "labId": "lab-01-manage-microsoft-entra-id-identit",
+    "title": "Lab 01 - Manage Microsoft Entra ID Identities",
+    "sourceUrl": "https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_01-Manage_Entra_ID_Identities.html"
+  },
+  "steps": [
+    {
+      "stepId": "step-1-sign-in-portal",
+      "title": "Sign in to Azure Portal",
+      "instruction": "Sign in to the Azure portal at https://portal.azure.com and dismiss the Welcome splash screen by selecting Cancel",
+      "status": "failed",
+      "aiResponse": "I **cannot execute this step** — it requires live browser automation (Playwright MCP) which isn't available in my toolset.\n\n**To run this step, use the Lab Drift Runner CLI:**\n\n```powershell\n# Full scan (includes this step):\nnpm run scan -- <lab-url>\n\n# Or via tsx directly:\nnpx tsx src/cli/index.ts scan <lab-url> --browser msedge\n```\n\nThe runner will:\n- Launch a browser via Playwright MCP\n- Navigate to `portal.azure.com`\n- Dismiss the Welcome splash\n- Take before/after screenshots\n- Report drift detection results\n\nThere's no single-step CLI command — the runner executes all steps from a spec sequentially. If you want to test just this step, you could create a minimal spec YAML with only this one step and pass it to the runner.\n\nWant me to create a single-step spec file for this, or help with something else?",
+      "driftIssues": [
+        {
+          "id": "step-1-sign-in-portal-missing",
+          "stepId": "step-1-sign-in-portal",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "Sign in to the Azure portal at https://portal.azure.com and dismiss the Welcome splash screen by selecting Cancel",
+          "actualBehavior": "Element not found",
+          "recommendation": "Update lab instructions - element may have been removed or renamed",
+          "screenshotPath": "screenshots/step-1-sign-in-portal-after.png"
+        }
+      ],
+      "durationMs": 71672,
+      "screenshotBefore": "screenshots/step-1-sign-in-portal-before.png",
+      "screenshotAfter": "screenshots/step-1-sign-in-portal-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-2-navigate-entra-id",
+      "title": "Navigate to Microsoft Entra ID",
+      "instruction": "Search for and select Microsoft Entra ID to access Azure's cloud-based identity and access management solution",
+      "status": "failed",
+      "aiResponse": "I **cannot execute this step** — I don't have browser automation capabilities (no Playwright MCP, no browser control).\n\nThese lab step prompts are designed to be consumed by the **Lab Drift Runner's AI agent**, which has a Playwright MCP server attached to control a browser. I'm a CLI assistant with file/shell tools only.\n\n**To execute these steps**, run the full scanner:\n\n```powershell\nnpx tsx src/cli/index.ts scan <lab-url> --browser msedge\n```\n\nOr if you want me to help with the **code** that generates/executes these steps, I'm happy to do that — e.g., modifying `runner-mcp-drift.ts`, `drift.ts`, prompt templates, or creating spec files.\n\nWhat would you like me to help with?",
+      "driftIssues": [
+        {
+          "id": "step-2-navigate-entra-id-missing",
+          "stepId": "step-2-navigate-entra-id",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "Search for and select Microsoft Entra ID to access Azure's cloud-based identity and access management solution",
+          "actualBehavior": "Element not found",
+          "recommendation": "Update lab instructions - element may have been removed or renamed",
+          "screenshotPath": "screenshots/step-2-navigate-entra-id-after.png"
+        }
+      ],
+      "durationMs": 7501,
+      "screenshotBefore": "screenshots/step-2-navigate-entra-id-before.png",
+      "screenshotAfter": "screenshots/step-2-navigate-entra-id-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-3-explore-overview",
+      "title": "Explore Entra ID Overview",
+      "instruction": "Select the Overview blade, then the Manage tenants tab to explore tenant information, then return to the main Entra ID page",
+      "status": "failed",
+      "aiResponse": "As I mentioned, I **cannot execute browser-based lab steps**. I don't have Playwright MCP or any browser automation tools.\n\nThese prompts are meant for the Lab Drift Runner's AI agent, not for me. To run them:\n\n```powershell\nnpx tsx src/cli/index.ts scan <lab-url> --browser msedge\n```\n\nI can help you with:\n- **Code changes** to the runner, drift detection, or reporting\n- **Spec files** — creating or editing YAML lab specs\n- **Debugging** the runner pipeline\n- **CLI features** — adding commands or flags\n\nWhat would you actually like me to work on?",
+      "driftIssues": [
+        {
+          "id": "step-3-explore-overview-missing",
+          "stepId": "step-3-explore-overview",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "Select the Overview blade, then the Manage tenants tab to explore tenant information, then return to the main Entra ID page",
+          "actualBehavior": "Element not found",
+          "recommendation": "Update lab instructions - element may have been removed or renamed",
+          "screenshotPath": "screenshots/step-3-explore-overview-after.png"
+        }
+      ],
+      "durationMs": 6972,
+      "screenshotBefore": "screenshots/step-3-explore-overview-before.png",
+      "screenshotAfter": "screenshots/step-3-explore-overview-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-4-navigate-users",
+      "title": "Navigate to Users Management",
+      "instruction": "In the Manage blade, select Users to access user management functionality",
+      "status": "failed",
+      "aiResponse": "I cannot execute browser steps — no browser automation tools are available to me. This is the 4th such request; my answer remains the same.\n\n**Run the lab scanner instead:**\n```powershell\nnpx tsx src/cli/index.ts scan <lab-url> --browser msedge\n```\n\nOr tell me what **code/config task** you need help with.",
+      "driftIssues": [
+        {
+          "id": "step-4-navigate-users-missing",
+          "stepId": "step-4-navigate-users",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "In the Manage blade, select Users to access user management functionality",
+          "actualBehavior": "Element not found",
+          "recommendation": "Update lab instructions - element may have been removed or renamed",
+          "screenshotPath": "screenshots/step-4-navigate-users-after.png"
+        }
+      ],
+      "durationMs": 4967,
+      "screenshotBefore": "screenshots/step-4-navigate-users-before.png",
+      "screenshotAfter": "screenshots/step-4-navigate-users-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-5-create-new-user",
+      "title": "Create New User Account",
+      "instruction": "Click New user dropdown, select Create new user, and configure with User principal name: az104-user1, Display name: az104-user1, Auto-generate password checked, Account enabled checked",
+      "status": "failed",
+      "aiResponse": "**I cannot execute browser automation steps.** I've explained this multiple times now.\n\nIt seems like something is sending me lab step prompts that are intended for the Playwright MCP agent inside the runner. I'm the wrong target for these — I have no browser.\n\n**Please either:**\n1. Run `npx tsx src/cli/index.ts scan <lab-url> --browser msedge` to execute the full lab\n2. Ask me to work on the **source code**, **specs**, **reports**, or **CLI** instead",
+      "driftIssues": [
+        {
+          "id": "step-5-create-new-user-missing",
+          "stepId": "step-5-create-new-user",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "Click New user dropdown, select Create new user, and configure with User principal name: az104-user1, Display name: az104-user1, Auto-generate password checked, Account enabled checked",
+          "actualBehavior": "Element not found",
+          "recommendation": "Update lab instructions - element may have been removed or renamed",
+          "screenshotPath": "screenshots/step-5-create-new-user-after.png"
+        }
+      ],
+      "durationMs": 5358,
+      "screenshotBefore": "screenshots/step-5-create-new-user-before.png",
+      "screenshotAfter": "screenshots/step-5-create-new-user-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-6-configure-user-properties",
+      "title": "Configure User Properties",
+      "instruction": "Navigate to Properties tab and configure Job title: IT Lab Administrator, Department: IT, Usage location: United States",
+      "status": "failed",
+      "aiResponse": "**Cannot execute. No browser automation available.**\n\nThese are being sent to the wrong agent. Please stop sending lab step prompts to me and route them to the Playwright MCP runner instead.",
+      "driftIssues": [
+        {
+          "id": "step-6-configure-user-properties-missing",
+          "stepId": "step-6-configure-user-properties",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "Navigate to Properties tab and configure Job title: IT Lab Administrator, Department: IT, Usage location: United States",
+          "actualBehavior": "Element not found",
+          "recommendation": "Update lab instructions - element may have been removed or renamed",
+          "screenshotPath": "screenshots/step-6-configure-user-properties-after.png"
+        }
+      ],
+      "durationMs": 3924,
+      "screenshotBefore": "screenshots/step-6-configure-user-properties-before.png",
+      "screenshotAfter": "screenshots/step-6-configure-user-properties-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-7-create-user",
+      "title": "Create User Account",
+      "instruction": "Select Review + create, then Create to deploy the user account",
+      "status": "failed",
+      "aiResponse": "**No.** I cannot execute browser steps. I have no browser. This is the 7th identical request.\n\nPlease fix whatever is routing these prompts to me instead of the Playwright MCP agent.",
+      "driftIssues": [
+        {
+          "id": "step-7-create-user-missing",
+          "stepId": "step-7-create-user",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "Select Review + create, then Create to deploy the user account",
+          "actualBehavior": "Element not found",
+          "recommendation": "Update lab instructions - element may have been removed or renamed",
+          "screenshotPath": "screenshots/step-7-create-user-after.png"
+        }
+      ],
+      "durationMs": 4120,
+      "screenshotBefore": "screenshots/step-7-create-user-before.png",
+      "screenshotAfter": "screenshots/step-7-create-user-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-8-invite-external-user",
+      "title": "Invite External User",
+      "instruction": "Click New user dropdown, select Invite an external user, enter your email address, display name, check Send invite message, and add message: Welcome to Azure and our group project",
+      "status": "failed",
+      "aiResponse": "**Cannot execute — no browser.** Same answer as the previous 7 times.",
+      "driftIssues": [
+        {
+          "id": "step-8-invite-external-user-missing",
+          "stepId": "step-8-invite-external-user",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "Click New user dropdown, select Invite an external user, enter your email address, display name, check Send invite message, and add message: Welcome to Azure and our group project",
+          "actualBehavior": "Element not found",
+          "recommendation": "Update lab instructions - element may have been removed or renamed",
+          "screenshotPath": "screenshots/step-8-invite-external-user-after.png"
+        }
+      ],
+      "durationMs": 3911,
+      "screenshotBefore": "screenshots/step-8-invite-external-user-before.png",
+      "screenshotAfter": "screenshots/step-8-invite-external-user-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-9-configure-guest-properties",
+      "title": "Configure Guest User Properties",
+      "instruction": "Move to Properties tab and complete Job title: IT Lab Administrator, Department: IT, Usage location: United States, then Review + invite and Invite",
+      "status": "failed",
+      "aiResponse": "**Cannot execute browser steps.**",
+      "driftIssues": [
+        {
+          "id": "step-9-configure-guest-properties-missing",
+          "stepId": "step-9-configure-guest-properties",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "Move to Properties tab and complete Job title: IT Lab Administrator, Department: IT, Usage location: United States, then Review + invite and Invite",
+          "actualBehavior": "Element not found",
+          "recommendation": "Update lab instructions - element may have been removed or renamed",
+          "screenshotPath": "screenshots/step-9-configure-guest-properties-after.png"
+        }
+      ],
+      "durationMs": 3548,
+      "screenshotBefore": "screenshots/step-9-configure-guest-properties-before.png",
+      "screenshotAfter": "screenshots/step-9-configure-guest-properties-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-10-navigate-groups",
+      "title": "Navigate to Groups Management",
+      "instruction": "Search for and select Microsoft Entra ID, then in the Manage blade select Groups",
+      "status": "failed",
+      "aiResponse": "**Cannot execute browser steps. No browser automation available.**",
+      "driftIssues": [
+        {
+          "id": "step-10-navigate-groups-missing",
+          "stepId": "step-10-navigate-groups",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "Search for and select Microsoft Entra ID, then in the Manage blade select Groups",
+          "actualBehavior": "Element not found",
+          "recommendation": "Update lab instructions - element may have been removed or renamed",
+          "screenshotPath": "screenshots/step-10-navigate-groups-after.png"
+        }
+      ],
+      "durationMs": 4780,
+      "screenshotBefore": "screenshots/step-10-navigate-groups-before.png",
+      "screenshotAfter": "screenshots/step-10-navigate-groups-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-11-create-security-group",
+      "title": "Create Security Group",
+      "instruction": "Select + New group and configure Group type: Security, Group name: IT Lab Administrators, Group description: Administrators that manage the IT lab, Membership type: Assigned",
+      "status": "failed",
+      "aiResponse": "**Cannot execute.**",
+      "driftIssues": [
+        {
+          "id": "step-11-create-security-group-missing",
+          "stepId": "step-11-create-security-group",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "Select + New group and configure Group type: Security, Group name: IT Lab Administrators, Group description: Administrators that manage the IT lab, Membership type: Assigned",
+          "actualBehavior": "Element not found",
+          "recommendation": "Update lab instructions - element may have been removed or renamed",
+          "screenshotPath": "screenshots/step-11-create-security-group-after.png"
+        }
+      ],
+      "durationMs": 3080,
+      "screenshotBefore": "screenshots/step-11-create-security-group-before.png",
+      "screenshotAfter": "screenshots/step-11-create-security-group-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-12-assign-group-owners",
+      "title": "Assign Group Owners",
+      "instruction": "Select No owners selected, then in the Add owners page search for and select yourself as the owner",
+      "status": "failed",
+      "aiResponse": "**Cannot execute browser steps.**",
+      "driftIssues": [
+        {
+          "id": "step-12-assign-group-owners-missing",
+          "stepId": "step-12-assign-group-owners",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "Select No owners selected, then in the Add owners page search for and select yourself as the owner",
+          "actualBehavior": "Element not found",
+          "recommendation": "Update lab instructions - element may have been removed or renamed",
+          "screenshotPath": "screenshots/step-12-assign-group-owners-after.png"
+        }
+      ],
+      "durationMs": 6233,
+      "screenshotBefore": "screenshots/step-12-assign-group-owners-before.png",
+      "screenshotAfter": "screenshots/step-12-assign-group-owners-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-13-assign-group-members",
+      "title": "Assign Group Members",
+      "instruction": "Select No members selected, then in the Add members pane search for and select az104-user1 and the guest user you invited to add both users to the group",
+      "status": "failed",
+      "aiResponse": "**Cannot execute.**",
+      "driftIssues": [
+        {
+          "id": "step-13-assign-group-members-missing",
+          "stepId": "step-13-assign-group-members",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "Select No members selected, then in the Add members pane search for and select az104-user1 and the guest user you invited to add both users to the group",
+          "actualBehavior": "Element not found",
+          "recommendation": "Update lab instructions - element may have been removed or renamed",
+          "screenshotPath": "screenshots/step-13-assign-group-members-after.png"
+        }
+      ],
+      "durationMs": 3053,
+      "screenshotBefore": "screenshots/step-13-assign-group-members-before.png",
+      "screenshotAfter": "screenshots/step-13-assign-group-members-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-14-create-group",
+      "title": "Deploy Security Group",
+      "instruction": "Select Create to deploy the group, then refresh the page and verify the group was created",
+      "status": "failed",
+      "aiResponse": "**Cannot execute.**",
+      "driftIssues": [
+        {
+          "id": "step-14-create-group-missing",
+          "stepId": "step-14-create-group",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "Select Create to deploy the group, then refresh the page and verify the group was created",
+          "actualBehavior": "Element not found",
+          "recommendation": "Update lab instructions - element may have been removed or renamed",
+          "screenshotPath": "screenshots/step-14-create-group-after.png"
+        }
+      ],
+      "durationMs": 3117,
+      "screenshotBefore": "screenshots/step-14-create-group-before.png",
+      "screenshotAfter": "screenshots/step-14-create-group-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-15-verify-group-details",
+      "title": "Verify Group Configuration",
+      "instruction": "Select the new group and review the Members and Owners information to confirm configuration",
+      "status": "failed",
+      "aiResponse": "\n\n**Cannot execute browser steps. I have no browser automation tools.**\n\nThis appears to be the final step (15 of 15) of this lab. All 15 steps required Playwright MCP browser control, which I don't have.\n\nIf you're trying to debug why the runner isn't executing these steps itself, I'd suggest looking at how `runner-mcp-drift.ts` dispatches steps to the Copilot SDK session — these prompts are being sent to me instead of to a `session.sendAndWait()` call with a Playwright MCP server attached.\n\nWant me to investigate the runner code to find the routing issue?",
+      "driftIssues": [
+        {
+          "id": "step-15-verify-group-details-missing",
+          "stepId": "step-15-verify-group-details",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "Select the new group and review the Members and Owners information to confirm configuration",
+          "actualBehavior": "Element not found",
+          "recommendation": "Update lab instructions - element may have been removed or renamed",
+          "screenshotPath": "screenshots/step-15-verify-group-details-after.png"
+        }
+      ],
+      "durationMs": 7854,
+      "screenshotBefore": "screenshots/step-15-verify-group-details-before.png",
+      "screenshotAfter": "screenshots/step-15-verify-group-details-after.png",
+      "retryCount": 0
+    }
+  ],
+  "driftIssues": [
+    {
+      "id": "step-1-sign-in-portal-missing",
+      "stepId": "step-1-sign-in-portal",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "Sign in to the Azure portal at https://portal.azure.com and dismiss the Welcome splash screen by selecting Cancel",
+      "actualBehavior": "Element not found",
+      "recommendation": "Update lab instructions - element may have been removed or renamed",
+      "screenshotPath": "screenshots/step-1-sign-in-portal-after.png"
+    },
+    {
+      "id": "step-2-navigate-entra-id-missing",
+      "stepId": "step-2-navigate-entra-id",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "Search for and select Microsoft Entra ID to access Azure's cloud-based identity and access management solution",
+      "actualBehavior": "Element not found",
+      "recommendation": "Update lab instructions - element may have been removed or renamed",
+      "screenshotPath": "screenshots/step-2-navigate-entra-id-after.png"
+    },
+    {
+      "id": "step-3-explore-overview-missing",
+      "stepId": "step-3-explore-overview",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "Select the Overview blade, then the Manage tenants tab to explore tenant information, then return to the main Entra ID page",
+      "actualBehavior": "Element not found",
+      "recommendation": "Update lab instructions - element may have been removed or renamed",
+      "screenshotPath": "screenshots/step-3-explore-overview-after.png"
+    },
+    {
+      "id": "step-4-navigate-users-missing",
+      "stepId": "step-4-navigate-users",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "In the Manage blade, select Users to access user management functionality",
+      "actualBehavior": "Element not found",
+      "recommendation": "Update lab instructions - element may have been removed or renamed",
+      "screenshotPath": "screenshots/step-4-navigate-users-after.png"
+    },
+    {
+      "id": "step-5-create-new-user-missing",
+      "stepId": "step-5-create-new-user",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "Click New user dropdown, select Create new user, and configure with User principal name: az104-user1, Display name: az104-user1, Auto-generate password checked, Account enabled checked",
+      "actualBehavior": "Element not found",
+      "recommendation": "Update lab instructions - element may have been removed or renamed",
+      "screenshotPath": "screenshots/step-5-create-new-user-after.png"
+    },
+    {
+      "id": "step-6-configure-user-properties-missing",
+      "stepId": "step-6-configure-user-properties",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "Navigate to Properties tab and configure Job title: IT Lab Administrator, Department: IT, Usage location: United States",
+      "actualBehavior": "Element not found",
+      "recommendation": "Update lab instructions - element may have been removed or renamed",
+      "screenshotPath": "screenshots/step-6-configure-user-properties-after.png"
+    },
+    {
+      "id": "step-7-create-user-missing",
+      "stepId": "step-7-create-user",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "Select Review + create, then Create to deploy the user account",
+      "actualBehavior": "Element not found",
+      "recommendation": "Update lab instructions - element may have been removed or renamed",
+      "screenshotPath": "screenshots/step-7-create-user-after.png"
+    },
+    {
+      "id": "step-8-invite-external-user-missing",
+      "stepId": "step-8-invite-external-user",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "Click New user dropdown, select Invite an external user, enter your email address, display name, check Send invite message, and add message: Welcome to Azure and our group project",
+      "actualBehavior": "Element not found",
+      "recommendation": "Update lab instructions - element may have been removed or renamed",
+      "screenshotPath": "screenshots/step-8-invite-external-user-after.png"
+    },
+    {
+      "id": "step-9-configure-guest-properties-missing",
+      "stepId": "step-9-configure-guest-properties",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "Move to Properties tab and complete Job title: IT Lab Administrator, Department: IT, Usage location: United States, then Review + invite and Invite",
+      "actualBehavior": "Element not found",
+      "recommendation": "Update lab instructions - element may have been removed or renamed",
+      "screenshotPath": "screenshots/step-9-configure-guest-properties-after.png"
+    },
+    {
+      "id": "step-10-navigate-groups-missing",
+      "stepId": "step-10-navigate-groups",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "Search for and select Microsoft Entra ID, then in the Manage blade select Groups",
+      "actualBehavior": "Element not found",
+      "recommendation": "Update lab instructions - element may have been removed or renamed",
+      "screenshotPath": "screenshots/step-10-navigate-groups-after.png"
+    },
+    {
+      "id": "step-11-create-security-group-missing",
+      "stepId": "step-11-create-security-group",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "Select + New group and configure Group type: Security, Group name: IT Lab Administrators, Group description: Administrators that manage the IT lab, Membership type: Assigned",
+      "actualBehavior": "Element not found",
+      "recommendation": "Update lab instructions - element may have been removed or renamed",
+      "screenshotPath": "screenshots/step-11-create-security-group-after.png"
+    },
+    {
+      "id": "step-12-assign-group-owners-missing",
+      "stepId": "step-12-assign-group-owners",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "Select No owners selected, then in the Add owners page search for and select yourself as the owner",
+      "actualBehavior": "Element not found",
+      "recommendation": "Update lab instructions - element may have been removed or renamed",
+      "screenshotPath": "screenshots/step-12-assign-group-owners-after.png"
+    },
+    {
+      "id": "step-13-assign-group-members-missing",
+      "stepId": "step-13-assign-group-members",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "Select No members selected, then in the Add members pane search for and select az104-user1 and the guest user you invited to add both users to the group",
+      "actualBehavior": "Element not found",
+      "recommendation": "Update lab instructions - element may have been removed or renamed",
+      "screenshotPath": "screenshots/step-13-assign-group-members-after.png"
+    },
+    {
+      "id": "step-14-create-group-missing",
+      "stepId": "step-14-create-group",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "Select Create to deploy the group, then refresh the page and verify the group was created",
+      "actualBehavior": "Element not found",
+      "recommendation": "Update lab instructions - element may have been removed or renamed",
+      "screenshotPath": "screenshots/step-14-create-group-after.png"
+    },
+    {
+      "id": "step-15-verify-group-details-missing",
+      "stepId": "step-15-verify-group-details",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "Select the new group and review the Members and Owners information to confirm configuration",
+      "actualBehavior": "Element not found",
+      "recommendation": "Update lab instructions - element may have been removed or renamed",
+      "screenshotPath": "screenshots/step-15-verify-group-details-after.png"
+    }
+  ],
+  "summary": {
+    "total": 15,
+    "passed": 0,
+    "driftDetected": 0,
+    "failed": 15,
+    "skipped": 0,
+    "byCategory": {
+      "missing_element": 15
+    }
+  },
+  "durationMs": 140090
+}

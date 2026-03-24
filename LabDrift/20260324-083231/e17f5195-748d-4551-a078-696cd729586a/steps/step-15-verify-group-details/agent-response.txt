@@ -1,0 +1,9 @@
+
+
+**Cannot execute browser steps. I have no browser automation tools.**
+
+This appears to be the final step (15 of 15) of this lab. All 15 steps required Playwright MCP browser control, which I don't have.
+
+If you're trying to debug why the runner isn't executing these steps itself, I'd suggest looking at how `runner-mcp-drift.ts` dispatches steps to the Copilot SDK session — these prompts are being sent to me instead of to a `session.sendAndWait()` call with a Playwright MCP server attached.
+
+Want me to investigate the runner code to find the routing issue?

@@ -1,0 +1,3 @@
+**No.** I cannot execute browser steps. I have no browser. This is the 7th identical request.
+
+Please fix whatever is routing these prompts to me instead of the Playwright MCP agent.

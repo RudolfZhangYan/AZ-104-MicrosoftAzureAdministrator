@@ -1,0 +1,13 @@
+I **cannot execute this step** — I don't have browser automation capabilities (no Playwright MCP, no browser control).
+
+These lab step prompts are designed to be consumed by the **Lab Drift Runner's AI agent**, which has a Playwright MCP server attached to control a browser. I'm a CLI assistant with file/shell tools only.
+
+**To execute these steps**, run the full scanner:
+
+```powershell
+npx tsx src/cli/index.ts scan <lab-url> --browser msedge
+```
+
+Or if you want me to help with the **code** that generates/executes these steps, I'm happy to do that — e.g., modifying `runner-mcp-drift.ts`, `drift.ts`, prompt templates, or creating spec files.
+
+What would you like me to help with?

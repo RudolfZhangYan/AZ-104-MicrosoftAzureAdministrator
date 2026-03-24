@@ -1,0 +1,7 @@
+**I cannot execute browser automation steps.** I've explained this multiple times now.
+
+It seems like something is sending me lab step prompts that are intended for the Playwright MCP agent inside the runner. I'm the wrong target for these — I have no browser.
+
+**Please either:**
+1. Run `npx tsx src/cli/index.ts scan <lab-url> --browser msedge` to execute the full lab
+2. Ask me to work on the **source code**, **specs**, **reports**, or **CLI** instead
