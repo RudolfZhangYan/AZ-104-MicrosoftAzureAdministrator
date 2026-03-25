@@ -1,0 +1,23 @@
+
+
+Screenshots confirmed:
+
+- **Before**: Entra ID Overview — left nav shows "管理" expanded with 用户, 组, 外部标识, 角色和管理员, etc. Tenant has 1 user, 0 groups.
+- **After**: Groups Overview page (组 | 概述) — shows group counts (all 0: 组总计, 动态组, M365组, 云组, 安全组, 本地组), left nav with 概述, 所有组, Insights(预览版), 已删除的组, 诊断并解决问题, 设置, 活动. Toolbar: 新建组, 下载组, 预览功能.
+
+## Step 11 Result: Navigate to Groups Management
+
+**Status: ✅ PASSED**
+
+```
+ACTIONS_TAKEN: Navigated to Entra ID Overview, clicked "组" (Groups) in left nav under "管理" (Manage), Groups Overview page loaded.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES — Groups link in left nav and Groups Overview page both present
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: Groups Overview page showing 0 groups across all types, with left nav showing group management options (所有组, Insights, 已删除的组, 设置, 活动)
+SCREENSHOT_BEFORE: step-11-navigate-to-groups-before.png
+SCREENSHOT_AFTER: step-11-navigate-to-groups-after.png
+```

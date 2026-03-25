@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab Fix Report - Lab 01 - Manage Microsoft Entra ID Identities</title>
+  <style>
+    * { box-sizing: border-box; }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      background: white;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    h1 {
+      color: #2c3e50;
+      border-bottom: 3px solid #3498db;
+      padding-bottom: 15px;
+      margin-top: 0;
+    }
+    
+    h2 {
+      color: #2c3e50;
+      margin-top: 40px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    h3 {
+      color: #34495e;
+      margin-top: 25px;
+    }
+    
+    .meta {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 6px;
+      margin-bottom: 30px;
+      border-left: 4px solid #3498db;
+    }
+    
+    .meta p { margin: 5px 0; }
+    .meta a { color: #3498db; }
+    
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 15px;
+      margin: 25px 0;
+    }
+    
+    .summary-card {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 6px;
+      text-align: center;
+      border-top: 3px solid #3498db;
+    }
+    
+    .summary-card .value {
+      font-size: 2em;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+    
+    .summary-card .label {
+      font-size: 0.85em;
+      color: #7f8c8d;
+      margin-top: 5px;
+    }
+    
+    .fix-card {
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      padding: 20px;
+      margin: 20px 0;
+      border-left: 4px solid #bdc3c7;
+    }
+    
+    .fix-card.critical { border-left-color: #c0392b; }
+    .fix-card.high { border-left-color: #e67e22; }
+    .fix-card.medium { border-left-color: #f39c12; }
+    .fix-card.low { border-left-color: #27ae60; }
+    
+    .fix-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .fix-title {
+      font-size: 1.1em;
+      font-weight: 600;
+      margin: 0;
+      color: #2c3e50;
+    }
+    
+    .badge {
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 0.75em;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    
+    .badge.critical { background: #c0392b; color: white; }
+    .badge.high { background: #e67e22; color: white; }
+    .badge.medium { background: #f39c12; color: white; }
+    .badge.low { background: #27ae60; color: white; }
+    
+    .fix-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-size: 0.85em;
+      color: #7f8c8d;
+      margin-bottom: 15px;
+    }
+    
+    .reason {
+      background: #fff3cd;
+      padding: 12px 15px;
+      border-radius: 4px;
+      margin: 15px 0;
+      font-size: 0.95em;
+      border-left: 3px solid #ffc107;
+    }
+    
+    .instruction-box {
+      border-radius: 6px;
+      padding: 15px;
+      margin: 10px 0;
+      font-size: 0.9em;
+      line-height: 1.5;
+    }
+    
+    .instruction-box.original {
+      background: #fff5f5;
+      border: 1px solid #fed7d7;
+    }
+    
+    .instruction-box.suggested {
+      background: #f0fff4;
+      border: 1px solid #c6f6d5;
+    }
+    
+    .instruction-label {
+      font-size: 0.8em;
+      font-weight: 600;
+      color: #666;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+    
+    .instruction-label.original { color: #c53030; }
+    .instruction-label.suggested { color: #276749; }
+    
+    .env-fix {
+      background: #fffbeb;
+      border: 1px solid #fcd34d;
+      border-radius: 6px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+    
+    .env-fix h4 {
+      margin-top: 0;
+      color: #92400e;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+      font-size: 0.9em;
+    }
+    
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border: 1px solid #e0e0e0;
+    }
+    
+    th {
+      background: #f8f9fa;
+      font-weight: 600;
+      color: #2c3e50;
+    }
+    
+    .quick-ref {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 6px;
+      margin-top: 40px;
+    }
+    
+    .quick-ref h2 { margin-top: 0; border: none; }
+    
+    .note-box {
+      background: #e8f4fd;
+      border: 1px solid #90cdf4;
+      border-radius: 4px;
+      padding: 15px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lab Fix Report</h1>
+    
+    <div class="meta">
+      <p><strong>Lab:</strong> Lab 01 - Manage Microsoft Entra ID Identities</p>
+      <p><strong>URL:</strong> <a href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_01-Manage_Entra_ID_Identities.html" target="_blank">https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_01-Manage_Entra_ID_Identities.html</a></p>
+      <p><strong>Generated:</strong> 2026/3/25 10:11:51</p>
+    </div>
+    
+    <h2>Summary</h2>
+    <div class="summary-grid">
+      <div class="summary-card">
+        <div class="value">15</div>
+        <div class="label">Total Issues</div>
+      </div>
+      <div class="summary-card">
+        <div class="value">15</div>
+        <div class="label">Instruction Fixes</div>
+      </div>
+      <div class="summary-card">
+        <div class="value">0</div>
+        <div class="label">Environment Fixes</div>
+      </div>
+      <div class="summary-card">
+        <div class="value" style="color: #c0392b">10</div>
+        <div class="label">Critical Issues</div>
+      </div>
+      <div class="summary-card">
+        <div class="value" style="font-size: 1em">High (&gt; 4 hours)</div>
+        <div class="label">Estimated Effort</div>
+      </div>
+    </div><h2>Instruction Updates</h2><h3>Critical Priority (10)</h3>
+    <div class="fix-card critical">
+      <div class="fix-header">
+        <h4 class="fix-title">Sign in to Azure Portal</h4>
+        <span class="badge critical">critical</span>
+      </div>
+      <div class="fix-meta">
+        <span><strong>Step:</strong> step-1-sign-in-portal</span>
+        <span><strong>Category:</strong> removed feature</span>
+        <span><strong>Confidence:</strong> high</span>
+      </div>
+      <div class="reason"><strong>Issue:</strong> Account has no active Azure subscription. The portal presents subscription options instead of the expected dashboard. The &quot;Cancel&quot; button referenced in the instructions only appears on accounts WITH a subscription.</div>
+      <div class="instruction-label original">Original Instruction</div>
+      <div class="instruction-box original">Sign in to the Azure portal - https://portal.azure.com. To proceed to the portal, select Cancel on the Welcome to Azure splash screen.</div>
+      <div class="instruction-label suggested">Suggested Update</div>
+      <div class="instruction-box suggested">Sign in to the Azure portal - https://portal.azure.com. If prompted with subscription options, select **Maybe later** or dismiss the screen to proceed to the portal home page.</div>
+    </div>
+    <div class="fix-card critical">
+      <div class="fix-header">
+        <h4 class="fix-title">Access User Creation</h4>
+        <span class="badge critical">critical</span>
+      </div>
+      <div class="fix-meta">
+        <span><strong>Step:</strong> step-4-access-user-creation</span>
+        <span><strong>Category:</strong> removed feature</span>
+        <span><strong>Confidence:</strong> high</span>
+      </div>
+      <div class="reason"><strong>Issue:</strong> Element not found</div>
+      <div class="instruction-label original">Original Instruction</div>
+      <div class="instruction-box original">In the Manage blade, select Users; then in the New user drop-down select Create new user.</div>
+      <div class="instruction-label suggested">Suggested Update</div>
+      <div class="instruction-box suggested">In the left navigation pane, select **Users**; then select **+ New user** and choose **Create new user** from the drop-down menu.</div>
+    </div>
+    <div class="fix-card critical">
+      <div class="fix-header">
+        <h4 class="fix-title">Configure Basic User Information</h4>
+        <span class="badge critical">critical</span>
+      </div>
+      <div class="fix-meta">
+        <span><strong>Step:</strong> step-5-create-internal-user-basics</span>
+        <span><strong>Category:</strong> removed feature</span>
+        <span><strong>Confidence:</strong> high</span>
+      </div>
+      <div class="reason"><strong>Issue:</strong> Element not found</div>
+      <div class="instruction-label original">Original Instruction</div>
+      <div class="instruction-box original">Create a new user with User principal name az104-user1, Display name az104-user1, Auto-generate password checked, Account enabled checked.</div>
+      <div class="instruction-label suggested">Suggested Update</div>
+      <div class="instruction-box suggested">Create a new user by entering **az104-user1** as the User principal name and **az104-user1** as the Display name. Enable the option to auto-generate the password and ensure the account is set to enabled before saving.</div>
+    </div>
+    <div class="fix-card critical">
+      <div class="fix-header">
+        <h4 class="fix-title">Configure User Properties</h4>
+        <span class="badge critical">critical</span>
+      </div>
+      <div class="fix-meta">
+        <span><strong>Step:</strong> step-6-configure-user-properties</span>
+        <span><strong>Category:</strong> removed feature</span>
+        <span><strong>Confidence:</strong> high</span>
+      </div>
+      <div class="reason"><strong>Issue:</strong> Element not found</div>
+      <div class="instruction-label original">Original Instruction</div>
+      <div class="instruction-box original">On the Properties tab notice all the different types of information that can be included in the user account. Set Job title IT Lab Administrator, Department IT, Usage location United States.</div>
+      <div class="instruction-label suggested">Suggested Update</div>
+      <div class="instruction-box suggested">Navigate to the **Properties** tab of the user account. Locate the identity and job information fields and set **Job title** to `IT Lab Administrator`, **Department** to `IT`, and **Usage location** to `United States`. Scroll through the tab to review the additional information that can be stored in the user account, then save your changes.</div>
+    </div>
+    <div class="fix-card critical">
+      <div class="fix-header">
+        <h4 class="fix-title">Review and Create User</h4>
+        <span class="badge critical">critical</span>
+      </div>
+      <div class="fix-meta">
+        <span><strong>Step:</strong> step-7-create-user</span>
+        <span><strong>Category:</strong> removed feature</span>
+        <span><strong>Confidence:</strong> high</span>
+      </div>
+      <div class="reason"><strong>Issue:</strong> Prerequisite steps 4-6 did not complete (automation session timeout)</div>
+      <div class="instruction-label original">Original Instruction</div>
+      <div class="instruction-box original">Once you have finished reviewing, select Review + create and then Create. Refresh the page and confirm your new user was created.</div>
+      <div class="instruction-label suggested">Suggested Update</div>
+      <div class="instruction-box suggested">Once you have finished reviewing, select **Review + create** and then **Create**. If the page does not reflect your new user immediately, refresh and confirm the user appears in the list.</div>
+    </div>
+    <div class="fix-card critical">
+      <div class="fix-header">
+        <h4 class="fix-title">Configure External User Basic Information</h4>
+        <span class="badge critical">critical</span>
+      </div>
+      <div class="fix-meta">
+        <span><strong>Step:</strong> step-9-configure-external-user-basics</span>
+        <span><strong>Category:</strong> removed feature</span>
+        <span><strong>Confidence:</strong> high</span>
+      </div>
+      <div class="reason"><strong>Issue:</strong> Prerequisite step 8 did not complete (automation session timeout)</div>
+      <div class="instruction-label original">Original Instruction</div>
+      <div class="instruction-box original">Set Email to your email address, Display name to your name, check Send invite message box, Message Welcome to Azure and our group project.</div>
+      <div class="instruction-label suggested">Suggested Update</div>
+      <div class="instruction-box suggested">Set the Email field to your email address and Display name to your name. Check the **Send invite message** checkbox and enter **Welcome to Azure and our group project** in the message field.</div>
+    </div>
+    <div class="fix-card critical">
+      <div class="fix-header">
+        <h4 class="fix-title">Configure External User Properties</h4>
+        <span class="badge critical">critical</span>
+      </div>
+      <div class="fix-meta">
+        <span><strong>Step:</strong> step-10-configure-external-user-properties</span>
+        <span><strong>Category:</strong> removed feature</span>
+        <span><strong>Confidence:</strong> high</span>
+      </div>
+      <div class="reason"><strong>Issue:</strong> Prerequisite steps 8-9 did not complete</div>
+      <div class="instruction-label original">Original Instruction</div>
+      <div class="instruction-box original">Move to the Properties tab. Complete the basic information, including Job title IT Lab Administrator, Department IT, Usage location United States. Select Review + invite, and then Invite. Refresh the page and confirm the invited user was created.</div>
+      <div class="instruction-label suggested">Suggested Update</div>
+      <div class="instruction-box suggested">Navigate to the Properties tab. Enter **IT Lab Administrator** for Job title and **IT** for Department. Set Usage location to **United States**. Select **Review + invite**, then select **Invite**. Refresh the page and verify the invited user appears in the directory.</div>
+    </div>
+    <div class="fix-card critical">
+      <div class="fix-header">
+        <h4 class="fix-title">Assign Group Owners</h4>
+        <span class="badge critical">critical</span>
+      </div>
+      <div class="fix-meta">
+        <span><strong>Step:</strong> step-13-assign-group-owners</span>
+        <span><strong>Category:</strong> removed feature</span>
+        <span><strong>Confidence:</strong> high</span>
+      </div>
+      <div class="reason"><strong>Issue:</strong> Prerequisite step 12 did not complete</div>
+      <div class="instruction-label original">Original Instruction</div>
+      <div class="instruction-box original">Select No owners selected. In the Add owners page, search for and select yourself (shown in the top right corner) as the owner. Notice you can have more than one owner.</div>
+      <div class="instruction-label suggested">Suggested Update</div>
+      <div class="instruction-box suggested">Select **No owners selected**. In the **Add owners** panel, search for and select yourself as the owner (you can find your name by searching with your username or email address visible in the top right corner of the portal). Note that multiple owners can be assigned to a group.</div>
+    </div>
+    <div class="fix-card critical">
+      <div class="fix-header">
+        <h4 class="fix-title">Add Members to Group</h4>
+        <span class="badge critical">critical</span>
+      </div>
+      <div class="fix-meta">
+        <span><strong>Step:</strong> step-14-add-group-members</span>
+        <span><strong>Category:</strong> removed feature</span>
+        <span><strong>Confidence:</strong> high</span>
+      </div>
+      <div class="reason"><strong>Issue:</strong> Prerequisite step 12 did not complete</div>
+      <div class="instruction-label original">Original Instruction</div>
+      <div class="instruction-box original">Select No members selected. In the Add members pane, search for and select the az104-user1 and the guest user you invited. Add both of the users to the group.</div>
+      <div class="instruction-label suggested">Suggested Update</div>
+      <div class="instruction-box suggested">Before adding members to the group, ensure that az104-user1 and the guest user have been created and are available in your directory. Then, select **No members selected**. In the **Add members** pane, search for and select az104-user1 and the guest user. Add both users to the group.</div>
+    </div>
+    <div class="fix-card critical">
+      <div class="fix-header">
+        <h4 class="fix-title">Deploy and Verify Group Creation</h4>
+        <span class="badge critical">critical</span>
+      </div>
+      <div class="fix-meta">
+        <span><strong>Step:</strong> step-15-deploy-and-verify-group</span>
+        <span><strong>Category:</strong> removed feature</span>
+        <span><strong>Confidence:</strong> high</span>
+      </div>
+      <div class="reason"><strong>Issue:</strong> Prerequisite steps 12-14 did not complete</div>
+      <div class="instruction-label original">Original Instruction</div>
+      <div class="instruction-box original">Select Create to deploy the group. Refresh the page and ensure your group was created. Select the new group and review the Members and Owners information.</div>
+      <div class="instruction-label suggested">Suggested Update</div>
+      <div class="instruction-box suggested">Select **Create** to deploy the group. If the page does not refresh automatically, manually refresh to confirm the group appears in the list. Select the new group and review the **Members** and **Owners** information.</div>
+    </div><h3>High Priority (2)</h3>
+    <div class="fix-card high">
+      <div class="fix-header">
+        <h4 class="fix-title">Sign in to Azure Portal</h4>
+        <span class="badge high">high</span>
+      </div>
+      <div class="fix-meta">
+        <span><strong>Step:</strong> step-1-sign-in-portal</span>
+        <span><strong>Category:</strong> ui change</span>
+        <span><strong>Confidence:</strong> high</span>
+      </div>
+      <div class="reason"><strong>Issue:</strong> The portal shows a full-page &quot;Welcome to Azure!&quot; with subscription signup cards (Free trial, Entra ID, Azure for Students). This is NOT the dismissible splash modal with a &quot;Cancel&quot; button described in the instructions — it's the no-subscription landing page.</div>
+      <div class="instruction-label original">Original Instruction</div>
+      <div class="instruction-box original">Sign in to the Azure portal - https://portal.azure.com. To proceed to the portal, select Cancel on the Welcome to Azure splash screen.</div>
+      <div class="instruction-label suggested">Suggested Update</div>
+      <div class="instruction-box suggested">Sign in to the Azure portal - https://portal.azure.com. If you see a &quot;Welcome to Azure!&quot; page with subscription options, sign in with an account that has an active Azure subscription to proceed to the portal.</div>
+    </div>
+    <div class="fix-card high">
+      <div class="fix-header">
+        <h4 class="fix-title">Explore Entra ID Overview and Tenants</h4>
+        <span class="badge high">high</span>
+      </div>
+      <div class="fix-meta">
+        <span><strong>Step:</strong> step-3-explore-overview</span>
+        <span><strong>Category:</strong> ui change</span>
+        <span><strong>Confidence:</strong> high</span>
+      </div>
+      <div class="reason"><strong>Issue:</strong> &quot;Manage tenants&quot; is a toolbar button, not a tab</div>
+      <div class="instruction-label original">Original Instruction</div>
+      <div class="instruction-box original">Select the Overview blade and then the Manage tenants tab. Return to the Entra ID page by pressing back in the browser or selecting the option in the breadcrumb menu. As you have time, explore other options such as Licenses and Password reset.</div>
+      <div class="instruction-label suggested">Suggested Update</div>
+      <div class="instruction-box suggested">Select the Overview blade and then click the **Manage tenants** button in the toolbar. Return to the Entra ID page by pressing back in the browser or selecting the option in the breadcrumb menu. As you have time, explore other options such as Licenses and Password reset.</div>
+    </div><h3>Medium Priority (2)</h3>
+    <div class="fix-card medium">
+      <div class="fix-header">
+        <h4 class="fix-title">Sign in to Azure Portal</h4>
+        <span class="badge medium">medium</span>
+      </div>
+      <div class="fix-meta">
+        <span><strong>Step:</strong> step-1-sign-in-portal</span>
+        <span><strong>Category:</strong> new requirement</span>
+        <span><strong>Confidence:</strong> high</span>
+      </div>
+      <div class="reason"><strong>Issue:</strong> The &quot;Welcome to Azure!&quot; page is a full-page view (not a dismissible modal) with no Cancel button. A human on this account would see the same thing.</div>
+      <div class="instruction-label original">Original Instruction</div>
+      <div class="instruction-box original">Sign in to the Azure portal - https://portal.azure.com. To proceed to the portal, select Cancel on the Welcome to Azure splash screen.</div>
+      <div class="instruction-label suggested">Suggested Update</div>
+      <div class="instruction-box suggested">Sign in to the Azure portal - https://portal.azure.com. If you see a **Welcome to Azure!** page, navigate past it by selecting the Azure portal home link or navigating directly to https://portal.azure.com/home.</div>
+    </div>
+    <div class="fix-card medium">
+      <div class="fix-header">
+        <h4 class="fix-title">Navigate to Microsoft Entra ID</h4>
+        <span class="badge medium">medium</span>
+      </div>
+      <div class="fix-meta">
+        <span><strong>Step:</strong> step-2-navigate-entra-id</span>
+        <span><strong>Category:</strong> new requirement</span>
+        <span><strong>Confidence:</strong> high</span>
+      </div>
+      <div class="reason"><strong>Issue:</strong> A &quot;Give feedback to Microsoft&quot; popup appeared in the top-right corner asking about portal satisfaction — informational only, does not block progress.</div>
+      <div class="instruction-label original">Original Instruction</div>
+      <div class="instruction-box original">Search for and select Microsoft Entra ID. Microsoft Entra ID is Azure's cloud-based identity and access management solution. Take a few minutes to familiarize yourself with some of the features listed in the left pane.</div>
+      <div class="instruction-label suggested">Suggested Update</div>
+      <div class="instruction-box suggested">Search for and select Microsoft Entra ID. Microsoft Entra ID is Azure's cloud-based identity and access management solution. If a &quot;Give feedback to Microsoft&quot; popup appears in the top-right corner, dismiss it and continue. Take a few minutes to familiarize yourself with some of the features listed in the left pane.</div>
+    </div><h3>Low Priority (1)</h3>
+    <div class="fix-card low">
+      <div class="fix-header">
+        <h4 class="fix-title">Explore Entra ID Overview and Tenants</h4>
+        <span class="badge low">low</span>
+      </div>
+      <div class="fix-meta">
+        <span><strong>Step:</strong> step-3-explore-overview</span>
+        <span><strong>Category:</strong> new requirement</span>
+        <span><strong>Confidence:</strong> high</span>
+      </div>
+      <div class="reason"><strong>Issue:</strong> Entra admin center banner + auth methods migration alert (informational)</div>
+      <div class="instruction-label original">Original Instruction</div>
+      <div class="instruction-box original">Select the Overview blade and then the Manage tenants tab. Return to the Entra ID page by pressing back in the browser or selecting the option in the breadcrumb menu. As you have time, explore other options such as Licenses and Password reset.</div>
+      <div class="instruction-label suggested">Suggested Update</div>
+      <div class="instruction-box suggested">Select the Overview blade and then the Manage tenants tab. If an authentication methods migration alert banner appears, you may dismiss it or leave it as is. Return to the Entra ID page by pressing back in the browser or selecting the option in the breadcrumb menu. As you have time, explore other options such as Licenses and Password reset.</div>
+    </div>
+    <div class="quick-ref">
+      <h2>Quick Reference</h2>
+      <h3>Common Replacements</h3>
+      <table>
+        <tr><th>Old Text</th><th>New Text</th></tr>
+        <tr><td>Azure Active Directory</td><td>Microsoft Entra ID</td></tr>
+        <tr><td>AAD</td><td>Entra</td></tr>
+        <tr><td>+ New User</td><td>+ New User &gt; Create new user</td></tr>
+        <tr><td>scroll right and select Remove</td><td>right-click to select, then click Remove assignments</td></tr>
+      </table>
+      
+      <h3>MFA-Related Additions</h3>
+      <p>Consider adding these notes where users log in with new accounts:</p>
+      <div class="note-box"><strong>Note:</strong> When signing in for the first time, you will be prompted to set up Multi-Factor Authentication (MFA). Follow the prompts to configure the Microsoft Authenticator app. This is required by Azure MFA Phase 2 enforcement.</div>
+    </div>
+  </div>
+</body>
+</html>

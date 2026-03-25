@@ -1,0 +1,14 @@
+
+
+Step 13 depends on step 12 (New group form). Cannot assign owners without creating the group first.
+
+```
+STEP_COMPLETED: NO (depends on incomplete step 12)
+ELEMENT_FOUND: N/A
+ELEMENT_DIFFERENT: N/A
+EXTRA_STEPS_NEEDED: N/A
+UNEXPECTED_UI: N/A
+BLOCKING_ISSUES: Prerequisite step 12 did not complete
+SCREENSHOT_BEFORE: SKIPPED
+SCREENSHOT_AFTER: SKIPPED
+```

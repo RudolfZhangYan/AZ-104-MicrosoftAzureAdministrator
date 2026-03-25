@@ -1,0 +1,14 @@
+
+
+Step 15 depends on steps 12-14 (group creation/configuration). Cannot deploy a group that wasn't created.
+
+```
+STEP_COMPLETED: NO (depends on incomplete steps 12-14)
+ELEMENT_FOUND: N/A
+ELEMENT_DIFFERENT: N/A
+EXTRA_STEPS_NEEDED: N/A
+UNEXPECTED_UI: N/A
+BLOCKING_ISSUES: Prerequisite steps 12-14 did not complete
+SCREENSHOT_BEFORE: SKIPPED
+SCREENSHOT_AFTER: SKIPPED
+```

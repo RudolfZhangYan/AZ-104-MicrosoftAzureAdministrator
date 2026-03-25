@@ -1,0 +1,27 @@
+
+
+## Step 1 Result: Sign in to Azure Portal
+
+**Status: ⚠️ BLOCKED — No active subscription**
+
+The screenshots confirm what the agent reported:
+
+- **Before**: Blank/loading page (browser launching)
+- **After**: "Welcome to Azure!" page with subscription options — **not** the expected dashboard
+
+### Drift Detection Report
+
+```
+ACTIONS_TAKEN: Navigated to https://portal.azure.com. Auto-authenticated via saved profile. Looked for "Cancel" button on Welcome splash screen — none found.
+STEP_COMPLETED: NO
+ELEMENT_FOUND: NO (no "Cancel" button found)
+ELEMENT_DIFFERENT: The portal shows a full-page "Welcome to Azure!" with subscription signup cards (Free trial, Entra ID, Azure for Students). This is NOT the dismissible splash modal with a "Cancel" button described in the instructions — it's the no-subscription landing page.
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: The "Welcome to Azure!" page is a full-page view (not a dismissible modal) with no Cancel button. A human on this account would see the same thing.
+BLOCKING_ISSUES: Account has no active Azure subscription. The portal presents subscription options instead of the expected dashboard. The "Cancel" button referenced in the instructions only appears on accounts WITH a subscription.
+CURRENT_STATE: Azure portal "Welcome to Azure!" page with 3 subscription option cards.
+SCREENSHOT_BEFORE: step-1-sign-in-portal-before.png
+SCREENSHOT_AFTER: step-1-sign-in-portal-after.png
+```
+
+**Root cause**: This is a lab environment issue (no subscription), not product drift. The "Welcome to Azure" splash with a Cancel button only appears for accounts that already have a subscription.

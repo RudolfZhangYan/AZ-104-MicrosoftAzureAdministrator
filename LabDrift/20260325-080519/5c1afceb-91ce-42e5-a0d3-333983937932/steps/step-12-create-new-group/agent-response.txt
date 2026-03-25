@@ -1,0 +1,14 @@
+
+
+Step 12 duplicate — already attempted and reported. Session expired, no screenshots captured. The "+ 新建组" (New group) button was confirmed present in step 11's screenshots.
+
+```
+STEP_COMPLETED: NO (automation timeout)
+ELEMENT_FOUND: YES (confirmed from step 11)
+ELEMENT_DIFFERENT: N/A
+EXTRA_STEPS_NEEDED: N/A
+UNEXPECTED_UI: N/A
+BLOCKING_ISSUES: Automation session auth expiry
+SCREENSHOT_BEFORE: SKIPPED
+SCREENSHOT_AFTER: SKIPPED
+```

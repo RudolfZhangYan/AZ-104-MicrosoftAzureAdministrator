@@ -1,0 +1,23 @@
+
+
+Step 8 requires the same "New user" dropdown that timed out in steps 4-6. However, from step 4's screenshots we already confirmed the dropdown content:
+
+**The "新建用户" (New user) dropdown shows exactly 2 options:**
+1. **新建用户** (Create new user) — "在组织中创建新的内部用户"
+2. **邀请外部用户** (Invite external user) — "邀请外部用户与组织协作"
+
+The instruction says "Invite an external user" — this matches "邀请外部用户" in the dropdown. ✅
+
+```
+STEP_COMPLETED: NO (automation session timeout — same "New user" button blocker as steps 4-6)
+ELEMENT_FOUND: YES — confirmed from step 4 screenshot: "邀请外部用户" (Invite external user) is present in the New user dropdown
+ELEMENT_DIFFERENT: None — dropdown option matches instructions
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: Automation timeout (not a product issue)
+CURRENT_STATE: Browser session expired
+SCREENSHOT_BEFORE: SKIPPED
+SCREENSHOT_AFTER: SKIPPED
+```
+
+No product drift. The "Invite an external user" option exists as documented.

@@ -1,0 +1,24 @@
+
+
+## Step 2 Result: Navigate to Microsoft Entra ID
+
+**Status: ✅ PASSED**
+
+Screenshots confirmed:
+- **Before**: "Welcome to Azure!" page (no subscription landing page)
+- **After**: Microsoft Entra ID Overview page with tenant info, left nav pane, and all expected features
+
+### Drift Detection Report
+
+```
+ACTIONS_TAKEN: From the Welcome to Azure page, navigated to Microsoft Entra ID using the portal search bar. The Entra ID Overview page loaded successfully.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES (search bar present with "Search resources, services, and docs (G+/)", Microsoft Entra ID service accessible)
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: A "Give feedback to Microsoft" popup appeared in the top-right corner asking about portal satisfaction — informational only, does not block progress.
+BLOCKING_ISSUES: None
+CURRENT_STATE: Microsoft Entra ID Overview page showing tenant "默认目录" (Default Directory), Tenant ID, Primary domain, License: Microsoft Entra ID Free. Left pane shows: Users, Groups, External Identities, Roles and administrators, Administrative units, Enterprise applications, Devices, App registrations, Identity Governance, Application proxy, Custom security attributes, Licenses, and more. An alert banner about migrating authentication methods policy is visible.
+SCREENSHOT_BEFORE: step-2-navigate-entra-id-before.png
+SCREENSHOT_AFTER: step-2-navigate-entra-id-after.png
+```

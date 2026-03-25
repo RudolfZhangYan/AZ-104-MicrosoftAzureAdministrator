@@ -1,0 +1,41 @@
+## Lab Step: Deploy and Verify Group Creation
+
+### Instruction
+Select Create to deploy the group. Refresh the page and ensure your group was created. Select the new group and review the Members and Owners information.
+
+### Actions to Perform
+- click: {"selector":"Create"}
+- click: {"selector":"refresh"}
+- click: {"selector":"IT Lab Administrators group"}
+- click: {"selector":"Members"}
+- click: {"selector":"Owners"}
+
+### Expected Outcome
+IT Lab Administrators group is created with correct members and owners
+
+### Screenshot Requirement
+BEFORE executing the step, take a screenshot and save it as: C:\lab-drift-runner\20260325-080519\5c1afceb-91ce-42e5-a0d3-333983937932\screenshots/step-15-deploy-and-verify-group-before.png
+AFTER completing the step, take a screenshot and save it as: C:\lab-drift-runner\20260325-080519\5c1afceb-91ce-42e5-a0d3-333983937932\screenshots/step-15-deploy-and-verify-group-after.png
+
+### IMPORTANT: Drift Detection Report
+After completing this step, report the following in your response:
+
+```
+ACTIONS_TAKEN: [Describe exactly what you did]
+STEP_COMPLETED: YES or NO
+ELEMENT_FOUND: YES or NO (was the expected element/button/field found?)
+ELEMENT_DIFFERENT: [ONLY if element was different - describe how. Write "None" if no differences]
+EXTRA_STEPS_NEEDED: [ONLY if you had to take extra steps not in instructions AND those steps would also be needed by a human following the instructions. Write "None" if not]
+UNEXPECTED_UI: [ONLY if unexpected popups/modals/banners appeared that a human user would also encounter - describe what and whether it blocked progress or was just informational. Write "None" if not]
+BLOCKING_ISSUES: [ONLY if something prevented completion. Write "None" if not]
+CURRENT_STATE: [Brief description of what the screen shows now]
+SCREENSHOT_BEFORE: [filename of before screenshot or SKIPPED]
+SCREENSHOT_AFTER: [filename of after screenshot or SKIPPED]
+```
+
+CRITICAL: Drift means the PRODUCT has changed so the INSTRUCTIONS are wrong for a human following them.
+Do NOT report issues caused by automation tooling limitations (Playwright file access, browser viewport size, download handling).
+Do NOT report your own workarounds for tooling constraints (e.g., using PowerShell instead of browser download).
+Do NOT report viewport/scrolling issues unless the UI has fundamentally reorganized.
+Only report differences that a human user following the written instructions in a normal browser would actually encounter.
+If everything worked as the instructions describe, write "None" for that field.

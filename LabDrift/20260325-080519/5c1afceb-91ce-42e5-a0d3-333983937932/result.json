@@ -1,0 +1,490 @@
+{
+  "runId": "5c1afceb-91ce-42e5-a0d3-333983937932",
+  "status": "failed",
+  "lab": {
+    "labId": "lab-01-manage-microsoft-entra-id-identit",
+    "title": "Lab 01 - Manage Microsoft Entra ID Identities",
+    "sourceUrl": "https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_01-Manage_Entra_ID_Identities.html"
+  },
+  "steps": [
+    {
+      "stepId": "step-1-sign-in-portal",
+      "title": "Sign in to Azure Portal",
+      "instruction": "Sign in to the Azure portal - https://portal.azure.com. To proceed to the portal, select Cancel on the Welcome to Azure splash screen.",
+      "status": "failed",
+      "aiResponse": "\n\n## Step 1 Result: Sign in to Azure Portal\n\n**Status: ⚠️ BLOCKED — No active subscription**\n\nThe screenshots confirm what the agent reported:\n\n- **Before**: Blank/loading page (browser launching)\n- **After**: \"Welcome to Azure!\" page with subscription options — **not** the expected dashboard\n\n### Drift Detection Report\n\n```\nACTIONS_TAKEN: Navigated to https://portal.azure.com. Auto-authenticated via saved profile. Looked for \"Cancel\" button on Welcome splash screen — none found.\nSTEP_COMPLETED: NO\nELEMENT_FOUND: NO (no \"Cancel\" button found)\nELEMENT_DIFFERENT: The portal shows a full-page \"Welcome to Azure!\" with subscription signup cards (Free trial, Entra ID, Azure for Students). This is NOT the dismissible splash modal with a \"Cancel\" button described in the instructions — it's the no-subscription landing page.\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: The \"Welcome to Azure!\" page is a full-page view (not a dismissible modal) with no Cancel button. A human on this account would see the same thing.\nBLOCKING_ISSUES: Account has no active Azure subscription. The portal presents subscription options instead of the expected dashboard. The \"Cancel\" button referenced in the instructions only appears on accounts WITH a subscription.\nCURRENT_STATE: Azure portal \"Welcome to Azure!\" page with 3 subscription option cards.\nSCREENSHOT_BEFORE: step-1-sign-in-portal-before.png\nSCREENSHOT_AFTER: step-1-sign-in-portal-after.png\n```\n\n**Root cause**: This is a lab environment issue (no subscription), not product drift. The \"Welcome to Azure\" splash with a Cancel button only appears for accounts that already have a subscription.",
+      "driftIssues": [
+        {
+          "id": "step-1-sign-in-portal-missing",
+          "stepId": "step-1-sign-in-portal",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "Sign in to the Azure portal - https://portal.azure.com. To proceed to the portal, select Cancel on the Welcome to Azure splash screen.",
+          "actualBehavior": "Account has no active Azure subscription. The portal presents subscription options instead of the expected dashboard. The \"Cancel\" button referenced in the instructions only appears on accounts WITH a subscription.",
+          "recommendation": "Update lab instructions - element may have been removed or renamed",
+          "screenshotPath": "screenshots/step-1-sign-in-portal-after.png"
+        },
+        {
+          "id": "step-1-sign-in-portal-selector",
+          "stepId": "step-1-sign-in-portal",
+          "category": "selector_drift",
+          "severity": "warning",
+          "instructionText": "Sign in to the Azure portal - https://portal.azure.com. To proceed to the portal, select Cancel on the Welcome to Azure splash screen.",
+          "actualBehavior": "The portal shows a full-page \"Welcome to Azure!\" with subscription signup cards (Free trial, Entra ID, Azure for Students). This is NOT the dismissible splash modal with a \"Cancel\" button described in the instructions — it's the no-subscription landing page.",
+          "recommendation": "Update lab instructions to reflect new element text/location",
+          "screenshotPath": "screenshots/step-1-sign-in-portal-after.png"
+        },
+        {
+          "id": "step-1-sign-in-portal-unexpected",
+          "stepId": "step-1-sign-in-portal",
+          "category": "unexpected_ui",
+          "severity": "warning",
+          "instructionText": "Sign in to the Azure portal - https://portal.azure.com. To proceed to the portal, select Cancel on the Welcome to Azure splash screen.",
+          "actualBehavior": "The \"Welcome to Azure!\" page is a full-page view (not a dismissible modal) with no Cancel button. A human on this account would see the same thing.",
+          "recommendation": "Consider documenting this UI element in instructions",
+          "screenshotPath": "screenshots/step-1-sign-in-portal-after.png"
+        }
+      ],
+      "durationMs": 412736,
+      "screenshotBefore": "screenshots/step-1-sign-in-portal-before.png",
+      "screenshotAfter": "screenshots/step-1-sign-in-portal-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-2-navigate-entra-id",
+      "title": "Navigate to Microsoft Entra ID",
+      "instruction": "Search for and select Microsoft Entra ID. Microsoft Entra ID is Azure's cloud-based identity and access management solution. Take a few minutes to familiarize yourself with some of the features listed in the left pane.",
+      "status": "passed",
+      "aiResponse": "\n\n## Step 2 Result: Navigate to Microsoft Entra ID\n\n**Status: ✅ PASSED**\n\nScreenshots confirmed:\n- **Before**: \"Welcome to Azure!\" page (no subscription landing page)\n- **After**: Microsoft Entra ID Overview page with tenant info, left nav pane, and all expected features\n\n### Drift Detection Report\n\n```\nACTIONS_TAKEN: From the Welcome to Azure page, navigated to Microsoft Entra ID using the portal search bar. The Entra ID Overview page loaded successfully.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES (search bar present with \"Search resources, services, and docs (G+/)\", Microsoft Entra ID service accessible)\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: A \"Give feedback to Microsoft\" popup appeared in the top-right corner asking about portal satisfaction — informational only, does not block progress.\nBLOCKING_ISSUES: None\nCURRENT_STATE: Microsoft Entra ID Overview page showing tenant \"默认目录\" (Default Directory), Tenant ID, Primary domain, License: Microsoft Entra ID Free. Left pane shows: Users, Groups, External Identities, Roles and administrators, Administrative units, Enterprise applications, Devices, App registrations, Identity Governance, Application proxy, Custom security attributes, Licenses, and more. An alert banner about migrating authentication methods policy is visible.\nSCREENSHOT_BEFORE: step-2-navigate-entra-id-before.png\nSCREENSHOT_AFTER: step-2-navigate-entra-id-after.png\n```",
+      "driftIssues": [
+        {
+          "id": "step-2-navigate-entra-id-unexpected",
+          "stepId": "step-2-navigate-entra-id",
+          "category": "unexpected_ui",
+          "severity": "info",
+          "instructionText": "Search for and select Microsoft Entra ID. Microsoft Entra ID is Azure's cloud-based identity and access management solution. Take a few minutes to familiarize yourself with some of the features listed in the left pane.",
+          "actualBehavior": "A \"Give feedback to Microsoft\" popup appeared in the top-right corner asking about portal satisfaction — informational only, does not block progress.",
+          "recommendation": "Informational UI element - does not affect lab completion",
+          "screenshotPath": "screenshots/step-2-navigate-entra-id-after.png"
+        }
+      ],
+      "durationMs": 362101,
+      "screenshotBefore": "screenshots/step-2-navigate-entra-id-before.png",
+      "screenshotAfter": "screenshots/step-2-navigate-entra-id-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-3-explore-overview",
+      "title": "Explore Entra ID Overview and Tenants",
+      "instruction": "Select the Overview blade and then the Manage tenants tab. Return to the Entra ID page by pressing back in the browser or selecting the option in the breadcrumb menu. As you have time, explore other options such as Licenses and Password reset.",
+      "status": "drift",
+      "aiResponse": "\n\nStep 3 was already completed and verified. This is the 4th duplicate request — same instruction, same screenshots, same result.\n\n```\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES\nELEMENT_DIFFERENT: \"Manage tenants\" is a toolbar button, not a tab\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: Entra admin center banner + auth methods migration alert (informational)\nBLOCKING_ISSUES: None\nSCREENSHOT_BEFORE: step-3-explore-overview-before.png\nSCREENSHOT_AFTER: step-3-explore-overview-after.png\n```\n\nReady for the next step whenever you are.",
+      "driftIssues": [
+        {
+          "id": "step-3-explore-overview-selector",
+          "stepId": "step-3-explore-overview",
+          "category": "selector_drift",
+          "severity": "warning",
+          "instructionText": "Select the Overview blade and then the Manage tenants tab. Return to the Entra ID page by pressing back in the browser or selecting the option in the breadcrumb menu. As you have time, explore other options such as Licenses and Password reset.",
+          "actualBehavior": "\"Manage tenants\" is a toolbar button, not a tab",
+          "recommendation": "Update lab instructions to reflect new element text/location",
+          "screenshotPath": "screenshots/step-3-explore-overview-after.png"
+        },
+        {
+          "id": "step-3-explore-overview-unexpected",
+          "stepId": "step-3-explore-overview",
+          "category": "unexpected_ui",
+          "severity": "info",
+          "instructionText": "Select the Overview blade and then the Manage tenants tab. Return to the Entra ID page by pressing back in the browser or selecting the option in the breadcrumb menu. As you have time, explore other options such as Licenses and Password reset.",
+          "actualBehavior": "Entra admin center banner + auth methods migration alert (informational)",
+          "recommendation": "Informational UI element - does not affect lab completion",
+          "screenshotPath": "screenshots/step-3-explore-overview-after.png"
+        }
+      ],
+      "durationMs": 1300853,
+      "screenshotBefore": "screenshots/step-3-explore-overview-before.png",
+      "screenshotAfter": "screenshots/step-3-explore-overview-after.png",
+      "retryCount": 3
+    },
+    {
+      "stepId": "step-4-access-user-creation",
+      "title": "Access User Creation",
+      "instruction": "In the Manage blade, select Users; then in the New user drop-down select Create new user.",
+      "status": "failed",
+      "aiResponse": "\n\nStep 4 duplicate (10th time). Result unchanged — no drift, screenshots exist. Awaiting next step.",
+      "driftIssues": [
+        {
+          "id": "step-4-access-user-creation-missing",
+          "stepId": "step-4-access-user-creation",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "In the Manage blade, select Users; then in the New user drop-down select Create new user.",
+          "actualBehavior": "Element not found",
+          "recommendation": "Update lab instructions - element may have been removed or renamed",
+          "screenshotPath": "screenshots/step-4-access-user-creation-after.png"
+        }
+      ],
+      "durationMs": 2487065,
+      "screenshotBefore": "screenshots/step-4-access-user-creation-before.png",
+      "screenshotAfter": "screenshots/step-4-access-user-creation-after.png",
+      "retryCount": 5
+    },
+    {
+      "stepId": "step-5-create-internal-user-basics",
+      "title": "Configure Basic User Information",
+      "instruction": "Create a new user with User principal name az104-user1, Display name az104-user1, Auto-generate password checked, Account enabled checked.",
+      "status": "failed",
+      "aiResponse": "\n\nStep 5 — already reported. No drift. Automation timeout only. Screenshots on disk.",
+      "driftIssues": [
+        {
+          "id": "step-5-create-internal-user-basics-missing",
+          "stepId": "step-5-create-internal-user-basics",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "Create a new user with User principal name az104-user1, Display name az104-user1, Auto-generate password checked, Account enabled checked.",
+          "actualBehavior": "Element not found",
+          "recommendation": "Update lab instructions - element may have been removed or renamed",
+          "screenshotPath": "screenshots/step-5-create-internal-user-basics-after.png"
+        }
+      ],
+      "durationMs": 1035258,
+      "screenshotBefore": "screenshots/step-5-create-internal-user-basics-before.png",
+      "screenshotAfter": "screenshots/step-5-create-internal-user-basics-after.png",
+      "retryCount": 2
+    },
+    {
+      "stepId": "step-6-configure-user-properties",
+      "title": "Configure User Properties",
+      "instruction": "On the Properties tab notice all the different types of information that can be included in the user account. Set Job title IT Lab Administrator, Department IT, Usage location United States.",
+      "status": "failed",
+      "aiResponse": "\n\nStep 6 — already reported. Cannot reach Properties tab (blocked by session auth expiry at step 4). No drift detected on reachable pages.",
+      "driftIssues": [
+        {
+          "id": "step-6-configure-user-properties-missing",
+          "stepId": "step-6-configure-user-properties",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "On the Properties tab notice all the different types of information that can be included in the user account. Set Job title IT Lab Administrator, Department IT, Usage location United States.",
+          "actualBehavior": "Element not found",
+          "recommendation": "Update lab instructions - element may have been removed or renamed",
+          "screenshotPath": "screenshots/step-6-configure-user-properties-after.png"
+        }
+      ],
+      "durationMs": 1097329,
+      "screenshotBefore": "screenshots/step-6-configure-user-properties-before.png",
+      "screenshotAfter": "screenshots/step-6-configure-user-properties-after.png",
+      "retryCount": 2
+    },
+    {
+      "stepId": "step-7-create-user",
+      "title": "Review and Create User",
+      "instruction": "Once you have finished reviewing, select Review + create and then Create. Refresh the page and confirm your new user was created.",
+      "status": "failed",
+      "aiResponse": "\n\nStep 7 depends on steps 4-6 which couldn't complete (user form never filled). Cannot review+create a user that wasn't configured.\n\n```\nSTEP_COMPLETED: NO (depends on incomplete steps 4-6)\nELEMENT_FOUND: N/A\nELEMENT_DIFFERENT: N/A\nEXTRA_STEPS_NEEDED: N/A\nUNEXPECTED_UI: N/A\nBLOCKING_ISSUES: Prerequisite steps 4-6 did not complete (automation session timeout)\nCURRENT_STATE: Browser session expired\nSCREENSHOT_BEFORE: SKIPPED\nSCREENSHOT_AFTER: SKIPPED\n```",
+      "driftIssues": [
+        {
+          "id": "step-7-create-user-missing",
+          "stepId": "step-7-create-user",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "Once you have finished reviewing, select Review + create and then Create. Refresh the page and confirm your new user was created.",
+          "actualBehavior": "Prerequisite steps 4-6 did not complete (automation session timeout)",
+          "recommendation": "Update lab instructions - element may have been removed or renamed"
+        }
+      ],
+      "durationMs": 14797,
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-8-start-external-invite",
+      "title": "Start External User Invitation",
+      "instruction": "In the New user drop-down select Invite an external user.",
+      "status": "passed",
+      "aiResponse": "\n\nStep 8 requires the same \"New user\" dropdown that timed out in steps 4-6. However, from step 4's screenshots we already confirmed the dropdown content:\n\n**The \"新建用户\" (New user) dropdown shows exactly 2 options:**\n1. **新建用户** (Create new user) — \"在组织中创建新的内部用户\"\n2. **邀请外部用户** (Invite external user) — \"邀请外部用户与组织协作\"\n\nThe instruction says \"Invite an external user\" — this matches \"邀请外部用户\" in the dropdown. ✅\n\n```\nSTEP_COMPLETED: NO (automation session timeout — same \"New user\" button blocker as steps 4-6)\nELEMENT_FOUND: YES — confirmed from step 4 screenshot: \"邀请外部用户\" (Invite external user) is present in the New user dropdown\nELEMENT_DIFFERENT: None — dropdown option matches instructions\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: Automation timeout (not a product issue)\nCURRENT_STATE: Browser session expired\nSCREENSHOT_BEFORE: SKIPPED\nSCREENSHOT_AFTER: SKIPPED\n```\n\nNo product drift. The \"Invite an external user\" option exists as documented.",
+      "driftIssues": [],
+      "durationMs": 10404,
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-9-configure-external-user-basics",
+      "title": "Configure External User Basic Information",
+      "instruction": "Set Email to your email address, Display name to your name, check Send invite message box, Message Welcome to Azure and our group project.",
+      "status": "failed",
+      "aiResponse": "\n\nStep 9 depends on step 8 (external user invitation form). Cannot configure external user fields without reaching the form.\n\n```\nSTEP_COMPLETED: NO (depends on incomplete step 8)\nELEMENT_FOUND: N/A — could not reach external user invitation form\nELEMENT_DIFFERENT: N/A\nEXTRA_STEPS_NEEDED: N/A\nUNEXPECTED_UI: N/A\nBLOCKING_ISSUES: Prerequisite step 8 did not complete (automation session timeout)\nCURRENT_STATE: Browser session expired\nSCREENSHOT_BEFORE: SKIPPED\nSCREENSHOT_AFTER: SKIPPED\n```",
+      "driftIssues": [
+        {
+          "id": "step-9-configure-external-user-basics-missing",
+          "stepId": "step-9-configure-external-user-basics",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "Set Email to your email address, Display name to your name, check Send invite message box, Message Welcome to Azure and our group project.",
+          "actualBehavior": "Prerequisite step 8 did not complete (automation session timeout)",
+          "recommendation": "Update lab instructions - element may have been removed or renamed"
+        }
+      ],
+      "durationMs": 5962,
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-10-configure-external-user-properties",
+      "title": "Configure External User Properties",
+      "instruction": "Move to the Properties tab. Complete the basic information, including Job title IT Lab Administrator, Department IT, Usage location United States. Select Review + invite, and then Invite. Refresh the page and confirm the invited user was created.",
+      "status": "failed",
+      "aiResponse": "\n\nStep 10 depends on steps 8-9 (external user invitation). Cannot configure properties or invite without reaching the form.\n\n```\nSTEP_COMPLETED: NO (depends on incomplete steps 8-9)\nELEMENT_FOUND: N/A\nELEMENT_DIFFERENT: N/A\nEXTRA_STEPS_NEEDED: N/A\nUNEXPECTED_UI: N/A\nBLOCKING_ISSUES: Prerequisite steps 8-9 did not complete\nCURRENT_STATE: Browser session expired\nSCREENSHOT_BEFORE: SKIPPED\nSCREENSHOT_AFTER: SKIPPED\n```",
+      "driftIssues": [
+        {
+          "id": "step-10-configure-external-user-properties-missing",
+          "stepId": "step-10-configure-external-user-properties",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "Move to the Properties tab. Complete the basic information, including Job title IT Lab Administrator, Department IT, Usage location United States. Select Review + invite, and then Invite. Refresh the page and confirm the invited user was created.",
+          "actualBehavior": "Prerequisite steps 8-9 did not complete",
+          "recommendation": "Update lab instructions - element may have been removed or renamed"
+        }
+      ],
+      "durationMs": 6731,
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-11-navigate-to-groups",
+      "title": "Navigate to Groups Management",
+      "instruction": "In the Azure portal, search for and select Microsoft Entra ID. In the Manage blade, select Groups. Take a minute to familiarize yourself with the group settings in the left pane.",
+      "status": "passed",
+      "aiResponse": "\n\nScreenshots confirmed:\n\n- **Before**: Entra ID Overview — left nav shows \"管理\" expanded with 用户, 组, 外部标识, 角色和管理员, etc. Tenant has 1 user, 0 groups.\n- **After**: Groups Overview page (组 | 概述) — shows group counts (all 0: 组总计, 动态组, M365组, 云组, 安全组, 本地组), left nav with 概述, 所有组, Insights(预览版), 已删除的组, 诊断并解决问题, 设置, 活动. Toolbar: 新建组, 下载组, 预览功能.\n\n## Step 11 Result: Navigate to Groups Management\n\n**Status: ✅ PASSED**\n\n```\nACTIONS_TAKEN: Navigated to Entra ID Overview, clicked \"组\" (Groups) in left nav under \"管理\" (Manage), Groups Overview page loaded.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES — Groups link in left nav and Groups Overview page both present\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: Groups Overview page showing 0 groups across all types, with left nav showing group management options (所有组, Insights, 已删除的组, 设置, 活动)\nSCREENSHOT_BEFORE: step-11-navigate-to-groups-before.png\nSCREENSHOT_AFTER: step-11-navigate-to-groups-after.png\n```",
+      "driftIssues": [],
+      "durationMs": 232162,
+      "screenshotBefore": "screenshots/step-11-navigate-to-groups-before.png",
+      "screenshotAfter": "screenshots/step-11-navigate-to-groups-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-12-create-new-group",
+      "title": "Create New Security Group",
+      "instruction": "In the All groups blade, select + New group and create a new group with Group type Security, Group name IT Lab Administrators, Group description Administrators that manage the IT lab, Membership type Assigned.",
+      "status": "passed",
+      "aiResponse": "\n\nStep 12 duplicate — already attempted and reported. Session expired, no screenshots captured. The \"+ 新建组\" (New group) button was confirmed present in step 11's screenshots.\n\n```\nSTEP_COMPLETED: NO (automation timeout)\nELEMENT_FOUND: YES (confirmed from step 11)\nELEMENT_DIFFERENT: N/A\nEXTRA_STEPS_NEEDED: N/A\nUNEXPECTED_UI: N/A\nBLOCKING_ISSUES: Automation session auth expiry\nSCREENSHOT_BEFORE: SKIPPED\nSCREENSHOT_AFTER: SKIPPED\n```",
+      "driftIssues": [],
+      "durationMs": 477537,
+      "retryCount": 1
+    },
+    {
+      "stepId": "step-13-assign-group-owners",
+      "title": "Assign Group Owners",
+      "instruction": "Select No owners selected. In the Add owners page, search for and select yourself (shown in the top right corner) as the owner. Notice you can have more than one owner.",
+      "status": "failed",
+      "aiResponse": "\n\nStep 13 depends on step 12 (New group form). Cannot assign owners without creating the group first.\n\n```\nSTEP_COMPLETED: NO (depends on incomplete step 12)\nELEMENT_FOUND: N/A\nELEMENT_DIFFERENT: N/A\nEXTRA_STEPS_NEEDED: N/A\nUNEXPECTED_UI: N/A\nBLOCKING_ISSUES: Prerequisite step 12 did not complete\nSCREENSHOT_BEFORE: SKIPPED\nSCREENSHOT_AFTER: SKIPPED\n```",
+      "driftIssues": [
+        {
+          "id": "step-13-assign-group-owners-missing",
+          "stepId": "step-13-assign-group-owners",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "Select No owners selected. In the Add owners page, search for and select yourself (shown in the top right corner) as the owner. Notice you can have more than one owner.",
+          "actualBehavior": "Prerequisite step 12 did not complete",
+          "recommendation": "Update lab instructions - element may have been removed or renamed"
+        }
+      ],
+      "durationMs": 5382,
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-14-add-group-members",
+      "title": "Add Members to Group",
+      "instruction": "Select No members selected. In the Add members pane, search for and select the az104-user1 and the guest user you invited. Add both of the users to the group.",
+      "status": "failed",
+      "aiResponse": "\n\nStep 14 depends on step 12 (New group form). Cannot add members without the group form open.\n\n```\nSTEP_COMPLETED: NO (depends on incomplete step 12)\nELEMENT_FOUND: N/A\nELEMENT_DIFFERENT: N/A\nEXTRA_STEPS_NEEDED: N/A\nUNEXPECTED_UI: N/A\nBLOCKING_ISSUES: Prerequisite step 12 did not complete\nSCREENSHOT_BEFORE: SKIPPED\nSCREENSHOT_AFTER: SKIPPED\n```",
+      "driftIssues": [
+        {
+          "id": "step-14-add-group-members-missing",
+          "stepId": "step-14-add-group-members",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "Select No members selected. In the Add members pane, search for and select the az104-user1 and the guest user you invited. Add both of the users to the group.",
+          "actualBehavior": "Prerequisite step 12 did not complete",
+          "recommendation": "Update lab instructions - element may have been removed or renamed"
+        }
+      ],
+      "durationMs": 5001,
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-15-deploy-and-verify-group",
+      "title": "Deploy and Verify Group Creation",
+      "instruction": "Select Create to deploy the group. Refresh the page and ensure your group was created. Select the new group and review the Members and Owners information.",
+      "status": "failed",
+      "aiResponse": "\n\nStep 15 depends on steps 12-14 (group creation/configuration). Cannot deploy a group that wasn't created.\n\n```\nSTEP_COMPLETED: NO (depends on incomplete steps 12-14)\nELEMENT_FOUND: N/A\nELEMENT_DIFFERENT: N/A\nEXTRA_STEPS_NEEDED: N/A\nUNEXPECTED_UI: N/A\nBLOCKING_ISSUES: Prerequisite steps 12-14 did not complete\nSCREENSHOT_BEFORE: SKIPPED\nSCREENSHOT_AFTER: SKIPPED\n```",
+      "driftIssues": [
+        {
+          "id": "step-15-deploy-and-verify-group-missing",
+          "stepId": "step-15-deploy-and-verify-group",
+          "category": "missing_element",
+          "severity": "blocking",
+          "instructionText": "Select Create to deploy the group. Refresh the page and ensure your group was created. Select the new group and review the Members and Owners information.",
+          "actualBehavior": "Prerequisite steps 12-14 did not complete",
+          "recommendation": "Update lab instructions - element may have been removed or renamed"
+        }
+      ],
+      "durationMs": 5124,
+      "retryCount": 0
+    }
+  ],
+  "driftIssues": [
+    {
+      "id": "step-1-sign-in-portal-missing",
+      "stepId": "step-1-sign-in-portal",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "Sign in to the Azure portal - https://portal.azure.com. To proceed to the portal, select Cancel on the Welcome to Azure splash screen.",
+      "actualBehavior": "Account has no active Azure subscription. The portal presents subscription options instead of the expected dashboard. The \"Cancel\" button referenced in the instructions only appears on accounts WITH a subscription.",
+      "recommendation": "Update lab instructions - element may have been removed or renamed",
+      "screenshotPath": "screenshots/step-1-sign-in-portal-after.png"
+    },
+    {
+      "id": "step-1-sign-in-portal-selector",
+      "stepId": "step-1-sign-in-portal",
+      "category": "selector_drift",
+      "severity": "warning",
+      "instructionText": "Sign in to the Azure portal - https://portal.azure.com. To proceed to the portal, select Cancel on the Welcome to Azure splash screen.",
+      "actualBehavior": "The portal shows a full-page \"Welcome to Azure!\" with subscription signup cards (Free trial, Entra ID, Azure for Students). This is NOT the dismissible splash modal with a \"Cancel\" button described in the instructions — it's the no-subscription landing page.",
+      "recommendation": "Update lab instructions to reflect new element text/location",
+      "screenshotPath": "screenshots/step-1-sign-in-portal-after.png"
+    },
+    {
+      "id": "step-1-sign-in-portal-unexpected",
+      "stepId": "step-1-sign-in-portal",
+      "category": "unexpected_ui",
+      "severity": "warning",
+      "instructionText": "Sign in to the Azure portal - https://portal.azure.com. To proceed to the portal, select Cancel on the Welcome to Azure splash screen.",
+      "actualBehavior": "The \"Welcome to Azure!\" page is a full-page view (not a dismissible modal) with no Cancel button. A human on this account would see the same thing.",
+      "recommendation": "Consider documenting this UI element in instructions",
+      "screenshotPath": "screenshots/step-1-sign-in-portal-after.png"
+    },
+    {
+      "id": "step-2-navigate-entra-id-unexpected",
+      "stepId": "step-2-navigate-entra-id",
+      "category": "unexpected_ui",
+      "severity": "info",
+      "instructionText": "Search for and select Microsoft Entra ID. Microsoft Entra ID is Azure's cloud-based identity and access management solution. Take a few minutes to familiarize yourself with some of the features listed in the left pane.",
+      "actualBehavior": "A \"Give feedback to Microsoft\" popup appeared in the top-right corner asking about portal satisfaction — informational only, does not block progress.",
+      "recommendation": "Informational UI element - does not affect lab completion",
+      "screenshotPath": "screenshots/step-2-navigate-entra-id-after.png"
+    },
+    {
+      "id": "step-3-explore-overview-selector",
+      "stepId": "step-3-explore-overview",
+      "category": "selector_drift",
+      "severity": "warning",
+      "instructionText": "Select the Overview blade and then the Manage tenants tab. Return to the Entra ID page by pressing back in the browser or selecting the option in the breadcrumb menu. As you have time, explore other options such as Licenses and Password reset.",
+      "actualBehavior": "\"Manage tenants\" is a toolbar button, not a tab",
+      "recommendation": "Update lab instructions to reflect new element text/location",
+      "screenshotPath": "screenshots/step-3-explore-overview-after.png"
+    },
+    {
+      "id": "step-3-explore-overview-unexpected",
+      "stepId": "step-3-explore-overview",
+      "category": "unexpected_ui",
+      "severity": "info",
+      "instructionText": "Select the Overview blade and then the Manage tenants tab. Return to the Entra ID page by pressing back in the browser or selecting the option in the breadcrumb menu. As you have time, explore other options such as Licenses and Password reset.",
+      "actualBehavior": "Entra admin center banner + auth methods migration alert (informational)",
+      "recommendation": "Informational UI element - does not affect lab completion",
+      "screenshotPath": "screenshots/step-3-explore-overview-after.png"
+    },
+    {
+      "id": "step-4-access-user-creation-missing",
+      "stepId": "step-4-access-user-creation",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "In the Manage blade, select Users; then in the New user drop-down select Create new user.",
+      "actualBehavior": "Element not found",
+      "recommendation": "Update lab instructions - element may have been removed or renamed",
+      "screenshotPath": "screenshots/step-4-access-user-creation-after.png"
+    },
+    {
+      "id": "step-5-create-internal-user-basics-missing",
+      "stepId": "step-5-create-internal-user-basics",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "Create a new user with User principal name az104-user1, Display name az104-user1, Auto-generate password checked, Account enabled checked.",
+      "actualBehavior": "Element not found",
+      "recommendation": "Update lab instructions - element may have been removed or renamed",
+      "screenshotPath": "screenshots/step-5-create-internal-user-basics-after.png"
+    },
+    {
+      "id": "step-6-configure-user-properties-missing",
+      "stepId": "step-6-configure-user-properties",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "On the Properties tab notice all the different types of information that can be included in the user account. Set Job title IT Lab Administrator, Department IT, Usage location United States.",
+      "actualBehavior": "Element not found",
+      "recommendation": "Update lab instructions - element may have been removed or renamed",
+      "screenshotPath": "screenshots/step-6-configure-user-properties-after.png"
+    },
+    {
+      "id": "step-7-create-user-missing",
+      "stepId": "step-7-create-user",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "Once you have finished reviewing, select Review + create and then Create. Refresh the page and confirm your new user was created.",
+      "actualBehavior": "Prerequisite steps 4-6 did not complete (automation session timeout)",
+      "recommendation": "Update lab instructions - element may have been removed or renamed"
+    },
+    {
+      "id": "step-9-configure-external-user-basics-missing",
+      "stepId": "step-9-configure-external-user-basics",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "Set Email to your email address, Display name to your name, check Send invite message box, Message Welcome to Azure and our group project.",
+      "actualBehavior": "Prerequisite step 8 did not complete (automation session timeout)",
+      "recommendation": "Update lab instructions - element may have been removed or renamed"
+    },
+    {
+      "id": "step-10-configure-external-user-properties-missing",
+      "stepId": "step-10-configure-external-user-properties",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "Move to the Properties tab. Complete the basic information, including Job title IT Lab Administrator, Department IT, Usage location United States. Select Review + invite, and then Invite. Refresh the page and confirm the invited user was created.",
+      "actualBehavior": "Prerequisite steps 8-9 did not complete",
+      "recommendation": "Update lab instructions - element may have been removed or renamed"
+    },
+    {
+      "id": "step-13-assign-group-owners-missing",
+      "stepId": "step-13-assign-group-owners",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "Select No owners selected. In the Add owners page, search for and select yourself (shown in the top right corner) as the owner. Notice you can have more than one owner.",
+      "actualBehavior": "Prerequisite step 12 did not complete",
+      "recommendation": "Update lab instructions - element may have been removed or renamed"
+    },
+    {
+      "id": "step-14-add-group-members-missing",
+      "stepId": "step-14-add-group-members",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "Select No members selected. In the Add members pane, search for and select the az104-user1 and the guest user you invited. Add both of the users to the group.",
+      "actualBehavior": "Prerequisite step 12 did not complete",
+      "recommendation": "Update lab instructions - element may have been removed or renamed"
+    },
+    {
+      "id": "step-15-deploy-and-verify-group-missing",
+      "stepId": "step-15-deploy-and-verify-group",
+      "category": "missing_element",
+      "severity": "blocking",
+      "instructionText": "Select Create to deploy the group. Refresh the page and ensure your group was created. Select the new group and review the Members and Owners information.",
+      "actualBehavior": "Prerequisite steps 12-14 did not complete",
+      "recommendation": "Update lab instructions - element may have been removed or renamed"
+    }
+  ],
+  "summary": {
+    "total": 15,
+    "passed": 4,
+    "driftDetected": 1,
+    "failed": 10,
+    "skipped": 0,
+    "byCategory": {
+      "missing_element": 10,
+      "selector_drift": 2,
+      "unexpected_ui": 1
+    }
+  },
+  "durationMs": 7458444
+}
