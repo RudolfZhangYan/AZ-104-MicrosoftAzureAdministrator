@@ -1,0 +1,18 @@
+The AFTER screenshot confirms all 3 users are visible:
+
+1. **az104-user1** — 成员 (Member)
+2. **Lab Test User** — 来宾 (Guest) 
+3. **Zhang Rudolf** — 成员 (Member)
+
+```
+ACTIONS_TAKEN: Navigated to All Users page. Clicked "刷新" (Refresh) button in the command bar. After refresh, the user list updated from 2 to 3 users, now showing the invited guest user "Lab Test User".
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: The info banner "Azure Active Directory 现在是 Microsoft Entra ID" (Azure Active Directory is now Microsoft Entra ID) persists on the Users page. Informational only, does not block progress.
+BLOCKING_ISSUES: None
+CURRENT_STATE: All Users page showing 3 users: az104-user1 (Member), Lab Test User (Guest), Zhang Rudolf (Member). "找到了 3 个用户" displayed.
+SCREENSHOT_BEFORE: step-5-verify-users-before.png
+SCREENSHOT_AFTER: step-5-verify-users-after.png
+```

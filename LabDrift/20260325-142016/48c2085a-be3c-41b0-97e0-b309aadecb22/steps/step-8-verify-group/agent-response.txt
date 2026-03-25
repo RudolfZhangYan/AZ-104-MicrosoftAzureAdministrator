@@ -1,0 +1,25 @@
+Both screenshots confirm the group is fully configured:
+
+**Members page** (step-8-members.png) — "找到 3 个组成员" (3 members found):
+1. AAD Request Verification Service - PROD (服务主体/Service Principal)
+2. az104-user1 (用户/User, 成员/Member) ✓
+3. Lab Test User (用户/User, 来宾/Guest) ✓
+
+**Owners page** (step-8-verify-group-after.png) — "找到 2 组所有者" (2 owners found):
+1. az104-user1 (用户/User, 成员/Member)
+2. Zhang Rudolf (用户/User, 成员/Member) ✓
+
+Interesting: there are 2 owners (az104-user1 was also added as owner) and an AAD service principal is an automatic member.
+
+```
+ACTIONS_TAKEN: Navigated to All Groups, clicked Refresh. Group "IT Lab Administrators" confirmed in list. Clicked into the group, navigated to Members blade — found 3 members: AAD Request Verification Service - PROD (service principal, auto-added), az104-user1 (user, member type), Lab Test User (user, guest type). Navigated to Owners blade — found 2 owners: az104-user1 and Zhang Rudolf.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: An automatic service principal "AAD Request Verification Service - PROD" appears as a group member that was not manually added. This is auto-added by Azure and a human user would also see it. The Owners list shows 2 owners (az104-user1 was also added as owner in addition to Zhang Rudolf) — this may differ from the instructions which only mention adding yourself as owner.
+BLOCKING_ISSUES: None
+CURRENT_STATE: IT Lab Administrators | Owners page showing 2 owners (az104-user1, Zhang Rudolf). Left nav shows: 概述, 诊断并解决问题, 管理 section with 属性, 成员, 所有者, 角色和管理员, 管理单元, 组成员身份, 应用程序, 许可证.
+SCREENSHOT_BEFORE: step-8-verify-group-before.png
+SCREENSHOT_AFTER: step-8-verify-group-after.png
+```

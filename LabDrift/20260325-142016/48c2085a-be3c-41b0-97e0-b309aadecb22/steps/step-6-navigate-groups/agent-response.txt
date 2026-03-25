@@ -1,0 +1,20 @@
+The screenshot confirms the Groups page loaded successfully. I can see:
+
+- **Title**: 组 | 所有组 (Groups | All Groups)
+- **Left nav**: 概述, 所有组, Insights (预览版), 已删除的组, 诊断并解决问题, 设置, 活动, 疑难解答和支持
+- **Command bar**: 新建组, 下载组, 刷新, 管理视图, 删除, 提供反馈?
+- **Content**: 找到了 0 个组 (Found 0 groups) — "无结果" (No results)
+- **Info banner**: Promoting Microsoft Entra admin center
+
+```
+ACTIONS_TAKEN: Navigated to Microsoft Entra ID, then to Groups (组) section via direct URL navigation to GroupsManagementMenuBlade/AllGroups. The Groups | All Groups page loaded showing the group list (currently empty with 0 groups) and the left navigation with group management options.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: An informational banner appears at the top promoting the new Microsoft Entra admin center: "Microsoft Entra 是有更简单的集成体验，用于管理所有身份和访问管理需求。试用新的 Microsoft Entra 管理中心!" This is informational and does not block progress.
+BLOCKING_ISSUES: None
+CURRENT_STATE: Groups | All Groups page displayed with 0 groups. Left nav shows: 概述 (Overview), 所有组 (All groups), Insights (预览版/Preview), 已删除的组 (Deleted groups), 诊断并解决问题 (Diagnose and solve problems), 设置 (Settings), 活动 (Activity), 疑难解答和支持 (Troubleshooting and support).
+SCREENSHOT_BEFORE: step-6-navigate-groups-before.png
+SCREENSHOT_AFTER: step-6-navigate-groups-after.png
+```

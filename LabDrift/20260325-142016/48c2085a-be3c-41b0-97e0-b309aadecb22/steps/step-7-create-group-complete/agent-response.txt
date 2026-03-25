@@ -1,0 +1,16 @@
+
+
+Step 7 is complete. The group was created and verified.
+
+```
+ACTIONS_TAKEN: Created "IT Lab Administrators" security group with Assigned membership type. Added Zhang Rudolf as owner. Added az104-user1 and Lab Test User (guest) as members. Clicked Create.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: All Groups page showing 1 group: IT Lab Administrators (Security, Assigned, 2 members, 1 owner).
+SCREENSHOT_BEFORE: step-7-create-group-complete-before.png
+SCREENSHOT_AFTER: step-7-create-group-complete-after.png
+```

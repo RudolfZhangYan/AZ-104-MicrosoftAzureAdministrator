@@ -1,0 +1,16 @@
+
+
+This step was already completed and verified. The invite was sent successfully with all fields filled correctly. Here's the report:
+
+```
+ACTIONS_TAKEN: Navigated to InviteUser.ReactView. Filled Email (labuser-test@outlook.com), Display name (Lab Test User), verified Send invite message checkbox (already checked by default), filled Message ("Welcome to Azure and our group project"). Navigated to Properties tab via "下一步: 属性" button. Filled Job title (IT Lab Administrator), Department (IT), Usage location (美国/United States via combobox). Clicked "审阅 + 邀请" tab — review confirmed all values. Clicked "邀请" button to send invitation.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES
+ELEMENT_DIFFERENT: The form wizard includes an "Assignments" tab (分配) between Properties and Review+invite that is not mentioned in the lab instructions. The form also has additional optional fields not in instructions: "CC Recipients" (抄送收件人) and "Invite Redirect URL" (邀请重定向 URL), both pre-populated with defaults.
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: Informational banner on Basics tab: "Starting December 2025, B2B invitation emails will be sent from your organization's primary domain instead of Microsoft.com." Does not block progress.
+BLOCKING_ISSUES: None
+CURRENT_STATE: All Users list page showing existing users.
+SCREENSHOT_BEFORE: step-4-invite-external-user-before.png
+SCREENSHOT_AFTER: step-4-invite-external-user-after.png
+```

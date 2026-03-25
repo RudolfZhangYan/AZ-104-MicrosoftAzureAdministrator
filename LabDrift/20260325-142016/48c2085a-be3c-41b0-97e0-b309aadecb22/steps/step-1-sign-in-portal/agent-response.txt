@@ -1,0 +1,14 @@
+Step completed. The Azure portal loaded and user is signed in (RudolfZhang@outloo...). The portal is in Chinese and shows a "Welcome to Azure" page (欢迎使用 Azure!) with subscription options — no "Cancel" splash screen appeared.
+
+```
+ACTIONS_TAKEN: Navigated to https://portal.azure.com using Edge with saved auth profile. Browser auto-authenticated and landed on portal home page. Looked for Cancel button on a welcome splash screen but none appeared.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: NO (no "Cancel" button on a welcome splash screen — the welcome tour/splash overlay did not appear)
+ELEMENT_DIFFERENT: The instructions describe a "Welcome to Azure splash screen" with a Cancel button (a guided tour overlay). Instead, the portal loaded directly to the home page showing "欢迎使用 Azure!" with subscription setup options. No dismissible splash/tour overlay appeared. This is likely because the welcome tour does not appear for returning users who have previously dismissed it — a human following these instructions for the second time would see the same behavior.
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: Azure portal home page displayed (portal.azure.com/#home). User is signed in. Page shows "Welcome to Azure" heading with three cards: Azure free trial, Manage Microsoft Entra ID, and Azure for Students. Portal UI is in Chinese.
+SCREENSHOT_BEFORE: step-1-sign-in-portal-before.png
+SCREENSHOT_AFTER: step-1-sign-in-portal-after.png
+```
