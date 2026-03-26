@@ -1,0 +1,14 @@
+Step completed successfully. The lab instructions describe "Manage tenants" as a **tab** but in the current Azure portal UI, it's a **command bar button** (toolbar button at the top). However, functionally it works the same way — a human following the instructions would find and click it without difficulty since it's prominently labeled "管理租户" / "Manage tenants" in the command bar.
+
+```
+ACTIONS_TAKEN: Navigated to Entra ID Overview page. Confirmed already on Overview blade. Clicked "管理租户" (Manage tenants) button in the command bar (found inside a React sandbox iframe). This opened the Manage tenants page (DirectorySwitchBlade) showing the tenant list. Then used browser back to return to the Entra ID Overview page.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES (both "Manage tenants" button and Overview blade were found)
+ELEMENT_DIFFERENT: The instructions describe "Manage tenants" as a "tab" but it is actually a command bar button in the toolbar at the top of the Overview blade (alongside "添加/Add", "新增功能/What's new", "预览功能/Preview features", "提供反馈/Provide feedback"). It functions the same way — clicking it opens the tenant management view — but it is not a tab within the content area. A human would still find it easily.
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: Back on Microsoft Entra ID Overview page (默认目录 | 概述) showing tenant info, basic info (Name, Tenant ID, Primary domain, License), alerts section, and left navigation pane.
+SCREENSHOT_BEFORE: step-3-explore-tenants-before.png
+SCREENSHOT_AFTER: step-3-explore-tenants-after.png
+```

@@ -1,0 +1,18 @@
+All screenshots confirm success:
+
+- **BASICS**: UPN = `az104-user1` @ RudolfZhangoutlook.on..., 邮件别名 (Mail nickname) = `az104-user1` (auto-derived ✓), 显示名称 (Display name) = `az104-user1`, 自动生成密码 (Auto-generate password) ✓, 已启用帐户 (Account enabled) ✓
+- **REVIEW**: Clean review with no validation errors. Shows UPN = `az104-user1@RudolfZhangoutlook.onmicrosoft.com`, 职务 (Job title) = `IT Lab Administrator`, 部门 (Department) = `IT`, 使用位置 (Usage location) = `美国` (United States)
+- **AFTER**: Portal redirected to home page (`#home`) — this confirms the user was created successfully (the form dismissed and navigated away). A notification badge (1) appeared in the top bar, likely a success notification.
+
+```
+ACTIONS_TAKEN: Navigated to Create User form. On Basics tab: filled User principal name with "az104-user1" (the UPN field is split into local part + domain dropdown), confirmed Mail nickname auto-derived as "az104-user1", filled Display name with "az104-user1", verified Auto-generate password was checked, verified Account enabled was checked. Clicked Properties tab. Filled Job title with "IT Lab Administrator", Department with "IT", and Usage location with "United States" (美国) via combobox dropdown. Clicked Review + create tab — review showed all values correctly with no validation errors. Clicked Create button. Portal redirected to home page confirming successful creation.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES (all form fields, tabs, and buttons found)
+ELEMENT_DIFFERENT: The "User principal name" field is split into two parts: a text input for the local part (labeled "用户主体名称的本地部分") and a domain dropdown (labeled "用户主题名称的域名") pre-filled with "RudolfZhangoutlook.onmicrosoft.com". The instructions simply say "User principal name: az104-user1" but a human would naturally type "az104-user1" in the local part field. This split UPN design matches current Azure portal behavior and would not confuse a human user.
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: Azure portal home page displayed after successful user creation. A notification badge (1) visible in the top bar indicating the user creation notification.
+SCREENSHOT_BEFORE: step-5-create-user-az104-before.png
+SCREENSHOT_AFTER: step-5-create-user-az104-after.png
+```

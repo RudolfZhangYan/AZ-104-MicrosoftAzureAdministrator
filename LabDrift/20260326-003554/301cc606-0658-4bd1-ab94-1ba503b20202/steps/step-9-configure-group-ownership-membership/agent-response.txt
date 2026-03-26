@@ -1,0 +1,18 @@
+All screenshots confirm success:
+
+- **BEFORE**: New group form with all fields filled (组类型=安全组, 组名=IT Lab Administrators, 组描述=Administrators that manage the IT lab, 成员身份类型=已分配), owners and members both showing "未选择" (none selected)
+- **PRE-CREATE**: Same form now showing "已选择 1 个所有者" (1 owner selected — Zhang Rudolf) and "选择了 2 个成员" (2 members selected — az104-user1 and Lab External User), 创建 button active
+- **AFTER**: Portal redirected to home page (`#home`) with notification badge (1) — confirms group was successfully created
+
+```
+ACTIONS_TAKEN: From the new group form (already filled from step 8), clicked "未选择所有者" (No owners selected) to open the owner picker panel "添加所有者". Searched for "Zhang" in the picker search box, found and checked Zhang Rudolf (RudolfZhang@outlook.com) as owner, clicked "选择" (Select) to confirm. Then clicked "未选择任何成员" (No members selected) to open member picker panel "添加成员". Searched "az104" and checked az104-user1, then searched "Lab External" and checked Lab External User (guest), clicked "选择" to confirm both members. Clicked "创建" (Create) button at bottom-left. Group was created and portal redirected to home page with a success notification.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES (owner picker, member picker, search boxes, user checkboxes, Select buttons, and Create button all found)
+ELEMENT_DIFFERENT: The owner/member picker panels are titled "添加所有者" (Add owners) and "添加成员" (Add members). They use a search box with a checkbox-based user list showing Name (名称) and User Principal Name (用户主体名称) columns. The picker has a "选择" (Select) button at the bottom to confirm. This matches the expected "No owners selected" / "No members selected" workflow described in the instructions — the links are labeled "未选择所有者" and "未选择任何成员" respectively.
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: Azure portal home page displayed after successful group creation. Notification badge (1) visible confirming the group was created.
+SCREENSHOT_BEFORE: step-9-configure-group-ownership-membership-before.png
+SCREENSHOT_AFTER: step-9-configure-group-ownership-membership-after.png
+```

@@ -1,0 +1,18 @@
+Step completed successfully. The screenshots confirm the full flow:
+
+- **BEFORE**: Entra ID Overview page with "用户" (Users) visible in left nav under "管理" (Manage)
+- **MID/DROPDOWN**: Users list page with "新建用户" dropdown open showing two options: "新建用户 - 在组织中创建新的内部用户" and "邀请外部用户"
+- **AFTER**: "新建用户" (Create new user) form displayed with tabs: 基本信息 (Basics), 属性 (Properties), 分配 (Assignments), 审阅+创建 (Review + create). Form fields visible: 用户主体名称 (User principal name), 邮件别名 (Mail nickname), 显示名称 (Display name), 密码 (Password), 已启用帐户 (Account enabled).
+
+```
+ACTIONS_TAKEN: From Entra ID Overview, clicked "用户" (Users) in the left Manage blade which navigated to the Users list page. Clicked the "新建用户" (New user) dropdown button in the command bar, which opened a two-option menu. Selected "新建用户 - 在组织中创建新的内部用户" (New user - Create new internal user in organization) from the dropdown. The Create new user form loaded.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES (Users link, New user dropdown, and Create new user menu item all found)
+ELEMENT_DIFFERENT: The instructions say "New user drop-down" with option "Create new user". In the current UI, the dropdown button is labeled "新建用户" (New user) and the dropdown option is also labeled "新建用户" with a subtitle "在组织中创建新的内部用户" (Create new internal user in organization) — not "Create new user" as a separate label. The second option is "邀请外部用户" (Invite external user). The naming is slightly different but a human would have no trouble identifying the correct option.
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: Create new user form (新建用户) is displayed on the "基本信息" (Basics) tab with fields: User principal name, Mail nickname (auto-derived checkbox checked), Display name, Password (auto-generate checked), Account enabled (checked). Bottom navigation shows "审阅+创建" (Review + create), "上一步" (Previous), and "下一步: 属性" (Next: Properties).
+SCREENSHOT_BEFORE: step-4-navigate-users-before.png
+SCREENSHOT_AFTER: step-4-navigate-users-after.png
+```

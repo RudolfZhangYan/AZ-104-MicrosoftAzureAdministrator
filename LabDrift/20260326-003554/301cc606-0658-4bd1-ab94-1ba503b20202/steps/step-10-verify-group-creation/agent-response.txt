@@ -1,0 +1,20 @@
+All three screenshots perfectly confirm the group was created and verified:
+
+- **After Refresh** (All Groups): "IT Lab Administrators" group visible — 组类型 = 安全性 (Security), 成员身份类型 = 已分配 (Assigned), Object ID shown. Info banner: "Microsoft Entra 具有更简单的集成体验...试用新的 Microsoft Entra 管理中心!" (Try the new Microsoft Entra admin center).
+- **Members**: "找到 2 个组成员" (Found 2 group members) — **az104-user1** (用户/User, 成员/Member) and **Lab External User** (用户/User, labuser-external@outlook.com, 来宾/Guest).
+- **Owners**: "找到 1 个组所有者" (Found 1 group owner) — **Zhang Rudolf** (用户/User, 成员/Member).
+
+Left nav shows: 概述, 诊断并解决问题, 管理 section with 属性, 成员, 所有者, 角色和管理员, 管理单元, 组成员身份, 应用程序, 许可证, Azure 角色分配, 活动, 疑难解答和支持.
+
+```
+ACTIONS_TAKEN: Navigated to All Groups page, refreshed the page. The "IT Lab Administrators" group appeared in the list (found 1 group) with type "安全性" (Security) and membership type "已分配" (Assigned). Clicked the group to open its details. Clicked "成员" (Members) in the left nav — confirmed 2 members: az104-user1 (member type) and Lab External User (guest type, labuser-external@outlook.com). Clicked "所有者" (Owners) in the left nav — confirmed 1 owner: Zhang Rudolf.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES (group in list, Members nav, Owners nav — all found)
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: An informational banner on the All Groups page: "Microsoft Entra 具有更简单的集成体验，用于管理所有身份和访问管理需求。试用新的 Microsoft Entra 管理中心!" (Microsoft Entra has a simpler integrated experience... Try the new Microsoft Entra admin center!). This is informational only and does not block progress.
+BLOCKING_ISSUES: None
+CURRENT_STATE: IT Lab Administrators group Owners page showing 1 owner (Zhang Rudolf). Left nav displays full group management options: 概述 (Overview), 属性 (Properties), 成员 (Members), 所有者 (Owners), 角色和管理员 (Roles and administrators), 管理单元 (Administrative units), 组成员身份 (Group memberships), 应用程序 (Applications), 许可证 (Licenses), Azure 角色分配 (Azure role assignments).
+SCREENSHOT_BEFORE: step-10-verify-group-creation-before.png
+SCREENSHOT_AFTER: step-10-verify-group-creation-after.png
+```

@@ -1,0 +1,332 @@
+{
+  "runId": "301cc606-0658-4bd1-ab94-1ba503b20202",
+  "status": "drift_detected",
+  "lab": {
+    "labId": "lab-01-manage-microsoft-entra-id-identit",
+    "title": "Lab 01 - Manage Microsoft Entra ID Identities",
+    "sourceUrl": "https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_01-Manage_Entra_ID_Identities.html"
+  },
+  "steps": [
+    {
+      "stepId": "step-1-sign-in-portal",
+      "title": "Sign in to Azure Portal",
+      "instruction": "Sign in to the Azure portal at https://portal.azure.com. Select Cancel on the Welcome to Azure splash screen to proceed to the portal.",
+      "status": "drift",
+      "aiResponse": "Step completed. The screenshots confirm:\n\n- **BEFORE**: Azure loading splash screen (Azure \"A\" logo with Microsoft branding)\n- **AFTER**: Portal loaded to `#home` showing \"欢迎使用 Azure!\" (Welcome to Azure) page — but this is **not** the \"Welcome splash screen\" dialog with a Cancel button. This is the portal home page showing subscription options (the account has no subscription).\n\nThe \"Welcome to Azure\" splash screen with a **Cancel** button did **not** appear. Instead, the portal went directly to the home page. This is likely because the splash was either already dismissed in a prior session (cookie/profile remembered) or the portal no longer shows it for returning users.\n\n```\nACTIONS_TAKEN: Launched Edge with saved azure-portal auth profile, navigated to https://portal.azure.com. Auto-login succeeded via saved session. Searched for Cancel/Dismiss button on splash screen — none appeared. Portal loaded directly to home page.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: NO (the \"Cancel\" button on a \"Welcome to Azure\" splash screen was not present)\nELEMENT_DIFFERENT: The \"Welcome to Azure\" splash screen with a Cancel button did not appear. The portal loaded directly to the home page showing \"欢迎使用 Azure!\" with subscription options. This is likely normal behavior for returning users whose profile already dismissed the splash — a human following these instructions would also not see the Cancel button if previously dismissed.\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: Azure portal home page (#home) is loaded and accessible. Shows \"欢迎使用 Azure!\" (Welcome to Azure) with options for free trial, Entra ID management, and student Azure. User is signed in as RudolfZhang@outloo...\nSCREENSHOT_BEFORE: step-1-sign-in-portal-before.png\nSCREENSHOT_AFTER: step-1-sign-in-portal-after.png\n```",
+      "driftIssues": [
+        {
+          "id": "step-1-sign-in-portal-selector",
+          "stepId": "step-1-sign-in-portal",
+          "category": "selector_drift",
+          "severity": "warning",
+          "instructionText": "Sign in to the Azure portal at https://portal.azure.com. Select Cancel on the Welcome to Azure splash screen to proceed to the portal.",
+          "actualBehavior": "The \"Welcome to Azure\" splash screen with a Cancel button did not appear. The portal loaded directly to the home page showing \"欢迎使用 Azure!\" with subscription options. This is likely normal behavior for returning users whose profile already dismissed the splash — a human following these instructions would also not see the Cancel button if previously dismissed.",
+          "recommendation": "Update lab instructions to reflect new element text/location",
+          "screenshotPath": "screenshots/step-1-sign-in-portal-after.png"
+        }
+      ],
+      "durationMs": 205897,
+      "screenshotBefore": "screenshots/step-1-sign-in-portal-before.png",
+      "screenshotAfter": "screenshots/step-1-sign-in-portal-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-2-navigate-entra-id",
+      "title": "Navigate to Microsoft Entra ID",
+      "instruction": "Search for and select Microsoft Entra ID. Take a few minutes to familiarize yourself with some of the features listed in the left pane.",
+      "status": "passed",
+      "aiResponse": "Step completed successfully. Screenshots confirm:\n\n- **BEFORE**: Azure portal loading splash (Azure \"A\" logo)\n- **SEARCH**: Search box found, typed \"Microsoft Entra ID\", results showed the service at top under \"服务\" (Services)\n- **AFTER**: Microsoft Entra ID Overview page loaded at `Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/Overview`. Left navigation pane visible with items: 概述 (Overview), 预览功能 (Preview features), 诊断并解决问题 (Diagnose and resolve), 管理 section with 用户 (Users), 组 (Groups), 外部标识 (External identities), 角色和管理员 (Roles and administrators), 管理单元 (Administrative units), 企业应用程序 (Enterprise applications), 设备 (Devices), 应用注册 (App registrations), Identity Governance, 许可证 (Licenses), 跨租户同步 (Cross-tenant sync), Microsoft Entra Connect, etc.\n\n```\nACTIONS_TAKEN: Navigated to portal.azure.com, clicked search box (found via input[placeholder*=\"搜索\"]), typed \"Microsoft Entra ID\", clicked the first search result under Services, waited for Entra ID overview page to load.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES (both search box and \"Microsoft Entra ID\" search result were found and clickable)\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: Microsoft Entra ID Overview page (默认目录 | 概述) is displayed showing tenant info (Name: 默认目录, Tenant ID, Primary domain: RudolfZhangoutlook.onmicrosoft.com, License: Microsoft Entra ID 免费版). Left navigation pane is fully visible with management options. A warning banner about migrating to converged authentication methods policy is shown.\nSCREENSHOT_BEFORE: step-2-navigate-entra-id-before.png\nSCREENSHOT_AFTER: step-2-navigate-entra-id-after.png\n```",
+      "driftIssues": [],
+      "durationMs": 88288,
+      "screenshotBefore": "screenshots/step-2-navigate-entra-id-before.png",
+      "screenshotAfter": "screenshots/step-2-navigate-entra-id-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-3-explore-tenants",
+      "title": "Explore Tenant Management",
+      "instruction": "Select the Overview blade and then the Manage tenants tab. Return to the Entra ID page by pressing back in the browser or selecting the option in the breadcrumb menu.",
+      "status": "drift",
+      "aiResponse": "Step completed successfully. The lab instructions describe \"Manage tenants\" as a **tab** but in the current Azure portal UI, it's a **command bar button** (toolbar button at the top). However, functionally it works the same way — a human following the instructions would find and click it without difficulty since it's prominently labeled \"管理租户\" / \"Manage tenants\" in the command bar.\n\n```\nACTIONS_TAKEN: Navigated to Entra ID Overview page. Confirmed already on Overview blade. Clicked \"管理租户\" (Manage tenants) button in the command bar (found inside a React sandbox iframe). This opened the Manage tenants page (DirectorySwitchBlade) showing the tenant list. Then used browser back to return to the Entra ID Overview page.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES (both \"Manage tenants\" button and Overview blade were found)\nELEMENT_DIFFERENT: The instructions describe \"Manage tenants\" as a \"tab\" but it is actually a command bar button in the toolbar at the top of the Overview blade (alongside \"添加/Add\", \"新增功能/What's new\", \"预览功能/Preview features\", \"提供反馈/Provide feedback\"). It functions the same way — clicking it opens the tenant management view — but it is not a tab within the content area. A human would still find it easily.\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: Back on Microsoft Entra ID Overview page (默认目录 | 概述) showing tenant info, basic info (Name, Tenant ID, Primary domain, License), alerts section, and left navigation pane.\nSCREENSHOT_BEFORE: step-3-explore-tenants-before.png\nSCREENSHOT_AFTER: step-3-explore-tenants-after.png\n```",
+      "driftIssues": [
+        {
+          "id": "step-3-explore-tenants-selector",
+          "stepId": "step-3-explore-tenants",
+          "category": "selector_drift",
+          "severity": "warning",
+          "instructionText": "Select the Overview blade and then the Manage tenants tab. Return to the Entra ID page by pressing back in the browser or selecting the option in the breadcrumb menu.",
+          "actualBehavior": "The instructions describe \"Manage tenants\" as a \"tab\" but it is actually a command bar button in the toolbar at the top of the Overview blade (alongside \"添加/Add\", \"新增功能/What's new\", \"预览功能/Preview features\", \"提供反馈/Provide feedback\"). It functions the same way — clicking it opens the tenant management view — but it is not a tab within the content area. A human would still find it easily.",
+          "recommendation": "Update lab instructions to reflect new element text/location",
+          "screenshotPath": "screenshots/step-3-explore-tenants-after.png"
+        }
+      ],
+      "durationMs": 383509,
+      "screenshotBefore": "screenshots/step-3-explore-tenants-before.png",
+      "screenshotAfter": "screenshots/step-3-explore-tenants-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-4-navigate-users",
+      "title": "Navigate to Users Section",
+      "instruction": "In the Manage blade, select Users; then in the New user drop-down select Create new user.",
+      "status": "drift",
+      "aiResponse": "Step completed successfully. The screenshots confirm the full flow:\n\n- **BEFORE**: Entra ID Overview page with \"用户\" (Users) visible in left nav under \"管理\" (Manage)\n- **MID/DROPDOWN**: Users list page with \"新建用户\" dropdown open showing two options: \"新建用户 - 在组织中创建新的内部用户\" and \"邀请外部用户\"\n- **AFTER**: \"新建用户\" (Create new user) form displayed with tabs: 基本信息 (Basics), 属性 (Properties), 分配 (Assignments), 审阅+创建 (Review + create). Form fields visible: 用户主体名称 (User principal name), 邮件别名 (Mail nickname), 显示名称 (Display name), 密码 (Password), 已启用帐户 (Account enabled).\n\n```\nACTIONS_TAKEN: From Entra ID Overview, clicked \"用户\" (Users) in the left Manage blade which navigated to the Users list page. Clicked the \"新建用户\" (New user) dropdown button in the command bar, which opened a two-option menu. Selected \"新建用户 - 在组织中创建新的内部用户\" (New user - Create new internal user in organization) from the dropdown. The Create new user form loaded.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES (Users link, New user dropdown, and Create new user menu item all found)\nELEMENT_DIFFERENT: The instructions say \"New user drop-down\" with option \"Create new user\". In the current UI, the dropdown button is labeled \"新建用户\" (New user) and the dropdown option is also labeled \"新建用户\" with a subtitle \"在组织中创建新的内部用户\" (Create new internal user in organization) — not \"Create new user\" as a separate label. The second option is \"邀请外部用户\" (Invite external user). The naming is slightly different but a human would have no trouble identifying the correct option.\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: Create new user form (新建用户) is displayed on the \"基本信息\" (Basics) tab with fields: User principal name, Mail nickname (auto-derived checkbox checked), Display name, Password (auto-generate checked), Account enabled (checked). Bottom navigation shows \"审阅+创建\" (Review + create), \"上一步\" (Previous), and \"下一步: 属性\" (Next: Properties).\nSCREENSHOT_BEFORE: step-4-navigate-users-before.png\nSCREENSHOT_AFTER: step-4-navigate-users-after.png\n```",
+      "driftIssues": [
+        {
+          "id": "step-4-navigate-users-selector",
+          "stepId": "step-4-navigate-users",
+          "category": "selector_drift",
+          "severity": "warning",
+          "instructionText": "In the Manage blade, select Users; then in the New user drop-down select Create new user.",
+          "actualBehavior": "The instructions say \"New user drop-down\" with option \"Create new user\". In the current UI, the dropdown button is labeled \"新建用户\" (New user) and the dropdown option is also labeled \"新建用户\" with a subtitle \"在组织中创建新的内部用户\" (Create new internal user in organization) — not \"Create new user\" as a separate label. The second option is \"邀请外部用户\" (Invite external user). The naming is slightly different but a human would have no trouble identifying the correct option.",
+          "recommendation": "Update lab instructions to reflect new element text/location",
+          "screenshotPath": "screenshots/step-4-navigate-users-after.png"
+        }
+      ],
+      "durationMs": 281251,
+      "screenshotBefore": "screenshots/step-4-navigate-users-before.png",
+      "screenshotAfter": "screenshots/step-4-navigate-users-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-5-create-user-az104",
+      "title": "Create New User az104-user1",
+      "instruction": "Create a new user with User principal name: az104-user1, Display name: az104-user1, Auto-generate password: checked, Account enabled: checked. On Properties tab add Job title: IT Lab Administrator, Department: IT, Usage location: United States. Select Review + create and then Create.",
+      "status": "drift",
+      "aiResponse": "All screenshots confirm success:\n\n- **BASICS**: UPN = `az104-user1` @ RudolfZhangoutlook.on..., 邮件别名 (Mail nickname) = `az104-user1` (auto-derived ✓), 显示名称 (Display name) = `az104-user1`, 自动生成密码 (Auto-generate password) ✓, 已启用帐户 (Account enabled) ✓\n- **REVIEW**: Clean review with no validation errors. Shows UPN = `az104-user1@RudolfZhangoutlook.onmicrosoft.com`, 职务 (Job title) = `IT Lab Administrator`, 部门 (Department) = `IT`, 使用位置 (Usage location) = `美国` (United States)\n- **AFTER**: Portal redirected to home page (`#home`) — this confirms the user was created successfully (the form dismissed and navigated away). A notification badge (1) appeared in the top bar, likely a success notification.\n\n```\nACTIONS_TAKEN: Navigated to Create User form. On Basics tab: filled User principal name with \"az104-user1\" (the UPN field is split into local part + domain dropdown), confirmed Mail nickname auto-derived as \"az104-user1\", filled Display name with \"az104-user1\", verified Auto-generate password was checked, verified Account enabled was checked. Clicked Properties tab. Filled Job title with \"IT Lab Administrator\", Department with \"IT\", and Usage location with \"United States\" (美国) via combobox dropdown. Clicked Review + create tab — review showed all values correctly with no validation errors. Clicked Create button. Portal redirected to home page confirming successful creation.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES (all form fields, tabs, and buttons found)\nELEMENT_DIFFERENT: The \"User principal name\" field is split into two parts: a text input for the local part (labeled \"用户主体名称的本地部分\") and a domain dropdown (labeled \"用户主题名称的域名\") pre-filled with \"RudolfZhangoutlook.onmicrosoft.com\". The instructions simply say \"User principal name: az104-user1\" but a human would naturally type \"az104-user1\" in the local part field. This split UPN design matches current Azure portal behavior and would not confuse a human user.\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: Azure portal home page displayed after successful user creation. A notification badge (1) visible in the top bar indicating the user creation notification.\nSCREENSHOT_BEFORE: step-5-create-user-az104-before.png\nSCREENSHOT_AFTER: step-5-create-user-az104-after.png\n```",
+      "driftIssues": [
+        {
+          "id": "step-5-create-user-az104-selector",
+          "stepId": "step-5-create-user-az104",
+          "category": "selector_drift",
+          "severity": "warning",
+          "instructionText": "Create a new user with User principal name: az104-user1, Display name: az104-user1, Auto-generate password: checked, Account enabled: checked. On Properties tab add Job title: IT Lab Administrator, Department: IT, Usage location: United States. Select Review + create and then Create.",
+          "actualBehavior": "The \"User principal name\" field is split into two parts: a text input for the local part (labeled \"用户主体名称的本地部分\") and a domain dropdown (labeled \"用户主题名称的域名\") pre-filled with \"RudolfZhangoutlook.onmicrosoft.com\". The instructions simply say \"User principal name: az104-user1\" but a human would naturally type \"az104-user1\" in the local part field. This split UPN design matches current Azure portal behavior and would not confuse a human user.",
+          "recommendation": "Update lab instructions to reflect new element text/location",
+          "screenshotPath": "screenshots/step-5-create-user-az104-after.png"
+        }
+      ],
+      "durationMs": 227120,
+      "screenshotBefore": "screenshots/step-5-create-user-az104-before.png",
+      "screenshotAfter": "screenshots/step-5-create-user-az104-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-6-invite-external-user",
+      "title": "Invite External User",
+      "instruction": "In the New user drop-down select Invite an external user. Fill Email with your email address, Display name with your name, check Send invite message, add Message: Welcome to Azure and our group project. On Properties tab add Job title: IT Lab Administrator, Department: IT, Usage location: United States. Select Review + invite and then Invite.",
+      "status": "drift",
+      "aiResponse": "All screenshots confirm complete success:\n\n- **BEFORE**: Users list showing 2 users (az104-user1 created in previous step + Zhang Rudolf)\n- **BASICS**: Invite form filled — 电子邮件 (Email) = `labuser-external@outlook.com`, 显示名称 (Display name) = `Lab External User`, 发送邀请邮件 (Send invite message) = ✓ checked, 消息 (Message) = \"Welcome to Azure and our group project\", 抄送收件人 (CC recipient) empty, 邀请重定向 URL = auto-populated\n- **REVIEW**: Clean review on 审阅+邀请 (Review + invite) tab. Shows all basics + 属性 (Properties): 用户类型 = 来宾 (Guest), 职务 = IT Lab Administrator, 部门 = IT, 使用位置 = 美国 (United States)\n- **AFTER**: Green success toast: \"已成功邀请用户 Lab External User\" (Successfully invited user Lab External User). 邀请 (Invite) button is now greyed out.\n\nNotable observations about the current UI:\n- The form title is \"邀请外部用户\" (Invite external user), matching the dropdown option label\n- The tab structure is: 基本信息 (Basics) → 属性 (Properties) → 分配 (Assignments) → 审阅+邀请 (Review + invite) — the last tab says \"Review + invite\" not \"Review + create\"\n- Additional fields present: 抄送收件人 (CC recipient) and 邀请重定向 URL (Invite redirect URL) — not mentioned in lab instructions\n- An info banner: \"自 2025 年 12 月起，B2B 邀请电子邮件将发送自你组织的主域...\" (Since Dec 2025, B2B invite emails will be sent from your org's primary domain, not Microsoft.com)\n\n```\nACTIONS_TAKEN: From Users list page, clicked \"新建用户\" (New user) dropdown, selected \"邀请外部用户\" (Invite external user) option. On the invite form Basics tab: filled Email with \"labuser-external@outlook.com\", Display name with \"Lab External User\", confirmed \"发送邀请邮件\" (Send invite message) was already checked, filled Message with \"Welcome to Azure and our group project\". Navigated to Properties tab: filled Job title with \"IT Lab Administrator\", Department with \"IT\", Usage location with \"美国\" (United States). Clicked \"审阅+邀请\" (Review + invite) tab, confirmed all details, clicked \"邀请\" (Invite) button. Success toast appeared confirming invitation sent.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES (all elements found — dropdown, invite option, form fields, tabs, buttons)\nELEMENT_DIFFERENT: The instructions say \"Review + invite\" and \"Invite\" which matches the current UI labels (审阅+邀请 / 邀请). The instructions describe \"Send invite message\" checkbox which is labeled \"发送邀请邮件\" and was checked by default. The invite form also includes additional fields not mentioned in the instructions: \"抄送收件人\" (CC recipient) and \"邀请重定向 URL\" (Invite redirect URL) — these are optional and do not need to be filled. None of these differences would confuse a human user.\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: An informational banner at the top of the invite form states: \"自 2025 年 12 月起，B2B 邀请电子邮件将发送自你组织的主域(例如 contoso.onmicrosoft.com)，而非 Microsoft.com\" (Since December 2025, B2B invite emails are sent from your org's primary domain, not Microsoft.com). This is informational only and does not block progress.\nBLOCKING_ISSUES: None\nCURRENT_STATE: Invite external user page showing review summary with green success notification toast: \"已成功邀请用户 Lab External User\" (Successfully invited user Lab External User). The Invite button is greyed out (completed).\nSCREENSHOT_BEFORE: step-6-invite-external-user-before.png\nSCREENSHOT_AFTER: step-6-invite-external-user-after.png\n```",
+      "driftIssues": [
+        {
+          "id": "step-6-invite-external-user-selector",
+          "stepId": "step-6-invite-external-user",
+          "category": "selector_drift",
+          "severity": "warning",
+          "instructionText": "In the New user drop-down select Invite an external user. Fill Email with your email address, Display name with your name, check Send invite message, add Message: Welcome to Azure and our group project. On Properties tab add Job title: IT Lab Administrator, Department: IT, Usage location: United States. Select Review + invite and then Invite.",
+          "actualBehavior": "The instructions say \"Review + invite\" and \"Invite\" which matches the current UI labels (审阅+邀请 / 邀请). The instructions describe \"Send invite message\" checkbox which is labeled \"发送邀请邮件\" and was checked by default. The invite form also includes additional fields not mentioned in the instructions: \"抄送收件人\" (CC recipient) and \"邀请重定向 URL\" (Invite redirect URL) — these are optional and do not need to be filled. None of these differences would confuse a human user.",
+          "recommendation": "Update lab instructions to reflect new element text/location",
+          "screenshotPath": "screenshots/step-6-invite-external-user-after.png"
+        },
+        {
+          "id": "step-6-invite-external-user-unexpected",
+          "stepId": "step-6-invite-external-user",
+          "category": "unexpected_ui",
+          "severity": "info",
+          "instructionText": "In the New user drop-down select Invite an external user. Fill Email with your email address, Display name with your name, check Send invite message, add Message: Welcome to Azure and our group project. On Properties tab add Job title: IT Lab Administrator, Department: IT, Usage location: United States. Select Review + invite and then Invite.",
+          "actualBehavior": "An informational banner at the top of the invite form states: \"自 2025 年 12 月起，B2B 邀请电子邮件将发送自你组织的主域(例如 contoso.onmicrosoft.com)，而非 Microsoft.com\" (Since December 2025, B2B invite emails are sent from your org's primary domain, not Microsoft.com). This is informational only and does not block progress.",
+          "recommendation": "Informational UI element - does not affect lab completion",
+          "screenshotPath": "screenshots/step-6-invite-external-user-after.png"
+        }
+      ],
+      "durationMs": 189720,
+      "screenshotBefore": "screenshots/step-6-invite-external-user-before.png",
+      "screenshotAfter": "screenshots/step-6-invite-external-user-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-7-navigate-groups",
+      "title": "Navigate to Groups Section",
+      "instruction": "In the Azure portal, search for and select Microsoft Entra ID. In the Manage blade, select Groups. Take a minute to familiarize yourself with the group settings in the left pane.",
+      "status": "passed",
+      "aiResponse": "Step completed successfully. Screenshots confirm:\n\n- **BEFORE**: Azure portal home page (欢迎使用 Azure!) with search bar at top\n- **AFTER**: Groups management page (组 | 概述) at `GroupsManagementMenuBlade/~/Overview`. Shows breadcrumb: 主页 > 默认目录 | 组. Left pane has: 概述 (Overview), 所有组 (All groups), Insights (预览版), 已删除的组 (Deleted groups), 诊断并解决问题 (Diagnose and resolve), 设置 (Settings), 活动 (Activity), 疑难解答和支持 (Troubleshooting and support). Main content shows 基本信息 (Basic info) with group counts all at 0, 警报 (Alerts), 功能亮点 (Feature highlights with 访问评审/Access reviews), and 快速操作 (Quick actions).\n\n```\nACTIONS_TAKEN: From Azure portal home, clicked search bar, typed \"Microsoft Entra ID\", clicked the search result to navigate to Entra ID Overview. Then clicked \"组\" (Groups) in the left Manage blade. Groups management overview page loaded.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES (search box, Microsoft Entra ID result, and Groups nav item all found)\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: Groups management page (组 | 概述) showing Overview with group statistics (all 0 — 组总计, 动态组, M365组, 云组, 安全组, 本地组). Left pane shows navigation items: 概述, 所有组, Insights (预览版), 已删除的组, 诊断并解决问题, 设置, 活动, 疑难解答和支持. Command bar has: 新建组, 下载组, 预览功能.\nSCREENSHOT_BEFORE: step-7-navigate-groups-before.png\nSCREENSHOT_AFTER: step-7-navigate-groups-after.png\n```",
+      "driftIssues": [],
+      "durationMs": 87928,
+      "screenshotBefore": "screenshots/step-7-navigate-groups-before.png",
+      "screenshotAfter": "screenshots/step-7-navigate-groups-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-8-create-security-group",
+      "title": "Create IT Lab Administrators Group",
+      "instruction": "In the All groups blade, select + New group and create a new group with Group type: Security, Group name: IT Lab Administrators, Group description: Administrators that manage the IT lab, Membership type: Assigned.",
+      "status": "drift",
+      "aiResponse": "The AFTER screenshot confirms the form is fully filled and ready:\n\n- **组类型 (Group type)**: 安全组 (Security) ✓\n- **组名 (Group name)**: IT Lab Administrators ✓ (green checkmark)\n- **组描述 (Group description)**: Administrators that manage the IT lab ✓ (green checkmark)\n- **成员身份类型 (Membership type)**: 已分配 (Assigned) ✓\n- **所有者 (Owners)**: 未选择所有者 (No owners selected)\n- **成员 (Members)**: 未选择任何成员 (No members selected)\n- **创建 (Create)** button active at bottom\n\n```\nACTIONS_TAKEN: Navigated to All Groups, clicked \"+ 新建组\" (New group) in the command bar to open the new group form. Verified Group type was already set to \"安全组\" (Security) by default. Filled Group name with \"IT Lab Administrators\". Filled Group description with \"Administrators that manage the IT lab\". Verified Membership type was already set to \"已分配\" (Assigned) by default. Form is ready for ownership/membership configuration with Create button available.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES (New group button, all form fields found and filled)\nELEMENT_DIFFERENT: The field labels in the current UI use Chinese: \"组类型\" (Group type), \"组名\" (Group name — not \"Group name\" but shortened to \"组名\"), \"组描述\" (Group description), \"成员身份类型\" (Membership type). The \"Group type\" default is \"安全组\" (Security), which matches the instructions. The \"Membership type\" default is \"已分配\" (Assigned), also matching. A human following the English instructions would easily identify the corresponding fields.\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: New group creation form (新建组) fully filled with Group type = Security, Group name = \"IT Lab Administrators\", Group description = \"Administrators that manage the IT lab\", Membership type = Assigned. Owners and Members sections show \"未选择\" (none selected). Create button is active at bottom of the form.\nSCREENSHOT_BEFORE: step-8-create-security-group-before.png\nSCREENSHOT_AFTER: step-8-create-security-group-after.png\n```",
+      "driftIssues": [
+        {
+          "id": "step-8-create-security-group-selector",
+          "stepId": "step-8-create-security-group",
+          "category": "selector_drift",
+          "severity": "warning",
+          "instructionText": "In the All groups blade, select + New group and create a new group with Group type: Security, Group name: IT Lab Administrators, Group description: Administrators that manage the IT lab, Membership type: Assigned.",
+          "actualBehavior": "The field labels in the current UI use Chinese: \"组类型\" (Group type), \"组名\" (Group name — not \"Group name\" but shortened to \"组名\"), \"组描述\" (Group description), \"成员身份类型\" (Membership type). The \"Group type\" default is \"安全组\" (Security), which matches the instructions. The \"Membership type\" default is \"已分配\" (Assigned), also matching. A human following the English instructions would easily identify the corresponding fields.",
+          "recommendation": "Update lab instructions to reflect new element text/location",
+          "screenshotPath": "screenshots/step-8-create-security-group-after.png"
+        }
+      ],
+      "durationMs": 204088,
+      "screenshotBefore": "screenshots/step-8-create-security-group-before.png",
+      "screenshotAfter": "screenshots/step-8-create-security-group-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-9-configure-group-ownership-membership",
+      "title": "Configure Group Owners and Members",
+      "instruction": "Select No owners selected, search for and select yourself as the owner. Select No members selected, search for and select the az104-user1 and the guest user you invited. Add both users to the group. Select Create to deploy the group.",
+      "status": "drift",
+      "aiResponse": "All screenshots confirm success:\n\n- **BEFORE**: New group form with all fields filled (组类型=安全组, 组名=IT Lab Administrators, 组描述=Administrators that manage the IT lab, 成员身份类型=已分配), owners and members both showing \"未选择\" (none selected)\n- **PRE-CREATE**: Same form now showing \"已选择 1 个所有者\" (1 owner selected — Zhang Rudolf) and \"选择了 2 个成员\" (2 members selected — az104-user1 and Lab External User), 创建 button active\n- **AFTER**: Portal redirected to home page (`#home`) with notification badge (1) — confirms group was successfully created\n\n```\nACTIONS_TAKEN: From the new group form (already filled from step 8), clicked \"未选择所有者\" (No owners selected) to open the owner picker panel \"添加所有者\". Searched for \"Zhang\" in the picker search box, found and checked Zhang Rudolf (RudolfZhang@outlook.com) as owner, clicked \"选择\" (Select) to confirm. Then clicked \"未选择任何成员\" (No members selected) to open member picker panel \"添加成员\". Searched \"az104\" and checked az104-user1, then searched \"Lab External\" and checked Lab External User (guest), clicked \"选择\" to confirm both members. Clicked \"创建\" (Create) button at bottom-left. Group was created and portal redirected to home page with a success notification.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES (owner picker, member picker, search boxes, user checkboxes, Select buttons, and Create button all found)\nELEMENT_DIFFERENT: The owner/member picker panels are titled \"添加所有者\" (Add owners) and \"添加成员\" (Add members). They use a search box with a checkbox-based user list showing Name (名称) and User Principal Name (用户主体名称) columns. The picker has a \"选择\" (Select) button at the bottom to confirm. This matches the expected \"No owners selected\" / \"No members selected\" workflow described in the instructions — the links are labeled \"未选择所有者\" and \"未选择任何成员\" respectively.\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: Azure portal home page displayed after successful group creation. Notification badge (1) visible confirming the group was created.\nSCREENSHOT_BEFORE: step-9-configure-group-ownership-membership-before.png\nSCREENSHOT_AFTER: step-9-configure-group-ownership-membership-after.png\n```",
+      "driftIssues": [
+        {
+          "id": "step-9-configure-group-ownership-membership-selector",
+          "stepId": "step-9-configure-group-ownership-membership",
+          "category": "selector_drift",
+          "severity": "warning",
+          "instructionText": "Select No owners selected, search for and select yourself as the owner. Select No members selected, search for and select the az104-user1 and the guest user you invited. Add both users to the group. Select Create to deploy the group.",
+          "actualBehavior": "The owner/member picker panels are titled \"添加所有者\" (Add owners) and \"添加成员\" (Add members). They use a search box with a checkbox-based user list showing Name (名称) and User Principal Name (用户主体名称) columns. The picker has a \"选择\" (Select) button at the bottom to confirm. This matches the expected \"No owners selected\" / \"No members selected\" workflow described in the instructions — the links are labeled \"未选择所有者\" and \"未选择任何成员\" respectively.",
+          "recommendation": "Update lab instructions to reflect new element text/location",
+          "screenshotPath": "screenshots/step-9-configure-group-ownership-membership-after.png"
+        }
+      ],
+      "durationMs": 312090,
+      "screenshotBefore": "screenshots/step-9-configure-group-ownership-membership-before.png",
+      "screenshotAfter": "screenshots/step-9-configure-group-ownership-membership-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-10-verify-group-creation",
+      "title": "Verify Group Creation",
+      "instruction": "Refresh the page and ensure your group was created. Select the new group and review the Members and Owners information.",
+      "status": "passed",
+      "aiResponse": "All three screenshots perfectly confirm the group was created and verified:\n\n- **After Refresh** (All Groups): \"IT Lab Administrators\" group visible — 组类型 = 安全性 (Security), 成员身份类型 = 已分配 (Assigned), Object ID shown. Info banner: \"Microsoft Entra 具有更简单的集成体验...试用新的 Microsoft Entra 管理中心!\" (Try the new Microsoft Entra admin center).\n- **Members**: \"找到 2 个组成员\" (Found 2 group members) — **az104-user1** (用户/User, 成员/Member) and **Lab External User** (用户/User, labuser-external@outlook.com, 来宾/Guest).\n- **Owners**: \"找到 1 个组所有者\" (Found 1 group owner) — **Zhang Rudolf** (用户/User, 成员/Member).\n\nLeft nav shows: 概述, 诊断并解决问题, 管理 section with 属性, 成员, 所有者, 角色和管理员, 管理单元, 组成员身份, 应用程序, 许可证, Azure 角色分配, 活动, 疑难解答和支持.\n\n```\nACTIONS_TAKEN: Navigated to All Groups page, refreshed the page. The \"IT Lab Administrators\" group appeared in the list (found 1 group) with type \"安全性\" (Security) and membership type \"已分配\" (Assigned). Clicked the group to open its details. Clicked \"成员\" (Members) in the left nav — confirmed 2 members: az104-user1 (member type) and Lab External User (guest type, labuser-external@outlook.com). Clicked \"所有者\" (Owners) in the left nav — confirmed 1 owner: Zhang Rudolf.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES (group in list, Members nav, Owners nav — all found)\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: An informational banner on the All Groups page: \"Microsoft Entra 具有更简单的集成体验，用于管理所有身份和访问管理需求。试用新的 Microsoft Entra 管理中心!\" (Microsoft Entra has a simpler integrated experience... Try the new Microsoft Entra admin center!). This is informational only and does not block progress.\nBLOCKING_ISSUES: None\nCURRENT_STATE: IT Lab Administrators group Owners page showing 1 owner (Zhang Rudolf). Left nav displays full group management options: 概述 (Overview), 属性 (Properties), 成员 (Members), 所有者 (Owners), 角色和管理员 (Roles and administrators), 管理单元 (Administrative units), 组成员身份 (Group memberships), 应用程序 (Applications), 许可证 (Licenses), Azure 角色分配 (Azure role assignments).\nSCREENSHOT_BEFORE: step-10-verify-group-creation-before.png\nSCREENSHOT_AFTER: step-10-verify-group-creation-after.png\n```",
+      "driftIssues": [
+        {
+          "id": "step-10-verify-group-creation-unexpected",
+          "stepId": "step-10-verify-group-creation",
+          "category": "unexpected_ui",
+          "severity": "info",
+          "instructionText": "Refresh the page and ensure your group was created. Select the new group and review the Members and Owners information.",
+          "actualBehavior": "An informational banner on the All Groups page: \"Microsoft Entra 具有更简单的集成体验，用于管理所有身份和访问管理需求。试用新的 Microsoft Entra 管理中心!\" (Microsoft Entra has a simpler integrated experience... Try the new Microsoft Entra admin center!). This is informational only and does not block progress.",
+          "recommendation": "Informational UI element - does not affect lab completion",
+          "screenshotPath": "screenshots/step-10-verify-group-creation-after.png"
+        }
+      ],
+      "durationMs": 106299,
+      "screenshotBefore": "screenshots/step-10-verify-group-creation-before.png",
+      "screenshotAfter": "screenshots/step-10-verify-group-creation-after.png",
+      "retryCount": 0
+    }
+  ],
+  "driftIssues": [
+    {
+      "id": "step-1-sign-in-portal-selector",
+      "stepId": "step-1-sign-in-portal",
+      "category": "selector_drift",
+      "severity": "warning",
+      "instructionText": "Sign in to the Azure portal at https://portal.azure.com. Select Cancel on the Welcome to Azure splash screen to proceed to the portal.",
+      "actualBehavior": "The \"Welcome to Azure\" splash screen with a Cancel button did not appear. The portal loaded directly to the home page showing \"欢迎使用 Azure!\" with subscription options. This is likely normal behavior for returning users whose profile already dismissed the splash — a human following these instructions would also not see the Cancel button if previously dismissed.",
+      "recommendation": "Update lab instructions to reflect new element text/location",
+      "screenshotPath": "screenshots/step-1-sign-in-portal-after.png"
+    },
+    {
+      "id": "step-3-explore-tenants-selector",
+      "stepId": "step-3-explore-tenants",
+      "category": "selector_drift",
+      "severity": "warning",
+      "instructionText": "Select the Overview blade and then the Manage tenants tab. Return to the Entra ID page by pressing back in the browser or selecting the option in the breadcrumb menu.",
+      "actualBehavior": "The instructions describe \"Manage tenants\" as a \"tab\" but it is actually a command bar button in the toolbar at the top of the Overview blade (alongside \"添加/Add\", \"新增功能/What's new\", \"预览功能/Preview features\", \"提供反馈/Provide feedback\"). It functions the same way — clicking it opens the tenant management view — but it is not a tab within the content area. A human would still find it easily.",
+      "recommendation": "Update lab instructions to reflect new element text/location",
+      "screenshotPath": "screenshots/step-3-explore-tenants-after.png"
+    },
+    {
+      "id": "step-4-navigate-users-selector",
+      "stepId": "step-4-navigate-users",
+      "category": "selector_drift",
+      "severity": "warning",
+      "instructionText": "In the Manage blade, select Users; then in the New user drop-down select Create new user.",
+      "actualBehavior": "The instructions say \"New user drop-down\" with option \"Create new user\". In the current UI, the dropdown button is labeled \"新建用户\" (New user) and the dropdown option is also labeled \"新建用户\" with a subtitle \"在组织中创建新的内部用户\" (Create new internal user in organization) — not \"Create new user\" as a separate label. The second option is \"邀请外部用户\" (Invite external user). The naming is slightly different but a human would have no trouble identifying the correct option.",
+      "recommendation": "Update lab instructions to reflect new element text/location",
+      "screenshotPath": "screenshots/step-4-navigate-users-after.png"
+    },
+    {
+      "id": "step-5-create-user-az104-selector",
+      "stepId": "step-5-create-user-az104",
+      "category": "selector_drift",
+      "severity": "warning",
+      "instructionText": "Create a new user with User principal name: az104-user1, Display name: az104-user1, Auto-generate password: checked, Account enabled: checked. On Properties tab add Job title: IT Lab Administrator, Department: IT, Usage location: United States. Select Review + create and then Create.",
+      "actualBehavior": "The \"User principal name\" field is split into two parts: a text input for the local part (labeled \"用户主体名称的本地部分\") and a domain dropdown (labeled \"用户主题名称的域名\") pre-filled with \"RudolfZhangoutlook.onmicrosoft.com\". The instructions simply say \"User principal name: az104-user1\" but a human would naturally type \"az104-user1\" in the local part field. This split UPN design matches current Azure portal behavior and would not confuse a human user.",
+      "recommendation": "Update lab instructions to reflect new element text/location",
+      "screenshotPath": "screenshots/step-5-create-user-az104-after.png"
+    },
+    {
+      "id": "step-6-invite-external-user-selector",
+      "stepId": "step-6-invite-external-user",
+      "category": "selector_drift",
+      "severity": "warning",
+      "instructionText": "In the New user drop-down select Invite an external user. Fill Email with your email address, Display name with your name, check Send invite message, add Message: Welcome to Azure and our group project. On Properties tab add Job title: IT Lab Administrator, Department: IT, Usage location: United States. Select Review + invite and then Invite.",
+      "actualBehavior": "The instructions say \"Review + invite\" and \"Invite\" which matches the current UI labels (审阅+邀请 / 邀请). The instructions describe \"Send invite message\" checkbox which is labeled \"发送邀请邮件\" and was checked by default. The invite form also includes additional fields not mentioned in the instructions: \"抄送收件人\" (CC recipient) and \"邀请重定向 URL\" (Invite redirect URL) — these are optional and do not need to be filled. None of these differences would confuse a human user.",
+      "recommendation": "Update lab instructions to reflect new element text/location",
+      "screenshotPath": "screenshots/step-6-invite-external-user-after.png"
+    },
+    {
+      "id": "step-6-invite-external-user-unexpected",
+      "stepId": "step-6-invite-external-user",
+      "category": "unexpected_ui",
+      "severity": "info",
+      "instructionText": "In the New user drop-down select Invite an external user. Fill Email with your email address, Display name with your name, check Send invite message, add Message: Welcome to Azure and our group project. On Properties tab add Job title: IT Lab Administrator, Department: IT, Usage location: United States. Select Review + invite and then Invite.",
+      "actualBehavior": "An informational banner at the top of the invite form states: \"自 2025 年 12 月起，B2B 邀请电子邮件将发送自你组织的主域(例如 contoso.onmicrosoft.com)，而非 Microsoft.com\" (Since December 2025, B2B invite emails are sent from your org's primary domain, not Microsoft.com). This is informational only and does not block progress.",
+      "recommendation": "Informational UI element - does not affect lab completion",
+      "screenshotPath": "screenshots/step-6-invite-external-user-after.png"
+    },
+    {
+      "id": "step-8-create-security-group-selector",
+      "stepId": "step-8-create-security-group",
+      "category": "selector_drift",
+      "severity": "warning",
+      "instructionText": "In the All groups blade, select + New group and create a new group with Group type: Security, Group name: IT Lab Administrators, Group description: Administrators that manage the IT lab, Membership type: Assigned.",
+      "actualBehavior": "The field labels in the current UI use Chinese: \"组类型\" (Group type), \"组名\" (Group name — not \"Group name\" but shortened to \"组名\"), \"组描述\" (Group description), \"成员身份类型\" (Membership type). The \"Group type\" default is \"安全组\" (Security), which matches the instructions. The \"Membership type\" default is \"已分配\" (Assigned), also matching. A human following the English instructions would easily identify the corresponding fields.",
+      "recommendation": "Update lab instructions to reflect new element text/location",
+      "screenshotPath": "screenshots/step-8-create-security-group-after.png"
+    },
+    {
+      "id": "step-9-configure-group-ownership-membership-selector",
+      "stepId": "step-9-configure-group-ownership-membership",
+      "category": "selector_drift",
+      "severity": "warning",
+      "instructionText": "Select No owners selected, search for and select yourself as the owner. Select No members selected, search for and select the az104-user1 and the guest user you invited. Add both users to the group. Select Create to deploy the group.",
+      "actualBehavior": "The owner/member picker panels are titled \"添加所有者\" (Add owners) and \"添加成员\" (Add members). They use a search box with a checkbox-based user list showing Name (名称) and User Principal Name (用户主体名称) columns. The picker has a \"选择\" (Select) button at the bottom to confirm. This matches the expected \"No owners selected\" / \"No members selected\" workflow described in the instructions — the links are labeled \"未选择所有者\" and \"未选择任何成员\" respectively.",
+      "recommendation": "Update lab instructions to reflect new element text/location",
+      "screenshotPath": "screenshots/step-9-configure-group-ownership-membership-after.png"
+    },
+    {
+      "id": "step-10-verify-group-creation-unexpected",
+      "stepId": "step-10-verify-group-creation",
+      "category": "unexpected_ui",
+      "severity": "info",
+      "instructionText": "Refresh the page and ensure your group was created. Select the new group and review the Members and Owners information.",
+      "actualBehavior": "An informational banner on the All Groups page: \"Microsoft Entra 具有更简单的集成体验，用于管理所有身份和访问管理需求。试用新的 Microsoft Entra 管理中心!\" (Microsoft Entra has a simpler integrated experience... Try the new Microsoft Entra admin center!). This is informational only and does not block progress.",
+      "recommendation": "Informational UI element - does not affect lab completion",
+      "screenshotPath": "screenshots/step-10-verify-group-creation-after.png"
+    }
+  ],
+  "summary": {
+    "total": 10,
+    "passed": 3,
+    "driftDetected": 7,
+    "failed": 0,
+    "skipped": 0,
+    "byCategory": {
+      "selector_drift": 7
+    }
+  },
+  "durationMs": 2086190
+}

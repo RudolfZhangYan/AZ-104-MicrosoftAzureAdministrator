@@ -1,0 +1,19 @@
+Step completed. The screenshots confirm:
+
+- **BEFORE**: Azure loading splash screen (Azure "A" logo with Microsoft branding)
+- **AFTER**: Portal loaded to `#home` showing "欢迎使用 Azure!" (Welcome to Azure) page — but this is **not** the "Welcome splash screen" dialog with a Cancel button. This is the portal home page showing subscription options (the account has no subscription).
+
+The "Welcome to Azure" splash screen with a **Cancel** button did **not** appear. Instead, the portal went directly to the home page. This is likely because the splash was either already dismissed in a prior session (cookie/profile remembered) or the portal no longer shows it for returning users.
+
+```
+ACTIONS_TAKEN: Launched Edge with saved azure-portal auth profile, navigated to https://portal.azure.com. Auto-login succeeded via saved session. Searched for Cancel/Dismiss button on splash screen — none appeared. Portal loaded directly to home page.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: NO (the "Cancel" button on a "Welcome to Azure" splash screen was not present)
+ELEMENT_DIFFERENT: The "Welcome to Azure" splash screen with a Cancel button did not appear. The portal loaded directly to the home page showing "欢迎使用 Azure!" with subscription options. This is likely normal behavior for returning users whose profile already dismissed the splash — a human following these instructions would also not see the Cancel button if previously dismissed.
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: Azure portal home page (#home) is loaded and accessible. Shows "欢迎使用 Azure!" (Welcome to Azure) with options for free trial, Entra ID management, and student Azure. User is signed in as RudolfZhang@outloo...
+SCREENSHOT_BEFORE: step-1-sign-in-portal-before.png
+SCREENSHOT_AFTER: step-1-sign-in-portal-after.png
+```

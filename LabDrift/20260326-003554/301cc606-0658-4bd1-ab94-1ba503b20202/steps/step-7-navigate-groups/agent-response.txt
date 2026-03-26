@@ -1,0 +1,17 @@
+Step completed successfully. Screenshots confirm:
+
+- **BEFORE**: Azure portal home page (欢迎使用 Azure!) with search bar at top
+- **AFTER**: Groups management page (组 | 概述) at `GroupsManagementMenuBlade/~/Overview`. Shows breadcrumb: 主页 > 默认目录 | 组. Left pane has: 概述 (Overview), 所有组 (All groups), Insights (预览版), 已删除的组 (Deleted groups), 诊断并解决问题 (Diagnose and resolve), 设置 (Settings), 活动 (Activity), 疑难解答和支持 (Troubleshooting and support). Main content shows 基本信息 (Basic info) with group counts all at 0, 警报 (Alerts), 功能亮点 (Feature highlights with 访问评审/Access reviews), and 快速操作 (Quick actions).
+
+```
+ACTIONS_TAKEN: From Azure portal home, clicked search bar, typed "Microsoft Entra ID", clicked the search result to navigate to Entra ID Overview. Then clicked "组" (Groups) in the left Manage blade. Groups management overview page loaded.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES (search box, Microsoft Entra ID result, and Groups nav item all found)
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: Groups management page (组 | 概述) showing Overview with group statistics (all 0 — 组总计, 动态组, M365组, 云组, 安全组, 本地组). Left pane shows navigation items: 概述, 所有组, Insights (预览版), 已删除的组, 诊断并解决问题, 设置, 活动, 疑难解答和支持. Command bar has: 新建组, 下载组, 预览功能.
+SCREENSHOT_BEFORE: step-7-navigate-groups-before.png
+SCREENSHOT_AFTER: step-7-navigate-groups-after.png
+```

@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drift Report - Lab 01 - Manage Microsoft Entra ID Identities</title>
+  <style>
+    :root {
+      --color-passed: #22c55e;
+      --color-drift: #f59e0b;
+      --color-failed: #ef4444;
+      --color-skipped: #8b5cf6;
+      --color-bg: #f8fafc;
+      --color-card: #ffffff;
+      --color-border: #e2e8f0;
+      --color-text: #1e293b;
+      --color-text-muted: #64748b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      margin: 0;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    h1 { margin-top: 0; }
+    .header {
+      background: var(--color-card);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .summary-cards {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .summary-card {
+      background: var(--color-card);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .summary-card .count {
+      font-size: 36px;
+      font-weight: 700;
+    }
+    .summary-card.passed .count { color: var(--color-passed); }
+    .summary-card.drift .count { color: var(--color-drift); }
+    .summary-card.failed .count { color: var(--color-failed); }
+    .summary-card.skipped .count { color: var(--color-skipped); }
+    .step {
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+    .step.status-passed { border-left: 4px solid var(--color-passed); }
+    .step.status-drift { border-left: 4px solid var(--color-drift); }
+    .step.status-failed { border-left: 4px solid var(--color-failed); }
+    .step.status-skipped { border-left: 4px solid var(--color-skipped); }
+    .step-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px;
+      background: var(--color-bg);
+    }
+    .step-icon { font-size: 20px; }
+    .step-id { font-weight: 600; color: var(--color-text-muted); }
+    .step-title { flex: 1; }
+    .step-duration { color: var(--color-text-muted); font-size: 14px; }
+    .retry-info { 
+      color: var(--color-skipped); 
+      font-size: 12px; 
+      margin-left: 8px;
+    }
+    .error-message {
+      background: #fee2e2;
+      color: #991b1b;
+      padding: 12px 16px;
+      font-family: monospace;
+      font-size: 13px;
+    }
+    .skipped-message {
+      background: #ede9fe;
+      color: #5b21b6;
+      padding: 12px 16px;
+      font-size: 13px;
+    }
+    .error-screenshot img {
+      border-color: var(--color-failed);
+      border-width: 2px;
+    }
+    .drift-issues {
+      padding: 16px;
+      background: #fef3c7;
+    }
+    .drift-issues ul { margin: 8px 0; padding-left: 20px; }
+    .drift-issues li { margin-bottom: 12px; }
+    .drift-category {
+      background: #fbbf24;
+      color: #78350f;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .drift-severity {
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      margin-left: 8px;
+    }
+    .severity-low { background: #d1fae5; color: #065f46; }
+    .severity-medium { background: #fef3c7; color: #92400e; }
+    .severity-high { background: #fee2e2; color: #991b1b; }
+    .recommendation {
+      font-style: italic;
+      color: var(--color-text-muted);
+      margin-top: 4px;
+    }
+    .screenshots {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 16px;
+      padding: 16px;
+    }
+    .screenshot img {
+      max-width: 100%;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+    }
+    .footer {
+      text-align: center;
+      color: var(--color-text-muted);
+      font-size: 12px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🔍 Drift Detection Report</h1>
+      <p><strong>Lab:</strong> Lab 01 - Manage Microsoft Entra ID Identities</p>
+      <p><strong>Source:</strong> <a href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_01-Manage_Entra_ID_Identities.html" target="_blank">https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_01-Manage_Entra_ID_Identities.html</a></p>
+      <p><strong>Run ID:</strong> <code>301cc606-0658-4bd1-ab94-1ba503b20202</code></p>
+      <p><strong>Duration:</strong> 2086s</p>
+    </div>
+    
+    <div class="summary-cards">
+      <div class="summary-card">
+        <div class="count">10</div>
+        <div>Total Steps</div>
+      </div>
+      <div class="summary-card passed">
+        <div class="count">3</div>
+        <div>Passed</div>
+      </div>
+      <div class="summary-card drift">
+        <div class="count">7</div>
+        <div>Drift</div>
+      </div>
+      <div class="summary-card failed">
+        <div class="count">0</div>
+        <div>Failed</div>
+      </div>
+      <div class="summary-card skipped">
+        <div class="count">0</div>
+        <div>Skipped</div>
+      </div>
+    </div>
+    
+    <h2>Step Results</h2>
+    
+      <div class="step status-drift">
+        <div class="step-header">
+          <span class="step-icon">⚠️</span>
+          <span class="step-id">step-1-sign-in-portal</span>
+          <span class="step-title">Sign in to Azure Portal</span>
+          
+          <span class="step-duration">206s</span>
+        </div>
+        
+        
+      <div class="drift-issues">
+        <strong>Drift Issues:</strong>
+        <ul>
+          
+            <li>
+              <span class="drift-category">selector_drift</span>
+              <span class="drift-severity severity-warning">warning</span>
+              <p>The &quot;Welcome to Azure&quot; splash screen with a Cancel button did not appear. The portal loaded directly to the home page showing &quot;欢迎使用 Azure!&quot; with subscription options. This is likely normal behavior for returning users whose profile already dismissed the splash — a human following these instructions would also not see the Cancel button if previously dismissed.</p>
+              <p class="recommendation">💡 Update lab instructions to reflect new element text/location</p>
+            </li>
+          
+        </ul>
+      </div>
+    
+        
+      <div class="screenshots">
+        
+          <div class="screenshot">
+            <strong>Before:</strong>
+            <img src="screenshots/step-1-sign-in-portal-before.png" alt="Before step-1-sign-in-portal" loading="lazy" />
+          </div>
+        
+        
+          <div class="screenshot">
+            <strong>After:</strong>
+            <img src="screenshots/step-1-sign-in-portal-after.png" alt="After step-1-sign-in-portal" loading="lazy" />
+          </div>
+        
+        
+      </div>
+    
+      </div>
+    
+
+      <div class="step status-passed">
+        <div class="step-header">
+          <span class="step-icon">✅</span>
+          <span class="step-id">step-2-navigate-entra-id</span>
+          <span class="step-title">Navigate to Microsoft Entra ID</span>
+          
+          <span class="step-duration">88s</span>
+        </div>
+        
+        
+        
+      <div class="screenshots">
+        
+          <div class="screenshot">
+            <strong>Before:</strong>
+            <img src="screenshots/step-2-navigate-entra-id-before.png" alt="Before step-2-navigate-entra-id" loading="lazy" />
+          </div>
+        
+        
+          <div class="screenshot">
+            <strong>After:</strong>
+            <img src="screenshots/step-2-navigate-entra-id-after.png" alt="After step-2-navigate-entra-id" loading="lazy" />
+          </div>
+        
+        
+      </div>
+    
+      </div>
+    
+
+      <div class="step status-drift">
+        <div class="step-header">
+          <span class="step-icon">⚠️</span>
+          <span class="step-id">step-3-explore-tenants</span>
+          <span class="step-title">Explore Tenant Management</span>
+          
+          <span class="step-duration">384s</span>
+        </div>
+        
+        
+      <div class="drift-issues">
+        <strong>Drift Issues:</strong>
+        <ul>
+          
+            <li>
+              <span class="drift-category">selector_drift</span>
+              <span class="drift-severity severity-warning">warning</span>
+              <p>The instructions describe &quot;Manage tenants&quot; as a &quot;tab&quot; but it is actually a command bar button in the toolbar at the top of the Overview blade (alongside &quot;添加/Add&quot;, &quot;新增功能/What's new&quot;, &quot;预览功能/Preview features&quot;, &quot;提供反馈/Provide feedback&quot;). It functions the same way — clicking it opens the tenant management view — but it is not a tab within the content area. A human would still find it easily.</p>
+              <p class="recommendation">💡 Update lab instructions to reflect new element text/location</p>
+            </li>
+          
+        </ul>
+      </div>
+    
+        
+      <div class="screenshots">
+        
+          <div class="screenshot">
+            <strong>Before:</strong>
+            <img src="screenshots/step-3-explore-tenants-before.png" alt="Before step-3-explore-tenants" loading="lazy" />
+          </div>
+        
+        
+          <div class="screenshot">
+            <strong>After:</strong>
+            <img src="screenshots/step-3-explore-tenants-after.png" alt="After step-3-explore-tenants" loading="lazy" />
+          </div>
+        
+        
+      </div>
+    
+      </div>
+    
+
+      <div class="step status-drift">
+        <div class="step-header">
+          <span class="step-icon">⚠️</span>
+          <span class="step-id">step-4-navigate-users</span>
+          <span class="step-title">Navigate to Users Section</span>
+          
+          <span class="step-duration">281s</span>
+        </div>
+        
+        
+      <div class="drift-issues">
+        <strong>Drift Issues:</strong>
+        <ul>
+          
+            <li>
+              <span class="drift-category">selector_drift</span>
+              <span class="drift-severity severity-warning">warning</span>
+              <p>The instructions say &quot;New user drop-down&quot; with option &quot;Create new user&quot;. In the current UI, the dropdown button is labeled &quot;新建用户&quot; (New user) and the dropdown option is also labeled &quot;新建用户&quot; with a subtitle &quot;在组织中创建新的内部用户&quot; (Create new internal user in organization) — not &quot;Create new user&quot; as a separate label. The second option is &quot;邀请外部用户&quot; (Invite external user). The naming is slightly different but a human would have no trouble identifying the correct option.</p>
+              <p class="recommendation">💡 Update lab instructions to reflect new element text/location</p>
+            </li>
+          
+        </ul>
+      </div>
+    
+        
+      <div class="screenshots">
+        
+          <div class="screenshot">
+            <strong>Before:</strong>
+            <img src="screenshots/step-4-navigate-users-before.png" alt="Before step-4-navigate-users" loading="lazy" />
+          </div>
+        
+        
+          <div class="screenshot">
+            <strong>After:</strong>
+            <img src="screenshots/step-4-navigate-users-after.png" alt="After step-4-navigate-users" loading="lazy" />
+          </div>
+        
+        
+      </div>
+    
+      </div>
+    
+
+      <div class="step status-drift">
+        <div class="step-header">
+          <span class="step-icon">⚠️</span>
+          <span class="step-id">step-5-create-user-az104</span>
+          <span class="step-title">Create New User az104-user1</span>
+          
+          <span class="step-duration">227s</span>
+        </div>
+        
+        
+      <div class="drift-issues">
+        <strong>Drift Issues:</strong>
+        <ul>
+          
+            <li>
+              <span class="drift-category">selector_drift</span>
+              <span class="drift-severity severity-warning">warning</span>
+              <p>The &quot;User principal name&quot; field is split into two parts: a text input for the local part (labeled &quot;用户主体名称的本地部分&quot;) and a domain dropdown (labeled &quot;用户主题名称的域名&quot;) pre-filled with &quot;RudolfZhangoutlook.onmicrosoft.com&quot;. The instructions simply say &quot;User principal name: az104-user1&quot; but a human would naturally type &quot;az104-user1&quot; in the local part field. This split UPN design matches current Azure portal behavior and would not confuse a human user.</p>
+              <p class="recommendation">💡 Update lab instructions to reflect new element text/location</p>
+            </li>
+          
+        </ul>
+      </div>
+    
+        
+      <div class="screenshots">
+        
+          <div class="screenshot">
+            <strong>Before:</strong>
+            <img src="screenshots/step-5-create-user-az104-before.png" alt="Before step-5-create-user-az104" loading="lazy" />
+          </div>
+        
+        
+          <div class="screenshot">
+            <strong>After:</strong>
+            <img src="screenshots/step-5-create-user-az104-after.png" alt="After step-5-create-user-az104" loading="lazy" />
+          </div>
+        
+        
+      </div>
+    
+      </div>
+    
+
+      <div class="step status-drift">
+        <div class="step-header">
+          <span class="step-icon">⚠️</span>
+          <span class="step-id">step-6-invite-external-user</span>
+          <span class="step-title">Invite External User</span>
+          
+          <span class="step-duration">190s</span>
+        </div>
+        
+        
+      <div class="drift-issues">
+        <strong>Drift Issues:</strong>
+        <ul>
+          
+            <li>
+              <span class="drift-category">selector_drift</span>
+              <span class="drift-severity severity-warning">warning</span>
+              <p>The instructions say &quot;Review + invite&quot; and &quot;Invite&quot; which matches the current UI labels (审阅+邀请 / 邀请). The instructions describe &quot;Send invite message&quot; checkbox which is labeled &quot;发送邀请邮件&quot; and was checked by default. The invite form also includes additional fields not mentioned in the instructions: &quot;抄送收件人&quot; (CC recipient) and &quot;邀请重定向 URL&quot; (Invite redirect URL) — these are optional and do not need to be filled. None of these differences would confuse a human user.</p>
+              <p class="recommendation">💡 Update lab instructions to reflect new element text/location</p>
+            </li>
+          
+            <li>
+              <span class="drift-category">unexpected_ui</span>
+              <span class="drift-severity severity-info">info</span>
+              <p>An informational banner at the top of the invite form states: &quot;自 2025 年 12 月起，B2B 邀请电子邮件将发送自你组织的主域(例如 contoso.onmicrosoft.com)，而非 Microsoft.com&quot; (Since December 2025, B2B invite emails are sent from your org's primary domain, not Microsoft.com). This is informational only and does not block progress.</p>
+              <p class="recommendation">💡 Informational UI element - does not affect lab completion</p>
+            </li>
+          
+        </ul>
+      </div>
+    
+        
+      <div class="screenshots">
+        
+          <div class="screenshot">
+            <strong>Before:</strong>
+            <img src="screenshots/step-6-invite-external-user-before.png" alt="Before step-6-invite-external-user" loading="lazy" />
+          </div>
+        
+        
+          <div class="screenshot">
+            <strong>After:</strong>
+            <img src="screenshots/step-6-invite-external-user-after.png" alt="After step-6-invite-external-user" loading="lazy" />
+          </div>
+        
+        
+      </div>
+    
+      </div>
+    
+
+      <div class="step status-passed">
+        <div class="step-header">
+          <span class="step-icon">✅</span>
+          <span class="step-id">step-7-navigate-groups</span>
+          <span class="step-title">Navigate to Groups Section</span>
+          
+          <span class="step-duration">88s</span>
+        </div>
+        
+        
+        
+      <div class="screenshots">
+        
+          <div class="screenshot">
+            <strong>Before:</strong>
+            <img src="screenshots/step-7-navigate-groups-before.png" alt="Before step-7-navigate-groups" loading="lazy" />
+          </div>
+        
+        
+          <div class="screenshot">
+            <strong>After:</strong>
+            <img src="screenshots/step-7-navigate-groups-after.png" alt="After step-7-navigate-groups" loading="lazy" />
+          </div>
+        
+        
+      </div>
+    
+      </div>
+    
+
+      <div class="step status-drift">
+        <div class="step-header">
+          <span class="step-icon">⚠️</span>
+          <span class="step-id">step-8-create-security-group</span>
+          <span class="step-title">Create IT Lab Administrators Group</span>
+          
+          <span class="step-duration">204s</span>
+        </div>
+        
+        
+      <div class="drift-issues">
+        <strong>Drift Issues:</strong>
+        <ul>
+          
+            <li>
+              <span class="drift-category">selector_drift</span>
+              <span class="drift-severity severity-warning">warning</span>
+              <p>The field labels in the current UI use Chinese: &quot;组类型&quot; (Group type), &quot;组名&quot; (Group name — not &quot;Group name&quot; but shortened to &quot;组名&quot;), &quot;组描述&quot; (Group description), &quot;成员身份类型&quot; (Membership type). The &quot;Group type&quot; default is &quot;安全组&quot; (Security), which matches the instructions. The &quot;Membership type&quot; default is &quot;已分配&quot; (Assigned), also matching. A human following the English instructions would easily identify the corresponding fields.</p>
+              <p class="recommendation">💡 Update lab instructions to reflect new element text/location</p>
+            </li>
+          
+        </ul>
+      </div>
+    
+        
+      <div class="screenshots">
+        
+          <div class="screenshot">
+            <strong>Before:</strong>
+            <img src="screenshots/step-8-create-security-group-before.png" alt="Before step-8-create-security-group" loading="lazy" />
+          </div>
+        
+        
+          <div class="screenshot">
+            <strong>After:</strong>
+            <img src="screenshots/step-8-create-security-group-after.png" alt="After step-8-create-security-group" loading="lazy" />
+          </div>
+        
+        
+      </div>
+    
+      </div>
+    
+
+      <div class="step status-drift">
+        <div class="step-header">
+          <span class="step-icon">⚠️</span>
+          <span class="step-id">step-9-configure-group-ownership-membership</span>
+          <span class="step-title">Configure Group Owners and Members</span>
+          
+          <span class="step-duration">312s</span>
+        </div>
+        
+        
+      <div class="drift-issues">
+        <strong>Drift Issues:</strong>
+        <ul>
+          
+            <li>
+              <span class="drift-category">selector_drift</span>
+              <span class="drift-severity severity-warning">warning</span>
+              <p>The owner/member picker panels are titled &quot;添加所有者&quot; (Add owners) and &quot;添加成员&quot; (Add members). They use a search box with a checkbox-based user list showing Name (名称) and User Principal Name (用户主体名称) columns. The picker has a &quot;选择&quot; (Select) button at the bottom to confirm. This matches the expected &quot;No owners selected&quot; / &quot;No members selected&quot; workflow described in the instructions — the links are labeled &quot;未选择所有者&quot; and &quot;未选择任何成员&quot; respectively.</p>
+              <p class="recommendation">💡 Update lab instructions to reflect new element text/location</p>
+            </li>
+          
+        </ul>
+      </div>
+    
+        
+      <div class="screenshots">
+        
+          <div class="screenshot">
+            <strong>Before:</strong>
+            <img src="screenshots/step-9-configure-group-ownership-membership-before.png" alt="Before step-9-configure-group-ownership-membership" loading="lazy" />
+          </div>
+        
+        
+          <div class="screenshot">
+            <strong>After:</strong>
+            <img src="screenshots/step-9-configure-group-ownership-membership-after.png" alt="After step-9-configure-group-ownership-membership" loading="lazy" />
+          </div>
+        
+        
+      </div>
+    
+      </div>
+    
+
+      <div class="step status-passed">
+        <div class="step-header">
+          <span class="step-icon">✅</span>
+          <span class="step-id">step-10-verify-group-creation</span>
+          <span class="step-title">Verify Group Creation</span>
+          
+          <span class="step-duration">106s</span>
+        </div>
+        
+        
+      <div class="drift-issues">
+        <strong>Drift Issues:</strong>
+        <ul>
+          
+            <li>
+              <span class="drift-category">unexpected_ui</span>
+              <span class="drift-severity severity-info">info</span>
+              <p>An informational banner on the All Groups page: &quot;Microsoft Entra 具有更简单的集成体验，用于管理所有身份和访问管理需求。试用新的 Microsoft Entra 管理中心!&quot; (Microsoft Entra has a simpler integrated experience... Try the new Microsoft Entra admin center!). This is informational only and does not block progress.</p>
+              <p class="recommendation">💡 Informational UI element - does not affect lab completion</p>
+            </li>
+          
+        </ul>
+      </div>
+    
+        
+      <div class="screenshots">
+        
+          <div class="screenshot">
+            <strong>Before:</strong>
+            <img src="screenshots/step-10-verify-group-creation-before.png" alt="Before step-10-verify-group-creation" loading="lazy" />
+          </div>
+        
+        
+          <div class="screenshot">
+            <strong>After:</strong>
+            <img src="screenshots/step-10-verify-group-creation-after.png" alt="After step-10-verify-group-creation" loading="lazy" />
+          </div>
+        
+        
+      </div>
+    
+      </div>
+    
+    
+    <div class="footer">
+      Generated at 2026-03-26T01:12:02.165Z
+    </div>
+  </div>
+</body>
+</html>

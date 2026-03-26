@@ -1,0 +1,25 @@
+All screenshots confirm complete success:
+
+- **BEFORE**: Users list showing 2 users (az104-user1 created in previous step + Zhang Rudolf)
+- **BASICS**: Invite form filled — 电子邮件 (Email) = `labuser-external@outlook.com`, 显示名称 (Display name) = `Lab External User`, 发送邀请邮件 (Send invite message) = ✓ checked, 消息 (Message) = "Welcome to Azure and our group project", 抄送收件人 (CC recipient) empty, 邀请重定向 URL = auto-populated
+- **REVIEW**: Clean review on 审阅+邀请 (Review + invite) tab. Shows all basics + 属性 (Properties): 用户类型 = 来宾 (Guest), 职务 = IT Lab Administrator, 部门 = IT, 使用位置 = 美国 (United States)
+- **AFTER**: Green success toast: "已成功邀请用户 Lab External User" (Successfully invited user Lab External User). 邀请 (Invite) button is now greyed out.
+
+Notable observations about the current UI:
+- The form title is "邀请外部用户" (Invite external user), matching the dropdown option label
+- The tab structure is: 基本信息 (Basics) → 属性 (Properties) → 分配 (Assignments) → 审阅+邀请 (Review + invite) — the last tab says "Review + invite" not "Review + create"
+- Additional fields present: 抄送收件人 (CC recipient) and 邀请重定向 URL (Invite redirect URL) — not mentioned in lab instructions
+- An info banner: "自 2025 年 12 月起，B2B 邀请电子邮件将发送自你组织的主域..." (Since Dec 2025, B2B invite emails will be sent from your org's primary domain, not Microsoft.com)
+
+```
+ACTIONS_TAKEN: From Users list page, clicked "新建用户" (New user) dropdown, selected "邀请外部用户" (Invite external user) option. On the invite form Basics tab: filled Email with "labuser-external@outlook.com", Display name with "Lab External User", confirmed "发送邀请邮件" (Send invite message) was already checked, filled Message with "Welcome to Azure and our group project". Navigated to Properties tab: filled Job title with "IT Lab Administrator", Department with "IT", Usage location with "美国" (United States). Clicked "审阅+邀请" (Review + invite) tab, confirmed all details, clicked "邀请" (Invite) button. Success toast appeared confirming invitation sent.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES (all elements found — dropdown, invite option, form fields, tabs, buttons)
+ELEMENT_DIFFERENT: The instructions say "Review + invite" and "Invite" which matches the current UI labels (审阅+邀请 / 邀请). The instructions describe "Send invite message" checkbox which is labeled "发送邀请邮件" and was checked by default. The invite form also includes additional fields not mentioned in the instructions: "抄送收件人" (CC recipient) and "邀请重定向 URL" (Invite redirect URL) — these are optional and do not need to be filled. None of these differences would confuse a human user.
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: An informational banner at the top of the invite form states: "自 2025 年 12 月起，B2B 邀请电子邮件将发送自你组织的主域(例如 contoso.onmicrosoft.com)，而非 Microsoft.com" (Since December 2025, B2B invite emails are sent from your org's primary domain, not Microsoft.com). This is informational only and does not block progress.
+BLOCKING_ISSUES: None
+CURRENT_STATE: Invite external user page showing review summary with green success notification toast: "已成功邀请用户 Lab External User" (Successfully invited user Lab External User). The Invite button is greyed out (completed).
+SCREENSHOT_BEFORE: step-6-invite-external-user-before.png
+SCREENSHOT_AFTER: step-6-invite-external-user-after.png
+```
