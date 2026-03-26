@@ -19,7 +19,6 @@ jobs:
           $ErrorActionPreference = "Stop"
 
           $apiUrl = "https://api.github.com/repos/$env:REPO"
-          Write-Host "Calling GitHub API: $apiUrl"
 
           $headers = @{
             Accept = "application/vnd.github+json"
@@ -29,8 +28,6 @@ jobs:
 
           $repo = Invoke-RestMethod -Uri $apiUrl -Headers $headers -Method Get
           $homepage = $repo.homepage
-
-          Write-Host "Homepage from API: [$homepage]"
 
           if ([string]::IsNullOrWhiteSpace($homepage)) {
             throw "Repository About/Homepage URL is empty."
@@ -46,9 +43,6 @@ jobs:
 
           $repoName = "${{ github.event.repository.name }}"
           $timestamp = Get-Date -Format "yyyyMMdd-HHmmss"
-
-          Write-Host "Repo name: $repoName"
-          Write-Host "Timestamp: $timestamp"
 
           Add-Content -Path $env:GITHUB_OUTPUT -Value "repo_name=$repoName"
           Add-Content -Path $env:GITHUB_OUTPUT -Value "timestamp=$timestamp"
@@ -74,102 +68,6 @@ jobs:
             throw "CLI entry not found: $runnerPath\src\cli\index.ts"
           }
 
-          Write-Host "Lab runner folder exists: $runnerPath"
-
-      - name: Debug runner identity and session
-        shell: powershell
-        run: |
-          $ErrorActionPreference = "Continue"
-
-          Write-Host "=== whoami ==="
-          whoami
-
-          Write-Host "`n=== hostname ==="
-          hostname
-
-          Write-Host "`n=== USERPROFILE ==="
-          Write-Host $env:USERPROFILE
-
-          Write-Host "`n=== HOMEDRIVE/HOMEPATH ==="
-          Write-Host "$env:HOMEDRIVE$env:HOMEPATH"
-
-          Write-Host "`n=== current location ==="
-          Get-Location
-
-          Write-Host "`n=== query session ==="
-          query session
-
-          Write-Host "`n=== explorer process ==="
-          tasklist | findstr /I explorer.exe
-
-          Write-Host "`n=== runner services ==="
-          Get-Service | Where-Object { $_.Name -like "actions.runner*" } | Format-Table -AutoSize
-
-          Write-Host "`n=== runner service account ==="
-          Get-WmiObject Win32_Service | Where-Object { $_.Name -like "actions.runner*" } | Select-Object Name, StartName, State | Format-Table -AutoSize
-
-      - name: Debug auth profile files
-        shell: powershell
-        run: |
-          $ErrorActionPreference = "Continue"
-
-          $authRoot = Join-Path $env:USERPROFILE ".copilot-lab-runner\auth"
-          Write-Host "Auth root: $authRoot"
-
-          if (Test-Path $authRoot) {
-            Get-ChildItem -Recurse $authRoot | Select-Object FullName, Length, LastWriteTime | Format-Table -AutoSize
-          } else {
-            Write-Host "Auth root not found"
-          }
-
-      - name: Check Edge standard install paths
-        shell: powershell
-        run: |
-          $ErrorActionPreference = "Continue"
-
-          $paths = @(
-            "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe",
-            "C:\Program Files\Microsoft\Edge\Application\msedge.exe"
-          )
-
-          foreach ($p in $paths) {
-            if (Test-Path $p) {
-              Write-Host "FOUND: $p"
-            } else {
-              Write-Host "MISSING: $p"
-            }
-          }
-
-      - name: Show Node npm and browser details
-        shell: powershell
-        working-directory: C:\lab-drift-runner
-        run: |
-          $ErrorActionPreference = "Continue"
-
-          Write-Host "=== where node ==="
-          where.exe node
-
-          Write-Host "`n=== where npm ==="
-          where.exe npm
-
-          Write-Host "`n=== where npx ==="
-          where.exe npx
-
-          Write-Host "`n=== where msedge ==="
-          where.exe msedge
-
-          Write-Host "`n=== versions ==="
-          node -v
-          npm -v
-          npx tsx --version
-
-          Write-Host "`n=== playwright / mcp packages ==="
-          npm ls @playwright/mcp playwright --depth=0
-
-          Write-Host "`n=== playwright installed browsers ==="
-          npx playwright install --list
-      
-      
       - name: Ensure output parent folder exists
         shell: powershell
         working-directory: C:\lab-drift-runner
@@ -180,68 +78,14 @@ jobs:
           $outDir = Join-Path (Get-Location) $timestamp
 
           if (-not (Test-Path $outDir)) {
-            Write-Host "Creating output root: $outDir"
             New-Item -ItemType Directory -Path $outDir -Force | Out-Null
-          } else {
-            Write-Host "Output root already exists: $outDir"
           }
 
       - name: Run scan
         shell: cmd
         working-directory: C:\lab-drift-runner
         run: |
-          echo ===== SCAN INPUTS =====
-          echo URL: ${{ steps.repo_info.outputs.homepage }}
-          echo Output folder: ${{ steps.scan_meta.outputs.relative_output }}
-          echo Browser: msedge
-          echo Executable path: C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe
-          echo Headless requested: true
-          echo Auth profile: azure-portal
-          echo =======================
-          npx tsx src/cli/index.ts scan "${{ steps.repo_info.outputs.homepage }}" --browser=msedge --executable-path="C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --auth=azure-portal --output="./${{ steps.scan_meta.outputs.relative_output }}" --agent-timeout-ms=420000 --max-step-retries=5 --verbose --skip-cleanup
-
-      - name: Debug output files after scan
-        if: always()
-        shell: powershell
-        run: |
-          $ErrorActionPreference = "Continue"
-
-          $timestamp = "${{ steps.scan_meta.outputs.timestamp }}"
-          $sourceDir = "C:\lab-drift-runner\$timestamp"
-
-          Write-Host "Expected output dir: $sourceDir"
-
-          if (Test-Path $sourceDir) {
-            Write-Host "`n=== output tree ==="
-            Get-ChildItem -Recurse $sourceDir | Select-Object FullName, Length, LastWriteTime | Format-Table -AutoSize
-          } else {
-            Write-Host "Output dir not found."
-          }
-
-      - name: Show recent text json md files from output
-        if: always()
-        shell: powershell
-        run: |
-          $ErrorActionPreference = "Continue"
-
-          $timestamp = "${{ steps.scan_meta.outputs.timestamp }}"
-          $sourceDir = "C:\lab-drift-runner\$timestamp"
-
-          if (-not (Test-Path $sourceDir)) {
-            Write-Host "Output dir not found, skipping file preview."
-            exit 0
-          }
-
-          $files = Get-ChildItem -Recurse $sourceDir -Include *.txt, *.json, *.md -File | Select-Object -First 30
-
-          foreach ($file in $files) {
-            Write-Host "`n================ FILE: $($file.FullName) ================"
-            try {
-              Get-Content $file.FullName -TotalCount 120
-            } catch {
-              Write-Host "Failed to read file: $($_.Exception.Message)"
-            }
-          }
+          npx tsx src/cli/index.ts scan "${{ steps.repo_info.outputs.homepage }}" --browser=msedge --executable-path="C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --auth=azure-portal --output="./${{ steps.scan_meta.outputs.relative_output }}" --agent-timeout-ms=420000 --max-step-retries=5 --skip-cleanup
 
       - name: Copy scan output back to repo LabDrift folder
         shell: powershell
@@ -262,11 +106,9 @@ jobs:
           New-Item -ItemType Directory -Path $targetRoot -Force | Out-Null
 
           if (Test-Path $targetDir) {
-            Write-Host "Removing existing timestamp folder: $targetDir"
             Remove-Item -Recurse -Force $targetDir
           }
 
-          Write-Host "Copying from $sourceDir to $targetDir"
           Copy-Item -Path $sourceDir -Destination $targetDir -Recurse -Force
 
           $metaFile = Join-Path $targetDir "_meta.txt"
@@ -284,7 +126,6 @@ jobs:
 
           $changes = git status --porcelain
           if (-not $changes) {
-            Write-Host "No changes to commit."
             exit 0
           }
 
@@ -301,8 +142,5 @@ jobs:
           $sourceDir = "C:\lab-drift-runner\$timestamp"
 
           if (Test-Path $sourceDir) {
-            Write-Host "Removing local output folder: $sourceDir"
             Remove-Item -Recurse -Force $sourceDir
-          } else {
-            Write-Host "Local output folder does not exist: $sourceDir"
           }
