@@ -1,0 +1,14 @@
+Step 6 verified. The Users list clearly shows **2 users found**: `az104-user1` and `Zhang Rudolf`, both as Member type.
+
+```
+ACTIONS_TAKEN: Navigated to the Users list page (All Users). The page loaded with the user list already showing the newly created user. Used F5 to refresh (the in-page Refresh button was not found in the accessibility snapshot, though the toolbar shows "New user", "Edit", "Delete", "Download users" buttons).
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES (user az104-user1 visible in the users list)
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: Users list page showing "2 users found" — az104-user1 (az104-user1@RudolfZhangoutlook.onmicrosoft.com, Member) and Zhang Rudolf (RudolfZhang_outl..., Member). An info banner "Azure Active Directory is now Microsoft Entra ID" is displayed at the top.
+SCREENSHOT_BEFORE: step-6-verify-user-creation-before.png
+SCREENSHOT_AFTER: step-6-verify-user-creation-after.png
+```

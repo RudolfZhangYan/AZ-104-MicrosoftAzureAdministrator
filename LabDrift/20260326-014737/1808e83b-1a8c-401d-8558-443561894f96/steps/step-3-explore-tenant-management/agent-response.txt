@@ -1,0 +1,16 @@
+
+
+Step 3 completed successfully. All three actions executed as expected — clicked Overview tab, navigated to Manage tenants page (showing tenant list with "默认目录"), then returned via browser back to the Entra ID Overview.
+
+```
+ACTIONS_TAKEN: Clicked the Overview tab on the Entra ID page, then clicked "Manage tenants" menu item which navigated to the Manage tenants page (portal.azure.com/#view/Microsoft_AAD_IAM/DirectorySwitchBlade). Viewed the tenant list showing "默认目录" (Default Directory). Used browser back to return to the Entra ID Overview page.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES (Overview tab, Manage tenants button, and browser back all worked)
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: Back on Microsoft Entra ID Overview page (默认目录 | Overview) showing tenant basic info: Name "默认目录", Tenant ID dc57358e-..., Primary domain RudolfZhangoutlook.onmicrosoft.com, License: Microsoft Entra ID Free, 1 User, 0 Groups, 0 Applications, 0 Devices.
+SCREENSHOT_BEFORE: step-3-explore-tenant-management-before.png
+SCREENSHOT_AFTER: step-3-explore-tenant-management-after.png
+```

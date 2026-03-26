@@ -1,0 +1,14 @@
+Step 5 completed. User `az104-user1` created and verified via Azure CLI.
+
+```
+ACTIONS_TAKEN: Navigated to the Create new user form. On the Basics tab: filled User principal name with "az104-user1", filled Display name with "az104-user1", confirmed Auto-generate password was checked (password: Qako612300), confirmed Account enabled was checked. Clicked the Properties tab: filled Job title with "IT Lab Administrator", filled Department with "IT", selected Usage location "United States" from the dropdown. Clicked "Review + create" tab which showed the summary confirming all values. Clicked "Create" button which created the user and redirected to the portal home page.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES (all form fields, tabs, and buttons found as expected)
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: Azure portal home page. User az104-user1@RudolfZhangoutlook.onmicrosoft.com successfully created and verified via Azure CLI (ID: 1a80e1f9-3010-4316-a9f7-75dbc580d894, Job title: IT Lab Administrator).
+SCREENSHOT_BEFORE: step-5-create-user-az104-before.png
+SCREENSHOT_AFTER: step-5-create-user-az104-after.png
+```

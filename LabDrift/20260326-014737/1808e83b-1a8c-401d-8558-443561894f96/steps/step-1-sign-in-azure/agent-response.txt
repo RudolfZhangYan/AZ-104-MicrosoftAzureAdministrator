@@ -1,0 +1,14 @@
+Step 1 complete. Here's the drift report:
+
+```
+ACTIONS_TAKEN: Navigated to https://portal.azure.com. Auto-signed in via saved browser session (RudolfZhang@outlook.com). Portal loaded directly to the home page. Dismissed a Microsoft feedback survey toast that appeared.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: NO (no "Cancel" button — there was no splash screen modal to dismiss)
+ELEMENT_DIFFERENT: The "Welcome to Azure" splash screen with a "Cancel" button no longer appears as a modal dialog. Instead, the portal loads directly to the home page which shows inline "Welcome to Azure!" content with subscription options (Free Trial, Manage Entra ID, Azure for Students). There is no Cancel button to click. This appears to be the current default home experience for tenants without subscriptions.
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: A Microsoft feedback survey toast ("How satisfied are you with portal.azure.com?") appeared in the top-right corner. It's informational and does not block progress — can be dismissed via its X button.
+BLOCKING_ISSUES: None
+CURRENT_STATE: Azure portal home page is displayed, signed in as RudolfZhang@outlook.com. Shows "Welcome to Azure!" with options for free trial, Entra ID management, and Azure for Students.
+SCREENSHOT_BEFORE: step-1-sign-in-azure-before.png
+SCREENSHOT_AFTER: step-1-sign-in-azure-after.png
+```

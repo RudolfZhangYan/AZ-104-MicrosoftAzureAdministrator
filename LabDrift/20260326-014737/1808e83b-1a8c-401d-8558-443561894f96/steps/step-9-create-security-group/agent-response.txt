@@ -1,0 +1,20 @@
+Step 9 completed. The screenshot confirms the New Group form is filled correctly:
+- **Group type**: Security ✓
+- **Group name**: IT Lab Administrators ✓
+- **Group description**: Administrators that manage the IT lab ✓
+- **Membership type**: Assigned (greyed out/disabled — default for Security groups) ✓
+- Owners: No owners selected, Members: No members selected
+- Create button visible at bottom
+
+```
+ACTIONS_TAKEN: Navigated to Groups > All groups, clicked "New group" menu item. On the New Group form: Group type was already set to "Security" by default, filled Group name with "IT Lab Administrators", filled Group description with "Administrators that manage the IT lab". Membership type was already set to "Assigned" and is disabled/greyed out for Security groups.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES (New group button, all form fields found as expected)
+ELEMENT_DIFFERENT: The Membership type dropdown is disabled/greyed out when Group type is "Security" — it's locked to "Assigned" and cannot be changed. A human user would see this is pre-set and not editable, which differs slightly from the instruction suggesting they need to "set" it.
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: New Group form displayed with all fields filled: Group type = Security, Group name = IT Lab Administrators, Group description = Administrators that manage the IT lab, Membership type = Assigned (disabled). Owners and Members sections show "No owners/members selected". Create button at bottom.
+SCREENSHOT_BEFORE: step-9-create-security-group-before.png
+SCREENSHOT_AFTER: step-9-create-security-group-after.png
+```

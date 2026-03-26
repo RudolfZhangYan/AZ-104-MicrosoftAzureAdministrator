@@ -1,0 +1,251 @@
+{
+  "runId": "1808e83b-1a8c-401d-8558-443561894f96",
+  "status": "drift_detected",
+  "lab": {
+    "labId": "lab-01-manage-microsoft-entra-id-identit",
+    "title": "Lab 01 - Manage Microsoft Entra ID Identities",
+    "sourceUrl": "https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_01-Manage_Entra_ID_Identities.html"
+  },
+  "steps": [
+    {
+      "stepId": "step-1-sign-in-azure",
+      "title": "Sign in to Azure Portal",
+      "instruction": "Sign in to the Azure portal at https://portal.azure.com and dismiss the Welcome to Azure splash screen by selecting Cancel",
+      "status": "drift",
+      "aiResponse": "Step 1 complete. Here's the drift report:\n\n```\nACTIONS_TAKEN: Navigated to https://portal.azure.com. Auto-signed in via saved browser session (RudolfZhang@outlook.com). Portal loaded directly to the home page. Dismissed a Microsoft feedback survey toast that appeared.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: NO (no \"Cancel\" button — there was no splash screen modal to dismiss)\nELEMENT_DIFFERENT: The \"Welcome to Azure\" splash screen with a \"Cancel\" button no longer appears as a modal dialog. Instead, the portal loads directly to the home page which shows inline \"Welcome to Azure!\" content with subscription options (Free Trial, Manage Entra ID, Azure for Students). There is no Cancel button to click. This appears to be the current default home experience for tenants without subscriptions.\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: A Microsoft feedback survey toast (\"How satisfied are you with portal.azure.com?\") appeared in the top-right corner. It's informational and does not block progress — can be dismissed via its X button.\nBLOCKING_ISSUES: None\nCURRENT_STATE: Azure portal home page is displayed, signed in as RudolfZhang@outlook.com. Shows \"Welcome to Azure!\" with options for free trial, Entra ID management, and Azure for Students.\nSCREENSHOT_BEFORE: step-1-sign-in-azure-before.png\nSCREENSHOT_AFTER: step-1-sign-in-azure-after.png\n```",
+      "driftIssues": [
+        {
+          "id": "step-1-sign-in-azure-selector",
+          "stepId": "step-1-sign-in-azure",
+          "category": "selector_drift",
+          "severity": "warning",
+          "instructionText": "Sign in to the Azure portal at https://portal.azure.com and dismiss the Welcome to Azure splash screen by selecting Cancel",
+          "actualBehavior": "The \"Welcome to Azure\" splash screen with a \"Cancel\" button no longer appears as a modal dialog. Instead, the portal loads directly to the home page which shows inline \"Welcome to Azure!\" content with subscription options (Free Trial, Manage Entra ID, Azure for Students). There is no Cancel button to click. This appears to be the current default home experience for tenants without subscriptions.",
+          "recommendation": "Update lab instructions to reflect new element text/location",
+          "screenshotPath": "screenshots/step-1-sign-in-azure-after.png"
+        },
+        {
+          "id": "step-1-sign-in-azure-unexpected",
+          "stepId": "step-1-sign-in-azure",
+          "category": "unexpected_ui",
+          "severity": "info",
+          "instructionText": "Sign in to the Azure portal at https://portal.azure.com and dismiss the Welcome to Azure splash screen by selecting Cancel",
+          "actualBehavior": "A Microsoft feedback survey toast (\"How satisfied are you with portal.azure.com?\") appeared in the top-right corner. It's informational and does not block progress — can be dismissed via its X button.",
+          "recommendation": "Informational UI element - does not affect lab completion",
+          "screenshotPath": "screenshots/step-1-sign-in-azure-after.png"
+        }
+      ],
+      "durationMs": 377717,
+      "screenshotBefore": "screenshots/step-1-sign-in-azure-before.png",
+      "screenshotAfter": "screenshots/step-1-sign-in-azure-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-2-navigate-entra-id",
+      "title": "Navigate to Microsoft Entra ID",
+      "instruction": "Search for and select Microsoft Entra ID from the Azure portal",
+      "status": "passed",
+      "aiResponse": "Step 2 complete. The Entra ID Overview page loaded successfully showing tenant \"默认目录\" with 1 user, 0 groups.\n\n```\nACTIONS_TAKEN: Clicked the Azure portal search box, typed \"Microsoft Entra ID\", selected \"Microsoft Entra ID\" from the Recent Services dropdown results. The Entra ID Overview page loaded at portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/Overview.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES (search box and Microsoft Entra ID service result both found)\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: Microsoft Entra ID Overview page showing tenant \"默认目录\" (Default Directory), Tenant ID dc57358e-0219-4d18-86ff-7b81b4d21318, Primary domain RudolfZhangoutlook.onmicrosoft.com, License: Microsoft Entra ID Free, 1 User, 0 Groups, 0 Applications, 0 Devices. Banner promoting Microsoft Entra admin center (entra.microsoft.com) is visible.\nSCREENSHOT_BEFORE: step-2-navigate-entra-id-before.png\nSCREENSHOT_AFTER: step-2-navigate-entra-id-after.png\n```",
+      "driftIssues": [],
+      "durationMs": 222104,
+      "screenshotBefore": "screenshots/step-2-navigate-entra-id-before.png",
+      "screenshotAfter": "screenshots/step-2-navigate-entra-id-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-3-explore-tenant-management",
+      "title": "Explore Tenant Management",
+      "instruction": "Select the Overview blade, then the Manage tenants tab, then return to the Entra ID page",
+      "status": "passed",
+      "aiResponse": "\n\nStep 3 completed successfully. All three actions executed as expected — clicked Overview tab, navigated to Manage tenants page (showing tenant list with \"默认目录\"), then returned via browser back to the Entra ID Overview.\n\n```\nACTIONS_TAKEN: Clicked the Overview tab on the Entra ID page, then clicked \"Manage tenants\" menu item which navigated to the Manage tenants page (portal.azure.com/#view/Microsoft_AAD_IAM/DirectorySwitchBlade). Viewed the tenant list showing \"默认目录\" (Default Directory). Used browser back to return to the Entra ID Overview page.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES (Overview tab, Manage tenants button, and browser back all worked)\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: Back on Microsoft Entra ID Overview page (默认目录 | Overview) showing tenant basic info: Name \"默认目录\", Tenant ID dc57358e-..., Primary domain RudolfZhangoutlook.onmicrosoft.com, License: Microsoft Entra ID Free, 1 User, 0 Groups, 0 Applications, 0 Devices.\nSCREENSHOT_BEFORE: step-3-explore-tenant-management-before.png\nSCREENSHOT_AFTER: step-3-explore-tenant-management-after.png\n```",
+      "driftIssues": [],
+      "durationMs": 95778,
+      "screenshotBefore": "screenshots/step-3-explore-tenant-management-before.png",
+      "screenshotAfter": "screenshots/step-3-explore-tenant-management-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-4-navigate-to-users",
+      "title": "Navigate to Users Section",
+      "instruction": "In the Manage blade, select Users, then in the New user drop-down select Create new user",
+      "status": "passed",
+      "aiResponse": "\n\nStep 4 completed successfully. The \"Create new user\" form is displayed with all expected fields visible.\n\n```\nACTIONS_TAKEN: From the Entra ID Overview page, clicked \"Users\" in the left navigation menu which navigated to the Users list page. Clicked the \"New user\" menu item, which revealed a dropdown with \"Create new user\" and \"Invite external user\" options. Clicked \"Create new user\" which opened the Create new user form.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES (Users link, New user button, and Create new user dropdown option all found)\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: Create new user form displayed on the Basics tab with fields: User principal name (empty, domain RudolfZhangoutlook.onmicrosoft.com), Mail nickname (derived from UPN, checked), Display name (empty), Password (auto-generated, checked), Account enabled (checked). Tabs visible: Basics, Properties, Assignments, Review + create. Bottom navigation shows \"Review + create\", \"Previous\", and \"Next: Properties\" buttons.\nSCREENSHOT_BEFORE: step-4-navigate-to-users-before.png\nSCREENSHOT_AFTER: step-4-navigate-to-users-after.png\n```",
+      "driftIssues": [],
+      "durationMs": 101592,
+      "screenshotBefore": "screenshots/step-4-navigate-to-users-before.png",
+      "screenshotAfter": "screenshots/step-4-navigate-to-users-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-5-create-user-az104",
+      "title": "Create User az104-user1",
+      "instruction": "Create a new user with User principal name az104-user1, Display name az104-user1, Auto-generate password checked, Account enabled checked. On Properties tab set Job title to IT Lab Administrator, Department to IT, Usage location to United States. Click Review + create, then Create",
+      "status": "passed",
+      "aiResponse": "Step 5 completed. User `az104-user1` created and verified via Azure CLI.\n\n```\nACTIONS_TAKEN: Navigated to the Create new user form. On the Basics tab: filled User principal name with \"az104-user1\", filled Display name with \"az104-user1\", confirmed Auto-generate password was checked (password: Qako612300), confirmed Account enabled was checked. Clicked the Properties tab: filled Job title with \"IT Lab Administrator\", filled Department with \"IT\", selected Usage location \"United States\" from the dropdown. Clicked \"Review + create\" tab which showed the summary confirming all values. Clicked \"Create\" button which created the user and redirected to the portal home page.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES (all form fields, tabs, and buttons found as expected)\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: Azure portal home page. User az104-user1@RudolfZhangoutlook.onmicrosoft.com successfully created and verified via Azure CLI (ID: 1a80e1f9-3010-4316-a9f7-75dbc580d894, Job title: IT Lab Administrator).\nSCREENSHOT_BEFORE: step-5-create-user-az104-before.png\nSCREENSHOT_AFTER: step-5-create-user-az104-after.png\n```",
+      "driftIssues": [],
+      "durationMs": 147145,
+      "screenshotBefore": "screenshots/step-5-create-user-az104-before.png",
+      "screenshotAfter": "screenshots/step-5-create-user-az104-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-6-verify-user-creation",
+      "title": "Verify User Creation",
+      "instruction": "Refresh the page and confirm your new user was created",
+      "status": "passed",
+      "aiResponse": "Step 6 verified. The Users list clearly shows **2 users found**: `az104-user1` and `Zhang Rudolf`, both as Member type.\n\n```\nACTIONS_TAKEN: Navigated to the Users list page (All Users). The page loaded with the user list already showing the newly created user. Used F5 to refresh (the in-page Refresh button was not found in the accessibility snapshot, though the toolbar shows \"New user\", \"Edit\", \"Delete\", \"Download users\" buttons).\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES (user az104-user1 visible in the users list)\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: Users list page showing \"2 users found\" — az104-user1 (az104-user1@RudolfZhangoutlook.onmicrosoft.com, Member) and Zhang Rudolf (RudolfZhang_outl..., Member). An info banner \"Azure Active Directory is now Microsoft Entra ID\" is displayed at the top.\nSCREENSHOT_BEFORE: step-6-verify-user-creation-before.png\nSCREENSHOT_AFTER: step-6-verify-user-creation-after.png\n```",
+      "driftIssues": [],
+      "durationMs": 74916,
+      "screenshotBefore": "screenshots/step-6-verify-user-creation-before.png",
+      "screenshotAfter": "screenshots/step-6-verify-user-creation-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-7-invite-external-user",
+      "title": "Invite External User",
+      "instruction": "In the New user drop-down select Invite an external user. Enter your email address, your name as display name, check Send invite message, add message 'Welcome to Azure and our group project'. Go to Properties tab and set Job title to IT Lab Administrator, Department to IT, Usage location to United States. Click Review + invite, then Invite",
+      "status": "drift",
+      "aiResponse": "Step 7 completed successfully. The screenshot confirms **3 users found**:\n- **az104-user1** (Member)\n- **AZ104 External Tester** (Guest)\n- **Zhang Rudolf** (Member)\n\n```\nACTIONS_TAKEN: From the Users list, clicked \"New user\" dropdown, selected \"Invite external user\". On the Basics tab: filled Email with \"az104-tester@outlook.com\", Display name with \"AZ104 External Tester\", confirmed \"Send invite message\" was already checked, filled Message with \"Welcome to Azure and our group project\". Clicked Properties tab: filled Job title with \"IT Lab Administrator\", Department with \"IT\", selected Usage location \"United States\". Clicked \"Review + invite\" tab which showed the summary. Clicked \"Invite\" button which sent the invitation and returned to the Users list.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES (New user dropdown, Invite external user option, all form fields, tabs, and Invite button found as expected)\nELEMENT_DIFFERENT: The lab instructions say \"Invite an external user\" but the actual menu item text is \"Invite external user\" (no \"an\"). The final button is labeled \"Invite\" (not \"Create\"). The review tab is labeled \"Review + invite\" (not \"Review + create\"). These are consistent with the invite workflow being distinct from the create workflow.\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: Users list page showing 3 users: az104-user1 (Member), AZ104 External Tester (Guest, az104-tester_outlook.com#EXT#@RudolfZhangoutlook.onmicrosoft.com), and Zhang Rudolf (Member).\nSCREENSHOT_BEFORE: step-7-invite-external-user-before.png\nSCREENSHOT_AFTER: step-7-invite-external-user-after.png\n```",
+      "driftIssues": [
+        {
+          "id": "step-7-invite-external-user-selector",
+          "stepId": "step-7-invite-external-user",
+          "category": "selector_drift",
+          "severity": "warning",
+          "instructionText": "In the New user drop-down select Invite an external user. Enter your email address, your name as display name, check Send invite message, add message 'Welcome to Azure and our group project'. Go to Properties tab and set Job title to IT Lab Administrator, Department to IT, Usage location to United States. Click Review + invite, then Invite",
+          "actualBehavior": "The lab instructions say \"Invite an external user\" but the actual menu item text is \"Invite external user\" (no \"an\"). The final button is labeled \"Invite\" (not \"Create\"). The review tab is labeled \"Review + invite\" (not \"Review + create\"). These are consistent with the invite workflow being distinct from the create workflow.",
+          "recommendation": "Update lab instructions to reflect new element text/location",
+          "screenshotPath": "screenshots/step-7-invite-external-user-after.png"
+        }
+      ],
+      "durationMs": 282654,
+      "screenshotBefore": "screenshots/step-7-invite-external-user-before.png",
+      "screenshotAfter": "screenshots/step-7-invite-external-user-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-8-navigate-to-groups",
+      "title": "Navigate to Groups Section",
+      "instruction": "Search for and select Microsoft Entra ID. In the Manage blade, select Groups",
+      "status": "passed",
+      "aiResponse": "\n\nStep 8 completed. The Groups Overview page is displayed showing 0 groups across all categories.\n\n```\nACTIONS_TAKEN: Navigated to Microsoft Entra ID Overview page, then clicked \"Groups\" in the left navigation Manage blade. The Groups | Overview page loaded showing group statistics and management options.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES (Groups link found in the Entra ID left navigation)\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: Groups | Overview page displayed for tenant \"默认目录\". Shows Basic information: Total groups 0, M365 groups 0, Security groups 0, Dynamic groups 0, Cloud groups 0, On-premises groups 0. Left nav shows Overview, All groups, Insights (Preview), Deleted groups, Settings, Activity, Troubleshooting + Support. Toolbar has \"New group\", \"Download groups\", \"Preview features\".\nSCREENSHOT_BEFORE: step-8-navigate-to-groups-before.png\nSCREENSHOT_AFTER: step-8-navigate-to-groups-after.png\n```",
+      "driftIssues": [],
+      "durationMs": 75041,
+      "screenshotBefore": "screenshots/step-8-navigate-to-groups-before.png",
+      "screenshotAfter": "screenshots/step-8-navigate-to-groups-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-9-create-security-group",
+      "title": "Create IT Lab Administrators Group",
+      "instruction": "In the All groups blade, select + New group. Set Group type to Security, Group name to IT Lab Administrators, Group description to Administrators that manage the IT lab, Membership type to Assigned",
+      "status": "drift",
+      "aiResponse": "Step 9 completed. The screenshot confirms the New Group form is filled correctly:\n- **Group type**: Security ✓\n- **Group name**: IT Lab Administrators ✓\n- **Group description**: Administrators that manage the IT lab ✓\n- **Membership type**: Assigned (greyed out/disabled — default for Security groups) ✓\n- Owners: No owners selected, Members: No members selected\n- Create button visible at bottom\n\n```\nACTIONS_TAKEN: Navigated to Groups > All groups, clicked \"New group\" menu item. On the New Group form: Group type was already set to \"Security\" by default, filled Group name with \"IT Lab Administrators\", filled Group description with \"Administrators that manage the IT lab\". Membership type was already set to \"Assigned\" and is disabled/greyed out for Security groups.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES (New group button, all form fields found as expected)\nELEMENT_DIFFERENT: The Membership type dropdown is disabled/greyed out when Group type is \"Security\" — it's locked to \"Assigned\" and cannot be changed. A human user would see this is pre-set and not editable, which differs slightly from the instruction suggesting they need to \"set\" it.\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: New Group form displayed with all fields filled: Group type = Security, Group name = IT Lab Administrators, Group description = Administrators that manage the IT lab, Membership type = Assigned (disabled). Owners and Members sections show \"No owners/members selected\". Create button at bottom.\nSCREENSHOT_BEFORE: step-9-create-security-group-before.png\nSCREENSHOT_AFTER: step-9-create-security-group-after.png\n```",
+      "driftIssues": [
+        {
+          "id": "step-9-create-security-group-selector",
+          "stepId": "step-9-create-security-group",
+          "category": "selector_drift",
+          "severity": "warning",
+          "instructionText": "In the All groups blade, select + New group. Set Group type to Security, Group name to IT Lab Administrators, Group description to Administrators that manage the IT lab, Membership type to Assigned",
+          "actualBehavior": "The Membership type dropdown is disabled/greyed out when Group type is \"Security\" — it's locked to \"Assigned\" and cannot be changed. A human user would see this is pre-set and not editable, which differs slightly from the instruction suggesting they need to \"set\" it.",
+          "recommendation": "Update lab instructions to reflect new element text/location",
+          "screenshotPath": "screenshots/step-9-create-security-group-after.png"
+        }
+      ],
+      "durationMs": 107360,
+      "screenshotBefore": "screenshots/step-9-create-security-group-before.png",
+      "screenshotAfter": "screenshots/step-9-create-security-group-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-10-add-group-owners",
+      "title": "Add Group Owners",
+      "instruction": "Select No owners selected. In the Add owners page, search for and select yourself as the owner",
+      "status": "passed",
+      "aiResponse": "Step 10 completed successfully. The screenshot confirms the New Group form with **1 owner selected** (Zhang Rudolf).\n\n```\nACTIONS_TAKEN: On the New Group form, clicked \"No owners selected\" which opened the \"Add owners\" side panel. The panel showed a list of all users with a search box. Searched for \"Zhang\" in the panel's search box, which filtered to show \"Zhang Rudolf (RudolfZhang@outlook.com)\". Clicked the checkbox to select Zhang Rudolf — the panel updated to show \"Owners (1)\" with Zhang Rudolf listed. Clicked the \"Select\" button to confirm. Returned to the New Group form which now shows \"1 owner selected\".\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES (\"No owners selected\" button, search box in Add owners panel, Zhang Rudolf user row, Select button all found)\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: New Group form showing: Group type = Security, Group name = IT Lab Administrators, Group description = Administrators that manage the IT lab, Membership type = Assigned, Owners = 1 owner selected (Zhang Rudolf), Members = No members selected. Create button at bottom.\nSCREENSHOT_BEFORE: step-10-add-group-owners-before.png\nSCREENSHOT_AFTER: step-10-add-group-owners-after.png\n```",
+      "driftIssues": [],
+      "durationMs": 200907,
+      "screenshotBefore": "screenshots/step-10-add-group-owners-before.png",
+      "screenshotAfter": "screenshots/step-10-add-group-owners-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-11-add-group-members",
+      "title": "Add Group Members",
+      "instruction": "Select No members selected. In the Add members pane, search for and select the az104-user1 and the guest user you invited. Add both users to the group",
+      "status": "passed",
+      "aiResponse": "Step 11 completed successfully. The screenshot clearly confirms the New Group form with **1 owner selected** and **2 members selected**.\n\n```\nACTIONS_TAKEN: On the New Group form, clicked \"No members selected\" which opened the \"Add members\" side panel. The panel showed all directory objects (users, groups, enterprise apps) under the \"All\" tab. Searched for \"az104\" in the panel search box, which filtered to show both \"az104-user1\" and \"AZ104 External Tester\". Selected az104-user1's checkbox, then selected AZ104 External Tester's checkbox. The panel updated to show \"Selected (2)\" with both users listed. Clicked \"Select\" to confirm. Returned to the New Group form which now shows \"2 members selected\".\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES (\"No members selected\" button, search box, both user rows with checkboxes, Select button all found)\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: New Group form fully populated: Group type = Security, Group name = IT Lab Administrators, Group description = Administrators that manage the IT lab, Membership type = Assigned, Owners = 1 owner selected (Zhang Rudolf), Members = 2 members selected (az104-user1, AZ104 External Tester). Create button at bottom ready to click.\nSCREENSHOT_BEFORE: step-11-add-group-members-before.png\nSCREENSHOT_AFTER: step-11-add-group-members-after.png\n```",
+      "driftIssues": [],
+      "durationMs": 126435,
+      "screenshotBefore": "screenshots/step-11-add-group-members-before.png",
+      "screenshotAfter": "screenshots/step-11-add-group-members-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-12-create-group",
+      "title": "Create and Verify Group",
+      "instruction": "Select Create to deploy the group. Refresh the page and ensure your group was created. Select the new group and review the Members and Owners information",
+      "status": "passed",
+      "aiResponse": "\n\nStep 12 completed successfully. The screenshot confirms the **IT Lab Administrators | Owners** page showing **1 group owner found** (Zhang Rudolf). The execution also verified the Members page showing **2 group members** (az104-user1 as Member, AZ104 External Tester as Guest).\n\n```\nACTIONS_TAKEN: Clicked Create on the New Group form. After creation, navigated to All Groups list which showed \"1 group found\" — IT Lab Administrators (Security, Assigned, Cloud). Clicked on the group to open its details. Clicked Members in the left nav — confirmed 2 direct members: az104-user1 (Member type) and AZ104 External Tester (Guest type). Navigated back and clicked Owners — confirmed 1 owner: Zhang Rudolf (User type).\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES (Create button, group in list, Members link, Owners link all found)\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: IT Lab Administrators | Owners page displayed. Shows 1 group owner: Zhang Rudolf (User). Group has 2 members (az104-user1 and AZ104 External Tester) verified on the Members page. Group ID: eef8f3b4-0a9a-4995-9f8b-bf71c1e7e3f8, Type: Security, Membership: Assigned, Source: Cloud.\nSCREENSHOT_BEFORE: step-12-create-group-before.png\nSCREENSHOT_AFTER: step-12-create-group-after.png\n```",
+      "driftIssues": [],
+      "durationMs": 192092,
+      "screenshotBefore": "screenshots/step-12-create-group-before.png",
+      "screenshotAfter": "screenshots/step-12-create-group-after.png",
+      "retryCount": 0
+    }
+  ],
+  "driftIssues": [
+    {
+      "id": "step-1-sign-in-azure-selector",
+      "stepId": "step-1-sign-in-azure",
+      "category": "selector_drift",
+      "severity": "warning",
+      "instructionText": "Sign in to the Azure portal at https://portal.azure.com and dismiss the Welcome to Azure splash screen by selecting Cancel",
+      "actualBehavior": "The \"Welcome to Azure\" splash screen with a \"Cancel\" button no longer appears as a modal dialog. Instead, the portal loads directly to the home page which shows inline \"Welcome to Azure!\" content with subscription options (Free Trial, Manage Entra ID, Azure for Students). There is no Cancel button to click. This appears to be the current default home experience for tenants without subscriptions.",
+      "recommendation": "Update lab instructions to reflect new element text/location",
+      "screenshotPath": "screenshots/step-1-sign-in-azure-after.png"
+    },
+    {
+      "id": "step-1-sign-in-azure-unexpected",
+      "stepId": "step-1-sign-in-azure",
+      "category": "unexpected_ui",
+      "severity": "info",
+      "instructionText": "Sign in to the Azure portal at https://portal.azure.com and dismiss the Welcome to Azure splash screen by selecting Cancel",
+      "actualBehavior": "A Microsoft feedback survey toast (\"How satisfied are you with portal.azure.com?\") appeared in the top-right corner. It's informational and does not block progress — can be dismissed via its X button.",
+      "recommendation": "Informational UI element - does not affect lab completion",
+      "screenshotPath": "screenshots/step-1-sign-in-azure-after.png"
+    },
+    {
+      "id": "step-7-invite-external-user-selector",
+      "stepId": "step-7-invite-external-user",
+      "category": "selector_drift",
+      "severity": "warning",
+      "instructionText": "In the New user drop-down select Invite an external user. Enter your email address, your name as display name, check Send invite message, add message 'Welcome to Azure and our group project'. Go to Properties tab and set Job title to IT Lab Administrator, Department to IT, Usage location to United States. Click Review + invite, then Invite",
+      "actualBehavior": "The lab instructions say \"Invite an external user\" but the actual menu item text is \"Invite external user\" (no \"an\"). The final button is labeled \"Invite\" (not \"Create\"). The review tab is labeled \"Review + invite\" (not \"Review + create\"). These are consistent with the invite workflow being distinct from the create workflow.",
+      "recommendation": "Update lab instructions to reflect new element text/location",
+      "screenshotPath": "screenshots/step-7-invite-external-user-after.png"
+    },
+    {
+      "id": "step-9-create-security-group-selector",
+      "stepId": "step-9-create-security-group",
+      "category": "selector_drift",
+      "severity": "warning",
+      "instructionText": "In the All groups blade, select + New group. Set Group type to Security, Group name to IT Lab Administrators, Group description to Administrators that manage the IT lab, Membership type to Assigned",
+      "actualBehavior": "The Membership type dropdown is disabled/greyed out when Group type is \"Security\" — it's locked to \"Assigned\" and cannot be changed. A human user would see this is pre-set and not editable, which differs slightly from the instruction suggesting they need to \"set\" it.",
+      "recommendation": "Update lab instructions to reflect new element text/location",
+      "screenshotPath": "screenshots/step-9-create-security-group-after.png"
+    }
+  ],
+  "summary": {
+    "total": 12,
+    "passed": 9,
+    "driftDetected": 3,
+    "failed": 0,
+    "skipped": 0,
+    "byCategory": {
+      "selector_drift": 3
+    }
+  },
+  "durationMs": 2127061
+}

@@ -1,0 +1,14 @@
+Step 11 completed successfully. The screenshot clearly confirms the New Group form with **1 owner selected** and **2 members selected**.
+
+```
+ACTIONS_TAKEN: On the New Group form, clicked "No members selected" which opened the "Add members" side panel. The panel showed all directory objects (users, groups, enterprise apps) under the "All" tab. Searched for "az104" in the panel search box, which filtered to show both "az104-user1" and "AZ104 External Tester". Selected az104-user1's checkbox, then selected AZ104 External Tester's checkbox. The panel updated to show "Selected (2)" with both users listed. Clicked "Select" to confirm. Returned to the New Group form which now shows "2 members selected".
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES ("No members selected" button, search box, both user rows with checkboxes, Select button all found)
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: New Group form fully populated: Group type = Security, Group name = IT Lab Administrators, Group description = Administrators that manage the IT lab, Membership type = Assigned, Owners = 1 owner selected (Zhang Rudolf), Members = 2 members selected (az104-user1, AZ104 External Tester). Create button at bottom ready to click.
+SCREENSHOT_BEFORE: step-11-add-group-members-before.png
+SCREENSHOT_AFTER: step-11-add-group-members-after.png
+```

@@ -1,0 +1,16 @@
+
+
+Step 4 completed successfully. The "Create new user" form is displayed with all expected fields visible.
+
+```
+ACTIONS_TAKEN: From the Entra ID Overview page, clicked "Users" in the left navigation menu which navigated to the Users list page. Clicked the "New user" menu item, which revealed a dropdown with "Create new user" and "Invite external user" options. Clicked "Create new user" which opened the Create new user form.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES (Users link, New user button, and Create new user dropdown option all found)
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: Create new user form displayed on the Basics tab with fields: User principal name (empty, domain RudolfZhangoutlook.onmicrosoft.com), Mail nickname (derived from UPN, checked), Display name (empty), Password (auto-generated, checked), Account enabled (checked). Tabs visible: Basics, Properties, Assignments, Review + create. Bottom navigation shows "Review + create", "Previous", and "Next: Properties" buttons.
+SCREENSHOT_BEFORE: step-4-navigate-to-users-before.png
+SCREENSHOT_AFTER: step-4-navigate-to-users-after.png
+```

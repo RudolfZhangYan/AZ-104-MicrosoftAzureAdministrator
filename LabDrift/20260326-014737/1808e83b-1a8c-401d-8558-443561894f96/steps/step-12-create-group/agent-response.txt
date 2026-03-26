@@ -1,0 +1,16 @@
+
+
+Step 12 completed successfully. The screenshot confirms the **IT Lab Administrators | Owners** page showing **1 group owner found** (Zhang Rudolf). The execution also verified the Members page showing **2 group members** (az104-user1 as Member, AZ104 External Tester as Guest).
+
+```
+ACTIONS_TAKEN: Clicked Create on the New Group form. After creation, navigated to All Groups list which showed "1 group found" — IT Lab Administrators (Security, Assigned, Cloud). Clicked on the group to open its details. Clicked Members in the left nav — confirmed 2 direct members: az104-user1 (Member type) and AZ104 External Tester (Guest type). Navigated back and clicked Owners — confirmed 1 owner: Zhang Rudolf (User type).
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES (Create button, group in list, Members link, Owners link all found)
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: IT Lab Administrators | Owners page displayed. Shows 1 group owner: Zhang Rudolf (User). Group has 2 members (az104-user1 and AZ104 External Tester) verified on the Members page. Group ID: eef8f3b4-0a9a-4995-9f8b-bf71c1e7e3f8, Type: Security, Membership: Assigned, Source: Cloud.
+SCREENSHOT_BEFORE: step-12-create-group-before.png
+SCREENSHOT_AFTER: step-12-create-group-after.png
+```

@@ -1,0 +1,17 @@
+Step 7 completed successfully. The screenshot confirms **3 users found**:
+- **az104-user1** (Member)
+- **AZ104 External Tester** (Guest)
+- **Zhang Rudolf** (Member)
+
+```
+ACTIONS_TAKEN: From the Users list, clicked "New user" dropdown, selected "Invite external user". On the Basics tab: filled Email with "az104-tester@outlook.com", Display name with "AZ104 External Tester", confirmed "Send invite message" was already checked, filled Message with "Welcome to Azure and our group project". Clicked Properties tab: filled Job title with "IT Lab Administrator", Department with "IT", selected Usage location "United States". Clicked "Review + invite" tab which showed the summary. Clicked "Invite" button which sent the invitation and returned to the Users list.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES (New user dropdown, Invite external user option, all form fields, tabs, and Invite button found as expected)
+ELEMENT_DIFFERENT: The lab instructions say "Invite an external user" but the actual menu item text is "Invite external user" (no "an"). The final button is labeled "Invite" (not "Create"). The review tab is labeled "Review + invite" (not "Review + create"). These are consistent with the invite workflow being distinct from the create workflow.
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: Users list page showing 3 users: az104-user1 (Member), AZ104 External Tester (Guest, az104-tester_outlook.com#EXT#@RudolfZhangoutlook.onmicrosoft.com), and Zhang Rudolf (Member).
+SCREENSHOT_BEFORE: step-7-invite-external-user-before.png
+SCREENSHOT_AFTER: step-7-invite-external-user-after.png
+```
