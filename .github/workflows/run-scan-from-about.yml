@@ -85,7 +85,7 @@ jobs:
         shell: cmd
         working-directory: C:\lab-drift-runner
         run: |
-          npx tsx src/cli/index.ts scan "${{ steps.repo_info.outputs.homepage }}" --browser=msedge --executable-path="C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --auth=azure-portal --output="./${{ steps.scan_meta.outputs.relative_output }}" --agent-timeout-ms=420000 --max-step-retries=5 --skip-cleanup
+          npx tsx src/cli/index.ts scan "${{ steps.repo_info.outputs.homepage }}" --browser=msedge --executable-path="C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --auth=azure-portal --output="./${{ steps.scan_meta.outputs.relative_output }}" --agent-timeout-ms=420000 --max-step-retries=5 
 
       - name: Copy scan output back to repo LabDrift folder
         shell: powershell
