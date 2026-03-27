@@ -1,0 +1,15 @@
+Step 10 already completed. Group form filled: Security / IT Lab Administrators / Assigned.
+
+```
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: New Group form filled, ready for member/owner assignment.
+SCREENSHOT_BEFORE: step-10-configure-group-basic-settings-before.png
+SCREENSHOT_AFTER: step-10-configure-group-basic-settings-after.png
+```
+
+Please send **Step 11**.

@@ -1,0 +1,20 @@
+✅ **Step 8 Complete** — with observations.
+
+The screenshot shows **2 users** in the list:
+- **az104-user1** — the internal user (Member)
+- **Zhang Rudolf** — shows Creation type: "Invitation", Identity: "MicrosoftAccount"
+
+The invited external user appears as "Zhang Rudolf" rather than "az104-user2" because Azure resolved the Microsoft Account's actual profile name from the email address. The invitation was successfully sent.
+
+```
+ACTIONS_TAKEN: Navigated to Users list, refreshed page. List shows 2 users. The invited external user appears with Creation type "Invitation" confirming the invite was processed.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES (invited user visible with "Invitation" creation type)
+ELEMENT_DIFFERENT: The invited external user's display name resolved to the Microsoft Account's profile name ("Zhang Rudolf") rather than the "az104-user2" display name set during invitation. This is standard Azure behavior — when inviting an existing Microsoft Account, Entra ID uses the account's real profile name.
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: A "Give feedback to Microsoft" popup appeared in the top-right corner (informational only, did not block progress).
+BLOCKING_ISSUES: None
+CURRENT_STATE: Users list showing 2 users: az104-user1 (Member) and Zhang Rudolf (Member, Invitation, MicrosoftAccount).
+SCREENSHOT_BEFORE: step-8-verify-external-user-before.png
+SCREENSHOT_AFTER: step-8-verify-external-user-after.png
+```

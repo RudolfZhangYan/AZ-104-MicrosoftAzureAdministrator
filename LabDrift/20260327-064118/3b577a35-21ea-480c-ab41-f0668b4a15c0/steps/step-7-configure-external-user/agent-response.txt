@@ -1,0 +1,15 @@
+Step 7 already completed. External user az104-user2@outlook.com invited successfully.
+
+```
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: Invitation sent, returned to Users list.
+SCREENSHOT_BEFORE: step-7-configure-external-user-before.png
+SCREENSHOT_AFTER: step-7-configure-external-user-after.png
+```
+
+Please send **Step 8**.

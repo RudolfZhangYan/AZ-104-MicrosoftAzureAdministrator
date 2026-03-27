@@ -1,0 +1,18 @@
+
+
+✅ **Step 1 Complete** — Signed in to Azure portal as RudolfZhang@outlook.
+
+The after screenshot confirms the portal loaded successfully. Here's the drift report:
+
+```
+ACTIONS_TAKEN: Navigated to https://portal.azure.com, waited for page load. No modal splash screen appeared — portal loaded directly to home page.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: NO (no dismissable "Welcome to Azure" splash dialog with Cancel button appeared)
+ELEMENT_DIFFERENT: The instructions mention a "Welcome to Azure" splash screen with a Cancel button. Instead, the portal loaded directly to the home page showing "Welcome to Azure!" as the default no-subscription landing page — not a dismissable modal. This is normal for returning authenticated sessions.
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: Azure portal home page showing "Welcome to Azure!" with options for free trial, Manage Microsoft Entra ID, and Azure for Students. Signed in as RudolfZhang@outlook.
+SCREENSHOT_BEFORE: step-1-sign-in-portal-before.png
+SCREENSHOT_AFTER: step-1-sign-in-portal-after.png
+```

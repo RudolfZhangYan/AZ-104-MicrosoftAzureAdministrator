@@ -1,0 +1,15 @@
+Step 12 already completed. 2 members selected (az104-user1 + Zhang Rudolf). Form ready for Create.
+
+```
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: New Group form — 1 owner, 2 members, Create button ready.
+SCREENSHOT_BEFORE: step-12-add-group-members-before.png
+SCREENSHOT_AFTER: step-12-add-group-members-after.png
+```
+
+Please send **Step 13**.

@@ -1,0 +1,15 @@
+Step 5 already completed. Screenshots confirm **2 users** now visible: az104-user1 and Zhang Rudolf.
+
+```
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES (az104-user1 in users list)
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: Users list showing 2 users including az104-user1.
+SCREENSHOT_BEFORE: step-5-verify-internal-user-before.png
+SCREENSHOT_AFTER: step-5-verify-internal-user-after.png
+```
+
+Please send **Step 6**.
