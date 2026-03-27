@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drift Report - Lab 01 - Manage Microsoft Entra ID Identities</title>
+  <style>
+    :root {
+      --color-passed: #22c55e;
+      --color-drift: #f59e0b;
+      --color-failed: #ef4444;
+      --color-skipped: #8b5cf6;
+      --color-bg: #f8fafc;
+      --color-card: #ffffff;
+      --color-border: #e2e8f0;
+      --color-text: #1e293b;
+      --color-text-muted: #64748b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      margin: 0;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    h1 { margin-top: 0; }
+    .header {
+      background: var(--color-card);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .summary-cards {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .summary-card {
+      background: var(--color-card);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .summary-card .count {
+      font-size: 36px;
+      font-weight: 700;
+    }
+    .summary-card.passed .count { color: var(--color-passed); }
+    .summary-card.drift .count { color: var(--color-drift); }
+    .summary-card.failed .count { color: var(--color-failed); }
+    .summary-card.skipped .count { color: var(--color-skipped); }
+    .step {
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+    .step.status-passed { border-left: 4px solid var(--color-passed); }
+    .step.status-drift { border-left: 4px solid var(--color-drift); }
+    .step.status-failed { border-left: 4px solid var(--color-failed); }
+    .step.status-skipped { border-left: 4px solid var(--color-skipped); }
+    .step-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px;
+      background: var(--color-bg);
+    }
+    .step-icon { font-size: 20px; }
+    .step-id { font-weight: 600; color: var(--color-text-muted); }
+    .step-title { flex: 1; }
+    .step-duration { color: var(--color-text-muted); font-size: 14px; }
+    .retry-info { 
+      color: var(--color-skipped); 
+      font-size: 12px; 
+      margin-left: 8px;
+    }
+    .error-message {
+      background: #fee2e2;
+      color: #991b1b;
+      padding: 12px 16px;
+      font-family: monospace;
+      font-size: 13px;
+    }
+    .skipped-message {
+      background: #ede9fe;
+      color: #5b21b6;
+      padding: 12px 16px;
+      font-size: 13px;
+    }
+    .error-screenshot img {
+      border-color: var(--color-failed);
+      border-width: 2px;
+    }
+    .drift-issues {
+      padding: 16px;
+      background: #fef3c7;
+    }
+    .drift-issues ul { margin: 8px 0; padding-left: 20px; }
+    .drift-issues li { margin-bottom: 12px; }
+    .drift-category {
+      background: #fbbf24;
+      color: #78350f;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .drift-severity {
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      margin-left: 8px;
+    }
+    .severity-low { background: #d1fae5; color: #065f46; }
+    .severity-medium { background: #fef3c7; color: #92400e; }
+    .severity-high { background: #fee2e2; color: #991b1b; }
+    .recommendation {
+      font-style: italic;
+      color: var(--color-text-muted);
+      margin-top: 4px;
+    }
+    .screenshots {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 16px;
+      padding: 16px;
+    }
+    .screenshot img {
+      max-width: 100%;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+    }
+    .footer {
+      text-align: center;
+      color: var(--color-text-muted);
+      font-size: 12px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🔍 Drift Detection Report</h1>
+      <p><strong>Lab:</strong> Lab 01 - Manage Microsoft Entra ID Identities</p>
+      <p><strong>Source:</strong> <a href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_01-Manage_Entra_ID_Identities.html" target="_blank">https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_01-Manage_Entra_ID_Identities.html</a></p>
+      <p><strong>Run ID:</strong> <code>a2965613-3fd8-4b47-a308-65cbcb467923</code></p>
+      <p><strong>Duration:</strong> 5565s</p>
+    </div>
+    
+    <div class="summary-cards">
+      <div class="summary-card">
+        <div class="count">8</div>
+        <div>Total Steps</div>
+      </div>
+      <div class="summary-card passed">
+        <div class="count">4</div>
+        <div>Passed</div>
+      </div>
+      <div class="summary-card drift">
+        <div class="count">4</div>
+        <div>Drift</div>
+      </div>
+      <div class="summary-card failed">
+        <div class="count">0</div>
+        <div>Failed</div>
+      </div>
+      <div class="summary-card skipped">
+        <div class="count">0</div>
+        <div>Skipped</div>
+      </div>
+    </div>
+    
+    <h2>Step Results</h2>
+    
+      <div class="step status-drift">
+        <div class="step-header">
+          <span class="step-icon">⚠️</span>
+          <span class="step-id">step-1-signin-portal</span>
+          <span class="step-title">Sign in to Azure Portal</span>
+          <span class="retry-info">(3 retries)</span>
+          <span class="step-duration">1705s</span>
+        </div>
+        
+        
+      <div class="drift-issues">
+        <strong>Drift Issues:</strong>
+        <ul>
+          
+            <li>
+              <span class="drift-category">selector_drift</span>
+              <span class="drift-severity severity-warning">warning</span>
+              <p>The instructions say &quot;Select Cancel on the Welcome to Azure splash screen.&quot; The portal now shows a &quot;Welcome to Azure!&quot; home page with subscription option cards (Free trial, Manage Entra ID, Azure for Students) — this is the default home page, not a dismissable overlay. There is no Cancel button. A human user would simply proceed.</p>
+              <p class="recommendation">💡 Update lab instructions to reflect new element text/location</p>
+            </li>
+          
+        </ul>
+      </div>
+    
+        
+      <div class="screenshots">
+        
+          <div class="screenshot">
+            <strong>Before:</strong>
+            <img src="screenshots/step-1-signin-portal-before.png" alt="Before step-1-signin-portal" loading="lazy" />
+          </div>
+        
+        
+          <div class="screenshot">
+            <strong>After:</strong>
+            <img src="screenshots/step-1-signin-portal-after.png" alt="After step-1-signin-portal" loading="lazy" />
+          </div>
+        
+        
+      </div>
+    
+      </div>
+    
+
+      <div class="step status-passed">
+        <div class="step-header">
+          <span class="step-icon">✅</span>
+          <span class="step-id">step-2-navigate-entra</span>
+          <span class="step-title">Navigate to Microsoft Entra ID</span>
+          
+          <span class="step-duration">147s</span>
+        </div>
+        
+        
+        
+      <div class="screenshots">
+        
+          <div class="screenshot">
+            <strong>Before:</strong>
+            <img src="screenshots/step-2-navigate-entra-before.png" alt="Before step-2-navigate-entra" loading="lazy" />
+          </div>
+        
+        
+          <div class="screenshot">
+            <strong>After:</strong>
+            <img src="screenshots/step-2-navigate-entra-after.png" alt="After step-2-navigate-entra" loading="lazy" />
+          </div>
+        
+        
+      </div>
+    
+      </div>
+    
+
+      <div class="step status-passed">
+        <div class="step-header">
+          <span class="step-icon">✅</span>
+          <span class="step-id">step-3-explore-overview</span>
+          <span class="step-title">Explore Overview and Tenant Management</span>
+          
+          <span class="step-duration">86s</span>
+        </div>
+        
+        
+        
+      <div class="screenshots">
+        
+          <div class="screenshot">
+            <strong>Before:</strong>
+            <img src="screenshots/step-3-explore-overview-before.png" alt="Before step-3-explore-overview" loading="lazy" />
+          </div>
+        
+        
+          <div class="screenshot">
+            <strong>After:</strong>
+            <img src="screenshots/step-3-explore-overview-after.png" alt="After step-3-explore-overview" loading="lazy" />
+          </div>
+        
+        
+      </div>
+    
+      </div>
+    
+
+      <div class="step status-drift">
+        <div class="step-header">
+          <span class="step-icon">⚠️</span>
+          <span class="step-id">step-4-create-new-user</span>
+          <span class="step-title">Create New User Account</span>
+          <span class="retry-info">(3 retries)</span>
+          <span class="step-duration">1452s</span>
+        </div>
+        
+        
+      <div class="drift-issues">
+        <strong>Drift Issues:</strong>
+        <ul>
+          
+            <li>
+              <span class="drift-category">selector_drift</span>
+              <span class="drift-severity severity-warning">warning</span>
+              <p>The create form uses a tabbed layout (Basics, Properties, Assignments, Review + create). Job title, Department, and Usage location are on the &quot;Properties&quot; tab. Usage location requires scrolling within the Properties tab.</p>
+              <p class="recommendation">💡 Update lab instructions to reflect new element text/location</p>
+            </li>
+          
+        </ul>
+      </div>
+    
+        
+      <div class="screenshots">
+        
+          <div class="screenshot">
+            <strong>Before:</strong>
+            <img src="screenshots/step-4-create-new-user-before.png" alt="Before step-4-create-new-user" loading="lazy" />
+          </div>
+        
+        
+          <div class="screenshot">
+            <strong>After:</strong>
+            <img src="screenshots/step-4-create-new-user-after.png" alt="After step-4-create-new-user" loading="lazy" />
+          </div>
+        
+        
+      </div>
+    
+      </div>
+    
+
+      <div class="step status-drift">
+        <div class="step-header">
+          <span class="step-icon">⚠️</span>
+          <span class="step-id">step-5-invite-external-user</span>
+          <span class="step-title">Invite External User</span>
+          
+          <span class="step-duration">196s</span>
+        </div>
+        
+        
+      <div class="drift-issues">
+        <strong>Drift Issues:</strong>
+        <ul>
+          
+            <li>
+              <span class="drift-category">selector_drift</span>
+              <span class="drift-severity severity-warning">warning</span>
+              <p>The dropdown option is labeled &quot;Invite external user&quot; rather than &quot;Invite an external user&quot; as described in the instructions (minor wording difference). The form uses a tabbed layout: Basics, Properties, Assignments, Review + invite. The instructions mention &quot;Review + invite&quot; and &quot;Invite&quot; which match correctly.</p>
+              <p class="recommendation">💡 Update lab instructions to reflect new element text/location</p>
+            </li>
+          
+            <li>
+              <span class="drift-category">unexpected_ui</span>
+              <span class="drift-severity severity-info">info</span>
+              <p>A &quot;Give feedback to Microsoft&quot; popup appeared in the top-right corner asking about satisfaction with portal.azure.com. This is informational only and did not block any actions.</p>
+              <p class="recommendation">💡 Informational UI element - does not affect lab completion</p>
+            </li>
+          
+        </ul>
+      </div>
+    
+        
+      <div class="screenshots">
+        
+          <div class="screenshot">
+            <strong>Before:</strong>
+            <img src="screenshots/step-5-invite-external-user-before.png" alt="Before step-5-invite-external-user" loading="lazy" />
+          </div>
+        
+        
+          <div class="screenshot">
+            <strong>After:</strong>
+            <img src="screenshots/step-5-invite-external-user-after.png" alt="After step-5-invite-external-user" loading="lazy" />
+          </div>
+        
+        
+      </div>
+    
+      </div>
+    
+
+      <div class="step status-drift">
+        <div class="step-header">
+          <span class="step-icon">⚠️</span>
+          <span class="step-id">step-6-navigate-groups</span>
+          <span class="step-title">Navigate to Groups Section</span>
+          
+          <span class="step-duration">77s</span>
+        </div>
+        
+        
+      <div class="drift-issues">
+        <strong>Drift Issues:</strong>
+        <ul>
+          
+            <li>
+              <span class="drift-category">selector_drift</span>
+              <span class="drift-severity severity-warning">warning</span>
+              <p>The left pane shows: Overview, All groups, Insights (Preview), Deleted groups, Diagnose and solve problems, Settings, Activity, Troubleshooting + Support. The instructions mention &quot;Expiration and Naming policy options&quot; as separate items in the left pane, but these are not visible as top-level menu items — they are likely nested under &quot;Settings&quot; now. A human user would need to expand or click &quot;Settings&quot; to find Expiration and Naming policy.</p>
+              <p class="recommendation">💡 Update lab instructions to reflect new element text/location</p>
+            </li>
+          
+            <li>
+              <span class="drift-category">unexpected_ui</span>
+              <span class="drift-severity severity-info">info</span>
+              <p>An informational banner at the top reads &quot;Microsoft Entra has a simpler, integrated experience for managing all your Identity and Access Management needs. Try the new Microsoft Entra admin center!&quot; — informational only, not blocking.</p>
+              <p class="recommendation">💡 Informational UI element - does not affect lab completion</p>
+            </li>
+          
+        </ul>
+      </div>
+    
+        
+      <div class="screenshots">
+        
+          <div class="screenshot">
+            <strong>Before:</strong>
+            <img src="screenshots/step-6-navigate-groups-before.png" alt="Before step-6-navigate-groups" loading="lazy" />
+          </div>
+        
+        
+          <div class="screenshot">
+            <strong>After:</strong>
+            <img src="screenshots/step-6-navigate-groups-after.png" alt="After step-6-navigate-groups" loading="lazy" />
+          </div>
+        
+        
+      </div>
+    
+      </div>
+    
+
+      <div class="step status-passed">
+        <div class="step-header">
+          <span class="step-icon">✅</span>
+          <span class="step-id">step-7-create-security-group</span>
+          <span class="step-title">Create Security Group with Members</span>
+          <span class="retry-info">(2 retries)</span>
+          <span class="step-duration">1077s</span>
+        </div>
+        
+        
+        
+      <div class="screenshots">
+        
+          <div class="screenshot">
+            <strong>Before:</strong>
+            <img src="screenshots/step-7-create-security-group-before.png" alt="Before step-7-create-security-group" loading="lazy" />
+          </div>
+        
+        
+          <div class="screenshot">
+            <strong>After:</strong>
+            <img src="screenshots/step-7-create-security-group-after.png" alt="After step-7-create-security-group" loading="lazy" />
+          </div>
+        
+        
+      </div>
+    
+      </div>
+    
+
+      <div class="step status-passed">
+        <div class="step-header">
+          <span class="step-icon">✅</span>
+          <span class="step-id">step-8-verify-group-creation</span>
+          <span class="step-title">Verify Group Creation and Membership</span>
+          
+          <span class="step-duration">271s</span>
+        </div>
+        
+        
+        
+      <div class="screenshots">
+        
+          <div class="screenshot">
+            <strong>Before:</strong>
+            <img src="screenshots/step-8-verify-group-creation-before.png" alt="Before step-8-verify-group-creation" loading="lazy" />
+          </div>
+        
+        
+          <div class="screenshot">
+            <strong>After:</strong>
+            <img src="screenshots/step-8-verify-group-creation-after.png" alt="After step-8-verify-group-creation" loading="lazy" />
+          </div>
+        
+        
+      </div>
+    
+      </div>
+    
+    
+    <div class="footer">
+      Generated at 2026-03-27T14:39:46.891Z
+    </div>
+  </div>
+</body>
+</html>

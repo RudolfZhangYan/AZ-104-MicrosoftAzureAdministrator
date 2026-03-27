@@ -1,0 +1,14 @@
+Screenshots are current (from ~30 seconds ago). The step was already completed successfully in the previous run — the portal is loaded and the user is signed in.
+
+```
+ACTIONS_TAKEN: Navigated to https://portal.azure.com. Portal loaded at #home. No dismissable splash/tour overlay with a "Cancel" button appeared.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: NO (no "Cancel" button on a splash screen was present)
+ELEMENT_DIFFERENT: The instructions say "Select Cancel on the Welcome to Azure splash screen." The portal now shows a "Welcome to Azure!" home page with subscription option cards (Free trial, Manage Entra ID, Azure for Students) — this is the default home page, not a dismissable overlay. There is no Cancel button. A human user would simply proceed.
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: Azure portal home page at portal.azure.com/#home. Signed in as RudolfZhang@outlook... Shows "Welcome to Azure!" with three option cards.
+SCREENSHOT_BEFORE: step-1-signin-portal-before.png
+SCREENSHOT_AFTER: step-1-signin-portal-after.png
+```

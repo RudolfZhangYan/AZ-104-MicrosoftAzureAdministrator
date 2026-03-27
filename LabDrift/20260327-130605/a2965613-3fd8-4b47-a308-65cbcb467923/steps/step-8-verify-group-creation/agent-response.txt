@@ -1,0 +1,14 @@
+Group verified — overview shows: **Owners: 1** (Zhang Rudolf), **Total members: 2** (az104-user1 + AZ104 Lab User), Type: Security, Membership: Assigned.
+
+```
+ACTIONS_TAKEN: Navigated to Groups | All groups, refreshed the page. Confirmed "IT Lab Administrators" group is listed. Clicked the group name to open the detail page. Reviewed Overview (Membership type: Assigned, Source: Cloud, Type: Security, Total direct members: 2, Users: 2). Navigated to Members blade (confirmed az104-user1 and AZ104 Lab User). Navigated to Owners blade (confirmed Zhang Rudolf as owner).
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: IT Lab Administrators | Owners page showing 1 group owner (Zhang Rudolf). Group has 2 members and correct configuration.
+SCREENSHOT_BEFORE: step-8-verify-group-creation-before.png
+SCREENSHOT_AFTER: step-8-verify-group-creation-after.png
+```

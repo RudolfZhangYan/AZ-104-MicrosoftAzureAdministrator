@@ -1,0 +1,16 @@
+
+
+This step is already complete. The group "IT Lab Administrators" was created with owner (Zhang Rudolf) and 2 members (az104-user1, AZ104 Lab User). Screenshots exist at the required paths from ~2 minutes ago.
+
+```
+ACTIONS_TAKEN: Navigated to Groups | All groups. Created new Security group "IT Lab Administrators" with description "Administrators that manage the IT lab", Membership type Assigned. Added Zhang Rudolf as owner, az104-user1 and AZ104 Lab User as members.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: Groups | All groups showing "IT Lab Administrators" (Security, Assigned, Cloud) with 1 owner and 2 members
+SCREENSHOT_BEFORE: step-7-create-security-group-before.png
+SCREENSHOT_AFTER: step-7-create-security-group-after.png
+```

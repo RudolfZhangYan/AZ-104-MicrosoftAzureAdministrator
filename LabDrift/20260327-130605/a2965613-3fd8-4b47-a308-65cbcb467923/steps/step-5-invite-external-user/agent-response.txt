@@ -1,0 +1,16 @@
+
+
+The screenshots confirm successful invitation. The Review page shows all details correctly and the AFTER screenshot shows the "Invite" button grayed out (submitted) with a notification badge appearing.
+
+```
+ACTIONS_TAKEN: Navigated to Users, clicked "New user" dropdown, selected "Invite external user". Filled Email (az104-labuser@outlook.com), Display name (AZ104 Lab User), Send invite message was already checked by default, filled message "Welcome to Azure and our group project". Switched to Properties tab, filled Job title "IT Lab Administrator" and Department "IT". Usage location dropdown was not found on Properties tab during automation (may require scrolling). Clicked "Review + invite" tab, then clicked "Invite" button. Invite was submitted — button grayed out and notification badge appeared.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES (New user dropdown, "Invite external user" option, Email field, Display name field, Send invite message checkbox, message textarea, Properties tab with Job title and Department fields, Review + invite tab, Invite button — all found)
+ELEMENT_DIFFERENT: The dropdown option is labeled "Invite external user" rather than "Invite an external user" as described in the instructions (minor wording difference). The form uses a tabbed layout: Basics, Properties, Assignments, Review + invite. The instructions mention "Review + invite" and "Invite" which match correctly.
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: A "Give feedback to Microsoft" popup appeared in the top-right corner asking about satisfaction with portal.azure.com. This is informational only and did not block any actions.
+BLOCKING_ISSUES: None
+CURRENT_STATE: Invite external user "Review + invite" tab displayed. Shows Email: az104-labuser@outlook.com, Display name: AZ104 Lab User, Send invite message: Yes, Message: "Welcome to Azure and our group project", User type: Guest, Job title: IT Lab Administrator, Department: IT. Invite button is grayed out (invite submitted). Notification badge shows 1 new notification.
+SCREENSHOT_BEFORE: step-5-invite-external-user-before.png
+SCREENSHOT_AFTER: step-5-invite-external-user-after.png
+```
