@@ -1,0 +1,16 @@
+The screenshot confirms complete success — the New Group form now shows **"1 owner selected"** (changed from "No owners selected"), confirming Zhang Rudolf was added as owner.
+
+```
+ACTIONS_TAKEN: Clicked "No owners selected" link on the New Group form. In the "Add owners" panel, the current user Zhang Rudolf (RudolfZhang@outlook.com) was listed alongside az104-user1. Selected Zhang Rudolf's checkbox and clicked the "Select" button.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES — "No owners selected" link, Add owners panel with search box and user list, checkboxes, and Select button all present and functional.
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: New Group form showing: Group type: Security, Group name: IT Lab Administrators, Group description: Administrators that manage the IT lab, Membership type: Assigned, Owners: 1 owner selected, Members: No members selected. "Create" button at bottom.
+SCREENSHOT_BEFORE: step-11-add-group-owners-before.png
+SCREENSHOT_AFTER: step-11-add-group-owners-after.png
+```
+
+**No drift detected.** The "Add owners" panel worked exactly as the lab instructions describe — search/select interface with a user list and Select button.

@@ -1,0 +1,16 @@
+
+
+This step was already completed successfully. Screenshots exist from 30 seconds ago:
+
+```
+ACTIONS_TAKEN: Clicked "No members selected" link in New Group form. Add members panel opened with user list. Selected az104-user1 and Zhang Rudolf (guest user) checkboxes. Clicked Select. Form confirmed "2 members selected".
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: New Group form with Group type: Security, Group name: IT Lab Administrators, 2 members selected, Create button visible
+SCREENSHOT_BEFORE: step-12-add-group-members-before.png
+SCREENSHOT_AFTER: step-12-add-group-members-after.png
+```

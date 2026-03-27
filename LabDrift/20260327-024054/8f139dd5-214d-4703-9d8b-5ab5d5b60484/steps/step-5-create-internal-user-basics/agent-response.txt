@@ -1,0 +1,18 @@
+
+
+All fields filled correctly. Here's the report:
+
+```
+ACTIONS_TAKEN: Filled User principal name with "az104-user1" (@RudolfZhangoutlook.onmicrosoft.com domain). Filled Display name with "az104-user1". Verified Auto-generate password is checked (auto-generated). Verified Account enabled is checked. Mail nickname auto-derived from UPN.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES — All form fields (UPN, Display name, Password, Auto-generate, Account enabled) found on the Basics tab.
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: "Create new user" form, Basics tab filled: UPN=az104-user1@RudolfZhangoutlook.onmicrosoft.com, Mail nickname=az104-user1 (derived), Display name=az104-user1, Password=auto-generated, Account enabled=checked. Bottom nav shows "Review + create", "Previous", "Next: Properties".
+SCREENSHOT_BEFORE: step-5-create-internal-user-basics-before.png
+SCREENSHOT_AFTER: step-5-create-internal-user-basics-after.png
+```
+
+**No drift detected.** The form layout matches the lab instructions exactly — all expected fields are present with the correct defaults (Auto-generate password ✓, Account enabled ✓).

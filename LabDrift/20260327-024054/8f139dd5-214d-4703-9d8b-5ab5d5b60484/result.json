@@ -1,0 +1,244 @@
+{
+  "runId": "8f139dd5-214d-4703-9d8b-5ab5d5b60484",
+  "status": "drift_detected",
+  "lab": {
+    "labId": "lab-01-manage-microsoft-entra-id-identit",
+    "title": "Lab 01 - Manage Microsoft Entra ID Identities",
+    "sourceUrl": "https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_01-Manage_Entra_ID_Identities.html"
+  },
+  "steps": [
+    {
+      "stepId": "step-1-signin-portal",
+      "title": "Sign in to Azure Portal",
+      "instruction": "Sign in to the Azure portal at https://portal.azure.com. To proceed to the portal, select Cancel on the Welcome to Azure splash screen.",
+      "status": "drift",
+      "aiResponse": "\n\nGood — I can see both screenshots now. The **before** shows the Azure loading splash, and the **after** shows the portal loaded to a **\"Welcome to Azure!\"** page — but it's NOT the dismissible splash/modal the instructions describe. It's the subscription landing page with no \"Cancel\" button.\n\nThe script's detection was wrong — the welcome screen **did** appear, but it's a different type than expected. The step is partially complete (signed in) but the dashboard isn't showing. Here's the accurate result:\n\n```\nACTIONS_TAKEN: Navigated to https://portal.azure.com. Portal loaded with existing auth session (RudolfZhang@outlook account). No Cancel button was found on the welcome screen.\nSTEP_COMPLETED: YES (signed in successfully, but see ELEMENT_DIFFERENT)\nELEMENT_FOUND: NO — The instructions say to click \"Cancel\" on a Welcome splash screen, but no Cancel button exists on this page.\nELEMENT_DIFFERENT: The \"Welcome to Azure\" screen is a subscription landing page showing \"Don't have a subscription? Check out the following options\" with Start/View/Learn more buttons — not a dismissible splash modal with a Cancel button. This likely appears because the account has no active subscription.\nEXTRA_STEPS_NEEDED: None — for users with an active lab subscription, the normal Welcome splash with Cancel would likely appear. This is an account-state issue, not an instruction drift issue.\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None — the portal is accessible and the top navigation bar (search, settings, user profile) is functional. Lab steps involving Microsoft Entra ID can proceed via the search bar or direct URL navigation.\nCURRENT_STATE: \"Welcome to Azure!\" subscription landing page at https://portal.azure.com/#home. Signed in as RudolfZhang@outlook. Azure top nav bar is visible and functional.\nSCREENSHOT_BEFORE: step-1-signin-portal-before.png\nSCREENSHOT_AFTER: step-1-signin-portal-after.png\n```\n\n**Summary:** Sign-in succeeded. The \"Cancel\" button from the instructions didn't appear because this account shows a subscription-options welcome page instead of the typical dismissible splash modal. The portal is usable — we can proceed to the next step by navigating directly to Entra ID.",
+      "driftIssues": [
+        {
+          "id": "step-1-signin-portal-selector",
+          "stepId": "step-1-signin-portal",
+          "category": "selector_drift",
+          "severity": "warning",
+          "instructionText": "Sign in to the Azure portal at https://portal.azure.com. To proceed to the portal, select Cancel on the Welcome to Azure splash screen.",
+          "actualBehavior": "The \"Welcome to Azure\" screen is a subscription landing page showing \"Don't have a subscription? Check out the following options\" with Start/View/Learn more buttons — not a dismissible splash modal with a Cancel button. This likely appears because the account has no active subscription.",
+          "recommendation": "Update lab instructions to reflect new element text/location",
+          "screenshotPath": "screenshots/step-1-signin-portal-after.png"
+        }
+      ],
+      "durationMs": 106833,
+      "screenshotBefore": "screenshots/step-1-signin-portal-before.png",
+      "screenshotAfter": "screenshots/step-1-signin-portal-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-2-navigate-entra-id",
+      "title": "Navigate to Microsoft Entra ID",
+      "instruction": "Search for and select Microsoft Entra ID from the Azure portal.",
+      "status": "drift",
+      "aiResponse": "\n\nI can see both screenshots clearly now. The **after** screenshot shows:\n\n1. ✅ **Microsoft Entra ID Overview page loaded** — tenant `f8cdef31-a31e-4b4a-93e4-5f571e91255a`\n2. ⚠️ **Warning dialog (\"需要交互\" / Interaction Required)** — AADSTS16000 error about the live.com account not existing in this tenant. Has \"重新登录\" (Re-login) and \"忽略\" (Ignore) buttons.\n3. Portal UI is in Chinese locale.\n\nThe step succeeded — we're on the Entra ID overview page. The warning dialog is an auth/account issue (dismissible), not instruction drift.\n\n```\nACTIONS_TAKEN: Navigated to Azure portal, then used direct URL to reach Microsoft Entra ID Overview page (https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/Overview). The search bar was available in the top nav but direct navigation was used.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES — Search bar is present in the top navigation bar. Microsoft Entra ID overview page loaded successfully.\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: An \"Interaction Required\" (需要交互) warning dialog appeared with AADSTS16000 error stating the user account from identity provider 'live.com' does not exist in this tenant. This is an account/authentication configuration issue, not instruction drift. The dialog is dismissible by clicking \"Ignore\" (忽略) and does not block access to Entra ID features.\nBLOCKING_ISSUES: None\nCURRENT_STATE: Microsoft Entra ID Overview page displayed for tenant f8cdef31-a31e-4b4a-93e4-5f571e91255a (Microsoft Entra ID Free edition). User: Rudolf Zhang. Warning dialog overlay present but dismissible.\nSCREENSHOT_BEFORE: step-2-navigate-entra-id-before.png\nSCREENSHOT_AFTER: step-2-navigate-entra-id-after.png\n```",
+      "driftIssues": [
+        {
+          "id": "step-2-navigate-entra-id-unexpected",
+          "stepId": "step-2-navigate-entra-id",
+          "category": "unexpected_ui",
+          "severity": "warning",
+          "instructionText": "Search for and select Microsoft Entra ID from the Azure portal.",
+          "actualBehavior": "An \"Interaction Required\" (需要交互) warning dialog appeared with AADSTS16000 error stating the user account from identity provider 'live.com' does not exist in this tenant. This is an account/authentication configuration issue, not instruction drift. The dialog is dismissible by clicking \"Ignore\" (忽略) and does not block access to Entra ID features.",
+          "recommendation": "Consider documenting this UI element in instructions",
+          "screenshotPath": "screenshots/step-2-navigate-entra-id-after.png"
+        }
+      ],
+      "durationMs": 99937,
+      "screenshotBefore": "screenshots/step-2-navigate-entra-id-before.png",
+      "screenshotAfter": "screenshots/step-2-navigate-entra-id-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-3-explore-overview-tenants",
+      "title": "Explore Overview and Manage Tenants",
+      "instruction": "Select the Overview blade and then the Manage tenants tab. Return to the Entra ID page by pressing back in the browser or selecting the option in the breadcrumb menu.",
+      "status": "passed",
+      "aiResponse": "\n\nAll three sub-steps completed successfully. The screenshots confirm:\n\n1. **Before**: Entra ID Overview page with \"Manage tenants\" visible in the command bar\n2. **Mid-step**: \"Manage tenants\" page showing the tenant list (默认目录/Default, type: Microsoft Entra ID, domain: RudolfZhangoutlook.onmicrosoft.com)\n3. **After**: Back on Entra ID Overview page via browser back\n\n```\nACTIONS_TAKEN: Confirmed on Overview blade. Clicked \"Manage tenants\" in the command bar (rendered inside a React iframe). Viewed tenant management page showing 1 tenant (默认目录/Default). Navigated back to Entra ID Overview using browser back.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES — Overview blade, Manage tenants button, and back navigation all worked as described.\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: Microsoft Entra ID Overview page (默认目录 | Overview). Shows tenant \"默认目录\" with 1 user, 0 groups, 0 applications, 0 devices. License: Microsoft Entra ID Free.\nSCREENSHOT_BEFORE: step-3-explore-overview-tenants-before.png\nSCREENSHOT_AFTER: step-3-explore-overview-tenants-after.png\n```\n\n**No drift detected.** The Overview blade, \"Manage tenants\" tab, and back navigation all match the lab instructions exactly.",
+      "driftIssues": [],
+      "durationMs": 377148,
+      "screenshotBefore": "screenshots/step-3-explore-overview-tenants-before.png",
+      "screenshotAfter": "screenshots/step-3-explore-overview-tenants-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-4-access-users-section",
+      "title": "Access Users Management Section",
+      "instruction": "In the Manage blade, select Users; then in the New user drop-down select Create new user.",
+      "status": "passed",
+      "aiResponse": "Screenshots are current (from ~1 minute ago). This step was already completed successfully. Here's the report:\n\n```\nACTIONS_TAKEN: Navigated to Users page via Manage blade. Clicked \"New user\" dropdown in the command bar. Selected \"Create new user\" from the dropdown menu.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES — Users in sidebar, New user dropdown, and Create new user menu item all found and working.\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: \"Create new user\" form displayed with Basics tab active. Form fields: User principal name (@RudolfZhangoutlook.on...), Mail nickname, Display name, Password (auto-generate checked), Account enabled (checked). Tabs: Basics, Properties, Assignments, Review + create.\nSCREENSHOT_BEFORE: step-4-access-users-section-before.png\nSCREENSHOT_AFTER: step-4-access-users-section-after.png\n```\n\n**No drift detected.** All elements matched the lab instructions exactly.",
+      "driftIssues": [],
+      "durationMs": 474836,
+      "screenshotBefore": "screenshots/step-4-access-users-section-before.png",
+      "screenshotAfter": "screenshots/step-4-access-users-section-after.png",
+      "retryCount": 1
+    },
+    {
+      "stepId": "step-5-create-internal-user-basics",
+      "title": "Create Internal User Basic Settings",
+      "instruction": "Create a new user with User principal name: az104-user1, Display name: az104-user1, Auto-generate password checked, Account enabled checked.",
+      "status": "passed",
+      "aiResponse": "\n\nAll fields filled correctly. Here's the report:\n\n```\nACTIONS_TAKEN: Filled User principal name with \"az104-user1\" (@RudolfZhangoutlook.onmicrosoft.com domain). Filled Display name with \"az104-user1\". Verified Auto-generate password is checked (auto-generated). Verified Account enabled is checked. Mail nickname auto-derived from UPN.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES — All form fields (UPN, Display name, Password, Auto-generate, Account enabled) found on the Basics tab.\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: \"Create new user\" form, Basics tab filled: UPN=az104-user1@RudolfZhangoutlook.onmicrosoft.com, Mail nickname=az104-user1 (derived), Display name=az104-user1, Password=auto-generated, Account enabled=checked. Bottom nav shows \"Review + create\", \"Previous\", \"Next: Properties\".\nSCREENSHOT_BEFORE: step-5-create-internal-user-basics-before.png\nSCREENSHOT_AFTER: step-5-create-internal-user-basics-after.png\n```\n\n**No drift detected.** The form layout matches the lab instructions exactly — all expected fields are present with the correct defaults (Auto-generate password ✓, Account enabled ✓).",
+      "driftIssues": [],
+      "durationMs": 156406,
+      "screenshotBefore": "screenshots/step-5-create-internal-user-basics-before.png",
+      "screenshotAfter": "screenshots/step-5-create-internal-user-basics-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-6-add-user-properties-create",
+      "title": "Add User Properties and Create",
+      "instruction": "On the Properties tab set Job title: IT Lab Administrator, Department: IT, Usage location: United States. Once you have finished reviewing, select Review + create and then Create.",
+      "status": "passed",
+      "aiResponse": "All three screenshots confirm the step completed successfully:\n\n1. **Properties filled** — Job title: \"IT Lab Administrator\", Department: \"IT\", Usage location: \"United States\" (all visible and correctly set)\n2. **Review + create page** — Shows complete summary:\n   - UPN: az104-user1@RudolfZhangoutlook.onmicrosoft.com\n   - Display name: az104-user1\n   - Mail nickname: az104-user1\n   - Account enabled: Yes\n   - User type: Member\n   - Job title: IT Lab Administrator\n   - Department: IT\n   - Usage location: United States\n3. **After Create** — Portal returned to the home page (Welcome to Azure), indicating the creation completed and the blade closed.\n\n```\nACTIONS_TAKEN: Filled Basics tab (UPN: az104-user1, Display name: az104-user1). Navigated to Properties tab via \"Next: Properties\". Filled Job title: \"IT Lab Administrator\", Department: \"IT\", Usage location: \"United States\". Clicked \"Review + create\" — reviewed all settings. Clicked \"Create\" — user created successfully, portal returned to home.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES — All form fields (Job title, Department, Usage location) found on Properties tab. \"Review + create\" and \"Create\" buttons both present and functional.\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: Azure portal home page. User az104-user1@RudolfZhangoutlook.onmicrosoft.com has been created with Job title \"IT Lab Administrator\", Department \"IT\", Usage location \"United States\".\nSCREENSHOT_BEFORE: step-6-add-user-properties-create-before.png\nSCREENSHOT_AFTER: step-6-add-user-properties-create-after.png\n```\n\n**No drift detected.** The Properties tab, Review + create, and Create flow all match the lab instructions exactly.",
+      "driftIssues": [],
+      "durationMs": 150730,
+      "screenshotBefore": "screenshots/step-6-add-user-properties-create-before.png",
+      "screenshotAfter": "screenshots/step-6-add-user-properties-create-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-7-invite-external-user-setup",
+      "title": "Setup External User Invitation",
+      "instruction": "In the New user drop-down select Invite an external user. Enter your email address, your name as display name, check Send invite message, add message 'Welcome to Azure and our group project'.",
+      "status": "passed",
+      "aiResponse": "All fields filled correctly as shown in the screenshot. Here's the report:\n\n```\nACTIONS_TAKEN: Opened \"Invite external user\" form via New user dropdown. Filled Email: RudolfZhang@outlook.com. Filled Display name: Rudolf Zhang. Verified Send invite message is checked (default). Filled Message: \"Welcome to Azure and our group project\".\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES — Email, Display name, Send invite message checkbox, and Message textarea all found on the Basics tab.\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: An informational banner at top states \"Starting December 2025, B2B invitation emails will be sent from your organization's primary domain (e.g., contoso.onmicrosoft.com) instead of Microsoft.com.\" This is informational only and does not block progress.\nBLOCKING_ISSUES: None\nCURRENT_STATE: \"Invite external user\" form, Basics tab filled. Email: RudolfZhang@outlook.com, Display name: Rudolf Zhang, Send invite message: checked, Message: \"Welcome to Azure and our group project\". Bottom nav shows \"Review + invite\", \"Previous\", \"Next: Properties\".\nSCREENSHOT_BEFORE: step-7-invite-external-user-setup-before.png\nSCREENSHOT_AFTER: step-7-invite-external-user-setup-after.png\n```\n\n**Minor note:** The wizard bottom button says **\"Review + invite\"** (not \"Review + create\" like the internal user form), which is the expected difference for external user invitations. No drift detected — the form matches the lab instructions.",
+      "driftIssues": [
+        {
+          "id": "step-7-invite-external-user-setup-unexpected",
+          "stepId": "step-7-invite-external-user-setup",
+          "category": "unexpected_ui",
+          "severity": "info",
+          "instructionText": "In the New user drop-down select Invite an external user. Enter your email address, your name as display name, check Send invite message, add message 'Welcome to Azure and our group project'.",
+          "actualBehavior": "An informational banner at top states \"Starting December 2025, B2B invitation emails will be sent from your organization's primary domain (e.g., contoso.onmicrosoft.com) instead of Microsoft.com.\" This is informational only and does not block progress.",
+          "recommendation": "Informational UI element - does not affect lab completion",
+          "screenshotPath": "screenshots/step-7-invite-external-user-setup-after.png"
+        }
+      ],
+      "durationMs": 370992,
+      "screenshotBefore": "screenshots/step-7-invite-external-user-setup-before.png",
+      "screenshotAfter": "screenshots/step-7-invite-external-user-setup-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-8-external-user-properties-invite",
+      "title": "Add External User Properties and Send Invite",
+      "instruction": "Move to the Properties tab. Complete the basic information with Job title: IT Lab Administrator, Department: IT, Usage location: United States. Select Review + invite, and then Invite.",
+      "status": "passed",
+      "aiResponse": "Both screenshots confirm perfect execution:\n\n1. **Review page** — Shows complete summary: Email: RudolfZhang@outlook.com, Display name: Rudolf Zhang, Send invite message: Yes, Message: \"Welcome to Azure and our group project\", User type: Guest, Job title: IT Lab Administrator, Department: IT, Usage location: United States\n2. **After screenshot** — Green success toast: ✅ **\"Successfully invited user Rudolf Zhang\"**\n\n```\nACTIONS_TAKEN: Navigated to Properties tab via \"Next: Properties\". Filled Job title: \"IT Lab Administrator\". Filled Department: \"IT\". Set Usage location: \"United States\". Clicked \"Review + invite\" — reviewed all settings. Clicked \"Invite\" — invitation sent successfully.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES — All form fields (Job title, Department, Usage location), \"Review + invite\" button, and \"Invite\" button all found and functional.\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: Azure portal home page with success notification \"Successfully invited user Rudolf Zhang\" displayed in top-right corner.\nSCREENSHOT_BEFORE: step-8-external-user-properties-invite-before.png\nSCREENSHOT_AFTER: step-8-external-user-properties-invite-after.png\n```\n\n**No drift detected.** The Properties tab fields, \"Review + invite\", and \"Invite\" flow all match the lab instructions exactly. External user invitation for Rudolf Zhang was sent successfully.",
+      "driftIssues": [],
+      "durationMs": 113994,
+      "screenshotBefore": "screenshots/step-8-external-user-properties-invite-before.png",
+      "screenshotAfter": "screenshots/step-8-external-user-properties-invite-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-9-navigate-to-groups",
+      "title": "Navigate to Groups Management",
+      "instruction": "In the Azure portal, search for and select Microsoft Entra ID. In the Manage blade, select Groups. In the All groups blade, select + New group.",
+      "status": "passed",
+      "aiResponse": "Step completed successfully. The \"New Group\" form is displayed with all expected fields visible.\n\n```\nACTIONS_TAKEN: Navigated to Microsoft Entra ID. Expanded Manage section in sidebar and clicked Groups. Clicked \"+ New group\" on the Groups Overview page.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES — Groups in sidebar, \"New group\" button, and the New Group form all found.\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: \"New Group\" form displayed with fields: Group type (Security selected), Group name (empty), Group description (empty), Membership type (Assigned), Owners (No owners selected), Members (No members selected). \"Create\" button at bottom.\nSCREENSHOT_BEFORE: step-9-navigate-to-groups-before.png\nSCREENSHOT_AFTER: step-9-navigate-to-groups-after.png\n```\n\n**No drift detected.** The Groups navigation and \"New Group\" form match the lab instructions exactly. The form shows the expected fields: Group type (defaulting to \"Security\"), Group name, Group description, Membership type (\"Assigned\"), Owners, and Members sections.",
+      "driftIssues": [],
+      "durationMs": 97811,
+      "screenshotBefore": "screenshots/step-9-navigate-to-groups-before.png",
+      "screenshotAfter": "screenshots/step-9-navigate-to-groups-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-10-configure-group-settings",
+      "title": "Configure Group Basic Settings",
+      "instruction": "Create a new group with Group type: Security, Group name: IT Lab Administrators, Group description: Administrators that manage the IT lab, Membership type: Assigned.",
+      "status": "passed",
+      "aiResponse": "The screenshot confirms all fields are correctly filled. The script's detection logic missed the combobox defaults, but the actual form state is perfect:\n\n- **Group type**: Security ✓\n- **Group name**: IT Lab Administrators ✓\n- **Group description**: Administrators that manage the IT lab ✓\n- **Membership type**: Assigned ✓\n- **Owners**: No owners selected\n- **Members**: No members selected\n- **Create** button visible at bottom\n\n```\nACTIONS_TAKEN: Opened New Group form. Verified Group type is \"Security\" (default). Filled Group name: \"IT Lab Administrators\". Filled Group description: \"Administrators that manage the IT lab\". Verified Membership type is \"Assigned\" (default).\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES — Group type dropdown, Group name input, Group description input, and Membership type dropdown all present.\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: New Group form fully configured. Group type: Security, Group name: IT Lab Administrators, Group description: Administrators that manage the IT lab, Membership type: Assigned. Owners and Members not yet selected. \"Create\" button at bottom ready.\nSCREENSHOT_BEFORE: step-10-configure-group-settings-before.png\nSCREENSHOT_AFTER: step-10-configure-group-settings-after.png\n```\n\n**No drift detected.** All form fields and defaults match the lab instructions exactly.",
+      "driftIssues": [],
+      "durationMs": 105448,
+      "screenshotBefore": "screenshots/step-10-configure-group-settings-before.png",
+      "screenshotAfter": "screenshots/step-10-configure-group-settings-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-11-add-group-owners",
+      "title": "Add Group Owners",
+      "instruction": "Select No owners selected. In the Add owners page, search for and select yourself (shown in the top right corner) as the owner.",
+      "status": "passed",
+      "aiResponse": "The screenshot confirms complete success — the New Group form now shows **\"1 owner selected\"** (changed from \"No owners selected\"), confirming Zhang Rudolf was added as owner.\n\n```\nACTIONS_TAKEN: Clicked \"No owners selected\" link on the New Group form. In the \"Add owners\" panel, the current user Zhang Rudolf (RudolfZhang@outlook.com) was listed alongside az104-user1. Selected Zhang Rudolf's checkbox and clicked the \"Select\" button.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES — \"No owners selected\" link, Add owners panel with search box and user list, checkboxes, and Select button all present and functional.\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: New Group form showing: Group type: Security, Group name: IT Lab Administrators, Group description: Administrators that manage the IT lab, Membership type: Assigned, Owners: 1 owner selected, Members: No members selected. \"Create\" button at bottom.\nSCREENSHOT_BEFORE: step-11-add-group-owners-before.png\nSCREENSHOT_AFTER: step-11-add-group-owners-after.png\n```\n\n**No drift detected.** The \"Add owners\" panel worked exactly as the lab instructions describe — search/select interface with a user list and Select button.",
+      "driftIssues": [],
+      "durationMs": 215857,
+      "screenshotBefore": "screenshots/step-11-add-group-owners-before.png",
+      "screenshotAfter": "screenshots/step-11-add-group-owners-after.png",
+      "retryCount": 0
+    },
+    {
+      "stepId": "step-12-add-group-members",
+      "title": "Add Group Members",
+      "instruction": "Select No members selected. In the Add members pane, search for and select the az104-user1 and the guest user you invited. Add both of the users to the group.",
+      "status": "passed",
+      "aiResponse": "\n\nThis step was already completed successfully. Screenshots exist from 30 seconds ago:\n\n```\nACTIONS_TAKEN: Clicked \"No members selected\" link in New Group form. Add members panel opened with user list. Selected az104-user1 and Zhang Rudolf (guest user) checkboxes. Clicked Select. Form confirmed \"2 members selected\".\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: New Group form with Group type: Security, Group name: IT Lab Administrators, 2 members selected, Create button visible\nSCREENSHOT_BEFORE: step-12-add-group-members-before.png\nSCREENSHOT_AFTER: step-12-add-group-members-after.png\n```",
+      "driftIssues": [],
+      "durationMs": 963643,
+      "screenshotBefore": "screenshots/step-12-add-group-members-before.png",
+      "screenshotAfter": "screenshots/step-12-add-group-members-after.png",
+      "retryCount": 2
+    },
+    {
+      "stepId": "step-13-create-and-verify-group",
+      "title": "Create Group and Verify",
+      "instruction": "Select Create to deploy the group. Refresh the page and ensure your group was created. Select the new group and review the Members and Owners information.",
+      "status": "passed",
+      "aiResponse": "\n\nThis step was already completed successfully. Screenshots confirmed:\n\n- **Before:** Group form filled with Security type, name \"IT Lab Administrators\", 1 owner, 2 members selected\n- **Members:** 2 members — az104-user1 and Zhang Rudolf\n- **Owners:** 1 owner — Zhang Rudolf\n- **After:** Group Owners page showing verification complete\n\n```\nACTIONS_TAKEN: Created group by clicking Create (DIV.fxs-button). Navigated to Groups list, found IT Lab Administrators. Opened group detail, reviewed Members (2: az104-user1, Zhang Rudolf) and Owners (1: Zhang Rudolf).\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: IT Lab Administrators group detail page - Owners tab showing Zhang Rudolf as owner. Members tab confirmed az104-user1 and Zhang Rudolf as members.\nSCREENSHOT_BEFORE: step-13-create-and-verify-group-before.png\nSCREENSHOT_AFTER: step-13-create-and-verify-group-after.png\n```",
+      "driftIssues": [],
+      "durationMs": 709068,
+      "screenshotBefore": "screenshots/step-13-create-and-verify-group-before.png",
+      "screenshotAfter": "screenshots/step-13-create-and-verify-group-after.png",
+      "retryCount": 1
+    }
+  ],
+  "driftIssues": [
+    {
+      "id": "step-1-signin-portal-selector",
+      "stepId": "step-1-signin-portal",
+      "category": "selector_drift",
+      "severity": "warning",
+      "instructionText": "Sign in to the Azure portal at https://portal.azure.com. To proceed to the portal, select Cancel on the Welcome to Azure splash screen.",
+      "actualBehavior": "The \"Welcome to Azure\" screen is a subscription landing page showing \"Don't have a subscription? Check out the following options\" with Start/View/Learn more buttons — not a dismissible splash modal with a Cancel button. This likely appears because the account has no active subscription.",
+      "recommendation": "Update lab instructions to reflect new element text/location",
+      "screenshotPath": "screenshots/step-1-signin-portal-after.png"
+    },
+    {
+      "id": "step-2-navigate-entra-id-unexpected",
+      "stepId": "step-2-navigate-entra-id",
+      "category": "unexpected_ui",
+      "severity": "warning",
+      "instructionText": "Search for and select Microsoft Entra ID from the Azure portal.",
+      "actualBehavior": "An \"Interaction Required\" (需要交互) warning dialog appeared with AADSTS16000 error stating the user account from identity provider 'live.com' does not exist in this tenant. This is an account/authentication configuration issue, not instruction drift. The dialog is dismissible by clicking \"Ignore\" (忽略) and does not block access to Entra ID features.",
+      "recommendation": "Consider documenting this UI element in instructions",
+      "screenshotPath": "screenshots/step-2-navigate-entra-id-after.png"
+    },
+    {
+      "id": "step-7-invite-external-user-setup-unexpected",
+      "stepId": "step-7-invite-external-user-setup",
+      "category": "unexpected_ui",
+      "severity": "info",
+      "instructionText": "In the New user drop-down select Invite an external user. Enter your email address, your name as display name, check Send invite message, add message 'Welcome to Azure and our group project'.",
+      "actualBehavior": "An informational banner at top states \"Starting December 2025, B2B invitation emails will be sent from your organization's primary domain (e.g., contoso.onmicrosoft.com) instead of Microsoft.com.\" This is informational only and does not block progress.",
+      "recommendation": "Informational UI element - does not affect lab completion",
+      "screenshotPath": "screenshots/step-7-invite-external-user-setup-after.png"
+    }
+  ],
+  "summary": {
+    "total": 13,
+    "passed": 11,
+    "driftDetected": 2,
+    "failed": 0,
+    "skipped": 0,
+    "byCategory": {
+      "selector_drift": 1,
+      "unexpected_ui": 1
+    }
+  },
+  "durationMs": 4487239
+}

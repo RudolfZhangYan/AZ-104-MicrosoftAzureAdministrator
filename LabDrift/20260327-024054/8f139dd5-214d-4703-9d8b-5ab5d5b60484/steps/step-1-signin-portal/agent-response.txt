@@ -1,0 +1,20 @@
+
+
+Good — I can see both screenshots now. The **before** shows the Azure loading splash, and the **after** shows the portal loaded to a **"Welcome to Azure!"** page — but it's NOT the dismissible splash/modal the instructions describe. It's the subscription landing page with no "Cancel" button.
+
+The script's detection was wrong — the welcome screen **did** appear, but it's a different type than expected. The step is partially complete (signed in) but the dashboard isn't showing. Here's the accurate result:
+
+```
+ACTIONS_TAKEN: Navigated to https://portal.azure.com. Portal loaded with existing auth session (RudolfZhang@outlook account). No Cancel button was found on the welcome screen.
+STEP_COMPLETED: YES (signed in successfully, but see ELEMENT_DIFFERENT)
+ELEMENT_FOUND: NO — The instructions say to click "Cancel" on a Welcome splash screen, but no Cancel button exists on this page.
+ELEMENT_DIFFERENT: The "Welcome to Azure" screen is a subscription landing page showing "Don't have a subscription? Check out the following options" with Start/View/Learn more buttons — not a dismissible splash modal with a Cancel button. This likely appears because the account has no active subscription.
+EXTRA_STEPS_NEEDED: None — for users with an active lab subscription, the normal Welcome splash with Cancel would likely appear. This is an account-state issue, not an instruction drift issue.
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None — the portal is accessible and the top navigation bar (search, settings, user profile) is functional. Lab steps involving Microsoft Entra ID can proceed via the search bar or direct URL navigation.
+CURRENT_STATE: "Welcome to Azure!" subscription landing page at https://portal.azure.com/#home. Signed in as RudolfZhang@outlook. Azure top nav bar is visible and functional.
+SCREENSHOT_BEFORE: step-1-signin-portal-before.png
+SCREENSHOT_AFTER: step-1-signin-portal-after.png
+```
+
+**Summary:** Sign-in succeeded. The "Cancel" button from the instructions didn't appear because this account shows a subscription-options welcome page instead of the typical dismissible splash modal. The portal is usable — we can proceed to the next step by navigating directly to Entra ID.

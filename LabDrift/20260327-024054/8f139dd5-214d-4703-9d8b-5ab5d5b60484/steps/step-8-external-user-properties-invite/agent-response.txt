@@ -1,0 +1,19 @@
+Both screenshots confirm perfect execution:
+
+1. **Review page** — Shows complete summary: Email: RudolfZhang@outlook.com, Display name: Rudolf Zhang, Send invite message: Yes, Message: "Welcome to Azure and our group project", User type: Guest, Job title: IT Lab Administrator, Department: IT, Usage location: United States
+2. **After screenshot** — Green success toast: ✅ **"Successfully invited user Rudolf Zhang"**
+
+```
+ACTIONS_TAKEN: Navigated to Properties tab via "Next: Properties". Filled Job title: "IT Lab Administrator". Filled Department: "IT". Set Usage location: "United States". Clicked "Review + invite" — reviewed all settings. Clicked "Invite" — invitation sent successfully.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES — All form fields (Job title, Department, Usage location), "Review + invite" button, and "Invite" button all found and functional.
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: Azure portal home page with success notification "Successfully invited user Rudolf Zhang" displayed in top-right corner.
+SCREENSHOT_BEFORE: step-8-external-user-properties-invite-before.png
+SCREENSHOT_AFTER: step-8-external-user-properties-invite-after.png
+```
+
+**No drift detected.** The Properties tab fields, "Review + invite", and "Invite" flow all match the lab instructions exactly. External user invitation for Rudolf Zhang was sent successfully.

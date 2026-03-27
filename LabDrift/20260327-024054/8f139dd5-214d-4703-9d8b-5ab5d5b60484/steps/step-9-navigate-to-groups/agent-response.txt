@@ -1,0 +1,16 @@
+Step completed successfully. The "New Group" form is displayed with all expected fields visible.
+
+```
+ACTIONS_TAKEN: Navigated to Microsoft Entra ID. Expanded Manage section in sidebar and clicked Groups. Clicked "+ New group" on the Groups Overview page.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES — Groups in sidebar, "New group" button, and the New Group form all found.
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: "New Group" form displayed with fields: Group type (Security selected), Group name (empty), Group description (empty), Membership type (Assigned), Owners (No owners selected), Members (No members selected). "Create" button at bottom.
+SCREENSHOT_BEFORE: step-9-navigate-to-groups-before.png
+SCREENSHOT_AFTER: step-9-navigate-to-groups-after.png
+```
+
+**No drift detected.** The Groups navigation and "New Group" form match the lab instructions exactly. The form shows the expected fields: Group type (defaulting to "Security"), Group name, Group description, Membership type ("Assigned"), Owners, and Members sections.

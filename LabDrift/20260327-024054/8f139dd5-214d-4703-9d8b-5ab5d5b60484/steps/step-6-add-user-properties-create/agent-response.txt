@@ -1,0 +1,28 @@
+All three screenshots confirm the step completed successfully:
+
+1. **Properties filled** — Job title: "IT Lab Administrator", Department: "IT", Usage location: "United States" (all visible and correctly set)
+2. **Review + create page** — Shows complete summary:
+   - UPN: az104-user1@RudolfZhangoutlook.onmicrosoft.com
+   - Display name: az104-user1
+   - Mail nickname: az104-user1
+   - Account enabled: Yes
+   - User type: Member
+   - Job title: IT Lab Administrator
+   - Department: IT
+   - Usage location: United States
+3. **After Create** — Portal returned to the home page (Welcome to Azure), indicating the creation completed and the blade closed.
+
+```
+ACTIONS_TAKEN: Filled Basics tab (UPN: az104-user1, Display name: az104-user1). Navigated to Properties tab via "Next: Properties". Filled Job title: "IT Lab Administrator", Department: "IT", Usage location: "United States". Clicked "Review + create" — reviewed all settings. Clicked "Create" — user created successfully, portal returned to home.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES — All form fields (Job title, Department, Usage location) found on Properties tab. "Review + create" and "Create" buttons both present and functional.
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: Azure portal home page. User az104-user1@RudolfZhangoutlook.onmicrosoft.com has been created with Job title "IT Lab Administrator", Department "IT", Usage location "United States".
+SCREENSHOT_BEFORE: step-6-add-user-properties-create-before.png
+SCREENSHOT_AFTER: step-6-add-user-properties-create-after.png
+```
+
+**No drift detected.** The Properties tab, Review + create, and Create flow all match the lab instructions exactly.

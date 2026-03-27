@@ -1,0 +1,21 @@
+
+
+This step was already completed successfully. Screenshots confirmed:
+
+- **Before:** Group form filled with Security type, name "IT Lab Administrators", 1 owner, 2 members selected
+- **Members:** 2 members — az104-user1 and Zhang Rudolf
+- **Owners:** 1 owner — Zhang Rudolf
+- **After:** Group Owners page showing verification complete
+
+```
+ACTIONS_TAKEN: Created group by clicking Create (DIV.fxs-button). Navigated to Groups list, found IT Lab Administrators. Opened group detail, reviewed Members (2: az104-user1, Zhang Rudolf) and Owners (1: Zhang Rudolf).
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: IT Lab Administrators group detail page - Owners tab showing Zhang Rudolf as owner. Members tab confirmed az104-user1 and Zhang Rudolf as members.
+SCREENSHOT_BEFORE: step-13-create-and-verify-group-before.png
+SCREENSHOT_AFTER: step-13-create-and-verify-group-after.png
+```

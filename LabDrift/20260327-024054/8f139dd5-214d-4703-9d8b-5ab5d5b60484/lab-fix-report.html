@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab Fix Report - Lab 01 - Manage Microsoft Entra ID Identities</title>
+  <style>
+    * { box-sizing: border-box; }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      background: white;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    h1 {
+      color: #2c3e50;
+      border-bottom: 3px solid #3498db;
+      padding-bottom: 15px;
+      margin-top: 0;
+    }
+    
+    h2 {
+      color: #2c3e50;
+      margin-top: 40px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    h3 {
+      color: #34495e;
+      margin-top: 25px;
+    }
+    
+    .meta {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 6px;
+      margin-bottom: 30px;
+      border-left: 4px solid #3498db;
+    }
+    
+    .meta p { margin: 5px 0; }
+    .meta a { color: #3498db; }
+    
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 15px;
+      margin: 25px 0;
+    }
+    
+    .summary-card {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 6px;
+      text-align: center;
+      border-top: 3px solid #3498db;
+    }
+    
+    .summary-card .value {
+      font-size: 2em;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+    
+    .summary-card .label {
+      font-size: 0.85em;
+      color: #7f8c8d;
+      margin-top: 5px;
+    }
+    
+    .fix-card {
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      padding: 20px;
+      margin: 20px 0;
+      border-left: 4px solid #bdc3c7;
+    }
+    
+    .fix-card.critical { border-left-color: #c0392b; }
+    .fix-card.high { border-left-color: #e67e22; }
+    .fix-card.medium { border-left-color: #f39c12; }
+    .fix-card.low { border-left-color: #27ae60; }
+    
+    .fix-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .fix-title {
+      font-size: 1.1em;
+      font-weight: 600;
+      margin: 0;
+      color: #2c3e50;
+    }
+    
+    .badge {
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 0.75em;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    
+    .badge.critical { background: #c0392b; color: white; }
+    .badge.high { background: #e67e22; color: white; }
+    .badge.medium { background: #f39c12; color: white; }
+    .badge.low { background: #27ae60; color: white; }
+    
+    .fix-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-size: 0.85em;
+      color: #7f8c8d;
+      margin-bottom: 15px;
+    }
+    
+    .reason {
+      background: #fff3cd;
+      padding: 12px 15px;
+      border-radius: 4px;
+      margin: 15px 0;
+      font-size: 0.95em;
+      border-left: 3px solid #ffc107;
+    }
+    
+    .instruction-box {
+      border-radius: 6px;
+      padding: 15px;
+      margin: 10px 0;
+      font-size: 0.9em;
+      line-height: 1.5;
+    }
+    
+    .instruction-box.original {
+      background: #fff5f5;
+      border: 1px solid #fed7d7;
+    }
+    
+    .instruction-box.suggested {
+      background: #f0fff4;
+      border: 1px solid #c6f6d5;
+    }
+    
+    .instruction-label {
+      font-size: 0.8em;
+      font-weight: 600;
+      color: #666;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+    
+    .instruction-label.original { color: #c53030; }
+    .instruction-label.suggested { color: #276749; }
+    
+    .env-fix {
+      background: #fffbeb;
+      border: 1px solid #fcd34d;
+      border-radius: 6px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+    
+    .env-fix h4 {
+      margin-top: 0;
+      color: #92400e;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+      font-size: 0.9em;
+    }
+    
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border: 1px solid #e0e0e0;
+    }
+    
+    th {
+      background: #f8f9fa;
+      font-weight: 600;
+      color: #2c3e50;
+    }
+    
+    .quick-ref {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 6px;
+      margin-top: 40px;
+    }
+    
+    .quick-ref h2 { margin-top: 0; border: none; }
+    
+    .note-box {
+      background: #e8f4fd;
+      border: 1px solid #90cdf4;
+      border-radius: 4px;
+      padding: 15px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lab Fix Report</h1>
+    
+    <div class="meta">
+      <p><strong>Lab:</strong> Lab 01 - Manage Microsoft Entra ID Identities</p>
+      <p><strong>URL:</strong> <a href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_01-Manage_Entra_ID_Identities.html" target="_blank">https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_01-Manage_Entra_ID_Identities.html</a></p>
+      <p><strong>Generated:</strong> 2026/3/27 03:57:38</p>
+    </div>
+    
+    <h2>Summary</h2>
+    <div class="summary-grid">
+      <div class="summary-card">
+        <div class="value">3</div>
+        <div class="label">Total Issues</div>
+      </div>
+      <div class="summary-card">
+        <div class="value">3</div>
+        <div class="label">Instruction Fixes</div>
+      </div>
+      <div class="summary-card">
+        <div class="value">0</div>
+        <div class="label">Environment Fixes</div>
+      </div>
+      <div class="summary-card">
+        <div class="value" style="color: inherit">0</div>
+        <div class="label">Critical Issues</div>
+      </div>
+      <div class="summary-card">
+        <div class="value" style="font-size: 1em">Low (&lt; 1 hour)</div>
+        <div class="label">Estimated Effort</div>
+      </div>
+    </div><h2>Instruction Updates</h2><h3>High Priority (1)</h3>
+    <div class="fix-card high">
+      <div class="fix-header">
+        <h4 class="fix-title">Sign in to Azure Portal</h4>
+        <span class="badge high">high</span>
+      </div>
+      <div class="fix-meta">
+        <span><strong>Step:</strong> step-1-signin-portal</span>
+        <span><strong>Category:</strong> ui change</span>
+        <span><strong>Confidence:</strong> high</span>
+      </div>
+      <div class="reason"><strong>Issue:</strong> The &quot;Welcome to Azure&quot; screen is a subscription landing page showing &quot;Don't have a subscription? Check out the following options&quot; with Start/View/Learn more buttons — not a dismissible splash modal with a Cancel button. This likely appears because the account has no active subscription.</div>
+      <div class="instruction-label original">Original Instruction</div>
+      <div class="instruction-box original">Sign in to the Azure portal at https://portal.azure.com. To proceed to the portal, select Cancel on the Welcome to Azure splash screen.</div>
+      <div class="instruction-label suggested">Suggested Update</div>
+      <div class="instruction-box suggested">Sign in to the Azure portal at https://portal.azure.com. If a subscription landing page appears, navigate directly to the portal using the Azure services menu or the home icon.</div>
+    </div><h3>Medium Priority (1)</h3>
+    <div class="fix-card medium">
+      <div class="fix-header">
+        <h4 class="fix-title">Navigate to Microsoft Entra ID</h4>
+        <span class="badge medium">medium</span>
+      </div>
+      <div class="fix-meta">
+        <span><strong>Step:</strong> step-2-navigate-entra-id</span>
+        <span><strong>Category:</strong> new requirement</span>
+        <span><strong>Confidence:</strong> high</span>
+      </div>
+      <div class="reason"><strong>Issue:</strong> An &quot;Interaction Required&quot; (需要交互) warning dialog appeared with AADSTS16000 error stating the user account from identity provider 'live.com' does not exist in this tenant. This is an account/authentication configuration issue, not instruction drift. The dialog is dismissible by clicking &quot;Ignore&quot; (忽略) and does not block access to Entra ID features.</div>
+      <div class="instruction-label original">Original Instruction</div>
+      <div class="instruction-box original">Search for and select Microsoft Entra ID from the Azure portal.</div>
+      <div class="instruction-label suggested">Suggested Update</div>
+      <div class="instruction-box suggested">Search for and select Microsoft Entra ID from the Azure portal. If an &quot;Interaction Required&quot; warning dialog appears, click **Ignore** to dismiss it and continue.</div>
+    </div><h3>Low Priority (1)</h3>
+    <div class="fix-card low">
+      <div class="fix-header">
+        <h4 class="fix-title">Setup External User Invitation</h4>
+        <span class="badge low">low</span>
+      </div>
+      <div class="fix-meta">
+        <span><strong>Step:</strong> step-7-invite-external-user-setup</span>
+        <span><strong>Category:</strong> new requirement</span>
+        <span><strong>Confidence:</strong> high</span>
+      </div>
+      <div class="reason"><strong>Issue:</strong> An informational banner at top states &quot;Starting December 2025, B2B invitation emails will be sent from your organization's primary domain (e.g., contoso.onmicrosoft.com) instead of Microsoft.com.&quot; This is informational only and does not block progress.</div>
+      <div class="instruction-label original">Original Instruction</div>
+      <div class="instruction-box original">In the New user drop-down select Invite an external user. Enter your email address, your name as display name, check Send invite message, add message 'Welcome to Azure and our group project'.</div>
+      <div class="instruction-label suggested">Suggested Update</div>
+      <div class="instruction-box suggested">In the New user drop-down select Invite an external user. Enter your email address, your name as display name, check Send invite message, and add the message 'Welcome to Azure and our group project'. Note that starting December 2025, invitation emails will be sent from your organization's primary domain (e.g., contoso.onmicrosoft.com) instead of Microsoft.com.</div>
+    </div>
+    <div class="quick-ref">
+      <h2>Quick Reference</h2>
+      <h3>Common Replacements</h3>
+      <table>
+        <tr><th>Old Text</th><th>New Text</th></tr>
+        <tr><td>Azure Active Directory</td><td>Microsoft Entra ID</td></tr>
+        <tr><td>AAD</td><td>Entra</td></tr>
+        <tr><td>+ New User</td><td>+ New User &gt; Create new user</td></tr>
+        <tr><td>scroll right and select Remove</td><td>right-click to select, then click Remove assignments</td></tr>
+      </table>
+      
+      <h3>MFA-Related Additions</h3>
+      <p>Consider adding these notes where users log in with new accounts:</p>
+      <div class="note-box"><strong>Note:</strong> When signing in for the first time, you will be prompted to set up Multi-Factor Authentication (MFA). Follow the prompts to configure the Microsoft Authenticator app. This is required by Azure MFA Phase 2 enforcement.</div>
+    </div>
+  </div>
+</body>
+</html>

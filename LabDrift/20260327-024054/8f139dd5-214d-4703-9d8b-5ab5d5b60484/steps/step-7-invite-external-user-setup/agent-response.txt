@@ -1,0 +1,16 @@
+All fields filled correctly as shown in the screenshot. Here's the report:
+
+```
+ACTIONS_TAKEN: Opened "Invite external user" form via New user dropdown. Filled Email: RudolfZhang@outlook.com. Filled Display name: Rudolf Zhang. Verified Send invite message is checked (default). Filled Message: "Welcome to Azure and our group project".
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES — Email, Display name, Send invite message checkbox, and Message textarea all found on the Basics tab.
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: An informational banner at top states "Starting December 2025, B2B invitation emails will be sent from your organization's primary domain (e.g., contoso.onmicrosoft.com) instead of Microsoft.com." This is informational only and does not block progress.
+BLOCKING_ISSUES: None
+CURRENT_STATE: "Invite external user" form, Basics tab filled. Email: RudolfZhang@outlook.com, Display name: Rudolf Zhang, Send invite message: checked, Message: "Welcome to Azure and our group project". Bottom nav shows "Review + invite", "Previous", "Next: Properties".
+SCREENSHOT_BEFORE: step-7-invite-external-user-setup-before.png
+SCREENSHOT_AFTER: step-7-invite-external-user-setup-after.png
+```
+
+**Minor note:** The wizard bottom button says **"Review + invite"** (not "Review + create" like the internal user form), which is the expected difference for external user invitations. No drift detected — the form matches the lab instructions.
