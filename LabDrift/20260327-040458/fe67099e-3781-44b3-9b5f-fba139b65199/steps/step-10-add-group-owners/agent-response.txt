@@ -1,0 +1,14 @@
+Screenshot confirmed. The Owners page shows **Zhang Rudolf** as the sole owner of IT Lab Administrators group. The left nav shows the group detail structure: Overview, Properties, Members, Owners, Roles and administrators, etc.
+
+```
+ACTIONS_TAKEN: Navigated to IT Lab Administrators group detail page, then to Owners blade. Clicked "Add owners", searched for current user (Zhang Rudolf), selected from results, clicked Select. Zhang Rudolf is now listed as the group owner (1 group owner found).
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES (Owners blade, Add owners button, search input, Select button all found)
+ELEMENT_DIFFERENT: The instructions say to click "No owners selected" link from the New Group form. However, since the group was already created in the previous step, the workflow is to navigate to the group → Owners blade → Add owners. The "Add owners" button is in the command bar (not a "No owners selected" link). A human following the instructions would likely be on the New Group creation form where "No owners selected" appears as a clickable link — both paths lead to the same Add Owners panel.
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: IT Lab Administrators | Owners page showing 1 group owner: Zhang Rudolf (User, Member type)
+SCREENSHOT_BEFORE: step-10-add-group-owners-before.png
+SCREENSHOT_AFTER: step-10-add-group-owners-after.png
+```

@@ -1,0 +1,21 @@
+Screenshot confirmed. The Members page shows exactly the right state:
+
+- **IT Lab Administrators | Members** heading
+- **2 group members found**
+- **az104-user1** — User, Member type
+- **AZ104 Lab Tester** — User, az104-tester@outlook.com, Guest type
+- Left nav: Properties, Members (selected), Owners, Roles and administrators, etc.
+- Command bar: Add members, Bulk operations, Refresh, Manage view, Remove
+
+```
+ACTIONS_TAKEN: Navigated to IT Lab Administrators group > Members blade. Added az104-user1 and AZ104 Lab Tester (guest user az104-tester@outlook.com) as group members. Both users now appear in the Direct members list.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES (Members blade, Add members button, search functionality, member list all present)
+ELEMENT_DIFFERENT: The instructions reference clicking "No members selected" link from the New Group creation form. Since the group was already created, the workflow uses the Members blade with an "Add members" button in the command bar. The Members page has tabs "Direct members" and "All members" (not mentioned in instructions). The command bar also includes "Bulk operations" dropdown (not in instructions).
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: IT Lab Administrators | Members page showing 2 group members: az104-user1 (Member) and AZ104 Lab Tester (Guest)
+SCREENSHOT_BEFORE: step-11-add-group-members-before.png
+SCREENSHOT_AFTER: step-11-add-group-members-after.png
+```

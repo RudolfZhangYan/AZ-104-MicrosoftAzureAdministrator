@@ -1,0 +1,26 @@
+Both screenshots confirm everything worked correctly. The Review + invite page shows:
+
+- **Email:** az104-tester@outlook.com ✅
+- **Display name:** AZ104 Lab Tester ✅
+- **Send invite message:** Yes ✅
+- **Message:** Welcome to Azure and our group project ✅
+- **Invite redirect URL:** auto-populated ✅
+- **User type:** Guest ✅
+- **Job title:** IT Lab Administrator ✅
+- **Department:** IT ✅
+- **Invite button** clicked, redirected to home → invite sent ✅
+
+The form has tabs: **Basics | Properties | Assignments | Review + invite**
+
+```
+ACTIONS_TAKEN: Navigated to Users > New user > Invite external user. Filled Basics: Email (az104-tester@outlook.com), Display name (AZ104 Lab Tester), Send invite message (already checked by default), Message ("Welcome to Azure and our group project"). Clicked Properties tab, filled Job title (IT Lab Administrator), Department (IT). Clicked Review + invite, confirmed all fields, clicked Invite. Redirected to home page — invitation sent.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES (all form fields, tabs, and buttons found)
+ELEMENT_DIFFERENT: The form has tabs "Basics | Properties | Assignments | Review + invite" — the "Assignments" tab is new (not in instructions). The Basics tab has additional fields not mentioned: "Cc recipient" and "Invite redirect URL" (pre-populated). There is also an info banner: "Starting December 2025, B2B invitation emails will be sent from your organization's primary domain instead of Microsoft.com." Usage location label exists on Properties but has no editable input during invite (same as Create new user).
+EXTRA_STEPS_NEEDED: Usage location cannot be set during invite — must be set after via user profile.
+UNEXPECTED_UI: Info banner about B2B invitation email domain change (December 2025). Informational only, does not block progress.
+BLOCKING_ISSUES: None
+CURRENT_STATE: Invitation sent successfully. Portal redirected to home page.
+SCREENSHOT_BEFORE: step-7-invite-external-user-before.png
+SCREENSHOT_AFTER: step-7-invite-external-user-after.png
+```

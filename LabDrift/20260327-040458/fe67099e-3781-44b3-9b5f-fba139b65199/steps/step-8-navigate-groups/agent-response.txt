@@ -1,0 +1,19 @@
+Screenshot confirmed. The Groups page is loaded showing:
+
+- **"IT Lab Administrators"** group already exists (from a previous run — Security, Assigned, Cloud)
+- Left pane: Overview, All groups, Insights (Preview), Deleted groups, Diagnose and solve problems, Settings, Activity, Troubleshooting + Support
+- Command bar: New group, Download groups, Refresh, Manage view, Delete, Got feedback?
+- Info banner about Microsoft Entra admin center
+
+```
+ACTIONS_TAKEN: Navigated to Microsoft Entra ID, then selected Groups in the Manage blade. Groups | All groups page loaded showing 1 existing group.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES (Groups in Manage blade, All groups page with left pane settings)
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: An "IT Lab Administrators" group already exists from a previous lab run (1 group found). Info banner: "Microsoft Entra has a simpler, integrated experience for managing all your Identity and Access Management needs. Try the new Microsoft Entra admin center!" — informational only.
+BLOCKING_ISSUES: None
+CURRENT_STATE: Groups | All groups page displayed. 1 group found: "IT Lab Administrators" (Security, Assigned, Cloud). Left pane shows group management options including All groups, Insights (Preview), Deleted groups, Settings, Activity.
+SCREENSHOT_BEFORE: step-8-navigate-groups-before.png
+SCREENSHOT_AFTER: step-8-navigate-groups-after.png
+```

@@ -1,0 +1,17 @@
+Both screenshots confirm everything:
+
+**Before**: Groups | All groups page (loading the group list)
+**After**: IT Lab Administrators | Owners page showing **Zhang Rudolf** (User, Member) as the sole owner. Left nav shows full group detail structure: Properties, Members, Owners, Roles and administrators, Administrative units, Group memberships, Applications, Licenses, Azure role assignments.
+
+```
+ACTIONS_TAKEN: The group was already created in the previous step. Navigated to Groups | All groups to verify IT Lab Administrators appears in the list. Opened the group, reviewed Members (2 members: az104-user1 and AZ104 Lab Tester) and Owners (1 owner: Zhang Rudolf).
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES (group visible in All groups list, Members and Owners blades accessible)
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: IT Lab Administrators | Owners page showing 1 group owner (Zhang Rudolf). Group has 2 members (az104-user1, AZ104 Lab Tester) confirmed in Members blade.
+SCREENSHOT_BEFORE: step-12-create-and-verify-group-before.png
+SCREENSHOT_AFTER: step-12-create-and-verify-group-after.png
+```

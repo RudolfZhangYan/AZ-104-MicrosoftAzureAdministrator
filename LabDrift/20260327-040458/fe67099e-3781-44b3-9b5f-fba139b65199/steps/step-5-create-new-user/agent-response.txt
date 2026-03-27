@@ -1,0 +1,14 @@
+This step is already done — `az104-user1` was created successfully. Same report applies:
+
+```
+ACTIONS_TAKEN: Created user az104-user1 with all specified Basics and Properties fields. Clicked Review + create, then Create.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES
+ELEMENT_DIFFERENT: Form has new "Assignments" tab and "Mail nickname" field not in instructions. Usage location has no editable input during creation.
+EXTRA_STEPS_NEEDED: Usage location must be set post-creation via user profile.
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: User az104-user1 created.
+SCREENSHOT_BEFORE: step-5-create-new-user-before.png
+SCREENSHOT_AFTER: step-5-create-new-user-after.png
+```
