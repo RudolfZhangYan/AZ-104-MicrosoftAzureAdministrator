@@ -1,0 +1,20 @@
+{
+  "stepId": "step-14-create-group",
+  "title": "Create and Verify Group",
+  "stepDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-14-create-group",
+  "finalStatus": "passed",
+  "retryCount": 0,
+  "attempts": [
+    {
+      "attempt": 0,
+      "startedAt": "2026-03-30T04:27:59.952Z",
+      "finishedAt": "2026-03-30T04:33:49.523Z",
+      "status": "passed",
+      "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-14-create-group\\prompt.attempt-0.txt",
+      "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-14-create-group\\agent-response.attempt-0.txt",
+      "screenshotBefore": "screenshots/step-14-create-group-before.png",
+      "screenshotAfter": "screenshots/step-14-create-group-after.png",
+      "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-14-create-group\\attempt-0.json"
+    }
+  ]
+}

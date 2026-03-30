@@ -1,0 +1,21 @@
+Screenshots confirm everything is perfectly configured:
+
+**Members** (2 group members found):
+- az104-tester — User, Guest, az104-tester@outlook.com
+- az104-user1 — User, Member
+
+**Owners** (1 group owner found):
+- Zhang Rudolf — User, Member
+
+```
+ACTIONS_TAKEN: Navigated to Groups > All groups, clicked "IT Lab Administrators" group to open its detail page. Clicked "Members" in the left nav to review members (2 found: az104-tester as Guest, az104-user1 as Member). Then clicked "Owners" in the left nav to review owners (1 found: Zhang Rudolf as Member).
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES (IT Lab Administrators group link, Members tab, Owners tab, all member/owner entries)
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: IT Lab Administrators | Owners page showing 1 group owner (Zhang Rudolf). Left nav shows full group management options: Overview, Members, Owners, Roles and administrators, etc.
+SCREENSHOT_BEFORE: step-15-review-group-details-before.png
+SCREENSHOT_AFTER: step-15-review-group-details-after.png
+```

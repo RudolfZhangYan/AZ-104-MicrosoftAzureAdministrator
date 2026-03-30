@@ -1,0 +1,361 @@
+{
+  "runId": "32ce9ca8-8e40-470e-9fa1-4d793b8afa5c",
+  "labTitle": "Lab 01 - Manage Microsoft Entra ID Identities",
+  "generatedAt": "2026-03-30T04:42:45.743Z",
+  "outputDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors",
+  "summary": {
+    "totalSteps": 15,
+    "stepsWithRetries": 3,
+    "stepsWithErrors": 3,
+    "totalAttempts": 19,
+    "transientErrors": 4,
+    "hardFailures": 0
+  },
+  "steps": [
+    {
+      "stepId": "step-1-sign-in-portal",
+      "title": "Sign in to Azure Portal",
+      "stepDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-1-sign-in-portal",
+      "finalStatus": "passed",
+      "retryCount": 1,
+      "attempts": [
+        {
+          "attempt": 0,
+          "startedAt": "2026-03-30T03:04:22.011Z",
+          "finishedAt": "2026-03-30T03:13:55.373Z",
+          "status": "retrying",
+          "errorMessage": "Timeout after 420000ms waiting for session.idle",
+          "isTransient": true,
+          "isHardFailure": false,
+          "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-1-sign-in-portal\\prompt.attempt-0.txt",
+          "errorScreenshot": "debug-errors/step-1-sign-in-portal/attempt-0-error.png",
+          "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-1-sign-in-portal\\attempt-0.json"
+        },
+        {
+          "attempt": 1,
+          "startedAt": "2026-03-30T03:13:55.374Z",
+          "finishedAt": "2026-03-30T03:15:05.860Z",
+          "status": "passed",
+          "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-1-sign-in-portal\\prompt.attempt-1.txt",
+          "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-1-sign-in-portal\\agent-response.attempt-1.txt",
+          "screenshotBefore": "screenshots/step-1-sign-in-portal-before.png",
+          "screenshotAfter": "screenshots/step-1-sign-in-portal-after.png",
+          "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-1-sign-in-portal\\attempt-1.json"
+        }
+      ]
+    },
+    {
+      "stepId": "step-2-navigate-entra-id",
+      "title": "Navigate to Microsoft Entra ID",
+      "stepDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-2-navigate-entra-id",
+      "finalStatus": "passed",
+      "retryCount": 0,
+      "attempts": [
+        {
+          "attempt": 0,
+          "startedAt": "2026-03-30T03:15:05.862Z",
+          "finishedAt": "2026-03-30T03:20:00.582Z",
+          "status": "passed",
+          "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-2-navigate-entra-id\\prompt.attempt-0.txt",
+          "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-2-navigate-entra-id\\agent-response.attempt-0.txt",
+          "screenshotBefore": "screenshots/step-2-navigate-entra-id-before.png",
+          "screenshotAfter": "screenshots/step-2-navigate-entra-id-after.png",
+          "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-2-navigate-entra-id\\attempt-0.json"
+        }
+      ]
+    },
+    {
+      "stepId": "step-3-explore-tenants",
+      "title": "Explore Entra ID Tenants",
+      "stepDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-3-explore-tenants",
+      "finalStatus": "passed",
+      "retryCount": 0,
+      "attempts": [
+        {
+          "attempt": 0,
+          "startedAt": "2026-03-30T03:20:00.584Z",
+          "finishedAt": "2026-03-30T03:22:08.909Z",
+          "status": "passed",
+          "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-3-explore-tenants\\prompt.attempt-0.txt",
+          "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-3-explore-tenants\\agent-response.attempt-0.txt",
+          "screenshotBefore": "screenshots/step-3-explore-tenants-before.png",
+          "screenshotAfter": "screenshots/step-3-explore-tenants-after.png",
+          "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-3-explore-tenants\\attempt-0.json"
+        }
+      ]
+    },
+    {
+      "stepId": "step-4-navigate-users",
+      "title": "Navigate to Users Section",
+      "stepDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-4-navigate-users",
+      "finalStatus": "passed",
+      "retryCount": 0,
+      "attempts": [
+        {
+          "attempt": 0,
+          "startedAt": "2026-03-30T03:22:08.911Z",
+          "finishedAt": "2026-03-30T03:23:33.813Z",
+          "status": "passed",
+          "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-4-navigate-users\\prompt.attempt-0.txt",
+          "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-4-navigate-users\\agent-response.attempt-0.txt",
+          "screenshotBefore": "screenshots/step-4-navigate-users-before.png",
+          "screenshotAfter": "screenshots/step-4-navigate-users-after.png",
+          "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-4-navigate-users\\attempt-0.json"
+        }
+      ]
+    },
+    {
+      "stepId": "step-5-create-new-user",
+      "title": "Create New User",
+      "stepDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-5-create-new-user",
+      "finalStatus": "passed",
+      "retryCount": 2,
+      "attempts": [
+        {
+          "attempt": 0,
+          "startedAt": "2026-03-30T03:23:33.815Z",
+          "finishedAt": "2026-03-30T03:37:33.803Z",
+          "status": "retrying",
+          "errorMessage": "Timeout after 420000ms waiting for session.idle",
+          "isTransient": true,
+          "isHardFailure": false,
+          "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-5-create-new-user\\prompt.attempt-0.txt",
+          "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-5-create-new-user\\attempt-0.json"
+        },
+        {
+          "attempt": 1,
+          "startedAt": "2026-03-30T03:37:33.804Z",
+          "finishedAt": "2026-03-30T03:51:38.796Z",
+          "status": "retrying",
+          "errorMessage": "Timeout after 420000ms waiting for session.idle",
+          "isTransient": true,
+          "isHardFailure": false,
+          "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-5-create-new-user\\prompt.attempt-1.txt",
+          "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-5-create-new-user\\attempt-1.json"
+        },
+        {
+          "attempt": 2,
+          "startedAt": "2026-03-30T03:51:38.797Z",
+          "finishedAt": "2026-03-30T03:54:57.852Z",
+          "status": "passed",
+          "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-5-create-new-user\\prompt.attempt-2.txt",
+          "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-5-create-new-user\\agent-response.attempt-2.txt",
+          "screenshotBefore": "screenshots/step-5-create-new-user-before.png",
+          "screenshotAfter": "screenshots/step-5-create-new-user-after.png",
+          "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-5-create-new-user\\attempt-2.json"
+        }
+      ]
+    },
+    {
+      "stepId": "step-6-verify-user-created",
+      "title": "Verify User Creation",
+      "stepDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-6-verify-user-created",
+      "finalStatus": "passed",
+      "retryCount": 0,
+      "attempts": [
+        {
+          "attempt": 0,
+          "startedAt": "2026-03-30T03:54:57.853Z",
+          "finishedAt": "2026-03-30T03:56:26.244Z",
+          "status": "passed",
+          "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-6-verify-user-created\\prompt.attempt-0.txt",
+          "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-6-verify-user-created\\agent-response.attempt-0.txt",
+          "screenshotBefore": "screenshots/step-6-verify-user-created-before.png",
+          "screenshotAfter": "screenshots/step-6-verify-user-created-after.png",
+          "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-6-verify-user-created\\attempt-0.json"
+        }
+      ]
+    },
+    {
+      "stepId": "step-7-invite-external-user",
+      "title": "Invite External User",
+      "stepDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-7-invite-external-user",
+      "finalStatus": "passed",
+      "retryCount": 0,
+      "attempts": [
+        {
+          "attempt": 0,
+          "startedAt": "2026-03-30T03:56:26.245Z",
+          "finishedAt": "2026-03-30T04:02:30.092Z",
+          "status": "passed",
+          "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-7-invite-external-user\\prompt.attempt-0.txt",
+          "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-7-invite-external-user\\agent-response.attempt-0.txt",
+          "screenshotBefore": "screenshots/step-7-invite-external-user-before.png",
+          "screenshotAfter": "screenshots/step-7-invite-external-user-after.png",
+          "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-7-invite-external-user\\attempt-0.json"
+        }
+      ]
+    },
+    {
+      "stepId": "step-8-verify-guest-user",
+      "title": "Verify Guest User Invitation",
+      "stepDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-8-verify-guest-user",
+      "finalStatus": "passed",
+      "retryCount": 0,
+      "attempts": [
+        {
+          "attempt": 0,
+          "startedAt": "2026-03-30T04:02:30.093Z",
+          "finishedAt": "2026-03-30T04:03:50.195Z",
+          "status": "passed",
+          "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-8-verify-guest-user\\prompt.attempt-0.txt",
+          "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-8-verify-guest-user\\agent-response.attempt-0.txt",
+          "screenshotBefore": "screenshots/step-8-verify-guest-user-before.png",
+          "screenshotAfter": "screenshots/step-8-verify-guest-user-after.png",
+          "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-8-verify-guest-user\\attempt-0.json"
+        }
+      ]
+    },
+    {
+      "stepId": "step-9-navigate-groups",
+      "title": "Navigate to Groups Section",
+      "stepDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-9-navigate-groups",
+      "finalStatus": "passed",
+      "retryCount": 0,
+      "attempts": [
+        {
+          "attempt": 0,
+          "startedAt": "2026-03-30T04:03:50.197Z",
+          "finishedAt": "2026-03-30T04:04:56.175Z",
+          "status": "passed",
+          "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-9-navigate-groups\\prompt.attempt-0.txt",
+          "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-9-navigate-groups\\agent-response.attempt-0.txt",
+          "screenshotBefore": "screenshots/step-9-navigate-groups-before.png",
+          "screenshotAfter": "screenshots/step-9-navigate-groups-after.png",
+          "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-9-navigate-groups\\attempt-0.json"
+        }
+      ]
+    },
+    {
+      "stepId": "step-10-explore-group-settings",
+      "title": "Explore Group Settings",
+      "stepDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-10-explore-group-settings",
+      "finalStatus": "passed",
+      "retryCount": 0,
+      "attempts": [
+        {
+          "attempt": 0,
+          "startedAt": "2026-03-30T04:04:56.177Z",
+          "finishedAt": "2026-03-30T04:06:21.718Z",
+          "status": "passed",
+          "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-10-explore-group-settings\\prompt.attempt-0.txt",
+          "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-10-explore-group-settings\\agent-response.attempt-0.txt",
+          "screenshotBefore": "screenshots/step-10-explore-group-settings-before.png",
+          "screenshotAfter": "screenshots/step-10-explore-group-settings-after.png",
+          "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-10-explore-group-settings\\attempt-0.json"
+        }
+      ]
+    },
+    {
+      "stepId": "step-11-create-security-group",
+      "title": "Create Security Group",
+      "stepDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-11-create-security-group",
+      "finalStatus": "passed",
+      "retryCount": 0,
+      "attempts": [
+        {
+          "attempt": 0,
+          "startedAt": "2026-03-30T04:06:21.720Z",
+          "finishedAt": "2026-03-30T04:09:19.027Z",
+          "status": "passed",
+          "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-11-create-security-group\\prompt.attempt-0.txt",
+          "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-11-create-security-group\\agent-response.attempt-0.txt",
+          "screenshotBefore": "screenshots/step-11-create-security-group-before.png",
+          "screenshotAfter": "screenshots/step-11-create-security-group-after.png",
+          "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-11-create-security-group\\attempt-0.json"
+        }
+      ]
+    },
+    {
+      "stepId": "step-12-assign-group-owners",
+      "title": "Assign Group Owners",
+      "stepDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-12-assign-group-owners",
+      "finalStatus": "passed",
+      "retryCount": 1,
+      "attempts": [
+        {
+          "attempt": 0,
+          "startedAt": "2026-03-30T04:09:19.028Z",
+          "finishedAt": "2026-03-30T04:23:19.020Z",
+          "status": "retrying",
+          "errorMessage": "Timeout after 420000ms waiting for session.idle",
+          "isTransient": true,
+          "isHardFailure": false,
+          "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-12-assign-group-owners\\prompt.attempt-0.txt",
+          "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-12-assign-group-owners\\attempt-0.json"
+        },
+        {
+          "attempt": 1,
+          "startedAt": "2026-03-30T04:23:19.021Z",
+          "finishedAt": "2026-03-30T04:25:40.393Z",
+          "status": "passed",
+          "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-12-assign-group-owners\\prompt.attempt-1.txt",
+          "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-12-assign-group-owners\\agent-response.attempt-1.txt",
+          "screenshotBefore": "screenshots/step-12-assign-group-owners-before.png",
+          "screenshotAfter": "screenshots/step-12-assign-group-owners-after.png",
+          "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-12-assign-group-owners\\attempt-1.json"
+        }
+      ]
+    },
+    {
+      "stepId": "step-13-assign-group-members",
+      "title": "Assign Group Members",
+      "stepDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-13-assign-group-members",
+      "finalStatus": "passed",
+      "retryCount": 0,
+      "attempts": [
+        {
+          "attempt": 0,
+          "startedAt": "2026-03-30T04:25:40.395Z",
+          "finishedAt": "2026-03-30T04:27:59.950Z",
+          "status": "passed",
+          "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-13-assign-group-members\\prompt.attempt-0.txt",
+          "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-13-assign-group-members\\agent-response.attempt-0.txt",
+          "screenshotBefore": "screenshots/step-13-assign-group-members-before.png",
+          "screenshotAfter": "screenshots/step-13-assign-group-members-after.png",
+          "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-13-assign-group-members\\attempt-0.json"
+        }
+      ]
+    },
+    {
+      "stepId": "step-14-create-group",
+      "title": "Create and Verify Group",
+      "stepDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-14-create-group",
+      "finalStatus": "passed",
+      "retryCount": 0,
+      "attempts": [
+        {
+          "attempt": 0,
+          "startedAt": "2026-03-30T04:27:59.952Z",
+          "finishedAt": "2026-03-30T04:33:49.523Z",
+          "status": "passed",
+          "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-14-create-group\\prompt.attempt-0.txt",
+          "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-14-create-group\\agent-response.attempt-0.txt",
+          "screenshotBefore": "screenshots/step-14-create-group-before.png",
+          "screenshotAfter": "screenshots/step-14-create-group-after.png",
+          "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-14-create-group\\attempt-0.json"
+        }
+      ]
+    },
+    {
+      "stepId": "step-15-review-group-details",
+      "title": "Review Group Configuration",
+      "stepDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-15-review-group-details",
+      "finalStatus": "passed",
+      "retryCount": 0,
+      "attempts": [
+        {
+          "attempt": 0,
+          "startedAt": "2026-03-30T04:33:49.525Z",
+          "finishedAt": "2026-03-30T04:35:45.750Z",
+          "status": "passed",
+          "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-15-review-group-details\\prompt.attempt-0.txt",
+          "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-15-review-group-details\\agent-response.attempt-0.txt",
+          "screenshotBefore": "screenshots/step-15-review-group-details-before.png",
+          "screenshotAfter": "screenshots/step-15-review-group-details-after.png",
+          "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-15-review-group-details\\attempt-0.json"
+        }
+      ]
+    }
+  ]
+}

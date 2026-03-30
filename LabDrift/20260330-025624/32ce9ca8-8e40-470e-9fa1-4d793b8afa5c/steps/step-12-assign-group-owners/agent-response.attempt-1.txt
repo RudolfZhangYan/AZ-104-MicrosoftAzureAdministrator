@@ -1,0 +1,14 @@
+Step 12 completed successfully — **1 owner selected** (Zhang Rudolf).
+
+```
+ACTIONS_TAKEN: Opened New Group form, filled Group name=IT Lab Administrators and description. Clicked "No owners selected" link, which opened the "Add owners" panel showing 3 users. Selected Zhang Rudolf by clicking the checkbox, then clicked "Select" to confirm.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES ("No owners selected" link, Add owners panel with user list, checkboxes, Select button)
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: New Group form with Group type=Security, Group name=IT Lab Administrators, Membership type=Assigned, 1 owner selected (Zhang Rudolf), No members selected
+SCREENSHOT_BEFORE: step-12-assign-group-owners-before.png
+SCREENSHOT_AFTER: step-12-assign-group-owners-after.png
+```

@@ -1,0 +1,18 @@
+All three screenshots confirm the step completed successfully:
+
+1. **BEFORE**: Entra ID Overview page showing tenant "默认目录" with Basic information (Tenant ID, Primary domain, License), Users: 1, Groups: 0. The "Manage tenants" button is visible in the toolbar.
+2. **Manage tenants**: Clicked "Manage tenants" — navigated to the tenant management view showing "Welcome to Azure!" with the tenant's available options (no additional tenants to manage with this free account).
+3. **AFTER**: Successfully navigated back to the Entra ID Overview page, identical to the before state.
+
+```
+ACTIONS_TAKEN: Clicked Overview in the left nav (already active). Clicked "Manage tenants" button in the toolbar — navigated to tenant management page showing the current tenant. Then navigated back to Entra ID Overview page.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES (Overview blade, "Manage tenants" button both found and clickable)
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: Microsoft Entra ID Overview page showing tenant "默认目录", Tenant ID dc57358e-..., Primary domain RudolfZhangoutlook.onmicrosoft.com, License: Microsoft Entra ID Free, Users: 1, Groups: 0, Applications: 0, Devices: 0. Alert about migrating to converged Authentication methods policy visible.
+SCREENSHOT_BEFORE: step-3-explore-tenants-before.png
+SCREENSHOT_AFTER: step-3-explore-tenants-after.png
+```

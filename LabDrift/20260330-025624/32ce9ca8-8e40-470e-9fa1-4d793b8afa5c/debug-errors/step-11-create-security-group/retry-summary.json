@@ -1,0 +1,20 @@
+{
+  "stepId": "step-11-create-security-group",
+  "title": "Create Security Group",
+  "stepDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-11-create-security-group",
+  "finalStatus": "passed",
+  "retryCount": 0,
+  "attempts": [
+    {
+      "attempt": 0,
+      "startedAt": "2026-03-30T04:06:21.720Z",
+      "finishedAt": "2026-03-30T04:09:19.027Z",
+      "status": "passed",
+      "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-11-create-security-group\\prompt.attempt-0.txt",
+      "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-11-create-security-group\\agent-response.attempt-0.txt",
+      "screenshotBefore": "screenshots/step-11-create-security-group-before.png",
+      "screenshotAfter": "screenshots/step-11-create-security-group-after.png",
+      "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-11-create-security-group\\attempt-0.json"
+    }
+  ]
+}

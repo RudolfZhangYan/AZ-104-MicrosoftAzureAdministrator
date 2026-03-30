@@ -1,0 +1,14 @@
+Step 10 completed successfully. Left pane menu items found: **All groups**, **Deleted groups**, **General**, **Expiration**, **Naming policy**. Explored both Expiration and Naming policy pages, then returned to All groups.
+
+```
+ACTIONS_TAKEN: Navigated to Groups page, explored the left pane settings including Expiration and Naming policy pages, then returned to All groups view
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES (All groups, Deleted groups, General, Expiration, Naming policy all found in left pane)
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: Groups | All groups page with 0 groups, left pane showing All groups, Deleted groups, General, Expiration, and Naming policy options
+SCREENSHOT_BEFORE: step-10-explore-group-settings-before.png
+SCREENSHOT_AFTER: step-10-explore-group-settings-after.png
+```

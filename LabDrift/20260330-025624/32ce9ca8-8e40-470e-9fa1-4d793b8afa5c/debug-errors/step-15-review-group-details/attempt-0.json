@@ -1,0 +1,10 @@
+{
+  "attempt": 0,
+  "startedAt": "2026-03-30T04:33:49.525Z",
+  "finishedAt": "2026-03-30T04:35:45.750Z",
+  "status": "passed",
+  "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-15-review-group-details\\prompt.attempt-0.txt",
+  "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-15-review-group-details\\agent-response.attempt-0.txt",
+  "screenshotBefore": "screenshots/step-15-review-group-details-before.png",
+  "screenshotAfter": "screenshots/step-15-review-group-details-after.png"
+}

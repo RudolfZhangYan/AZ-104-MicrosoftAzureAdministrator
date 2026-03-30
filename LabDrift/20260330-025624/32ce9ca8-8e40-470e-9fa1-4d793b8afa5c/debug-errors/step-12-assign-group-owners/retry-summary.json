@@ -1,0 +1,31 @@
+{
+  "stepId": "step-12-assign-group-owners",
+  "title": "Assign Group Owners",
+  "stepDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-12-assign-group-owners",
+  "finalStatus": "passed",
+  "retryCount": 1,
+  "attempts": [
+    {
+      "attempt": 0,
+      "startedAt": "2026-03-30T04:09:19.028Z",
+      "finishedAt": "2026-03-30T04:23:19.020Z",
+      "status": "retrying",
+      "errorMessage": "Timeout after 420000ms waiting for session.idle",
+      "isTransient": true,
+      "isHardFailure": false,
+      "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-12-assign-group-owners\\prompt.attempt-0.txt",
+      "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-12-assign-group-owners\\attempt-0.json"
+    },
+    {
+      "attempt": 1,
+      "startedAt": "2026-03-30T04:23:19.021Z",
+      "finishedAt": "2026-03-30T04:25:40.393Z",
+      "status": "passed",
+      "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-12-assign-group-owners\\prompt.attempt-1.txt",
+      "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-12-assign-group-owners\\agent-response.attempt-1.txt",
+      "screenshotBefore": "screenshots/step-12-assign-group-owners-before.png",
+      "screenshotAfter": "screenshots/step-12-assign-group-owners-after.png",
+      "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-12-assign-group-owners\\attempt-1.json"
+    }
+  ]
+}

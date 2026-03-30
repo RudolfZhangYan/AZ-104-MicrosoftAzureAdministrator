@@ -1,0 +1,14 @@
+Screenshot confirmed — `az104-user1` is visible in the Users list with 2 users found.
+
+```
+ACTIONS_TAKEN: Verified az104-user1 already exists from prior creation. Original flow: clicked "New user" dropdown → "Create new user" → filled Basics (UPN: az104-user1, Display name: az104-user1) → "Next: Properties" → filled Job title: IT Lab Administrator, Department: IT → "Review + create" → "Create".
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: An informational banner "Azure Active Directory is now Microsoft Entra ID" appears at the top of the Users page. It is non-blocking and informational only.
+BLOCKING_ISSUES: None
+CURRENT_STATE: Users | All users page showing 2 users: az104-user1 (az104-user1@Rud..., Member, RudolfZhangoutlook.onmicroso) and Zhang Rudolf (RudolfZhang_outl..., Member, MicrosoftAccount, Invitation).
+SCREENSHOT_BEFORE: step-5-create-new-user-before.png
+SCREENSHOT_AFTER: step-5-create-new-user-after.png
+```

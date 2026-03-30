@@ -1,0 +1,19 @@
+Screenshot confirms perfect success — **IT Lab Administrators** group is visible in the All Groups list:
+
+- **Name**: IT Lab Administrators
+- **Group type**: Security
+- **Membership type**: Assigned
+- **Source**: Cloud
+
+```
+ACTIONS_TAKEN: Filled the New Group form (Group type=Security, Group name=IT Lab Administrators, description, 1 owner Zhang Rudolf, 2 members az104-user1 and az104-tester), clicked Create button. After creation, navigated to Groups > All groups and refreshed to verify the group appeared.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES (Create button, groups list with IT Lab Administrators)
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: Groups | All groups page showing 1 group found: IT Lab Administrators (Security, Assigned, Cloud)
+SCREENSHOT_BEFORE: step-14-create-group-before.png
+SCREENSHOT_AFTER: step-14-create-group-after.png
+```

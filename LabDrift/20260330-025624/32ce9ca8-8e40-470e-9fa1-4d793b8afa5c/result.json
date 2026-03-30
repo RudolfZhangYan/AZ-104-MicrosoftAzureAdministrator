@@ -1,0 +1,610 @@
+{
+  "runId": "32ce9ca8-8e40-470e-9fa1-4d793b8afa5c",
+  "status": "passed",
+  "lab": {
+    "labId": "lab-01-manage-microsoft-entra-id-identit",
+    "title": "Lab 01 - Manage Microsoft Entra ID Identities",
+    "sourceUrl": "https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_01-Manage_Entra_ID_Identities.html"
+  },
+  "steps": [
+    {
+      "stepId": "step-1-sign-in-portal",
+      "title": "Sign in to Azure Portal",
+      "instruction": "Sign in to the Azure portal at https://portal.azure.com and dismiss any welcome screens",
+      "status": "passed",
+      "aiResponse": "\n\nBoth screenshots confirm successful sign-in. The Azure portal is loaded at `portal.azure.com/#home`, signed in as RudolfZhang@outlook. No welcome dialog appeared that needed dismissing — the portal shows the \"Welcome to Azure!\" home page with options for Free Trial, Manage Microsoft Entra ID, and Azure for Students.\n\n```\nACTIONS_TAKEN: Navigated to https://portal.azure.com. Portal loaded directly to home page. No welcome dialog or tour appeared to dismiss. Pressed Escape as precaution.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES (portal dashboard loaded successfully)\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: Azure portal home page displaying \"Welcome to Azure!\" with three cards: Start with an Azure free trial, Manage Microsoft Entra ID, and Azure for Students. Signed in as RudolfZhang@outlook.\nSCREENSHOT_BEFORE: step-1-sign-in-portal-before.png\nSCREENSHOT_AFTER: step-1-sign-in-portal-after.png\n```",
+      "driftIssues": [],
+      "durationMs": 643853,
+      "screenshotBefore": "screenshots/step-1-sign-in-portal-before.png",
+      "screenshotAfter": "screenshots/step-1-sign-in-portal-after.png",
+      "retryCount": 1,
+      "debug": {
+        "stepId": "step-1-sign-in-portal",
+        "title": "Sign in to Azure Portal",
+        "stepDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-1-sign-in-portal",
+        "finalStatus": "passed",
+        "retryCount": 1,
+        "attempts": [
+          {
+            "attempt": 0,
+            "startedAt": "2026-03-30T03:04:22.011Z",
+            "finishedAt": "2026-03-30T03:13:55.373Z",
+            "status": "retrying",
+            "errorMessage": "Timeout after 420000ms waiting for session.idle",
+            "isTransient": true,
+            "isHardFailure": false,
+            "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-1-sign-in-portal\\prompt.attempt-0.txt",
+            "errorScreenshot": "debug-errors/step-1-sign-in-portal/attempt-0-error.png",
+            "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-1-sign-in-portal\\attempt-0.json"
+          },
+          {
+            "attempt": 1,
+            "startedAt": "2026-03-30T03:13:55.374Z",
+            "finishedAt": "2026-03-30T03:15:05.860Z",
+            "status": "passed",
+            "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-1-sign-in-portal\\prompt.attempt-1.txt",
+            "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-1-sign-in-portal\\agent-response.attempt-1.txt",
+            "screenshotBefore": "screenshots/step-1-sign-in-portal-before.png",
+            "screenshotAfter": "screenshots/step-1-sign-in-portal-after.png",
+            "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-1-sign-in-portal\\attempt-1.json"
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "step-2-navigate-entra-id",
+      "title": "Navigate to Microsoft Entra ID",
+      "instruction": "Search for and select Microsoft Entra ID from the Azure portal",
+      "status": "passed",
+      "aiResponse": "The Microsoft Entra ID Overview page loaded successfully. I can see the tenant info (名默认目录), Tenant ID, Primary domain (RudolfZhangoutlook.onmicrosoft.com), Users: 1, Groups: 0, and the left nav with Users, Groups, etc.\n\n```\nACTIONS_TAKEN: Searched for \"Microsoft Entra ID\" using the portal search bar at the top. Clicked the first search result which navigated to the Microsoft Entra ID Overview page.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES (search bar found, \"Microsoft Entra ID\" appeared in search results)\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: A \"Give feedback to Microsoft\" satisfaction survey popup appeared in the top-right corner. It was informational only and did not block any functionality.\nBLOCKING_ISSUES: None\nCURRENT_STATE: Microsoft Entra ID Overview page showing tenant \"默认目录\" with Tenant ID, Primary domain (RudolfZhangoutlook.onmicrosoft.com), License: Microsoft Entra ID Free, Users: 1, Groups: 0, Applications: 0, Devices: 0. Left nav shows Users, Groups, External Identities, Roles and administrators, etc.\nSCREENSHOT_BEFORE: step-2-navigate-entra-id-before.png\nSCREENSHOT_AFTER: step-2-navigate-entra-id-after.png\n```",
+      "driftIssues": [
+        {
+          "id": "step-2-navigate-entra-id-unexpected",
+          "stepId": "step-2-navigate-entra-id",
+          "category": "unexpected_ui",
+          "severity": "info",
+          "instructionText": "Search for and select Microsoft Entra ID from the Azure portal",
+          "actualBehavior": "A \"Give feedback to Microsoft\" satisfaction survey popup appeared in the top-right corner. It was informational only and did not block any functionality.",
+          "recommendation": "Informational UI element - does not affect lab completion",
+          "screenshotPath": "screenshots/step-2-navigate-entra-id-after.png"
+        }
+      ],
+      "durationMs": 294721,
+      "screenshotBefore": "screenshots/step-2-navigate-entra-id-before.png",
+      "screenshotAfter": "screenshots/step-2-navigate-entra-id-after.png",
+      "retryCount": 0,
+      "debug": {
+        "stepId": "step-2-navigate-entra-id",
+        "title": "Navigate to Microsoft Entra ID",
+        "stepDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-2-navigate-entra-id",
+        "finalStatus": "passed",
+        "retryCount": 0,
+        "attempts": [
+          {
+            "attempt": 0,
+            "startedAt": "2026-03-30T03:15:05.862Z",
+            "finishedAt": "2026-03-30T03:20:00.582Z",
+            "status": "passed",
+            "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-2-navigate-entra-id\\prompt.attempt-0.txt",
+            "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-2-navigate-entra-id\\agent-response.attempt-0.txt",
+            "screenshotBefore": "screenshots/step-2-navigate-entra-id-before.png",
+            "screenshotAfter": "screenshots/step-2-navigate-entra-id-after.png",
+            "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-2-navigate-entra-id\\attempt-0.json"
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "step-3-explore-tenants",
+      "title": "Explore Entra ID Tenants",
+      "instruction": "Select the Overview blade, then click the Manage tenants tab to explore tenant management, then return to Entra ID page",
+      "status": "passed",
+      "aiResponse": "All three screenshots confirm the step completed successfully:\n\n1. **BEFORE**: Entra ID Overview page showing tenant \"默认目录\" with Basic information (Tenant ID, Primary domain, License), Users: 1, Groups: 0. The \"Manage tenants\" button is visible in the toolbar.\n2. **Manage tenants**: Clicked \"Manage tenants\" — navigated to the tenant management view showing \"Welcome to Azure!\" with the tenant's available options (no additional tenants to manage with this free account).\n3. **AFTER**: Successfully navigated back to the Entra ID Overview page, identical to the before state.\n\n```\nACTIONS_TAKEN: Clicked Overview in the left nav (already active). Clicked \"Manage tenants\" button in the toolbar — navigated to tenant management page showing the current tenant. Then navigated back to Entra ID Overview page.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES (Overview blade, \"Manage tenants\" button both found and clickable)\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: Microsoft Entra ID Overview page showing tenant \"默认目录\", Tenant ID dc57358e-..., Primary domain RudolfZhangoutlook.onmicrosoft.com, License: Microsoft Entra ID Free, Users: 1, Groups: 0, Applications: 0, Devices: 0. Alert about migrating to converged Authentication methods policy visible.\nSCREENSHOT_BEFORE: step-3-explore-tenants-before.png\nSCREENSHOT_AFTER: step-3-explore-tenants-after.png\n```",
+      "driftIssues": [],
+      "durationMs": 128327,
+      "screenshotBefore": "screenshots/step-3-explore-tenants-before.png",
+      "screenshotAfter": "screenshots/step-3-explore-tenants-after.png",
+      "retryCount": 0,
+      "debug": {
+        "stepId": "step-3-explore-tenants",
+        "title": "Explore Entra ID Tenants",
+        "stepDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-3-explore-tenants",
+        "finalStatus": "passed",
+        "retryCount": 0,
+        "attempts": [
+          {
+            "attempt": 0,
+            "startedAt": "2026-03-30T03:20:00.584Z",
+            "finishedAt": "2026-03-30T03:22:08.909Z",
+            "status": "passed",
+            "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-3-explore-tenants\\prompt.attempt-0.txt",
+            "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-3-explore-tenants\\agent-response.attempt-0.txt",
+            "screenshotBefore": "screenshots/step-3-explore-tenants-before.png",
+            "screenshotAfter": "screenshots/step-3-explore-tenants-after.png",
+            "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-3-explore-tenants\\attempt-0.json"
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "step-4-navigate-users",
+      "title": "Navigate to Users Section",
+      "instruction": "In the Manage blade, select Users to access user management",
+      "status": "passed",
+      "aiResponse": "Screenshots confirmed. The step completed perfectly:\n\n- **BEFORE**: Entra ID Overview page with \"Users\" visible in the left nav under \"Manage\"\n- **AFTER**: Users page showing \"All users\" with 1 user found (Zhang Rudolf, Member, MicrosoftAccount)\n\n```\nACTIONS_TAKEN: Clicked \"Users\" in the left navigation under the Manage section of Microsoft Entra ID. Navigated to the All Users page.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES (Users link found in left nav at expected position)\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: Users | All users page showing 1 user found: \"Zhang Rudolf\" (RudolfZhang_outl..., Member, MicrosoftAccount, Creation type: Invitation). Toolbar shows New user, Edit, Delete, Download users (Preview), Bulk operations, Refresh, Per-user MFA, Got feedback? Left nav shows All users, Audit logs, Sign-in logs, Diagnose and solve problems, Deleted users, Password reset, User settings, Bulk operation results.\nSCREENSHOT_BEFORE: step-4-navigate-users-before.png\nSCREENSHOT_AFTER: step-4-navigate-users-after.png\n```",
+      "driftIssues": [],
+      "durationMs": 84904,
+      "screenshotBefore": "screenshots/step-4-navigate-users-before.png",
+      "screenshotAfter": "screenshots/step-4-navigate-users-after.png",
+      "retryCount": 0,
+      "debug": {
+        "stepId": "step-4-navigate-users",
+        "title": "Navigate to Users Section",
+        "stepDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-4-navigate-users",
+        "finalStatus": "passed",
+        "retryCount": 0,
+        "attempts": [
+          {
+            "attempt": 0,
+            "startedAt": "2026-03-30T03:22:08.911Z",
+            "finishedAt": "2026-03-30T03:23:33.813Z",
+            "status": "passed",
+            "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-4-navigate-users\\prompt.attempt-0.txt",
+            "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-4-navigate-users\\agent-response.attempt-0.txt",
+            "screenshotBefore": "screenshots/step-4-navigate-users-before.png",
+            "screenshotAfter": "screenshots/step-4-navigate-users-after.png",
+            "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-4-navigate-users\\attempt-0.json"
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "step-5-create-new-user",
+      "title": "Create New User",
+      "instruction": "Click the New user dropdown and select Create new user, then fill the form with az104-user1 details and create the user",
+      "status": "passed",
+      "aiResponse": "Screenshot confirmed — `az104-user1` is visible in the Users list with 2 users found.\n\n```\nACTIONS_TAKEN: Verified az104-user1 already exists from prior creation. Original flow: clicked \"New user\" dropdown → \"Create new user\" → filled Basics (UPN: az104-user1, Display name: az104-user1) → \"Next: Properties\" → filled Job title: IT Lab Administrator, Department: IT → \"Review + create\" → \"Create\".\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: An informational banner \"Azure Active Directory is now Microsoft Entra ID\" appears at the top of the Users page. It is non-blocking and informational only.\nBLOCKING_ISSUES: None\nCURRENT_STATE: Users | All users page showing 2 users: az104-user1 (az104-user1@Rud..., Member, RudolfZhangoutlook.onmicroso) and Zhang Rudolf (RudolfZhang_outl..., Member, MicrosoftAccount, Invitation).\nSCREENSHOT_BEFORE: step-5-create-new-user-before.png\nSCREENSHOT_AFTER: step-5-create-new-user-after.png\n```",
+      "driftIssues": [
+        {
+          "id": "step-5-create-new-user-unexpected",
+          "stepId": "step-5-create-new-user",
+          "category": "unexpected_ui",
+          "severity": "info",
+          "instructionText": "Click the New user dropdown and select Create new user, then fill the form with az104-user1 details and create the user",
+          "actualBehavior": "An informational banner \"Azure Active Directory is now Microsoft Entra ID\" appears at the top of the Users page. It is non-blocking and informational only.",
+          "recommendation": "Informational UI element - does not affect lab completion",
+          "screenshotPath": "screenshots/step-5-create-new-user-after.png"
+        }
+      ],
+      "durationMs": 1884039,
+      "screenshotBefore": "screenshots/step-5-create-new-user-before.png",
+      "screenshotAfter": "screenshots/step-5-create-new-user-after.png",
+      "retryCount": 2,
+      "debug": {
+        "stepId": "step-5-create-new-user",
+        "title": "Create New User",
+        "stepDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-5-create-new-user",
+        "finalStatus": "passed",
+        "retryCount": 2,
+        "attempts": [
+          {
+            "attempt": 0,
+            "startedAt": "2026-03-30T03:23:33.815Z",
+            "finishedAt": "2026-03-30T03:37:33.803Z",
+            "status": "retrying",
+            "errorMessage": "Timeout after 420000ms waiting for session.idle",
+            "isTransient": true,
+            "isHardFailure": false,
+            "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-5-create-new-user\\prompt.attempt-0.txt",
+            "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-5-create-new-user\\attempt-0.json"
+          },
+          {
+            "attempt": 1,
+            "startedAt": "2026-03-30T03:37:33.804Z",
+            "finishedAt": "2026-03-30T03:51:38.796Z",
+            "status": "retrying",
+            "errorMessage": "Timeout after 420000ms waiting for session.idle",
+            "isTransient": true,
+            "isHardFailure": false,
+            "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-5-create-new-user\\prompt.attempt-1.txt",
+            "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-5-create-new-user\\attempt-1.json"
+          },
+          {
+            "attempt": 2,
+            "startedAt": "2026-03-30T03:51:38.797Z",
+            "finishedAt": "2026-03-30T03:54:57.852Z",
+            "status": "passed",
+            "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-5-create-new-user\\prompt.attempt-2.txt",
+            "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-5-create-new-user\\agent-response.attempt-2.txt",
+            "screenshotBefore": "screenshots/step-5-create-new-user-before.png",
+            "screenshotAfter": "screenshots/step-5-create-new-user-after.png",
+            "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-5-create-new-user\\attempt-2.json"
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "step-6-verify-user-created",
+      "title": "Verify User Creation",
+      "instruction": "Refresh the page and confirm your new user az104-user1 was created",
+      "status": "passed",
+      "aiResponse": "Screenshot confirmed — `az104-user1` is clearly visible in the users list after refresh.\n\n```\nACTIONS_TAKEN: Navigated to Users page, refreshed the page, confirmed az104-user1 appears in the users list alongside Zhang Rudolf (2 users found total).\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES (az104-user1 visible in users list with UPN az104-user1@Rud..., User type: Member, Identity: RudolfZhangoutlook.onmicroso)\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: Users | All users page showing 2 users found: az104-user1 (Member, RudolfZhangoutlook.onmicroso) and Zhang Rudolf (Member, MicrosoftAccount, Invitation). Toolbar shows New user, Edit, Delete, Download users (Preview), Bulk operations, Refresh, Manage view, Per-user MFA, Got feedback?\nSCREENSHOT_BEFORE: step-6-verify-user-created-before.png\nSCREENSHOT_AFTER: step-6-verify-user-created-after.png\n```",
+      "driftIssues": [],
+      "durationMs": 88392,
+      "screenshotBefore": "screenshots/step-6-verify-user-created-before.png",
+      "screenshotAfter": "screenshots/step-6-verify-user-created-after.png",
+      "retryCount": 0,
+      "debug": {
+        "stepId": "step-6-verify-user-created",
+        "title": "Verify User Creation",
+        "stepDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-6-verify-user-created",
+        "finalStatus": "passed",
+        "retryCount": 0,
+        "attempts": [
+          {
+            "attempt": 0,
+            "startedAt": "2026-03-30T03:54:57.853Z",
+            "finishedAt": "2026-03-30T03:56:26.244Z",
+            "status": "passed",
+            "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-6-verify-user-created\\prompt.attempt-0.txt",
+            "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-6-verify-user-created\\agent-response.attempt-0.txt",
+            "screenshotBefore": "screenshots/step-6-verify-user-created-before.png",
+            "screenshotAfter": "screenshots/step-6-verify-user-created-after.png",
+            "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-6-verify-user-created\\attempt-0.json"
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "step-7-invite-external-user",
+      "title": "Invite External User",
+      "instruction": "Click New user dropdown, select Invite an external user, fill the invitation form with your email and details, then send the invitation",
+      "status": "passed",
+      "aiResponse": "The screenshot confirms complete success — **3 users found**:\n- `az104-tester` (Guest, az104-tester_outl..., Invitation, RudolfZhangoutlook.onmicroso)\n- `az104-user1` (Member, az104-user1@Rud...)\n- `Zhang Rudolf` (Member, MicrosoftAccount, Invitation)\n\n```\nACTIONS_TAKEN: Clicked \"New user\" dropdown in toolbar, selected \"Invite external user\" from the dropdown menu. Filled the Basics tab: Email = az104-tester@outlook.com, Display name = az104-tester, Send invite message = Yes. Clicked \"Next: Properties\" and filled Job title = IT Lab Administrator, Department = IT. Clicked \"Review + invite\" tab to review all settings, then clicked \"Invite\" button to send the invitation.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES (New user dropdown, \"Invite external user\" option, all form fields, Properties tab, Review + invite tab, Invite button)\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: A \"Give feedback to Microsoft\" satisfaction survey popup appeared in the top-right corner during the invite form. It was informational only and did not block functionality.\nBLOCKING_ISSUES: None\nCURRENT_STATE: Users | All users page showing 3 users found: az104-tester (Guest, Invitation), az104-user1 (Member), and Zhang Rudolf (Member, MicrosoftAccount, Invitation).\nSCREENSHOT_BEFORE: step-7-invite-external-user-before.png\nSCREENSHOT_AFTER: step-7-invite-external-user-after.png\n```",
+      "driftIssues": [
+        {
+          "id": "step-7-invite-external-user-unexpected",
+          "stepId": "step-7-invite-external-user",
+          "category": "unexpected_ui",
+          "severity": "info",
+          "instructionText": "Click New user dropdown, select Invite an external user, fill the invitation form with your email and details, then send the invitation",
+          "actualBehavior": "A \"Give feedback to Microsoft\" satisfaction survey popup appeared in the top-right corner during the invite form. It was informational only and did not block functionality.",
+          "recommendation": "Informational UI element - does not affect lab completion",
+          "screenshotPath": "screenshots/step-7-invite-external-user-after.png"
+        }
+      ],
+      "durationMs": 363848,
+      "screenshotBefore": "screenshots/step-7-invite-external-user-before.png",
+      "screenshotAfter": "screenshots/step-7-invite-external-user-after.png",
+      "retryCount": 0,
+      "debug": {
+        "stepId": "step-7-invite-external-user",
+        "title": "Invite External User",
+        "stepDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-7-invite-external-user",
+        "finalStatus": "passed",
+        "retryCount": 0,
+        "attempts": [
+          {
+            "attempt": 0,
+            "startedAt": "2026-03-30T03:56:26.245Z",
+            "finishedAt": "2026-03-30T04:02:30.092Z",
+            "status": "passed",
+            "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-7-invite-external-user\\prompt.attempt-0.txt",
+            "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-7-invite-external-user\\agent-response.attempt-0.txt",
+            "screenshotBefore": "screenshots/step-7-invite-external-user-before.png",
+            "screenshotAfter": "screenshots/step-7-invite-external-user-after.png",
+            "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-7-invite-external-user\\attempt-0.json"
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "step-8-verify-guest-user",
+      "title": "Verify Guest User Invitation",
+      "instruction": "Refresh the page and confirm the invited external user was created",
+      "status": "passed",
+      "aiResponse": "Step 8 completed successfully. Here's the drift detection report:\n\n```\nACTIONS_TAKEN: Navigated to Users page, refreshed with F5, confirmed az104-tester guest user is present in the users list (3 total users, Guest type visible)\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES (az104-tester found in users list with Guest user type)\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: Users page showing 3 users: Zhang Rudolf (Member), az104-user1 (Member), az104-tester (Guest)\nSCREENSHOT_BEFORE: step-8-verify-guest-user-before.png\nSCREENSHOT_AFTER: step-8-verify-guest-user-after.png\n```",
+      "driftIssues": [],
+      "durationMs": 80104,
+      "screenshotBefore": "screenshots/step-8-verify-guest-user-before.png",
+      "screenshotAfter": "screenshots/step-8-verify-guest-user-after.png",
+      "retryCount": 0,
+      "debug": {
+        "stepId": "step-8-verify-guest-user",
+        "title": "Verify Guest User Invitation",
+        "stepDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-8-verify-guest-user",
+        "finalStatus": "passed",
+        "retryCount": 0,
+        "attempts": [
+          {
+            "attempt": 0,
+            "startedAt": "2026-03-30T04:02:30.093Z",
+            "finishedAt": "2026-03-30T04:03:50.195Z",
+            "status": "passed",
+            "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-8-verify-guest-user\\prompt.attempt-0.txt",
+            "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-8-verify-guest-user\\agent-response.attempt-0.txt",
+            "screenshotBefore": "screenshots/step-8-verify-guest-user-before.png",
+            "screenshotAfter": "screenshots/step-8-verify-guest-user-after.png",
+            "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-8-verify-guest-user\\attempt-0.json"
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "step-9-navigate-groups",
+      "title": "Navigate to Groups Section",
+      "instruction": "Search for and select Microsoft Entra ID, then in the Manage blade, select Groups",
+      "status": "passed",
+      "aiResponse": "Step 9 completed successfully. Groups page loaded with 0 groups, \"All groups\" heading and \"New group\" button visible.\n\n```\nACTIONS_TAKEN: Navigated to Microsoft Entra ID Overview page, then navigated to the Groups section (All Groups blade)\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES (Groups page with \"All groups\" heading and \"New group\" button)\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: Groups | All groups page showing 0 groups, with \"New group\" button available in toolbar\nSCREENSHOT_BEFORE: step-9-navigate-groups-before.png\nSCREENSHOT_AFTER: step-9-navigate-groups-after.png\n```",
+      "driftIssues": [],
+      "durationMs": 65980,
+      "screenshotBefore": "screenshots/step-9-navigate-groups-before.png",
+      "screenshotAfter": "screenshots/step-9-navigate-groups-after.png",
+      "retryCount": 0,
+      "debug": {
+        "stepId": "step-9-navigate-groups",
+        "title": "Navigate to Groups Section",
+        "stepDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-9-navigate-groups",
+        "finalStatus": "passed",
+        "retryCount": 0,
+        "attempts": [
+          {
+            "attempt": 0,
+            "startedAt": "2026-03-30T04:03:50.197Z",
+            "finishedAt": "2026-03-30T04:04:56.175Z",
+            "status": "passed",
+            "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-9-navigate-groups\\prompt.attempt-0.txt",
+            "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-9-navigate-groups\\agent-response.attempt-0.txt",
+            "screenshotBefore": "screenshots/step-9-navigate-groups-before.png",
+            "screenshotAfter": "screenshots/step-9-navigate-groups-after.png",
+            "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-9-navigate-groups\\attempt-0.json"
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "step-10-explore-group-settings",
+      "title": "Explore Group Settings",
+      "instruction": "Take a minute to familiarize yourself with the group settings in the left pane, including Expiration and Naming policy options",
+      "status": "passed",
+      "aiResponse": "Step 10 completed successfully. Left pane menu items found: **All groups**, **Deleted groups**, **General**, **Expiration**, **Naming policy**. Explored both Expiration and Naming policy pages, then returned to All groups.\n\n```\nACTIONS_TAKEN: Navigated to Groups page, explored the left pane settings including Expiration and Naming policy pages, then returned to All groups view\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES (All groups, Deleted groups, General, Expiration, Naming policy all found in left pane)\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: Groups | All groups page with 0 groups, left pane showing All groups, Deleted groups, General, Expiration, and Naming policy options\nSCREENSHOT_BEFORE: step-10-explore-group-settings-before.png\nSCREENSHOT_AFTER: step-10-explore-group-settings-after.png\n```",
+      "driftIssues": [],
+      "durationMs": 85542,
+      "screenshotBefore": "screenshots/step-10-explore-group-settings-before.png",
+      "screenshotAfter": "screenshots/step-10-explore-group-settings-after.png",
+      "retryCount": 0,
+      "debug": {
+        "stepId": "step-10-explore-group-settings",
+        "title": "Explore Group Settings",
+        "stepDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-10-explore-group-settings",
+        "finalStatus": "passed",
+        "retryCount": 0,
+        "attempts": [
+          {
+            "attempt": 0,
+            "startedAt": "2026-03-30T04:04:56.177Z",
+            "finishedAt": "2026-03-30T04:06:21.718Z",
+            "status": "passed",
+            "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-10-explore-group-settings\\prompt.attempt-0.txt",
+            "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-10-explore-group-settings\\agent-response.attempt-0.txt",
+            "screenshotBefore": "screenshots/step-10-explore-group-settings-before.png",
+            "screenshotAfter": "screenshots/step-10-explore-group-settings-after.png",
+            "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-10-explore-group-settings\\attempt-0.json"
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "step-11-create-security-group",
+      "title": "Create Security Group",
+      "instruction": "In the All groups blade, select + New group and create a security group named 'IT Lab Administrators' with assigned membership",
+      "status": "passed",
+      "aiResponse": "```\nACTIONS_TAKEN: Navigated to Groups > All groups, clicked \"+ New group\" button, which opened the New Group form. Filled Group type = Security, Group name = IT Lab Administrators, Group description = IT Lab Administrators group. Membership type was already set to Assigned by default. Owners and Members sections show \"No owners selected\" and \"No members selected\" — ready for member assignment.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES (New group button, Group type dropdown, Group name field, Group description field, Membership type dropdown, Create button)\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: New Group form filled with Group type=Security, Group name=IT Lab Administrators, Group description=IT Lab Administrators group, Membership type=Assigned. Create button visible at bottom. Owners and Members not yet assigned.\nSCREENSHOT_BEFORE: step-11-create-security-group-before.png\nSCREENSHOT_AFTER: step-11-create-security-group-after.png\n```",
+      "driftIssues": [],
+      "durationMs": 177309,
+      "screenshotBefore": "screenshots/step-11-create-security-group-before.png",
+      "screenshotAfter": "screenshots/step-11-create-security-group-after.png",
+      "retryCount": 0,
+      "debug": {
+        "stepId": "step-11-create-security-group",
+        "title": "Create Security Group",
+        "stepDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-11-create-security-group",
+        "finalStatus": "passed",
+        "retryCount": 0,
+        "attempts": [
+          {
+            "attempt": 0,
+            "startedAt": "2026-03-30T04:06:21.720Z",
+            "finishedAt": "2026-03-30T04:09:19.027Z",
+            "status": "passed",
+            "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-11-create-security-group\\prompt.attempt-0.txt",
+            "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-11-create-security-group\\agent-response.attempt-0.txt",
+            "screenshotBefore": "screenshots/step-11-create-security-group-before.png",
+            "screenshotAfter": "screenshots/step-11-create-security-group-after.png",
+            "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-11-create-security-group\\attempt-0.json"
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "step-12-assign-group-owners",
+      "title": "Assign Group Owners",
+      "instruction": "Select No owners selected, then in the Add owners page, search for and select yourself as the owner",
+      "status": "passed",
+      "aiResponse": "Step 12 completed successfully — **1 owner selected** (Zhang Rudolf).\n\n```\nACTIONS_TAKEN: Opened New Group form, filled Group name=IT Lab Administrators and description. Clicked \"No owners selected\" link, which opened the \"Add owners\" panel showing 3 users. Selected Zhang Rudolf by clicking the checkbox, then clicked \"Select\" to confirm.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES (\"No owners selected\" link, Add owners panel with user list, checkboxes, Select button)\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: New Group form with Group type=Security, Group name=IT Lab Administrators, Membership type=Assigned, 1 owner selected (Zhang Rudolf), No members selected\nSCREENSHOT_BEFORE: step-12-assign-group-owners-before.png\nSCREENSHOT_AFTER: step-12-assign-group-owners-after.png\n```",
+      "driftIssues": [],
+      "durationMs": 981366,
+      "screenshotBefore": "screenshots/step-12-assign-group-owners-before.png",
+      "screenshotAfter": "screenshots/step-12-assign-group-owners-after.png",
+      "retryCount": 1,
+      "debug": {
+        "stepId": "step-12-assign-group-owners",
+        "title": "Assign Group Owners",
+        "stepDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-12-assign-group-owners",
+        "finalStatus": "passed",
+        "retryCount": 1,
+        "attempts": [
+          {
+            "attempt": 0,
+            "startedAt": "2026-03-30T04:09:19.028Z",
+            "finishedAt": "2026-03-30T04:23:19.020Z",
+            "status": "retrying",
+            "errorMessage": "Timeout after 420000ms waiting for session.idle",
+            "isTransient": true,
+            "isHardFailure": false,
+            "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-12-assign-group-owners\\prompt.attempt-0.txt",
+            "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-12-assign-group-owners\\attempt-0.json"
+          },
+          {
+            "attempt": 1,
+            "startedAt": "2026-03-30T04:23:19.021Z",
+            "finishedAt": "2026-03-30T04:25:40.393Z",
+            "status": "passed",
+            "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-12-assign-group-owners\\prompt.attempt-1.txt",
+            "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-12-assign-group-owners\\agent-response.attempt-1.txt",
+            "screenshotBefore": "screenshots/step-12-assign-group-owners-before.png",
+            "screenshotAfter": "screenshots/step-12-assign-group-owners-after.png",
+            "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-12-assign-group-owners\\attempt-1.json"
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "step-13-assign-group-members",
+      "title": "Assign Group Members",
+      "instruction": "Select No members selected, then in the Add members pane, search for and select both az104-user1 and the guest user to add them to the group",
+      "status": "passed",
+      "aiResponse": "Screenshot confirms perfect state:\n\n- **Group type**: Security\n- **Group name**: IT Lab Administrators\n- **Group description**: IT Lab Administrators group\n- **Membership type**: Assigned\n- **Owners**: 1 owner selected (blue link)\n- **Members**: 2 members selected (blue link)\n- **Create** button visible at bottom\n\n```\nACTIONS_TAKEN: Opened New Group form, set owner (Zhang Rudolf) first since form was fresh. Then clicked \"No members selected\" link which opened the \"Add members\" panel showing all available users. Selected az104-user1 and az104-tester (guest user) by clicking their checkboxes, then clicked \"Select\" to confirm both members.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES (\"No members selected\" link, Add members panel, user checkboxes, Select button)\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: New Group form fully configured — Group type=Security, Group name=IT Lab Administrators, Membership type=Assigned, 1 owner selected, 2 members selected. Create button ready at bottom.\nSCREENSHOT_BEFORE: step-13-assign-group-members-before.png\nSCREENSHOT_AFTER: step-13-assign-group-members-after.png\n```",
+      "driftIssues": [],
+      "durationMs": 139558,
+      "screenshotBefore": "screenshots/step-13-assign-group-members-before.png",
+      "screenshotAfter": "screenshots/step-13-assign-group-members-after.png",
+      "retryCount": 0,
+      "debug": {
+        "stepId": "step-13-assign-group-members",
+        "title": "Assign Group Members",
+        "stepDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-13-assign-group-members",
+        "finalStatus": "passed",
+        "retryCount": 0,
+        "attempts": [
+          {
+            "attempt": 0,
+            "startedAt": "2026-03-30T04:25:40.395Z",
+            "finishedAt": "2026-03-30T04:27:59.950Z",
+            "status": "passed",
+            "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-13-assign-group-members\\prompt.attempt-0.txt",
+            "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-13-assign-group-members\\agent-response.attempt-0.txt",
+            "screenshotBefore": "screenshots/step-13-assign-group-members-before.png",
+            "screenshotAfter": "screenshots/step-13-assign-group-members-after.png",
+            "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-13-assign-group-members\\attempt-0.json"
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "step-14-create-group",
+      "title": "Create and Verify Group",
+      "instruction": "Select Create to deploy the group, then refresh the page and ensure your group was created",
+      "status": "passed",
+      "aiResponse": "Screenshot confirms perfect success — **IT Lab Administrators** group is visible in the All Groups list:\n\n- **Name**: IT Lab Administrators\n- **Group type**: Security\n- **Membership type**: Assigned\n- **Source**: Cloud\n\n```\nACTIONS_TAKEN: Filled the New Group form (Group type=Security, Group name=IT Lab Administrators, description, 1 owner Zhang Rudolf, 2 members az104-user1 and az104-tester), clicked Create button. After creation, navigated to Groups > All groups and refreshed to verify the group appeared.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES (Create button, groups list with IT Lab Administrators)\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: Groups | All groups page showing 1 group found: IT Lab Administrators (Security, Assigned, Cloud)\nSCREENSHOT_BEFORE: step-14-create-group-before.png\nSCREENSHOT_AFTER: step-14-create-group-after.png\n```",
+      "driftIssues": [],
+      "durationMs": 349573,
+      "screenshotBefore": "screenshots/step-14-create-group-before.png",
+      "screenshotAfter": "screenshots/step-14-create-group-after.png",
+      "retryCount": 0,
+      "debug": {
+        "stepId": "step-14-create-group",
+        "title": "Create and Verify Group",
+        "stepDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-14-create-group",
+        "finalStatus": "passed",
+        "retryCount": 0,
+        "attempts": [
+          {
+            "attempt": 0,
+            "startedAt": "2026-03-30T04:27:59.952Z",
+            "finishedAt": "2026-03-30T04:33:49.523Z",
+            "status": "passed",
+            "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-14-create-group\\prompt.attempt-0.txt",
+            "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-14-create-group\\agent-response.attempt-0.txt",
+            "screenshotBefore": "screenshots/step-14-create-group-before.png",
+            "screenshotAfter": "screenshots/step-14-create-group-after.png",
+            "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-14-create-group\\attempt-0.json"
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "step-15-review-group-details",
+      "title": "Review Group Configuration",
+      "instruction": "Select the new IT Lab Administrators group and review the Members and Owners information to verify correct configuration",
+      "status": "passed",
+      "aiResponse": "Screenshots confirm everything is perfectly configured:\n\n**Members** (2 group members found):\n- az104-tester — User, Guest, az104-tester@outlook.com\n- az104-user1 — User, Member\n\n**Owners** (1 group owner found):\n- Zhang Rudolf — User, Member\n\n```\nACTIONS_TAKEN: Navigated to Groups > All groups, clicked \"IT Lab Administrators\" group to open its detail page. Clicked \"Members\" in the left nav to review members (2 found: az104-tester as Guest, az104-user1 as Member). Then clicked \"Owners\" in the left nav to review owners (1 found: Zhang Rudolf as Member).\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES (IT Lab Administrators group link, Members tab, Owners tab, all member/owner entries)\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: IT Lab Administrators | Owners page showing 1 group owner (Zhang Rudolf). Left nav shows full group management options: Overview, Members, Owners, Roles and administrators, etc.\nSCREENSHOT_BEFORE: step-15-review-group-details-before.png\nSCREENSHOT_AFTER: step-15-review-group-details-after.png\n```",
+      "driftIssues": [],
+      "durationMs": 116226,
+      "screenshotBefore": "screenshots/step-15-review-group-details-before.png",
+      "screenshotAfter": "screenshots/step-15-review-group-details-after.png",
+      "retryCount": 0,
+      "debug": {
+        "stepId": "step-15-review-group-details",
+        "title": "Review Group Configuration",
+        "stepDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-15-review-group-details",
+        "finalStatus": "passed",
+        "retryCount": 0,
+        "attempts": [
+          {
+            "attempt": 0,
+            "startedAt": "2026-03-30T04:33:49.525Z",
+            "finishedAt": "2026-03-30T04:35:45.750Z",
+            "status": "passed",
+            "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-15-review-group-details\\prompt.attempt-0.txt",
+            "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-15-review-group-details\\agent-response.attempt-0.txt",
+            "screenshotBefore": "screenshots/step-15-review-group-details-before.png",
+            "screenshotAfter": "screenshots/step-15-review-group-details-after.png",
+            "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-15-review-group-details\\attempt-0.json"
+          }
+        ]
+      }
+    }
+  ],
+  "driftIssues": [
+    {
+      "id": "step-2-navigate-entra-id-unexpected",
+      "stepId": "step-2-navigate-entra-id",
+      "category": "unexpected_ui",
+      "severity": "info",
+      "instructionText": "Search for and select Microsoft Entra ID from the Azure portal",
+      "actualBehavior": "A \"Give feedback to Microsoft\" satisfaction survey popup appeared in the top-right corner. It was informational only and did not block any functionality.",
+      "recommendation": "Informational UI element - does not affect lab completion",
+      "screenshotPath": "screenshots/step-2-navigate-entra-id-after.png"
+    },
+    {
+      "id": "step-5-create-new-user-unexpected",
+      "stepId": "step-5-create-new-user",
+      "category": "unexpected_ui",
+      "severity": "info",
+      "instructionText": "Click the New user dropdown and select Create new user, then fill the form with az104-user1 details and create the user",
+      "actualBehavior": "An informational banner \"Azure Active Directory is now Microsoft Entra ID\" appears at the top of the Users page. It is non-blocking and informational only.",
+      "recommendation": "Informational UI element - does not affect lab completion",
+      "screenshotPath": "screenshots/step-5-create-new-user-after.png"
+    },
+    {
+      "id": "step-7-invite-external-user-unexpected",
+      "stepId": "step-7-invite-external-user",
+      "category": "unexpected_ui",
+      "severity": "info",
+      "instructionText": "Click New user dropdown, select Invite an external user, fill the invitation form with your email and details, then send the invitation",
+      "actualBehavior": "A \"Give feedback to Microsoft\" satisfaction survey popup appeared in the top-right corner during the invite form. It was informational only and did not block functionality.",
+      "recommendation": "Informational UI element - does not affect lab completion",
+      "screenshotPath": "screenshots/step-7-invite-external-user-after.png"
+    }
+  ],
+  "summary": {
+    "total": 15,
+    "passed": 15,
+    "driftDetected": 0,
+    "failed": 0,
+    "skipped": 0,
+    "byCategory": {}
+  },
+  "durationMs": 6323752
+}

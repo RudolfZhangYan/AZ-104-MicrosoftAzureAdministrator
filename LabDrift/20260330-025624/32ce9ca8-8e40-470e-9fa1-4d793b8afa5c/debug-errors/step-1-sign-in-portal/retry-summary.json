@@ -1,0 +1,32 @@
+{
+  "stepId": "step-1-sign-in-portal",
+  "title": "Sign in to Azure Portal",
+  "stepDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-1-sign-in-portal",
+  "finalStatus": "passed",
+  "retryCount": 1,
+  "attempts": [
+    {
+      "attempt": 0,
+      "startedAt": "2026-03-30T03:04:22.011Z",
+      "finishedAt": "2026-03-30T03:13:55.373Z",
+      "status": "retrying",
+      "errorMessage": "Timeout after 420000ms waiting for session.idle",
+      "isTransient": true,
+      "isHardFailure": false,
+      "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-1-sign-in-portal\\prompt.attempt-0.txt",
+      "errorScreenshot": "debug-errors/step-1-sign-in-portal/attempt-0-error.png",
+      "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-1-sign-in-portal\\attempt-0.json"
+    },
+    {
+      "attempt": 1,
+      "startedAt": "2026-03-30T03:13:55.374Z",
+      "finishedAt": "2026-03-30T03:15:05.860Z",
+      "status": "passed",
+      "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-1-sign-in-portal\\prompt.attempt-1.txt",
+      "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-1-sign-in-portal\\agent-response.attempt-1.txt",
+      "screenshotBefore": "screenshots/step-1-sign-in-portal-before.png",
+      "screenshotAfter": "screenshots/step-1-sign-in-portal-after.png",
+      "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-1-sign-in-portal\\attempt-1.json"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+Screenshots confirmed. The step completed perfectly:
+
+- **BEFORE**: Entra ID Overview page with "Users" visible in the left nav under "Manage"
+- **AFTER**: Users page showing "All users" with 1 user found (Zhang Rudolf, Member, MicrosoftAccount)
+
+```
+ACTIONS_TAKEN: Clicked "Users" in the left navigation under the Manage section of Microsoft Entra ID. Navigated to the All Users page.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES (Users link found in left nav at expected position)
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: Users | All users page showing 1 user found: "Zhang Rudolf" (RudolfZhang_outl..., Member, MicrosoftAccount, Creation type: Invitation). Toolbar shows New user, Edit, Delete, Download users (Preview), Bulk operations, Refresh, Per-user MFA, Got feedback? Left nav shows All users, Audit logs, Sign-in logs, Diagnose and solve problems, Deleted users, Password reset, User settings, Bulk operation results.
+SCREENSHOT_BEFORE: step-4-navigate-users-before.png
+SCREENSHOT_AFTER: step-4-navigate-users-after.png
+```

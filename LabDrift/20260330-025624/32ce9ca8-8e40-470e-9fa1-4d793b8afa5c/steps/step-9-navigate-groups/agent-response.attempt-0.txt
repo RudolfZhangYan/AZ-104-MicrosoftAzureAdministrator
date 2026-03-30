@@ -1,0 +1,14 @@
+Step 9 completed successfully. Groups page loaded with 0 groups, "All groups" heading and "New group" button visible.
+
+```
+ACTIONS_TAKEN: Navigated to Microsoft Entra ID Overview page, then navigated to the Groups section (All Groups blade)
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES (Groups page with "All groups" heading and "New group" button)
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: Groups | All groups page showing 0 groups, with "New group" button available in toolbar
+SCREENSHOT_BEFORE: step-9-navigate-groups-before.png
+SCREENSHOT_AFTER: step-9-navigate-groups-after.png
+```

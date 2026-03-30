@@ -1,0 +1,10 @@
+{
+  "attempt": 1,
+  "startedAt": "2026-03-30T03:13:55.374Z",
+  "finishedAt": "2026-03-30T03:15:05.860Z",
+  "status": "passed",
+  "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-1-sign-in-portal\\prompt.attempt-1.txt",
+  "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-1-sign-in-portal\\agent-response.attempt-1.txt",
+  "screenshotBefore": "screenshots/step-1-sign-in-portal-before.png",
+  "screenshotAfter": "screenshots/step-1-sign-in-portal-after.png"
+}

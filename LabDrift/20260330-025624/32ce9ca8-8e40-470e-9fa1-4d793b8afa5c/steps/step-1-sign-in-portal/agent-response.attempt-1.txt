@@ -1,0 +1,16 @@
+
+
+Both screenshots confirm successful sign-in. The Azure portal is loaded at `portal.azure.com/#home`, signed in as RudolfZhang@outlook. No welcome dialog appeared that needed dismissing — the portal shows the "Welcome to Azure!" home page with options for Free Trial, Manage Microsoft Entra ID, and Azure for Students.
+
+```
+ACTIONS_TAKEN: Navigated to https://portal.azure.com. Portal loaded directly to home page. No welcome dialog or tour appeared to dismiss. Pressed Escape as precaution.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES (portal dashboard loaded successfully)
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: Azure portal home page displaying "Welcome to Azure!" with three cards: Start with an Azure free trial, Manage Microsoft Entra ID, and Azure for Students. Signed in as RudolfZhang@outlook.
+SCREENSHOT_BEFORE: step-1-sign-in-portal-before.png
+SCREENSHOT_AFTER: step-1-sign-in-portal-after.png
+```

@@ -1,0 +1,17 @@
+The screenshot confirms complete success — **3 users found**:
+- `az104-tester` (Guest, az104-tester_outl..., Invitation, RudolfZhangoutlook.onmicroso)
+- `az104-user1` (Member, az104-user1@Rud...)
+- `Zhang Rudolf` (Member, MicrosoftAccount, Invitation)
+
+```
+ACTIONS_TAKEN: Clicked "New user" dropdown in toolbar, selected "Invite external user" from the dropdown menu. Filled the Basics tab: Email = az104-tester@outlook.com, Display name = az104-tester, Send invite message = Yes. Clicked "Next: Properties" and filled Job title = IT Lab Administrator, Department = IT. Clicked "Review + invite" tab to review all settings, then clicked "Invite" button to send the invitation.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES (New user dropdown, "Invite external user" option, all form fields, Properties tab, Review + invite tab, Invite button)
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: A "Give feedback to Microsoft" satisfaction survey popup appeared in the top-right corner during the invite form. It was informational only and did not block functionality.
+BLOCKING_ISSUES: None
+CURRENT_STATE: Users | All users page showing 3 users found: az104-tester (Guest, Invitation), az104-user1 (Member), and Zhang Rudolf (Member, MicrosoftAccount, Invitation).
+SCREENSHOT_BEFORE: step-7-invite-external-user-before.png
+SCREENSHOT_AFTER: step-7-invite-external-user-after.png
+```

@@ -1,0 +1,22 @@
+Screenshot confirms perfect state:
+
+- **Group type**: Security
+- **Group name**: IT Lab Administrators
+- **Group description**: IT Lab Administrators group
+- **Membership type**: Assigned
+- **Owners**: 1 owner selected (blue link)
+- **Members**: 2 members selected (blue link)
+- **Create** button visible at bottom
+
+```
+ACTIONS_TAKEN: Opened New Group form, set owner (Zhang Rudolf) first since form was fresh. Then clicked "No members selected" link which opened the "Add members" panel showing all available users. Selected az104-user1 and az104-tester (guest user) by clicking their checkboxes, then clicked "Select" to confirm both members.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES ("No members selected" link, Add members panel, user checkboxes, Select button)
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: New Group form fully configured — Group type=Security, Group name=IT Lab Administrators, Membership type=Assigned, 1 owner selected, 2 members selected. Create button ready at bottom.
+SCREENSHOT_BEFORE: step-13-assign-group-members-before.png
+SCREENSHOT_AFTER: step-13-assign-group-members-after.png
+```

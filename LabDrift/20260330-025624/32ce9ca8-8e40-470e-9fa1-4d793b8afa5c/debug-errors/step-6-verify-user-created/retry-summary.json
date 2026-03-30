@@ -1,0 +1,20 @@
+{
+  "stepId": "step-6-verify-user-created",
+  "title": "Verify User Creation",
+  "stepDir": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-6-verify-user-created",
+  "finalStatus": "passed",
+  "retryCount": 0,
+  "attempts": [
+    {
+      "attempt": 0,
+      "startedAt": "2026-03-30T03:54:57.853Z",
+      "finishedAt": "2026-03-30T03:56:26.244Z",
+      "status": "passed",
+      "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-6-verify-user-created\\prompt.attempt-0.txt",
+      "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-6-verify-user-created\\agent-response.attempt-0.txt",
+      "screenshotBefore": "screenshots/step-6-verify-user-created-before.png",
+      "screenshotAfter": "screenshots/step-6-verify-user-created-after.png",
+      "attemptJsonPath": "C:\\lab-drift-runner\\20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\debug-errors\\step-6-verify-user-created\\attempt-0.json"
+    }
+  ]
+}

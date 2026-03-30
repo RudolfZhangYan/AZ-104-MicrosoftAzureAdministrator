@@ -1,0 +1,10 @@
+{
+  "attempt": 0,
+  "startedAt": "2026-03-30T03:56:26.245Z",
+  "finishedAt": "2026-03-30T04:02:30.092Z",
+  "status": "passed",
+  "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-7-invite-external-user\\prompt.attempt-0.txt",
+  "responsePath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-7-invite-external-user\\agent-response.attempt-0.txt",
+  "screenshotBefore": "screenshots/step-7-invite-external-user-before.png",
+  "screenshotAfter": "screenshots/step-7-invite-external-user-after.png"
+}

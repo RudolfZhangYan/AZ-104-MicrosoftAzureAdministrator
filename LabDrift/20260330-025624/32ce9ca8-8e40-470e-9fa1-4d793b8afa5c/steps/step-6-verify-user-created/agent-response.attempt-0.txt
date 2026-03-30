@@ -1,0 +1,14 @@
+Screenshot confirmed — `az104-user1` is clearly visible in the users list after refresh.
+
+```
+ACTIONS_TAKEN: Navigated to Users page, refreshed the page, confirmed az104-user1 appears in the users list alongside Zhang Rudolf (2 users found total).
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES (az104-user1 visible in users list with UPN az104-user1@Rud..., User type: Member, Identity: RudolfZhangoutlook.onmicroso)
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: Users | All users page showing 2 users found: az104-user1 (Member, RudolfZhangoutlook.onmicroso) and Zhang Rudolf (Member, MicrosoftAccount, Invitation). Toolbar shows New user, Edit, Delete, Download users (Preview), Bulk operations, Refresh, Manage view, Per-user MFA, Got feedback?
+SCREENSHOT_BEFORE: step-6-verify-user-created-before.png
+SCREENSHOT_AFTER: step-6-verify-user-created-after.png
+```

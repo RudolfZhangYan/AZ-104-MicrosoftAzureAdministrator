@@ -1,0 +1,10 @@
+{
+  "attempt": 0,
+  "startedAt": "2026-03-30T03:23:33.815Z",
+  "finishedAt": "2026-03-30T03:37:33.803Z",
+  "status": "retrying",
+  "errorMessage": "Timeout after 420000ms waiting for session.idle",
+  "isTransient": true,
+  "isHardFailure": false,
+  "promptPath": "20260330-025624\\32ce9ca8-8e40-470e-9fa1-4d793b8afa5c\\steps\\step-5-create-new-user\\prompt.attempt-0.txt"
+}
