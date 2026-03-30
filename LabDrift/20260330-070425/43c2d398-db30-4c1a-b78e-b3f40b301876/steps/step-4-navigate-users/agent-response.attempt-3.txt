@@ -1,0 +1,14 @@
+Screenshot confirmed — the "Create new user" form is displayed correctly on the Basics tab.
+
+```
+ACTIONS_TAKEN: Navigated to Entra ID Overview, clicked "Users" in left nav under Manage, clicked "New user" dropdown, selected "Create new user".
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES — Users link, "New user" dropdown, and "Create new user" option all found as expected.
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: "Create new user" form displayed on Basics tab with fields: User principal name (@RudolfZhangoutlook.on... domain), Mail nickname (derive from UPN ✓), Display name, Password (auto-generated ✓), Account enabled ✓. Tabs: Basics, Properties, Assignments, Review + create.
+SCREENSHOT_BEFORE: step-4-navigate-users-before.png
+SCREENSHOT_AFTER: step-4-navigate-users-after.png
+```

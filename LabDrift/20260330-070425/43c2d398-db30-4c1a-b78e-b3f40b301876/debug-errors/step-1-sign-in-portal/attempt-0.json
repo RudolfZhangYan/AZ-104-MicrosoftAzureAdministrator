@@ -1,0 +1,54 @@
+{
+  "attempt": 0,
+  "startedAt": "2026-03-30T07:10:18.133Z",
+  "finishedAt": "2026-03-30T07:14:07.364Z",
+  "status": "passed",
+  "promptPath": "20260330-070425\\43c2d398-db30-4c1a-b78e-b3f40b301876\\steps\\step-1-sign-in-portal\\prompt.attempt-0.txt",
+  "responsePath": "20260330-070425\\43c2d398-db30-4c1a-b78e-b3f40b301876\\steps\\step-1-sign-in-portal\\agent-response.attempt-0.txt",
+  "screenshotBefore": "screenshots/step-1-sign-in-portal-before.png",
+  "screenshotAfter": "screenshots/step-1-sign-in-portal-after.png",
+  "timeline": [
+    {
+      "ts": "2026-03-30T07:10:18.133Z",
+      "event": "attempt_started",
+      "detail": "Attempt 0 started"
+    },
+    {
+      "ts": "2026-03-30T07:10:18.134Z",
+      "event": "prompt_saved",
+      "detail": "Prompt saved"
+    },
+    {
+      "ts": "2026-03-30T07:10:18.134Z",
+      "event": "agent_send_started",
+      "detail": "Sending main step prompt"
+    },
+    {
+      "ts": "2026-03-30T07:14:07.360Z",
+      "event": "agent_send_succeeded",
+      "detail": "Agent returned response"
+    },
+    {
+      "ts": "2026-03-30T07:14:07.361Z",
+      "event": "response_saved",
+      "detail": "Response saved"
+    },
+    {
+      "ts": "2026-03-30T07:14:07.363Z",
+      "event": "drift_parsed",
+      "detail": "Parsed 0 drift issues"
+    },
+    {
+      "ts": "2026-03-30T07:14:07.363Z",
+      "event": "attempt_finished",
+      "detail": "Attempt 0 finished with status passed"
+    }
+  ],
+  "timelinePath": "C:\\lab-drift-runner\\20260330-070425\\43c2d398-db30-4c1a-b78e-b3f40b301876\\debug-errors\\step-1-sign-in-portal\\attempt-0-timeline.json",
+  "lastKnownState": {
+    "updatedAt": "2026-03-30T07:14:07.363Z",
+    "phase": "attempt_finished",
+    "note": "Attempt 0 finished with status passed",
+    "lastAssistantMessage": "\n\nStep 1 completed successfully. Screenshot confirms the Azure portal home page is displayed, signed in as RudolfZhang@outlook.com.\n\n```\nACTIONS_TAKEN: Navigated to https://portal.azure.com. Portal loaded directly to home page — no splash screen/tour dialog appeared.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: NO (no splash screen with Cancel button appeared — portal went straight to home)\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: Azure portal home page showing \"Welcome to Azure!\" with options for free trial, Manage Microsoft Entra ID, and Azure for Students.\nSCREENSHOT_BEFORE: step-1-sign-in-portal-before.png\nSCREENSHOT_AFTER: step-1-sign-in-portal-after.png\n```"
+  }
+}

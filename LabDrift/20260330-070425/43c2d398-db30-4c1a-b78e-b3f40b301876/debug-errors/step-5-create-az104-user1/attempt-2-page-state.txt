@@ -1,0 +1,20 @@
+
+
+Based on the most recent screenshot (`step-5-create-az104-user1-after.png`, captured at ~9:14):
+
+```
+URL: https://portal.azure.com/#view/Microsoft_AAD_IAM/UserDetailsMenuBlade/~/Profile/userId/...
+TITLE: az104-user1 | Profile - Microsoft Azure
+HEADINGS:
+- az104-user1
+- User Information
+
+SUMMARY: The az104-user1 user profile Overview page is displayed. A 
+green success toast confirms "Successfully updated properties for user 
+az104-user1@RudolfZhangoutlook.onmicrosoft.com". The profile shows: 
+Display name az104-user1, UPN az104-user1@RudolfZhangoutlook.onmicrosoft.com, 
+User type Member, Account status Enabled, Created Mar 30 2026 8:53 AM. 
+The left nav shows user management options (Overview, Properties, 
+Authentication methods, etc). Toolbar has Edit properties, Download 
+sign-in log, Revoke sessions, and Delete buttons.
+```

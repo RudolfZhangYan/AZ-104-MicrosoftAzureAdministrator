@@ -1,0 +1,23 @@
+
+
+Based on the most recent screenshot (step-4-navigate-users-after.png, captured at 7:51:33):
+
+```
+URL: https://portal.azure.com/#view/Microsoft_AAD_IAM/AddNewUser.ReactView
+TITLE: Create new user - Microsoft Azure
+HEADINGS:
+- Create new user
+- Identity
+
+SUMMARY: The "Create new user" form is displayed on the Basics tab 
+within the Azure portal. Four tabs are visible at the top: Basics, 
+Properties, Assignments, Review + create. The Identity section contains 
+empty fields for User principal name (with @RudolfZhangoutlook.on... 
+domain dropdown), Mail nickname (with "Derive from user principal name" 
+checked), Display name, and Password (with "Auto-generate password" 
+checked). Account enabled is toggled on. A "Give feedback to Microsoft" 
+survey popup is overlaid in the top-right corner. Breadcrumb reads: 
+Home > 默认目录 | Users > Create new user.
+```
+
+> **Note:** Each Copilot SDK + Playwright MCP session opens a new browser tab, so a live "inspect" would show a blank page, not this state. The above is from the latest captured screenshot which reflects the actual browser state at step completion.

@@ -1,0 +1,66 @@
+{
+  "stepId": "step-9-verify-external-user",
+  "title": "Verify External User Invitation",
+  "stepDir": "C:\\lab-drift-runner\\20260330-070425\\43c2d398-db30-4c1a-b78e-b3f40b301876\\debug-errors\\step-9-verify-external-user",
+  "finalStatus": "passed",
+  "retryCount": 0,
+  "attempts": [
+    {
+      "attempt": 0,
+      "startedAt": "2026-03-30T09:23:15.943Z",
+      "finishedAt": "2026-03-30T09:24:53.011Z",
+      "status": "passed",
+      "promptPath": "20260330-070425\\43c2d398-db30-4c1a-b78e-b3f40b301876\\steps\\step-9-verify-external-user\\prompt.attempt-0.txt",
+      "responsePath": "20260330-070425\\43c2d398-db30-4c1a-b78e-b3f40b301876\\steps\\step-9-verify-external-user\\agent-response.attempt-0.txt",
+      "screenshotBefore": "screenshots/step-9-verify-external-user-before.png",
+      "screenshotAfter": "screenshots/step-9-verify-external-user-after.png",
+      "timeline": [
+        {
+          "ts": "2026-03-30T09:23:15.943Z",
+          "event": "attempt_started",
+          "detail": "Attempt 0 started"
+        },
+        {
+          "ts": "2026-03-30T09:23:15.944Z",
+          "event": "prompt_saved",
+          "detail": "Prompt saved"
+        },
+        {
+          "ts": "2026-03-30T09:23:15.944Z",
+          "event": "agent_send_started",
+          "detail": "Sending main step prompt"
+        },
+        {
+          "ts": "2026-03-30T09:24:53.010Z",
+          "event": "agent_send_succeeded",
+          "detail": "Agent returned response"
+        },
+        {
+          "ts": "2026-03-30T09:24:53.011Z",
+          "event": "response_saved",
+          "detail": "Response saved"
+        },
+        {
+          "ts": "2026-03-30T09:24:53.011Z",
+          "event": "drift_parsed",
+          "detail": "Parsed 0 drift issues"
+        },
+        {
+          "ts": "2026-03-30T09:24:53.011Z",
+          "event": "attempt_finished",
+          "detail": "Attempt 0 finished with status passed"
+        }
+      ],
+      "timelinePath": "C:\\lab-drift-runner\\20260330-070425\\43c2d398-db30-4c1a-b78e-b3f40b301876\\debug-errors\\step-9-verify-external-user\\attempt-0-timeline.json",
+      "lastKnownState": {
+        "updatedAt": "2026-03-30T09:24:53.011Z",
+        "phase": "attempt_finished",
+        "note": "Attempt 0 finished with status passed",
+        "lastAssistantMessage": "Step 9 verified successfully. The screenshot clearly shows **3 users found**:\n\n```\nACTIONS_TAKEN: Navigated to Entra ID → Users list, clicked Refresh button to reload.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES — Refresh button found and clicked.\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: Users list showing 3 users:\n  1. az104-user1 — az104-user1@Rud... | Member | RudolfZhangoutlook.onmicroso\n  2. Lab User — labuser_outlook.c... | Guest | RudolfZhangoutlook.onmicroso | Invitation\n  3. Zhang Rudolf — RudolfZhang_outl... | Member | MicrosoftAccount | Invitation\nSCREENSHOT_BEFORE: step-9-verify-external-user-before.png\nSCREENSHOT_AFTER: step-9-verify-external-user-after.png\n```"
+      },
+      "attemptJsonPath": "C:\\lab-drift-runner\\20260330-070425\\43c2d398-db30-4c1a-b78e-b3f40b301876\\debug-errors\\step-9-verify-external-user\\attempt-0.json"
+    }
+  ],
+  "hadPageStateSnapshots": false,
+  "hadErrorScreenshots": false
+}

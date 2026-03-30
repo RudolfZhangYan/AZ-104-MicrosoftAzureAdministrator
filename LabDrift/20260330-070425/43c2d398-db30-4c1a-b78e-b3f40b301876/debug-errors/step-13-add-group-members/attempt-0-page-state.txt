@@ -1,0 +1,10 @@
+The browser opened a fresh tab (each `launchPersistentContext` creates a new window). The last confirmed state from step 13 was:
+
+```
+URL: https://portal.azure.com/#view/Microsoft_AAD_IAM/GroupsManagementMenuBlade/~/AllGroups
+TITLE: Microsoft Azure
+HEADINGS:
+- Groups | All groups
+
+SUMMARY: The Azure portal Groups page is displayed showing 1 group found: "IT Lab Administrators" — a Security group with Assigned membership type and Cloud source. The left navigation shows group management options including Overview, All groups, Deleted groups, and Settings. The group was just created in step 13 with Zhang Rudolf as owner and az104-user1 + Lab User as members.
+```

@@ -1,0 +1,16 @@
+
+
+Step 1 completed successfully. Screenshot confirms the Azure portal home page is displayed, signed in as RudolfZhang@outlook.com.
+
+```
+ACTIONS_TAKEN: Navigated to https://portal.azure.com. Portal loaded directly to home page — no splash screen/tour dialog appeared.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: NO (no splash screen with Cancel button appeared — portal went straight to home)
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: Azure portal home page showing "Welcome to Azure!" with options for free trial, Manage Microsoft Entra ID, and Azure for Students.
+SCREENSHOT_BEFORE: step-1-sign-in-portal-before.png
+SCREENSHOT_AFTER: step-1-sign-in-portal-after.png
+```

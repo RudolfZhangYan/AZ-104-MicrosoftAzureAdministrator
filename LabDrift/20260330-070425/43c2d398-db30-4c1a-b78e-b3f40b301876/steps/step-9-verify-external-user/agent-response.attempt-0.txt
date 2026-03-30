@@ -1,0 +1,17 @@
+Step 9 verified successfully. The screenshot clearly shows **3 users found**:
+
+```
+ACTIONS_TAKEN: Navigated to Entra ID → Users list, clicked Refresh button to reload.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES — Refresh button found and clicked.
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: Users list showing 3 users:
+  1. az104-user1 — az104-user1@Rud... | Member | RudolfZhangoutlook.onmicroso
+  2. Lab User — labuser_outlook.c... | Guest | RudolfZhangoutlook.onmicroso | Invitation
+  3. Zhang Rudolf — RudolfZhang_outl... | Member | MicrosoftAccount | Invitation
+SCREENSHOT_BEFORE: step-9-verify-external-user-before.png
+SCREENSHOT_AFTER: step-9-verify-external-user-after.png
+```

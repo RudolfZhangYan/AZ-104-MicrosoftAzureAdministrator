@@ -1,0 +1,14 @@
+Both screenshots confirm the invitation was sent successfully. The review page shows all fields correctly filled, and the "after" screenshot shows the Invite button is now greyed out (disabled) with a notification badge (1) appearing — confirming the invite was sent.
+
+```
+ACTIONS_TAKEN: Clicked Next: Properties on the invite form. Filled Properties: Job title=IT Lab Administrator, Department=IT, Usage location=United States. Clicked Review + invite to review all settings. Clicked Invite to send the invitation.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES — Properties tab, all fields (Job title, Department, Usage location), Review + invite button, and Invite button all found as expected.
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: Review + invite page showing the completed invitation. Basics: Email=labuser@outlook.com, Display name=Lab User, Send invite message=Yes, Message="Welcome to Azure and our group project". Properties: User type=Guest, Job title=IT Lab Administrator, Department=IT, Usage location=United States. Invite button is now greyed out (invitation sent). Notification badge (1) visible.
+SCREENSHOT_BEFORE: step-8-configure-external-user-properties-before.png
+SCREENSHOT_AFTER: step-8-configure-external-user-properties-after.png
+```

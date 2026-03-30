@@ -1,0 +1,14 @@
+Everything verified perfectly. The Owners page shows **1 group owner found: Zhang Rudolf**.
+
+```
+ACTIONS_TAKEN: Navigated to All groups, clicked Refresh, confirmed "IT Lab Administrators" group visible (1 group found). Clicked the group to open its detail page. Clicked Members in left nav — confirmed 2 group members: az104-user1 (Member type) and Lab User (Guest type, labuser@outlook.com). Clicked Owners in left nav — confirmed 1 group owner: Zhang Rudolf.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES — Refresh button, group link, Members and Owners nav items all found.
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: IT Lab Administrators | Owners page showing 1 group owner (Zhang Rudolf). Left nav shows: Overview, Diagnose and solve problems, Manage section with Properties, Members, Owners, Roles and administrators, Administrative units, Group memberships, Applications, Licenses, Azure role assignments, Activity, Troubleshooting + Support.
+SCREENSHOT_BEFORE: step-14-verify-group-creation-before.png
+SCREENSHOT_AFTER: step-14-verify-group-creation-after.png
+```

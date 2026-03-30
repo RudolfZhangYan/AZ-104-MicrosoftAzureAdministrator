@@ -1,0 +1,76 @@
+{
+  "attempt": 1,
+  "startedAt": "2026-03-30T08:40:25.806Z",
+  "finishedAt": "2026-03-30T09:01:30.771Z",
+  "status": "retrying",
+  "errorName": "Error",
+  "errorMessage": "Timeout after 420000ms waiting for session.idle",
+  "errorStack": "Error: Timeout after 420000ms waiting for session.idle\n    at Timeout.<anonymous> (file:///C:/lab-drift-runner/node_modules/@github/copilot-sdk/dist/session.js:117:13)\n    at listOnTimeout (node:internal/timers:605:17)\n    at process.processTimers (node:internal/timers:541:7)",
+  "errorRaw": "Error: Timeout after 420000ms waiting for session.idle",
+  "isTransient": true,
+  "isHardFailure": false,
+  "promptPath": "20260330-070425\\43c2d398-db30-4c1a-b78e-b3f40b301876\\steps\\step-5-create-az104-user1\\prompt.attempt-1.txt",
+  "timeline": [
+    {
+      "ts": "2026-03-30T08:40:25.806Z",
+      "event": "attempt_started",
+      "detail": "Attempt 1 started"
+    },
+    {
+      "ts": "2026-03-30T08:40:30.808Z",
+      "event": "prompt_saved",
+      "detail": "Prompt saved"
+    },
+    {
+      "ts": "2026-03-30T08:40:30.808Z",
+      "event": "agent_send_started",
+      "detail": "Sending main step prompt"
+    },
+    {
+      "ts": "2026-03-30T08:47:30.802Z",
+      "event": "agent_send_failed",
+      "detail": "Timeout after 420000ms waiting for session.idle"
+    },
+    {
+      "ts": "2026-03-30T08:47:30.803Z",
+      "event": "prompt_saved",
+      "detail": "Prompt saved"
+    },
+    {
+      "ts": "2026-03-30T08:47:30.803Z",
+      "event": "page_state_requested",
+      "detail": "Requesting page state snapshot"
+    },
+    {
+      "ts": "2026-03-30T08:47:30.803Z",
+      "event": "agent_send_started",
+      "detail": "Sending page-state inspection prompt"
+    },
+    {
+      "ts": "2026-03-30T08:54:30.779Z",
+      "event": "page_state_captured",
+      "detail": "Failed to capture page state: Timeout after 420000ms waiting for session.idle"
+    },
+    {
+      "ts": "2026-03-30T08:54:30.779Z",
+      "event": "error_screenshot_requested",
+      "detail": "Requesting error screenshot"
+    },
+    {
+      "ts": "2026-03-30T09:01:30.770Z",
+      "event": "error_screenshot_captured",
+      "detail": "Failed to capture screenshot: Timeout after 420000ms waiting for session.idle"
+    },
+    {
+      "ts": "2026-03-30T09:01:30.770Z",
+      "event": "attempt_finished",
+      "detail": "Attempt 1 finished with status retrying"
+    }
+  ],
+  "timelinePath": "C:\\lab-drift-runner\\20260330-070425\\43c2d398-db30-4c1a-b78e-b3f40b301876\\debug-errors\\step-5-create-az104-user1\\attempt-1-timeline.json",
+  "lastKnownState": {
+    "updatedAt": "2026-03-30T09:01:30.770Z",
+    "phase": "attempt_finished",
+    "note": "Attempt 1 finished with status retrying"
+  }
+}

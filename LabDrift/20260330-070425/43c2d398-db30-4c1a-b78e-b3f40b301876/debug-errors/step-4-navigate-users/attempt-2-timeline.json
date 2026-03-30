@@ -1,0 +1,57 @@
+[
+  {
+    "ts": "2026-03-30T07:56:09.249Z",
+    "event": "attempt_started",
+    "detail": "Attempt 2 started"
+  },
+  {
+    "ts": "2026-03-30T07:56:19.264Z",
+    "event": "prompt_saved",
+    "detail": "Prompt saved"
+  },
+  {
+    "ts": "2026-03-30T07:56:19.264Z",
+    "event": "agent_send_started",
+    "detail": "Sending main step prompt"
+  },
+  {
+    "ts": "2026-03-30T08:03:19.250Z",
+    "event": "agent_send_failed",
+    "detail": "Timeout after 420000ms waiting for session.idle"
+  },
+  {
+    "ts": "2026-03-30T08:03:19.252Z",
+    "event": "prompt_saved",
+    "detail": "Prompt saved"
+  },
+  {
+    "ts": "2026-03-30T08:03:19.252Z",
+    "event": "page_state_requested",
+    "detail": "Requesting page state snapshot"
+  },
+  {
+    "ts": "2026-03-30T08:03:19.252Z",
+    "event": "agent_send_started",
+    "detail": "Sending page-state inspection prompt"
+  },
+  {
+    "ts": "2026-03-30T08:10:19.233Z",
+    "event": "page_state_captured",
+    "detail": "Failed to capture page state: Timeout after 420000ms waiting for session.idle"
+  },
+  {
+    "ts": "2026-03-30T08:10:19.233Z",
+    "event": "error_screenshot_requested",
+    "detail": "Requesting error screenshot"
+  },
+  {
+    "ts": "2026-03-30T08:17:19.245Z",
+    "event": "error_screenshot_captured",
+    "detail": "Failed to capture screenshot: Timeout after 420000ms waiting for session.idle"
+  },
+  {
+    "ts": "2026-03-30T08:17:19.245Z",
+    "event": "attempt_finished",
+    "detail": "Attempt 2 finished with status retrying"
+  }
+]

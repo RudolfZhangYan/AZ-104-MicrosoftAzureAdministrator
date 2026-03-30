@@ -1,0 +1,37 @@
+[
+  {
+    "ts": "2026-03-30T09:16:34.885Z",
+    "event": "attempt_started",
+    "detail": "Attempt 0 started"
+  },
+  {
+    "ts": "2026-03-30T09:16:34.886Z",
+    "event": "prompt_saved",
+    "detail": "Prompt saved"
+  },
+  {
+    "ts": "2026-03-30T09:16:34.886Z",
+    "event": "agent_send_started",
+    "detail": "Sending main step prompt"
+  },
+  {
+    "ts": "2026-03-30T09:17:50.650Z",
+    "event": "agent_send_succeeded",
+    "detail": "Agent returned response"
+  },
+  {
+    "ts": "2026-03-30T09:17:50.652Z",
+    "event": "response_saved",
+    "detail": "Response saved"
+  },
+  {
+    "ts": "2026-03-30T09:17:50.652Z",
+    "event": "drift_parsed",
+    "detail": "Parsed 1 drift issues"
+  },
+  {
+    "ts": "2026-03-30T09:17:50.652Z",
+    "event": "attempt_finished",
+    "detail": "Attempt 0 finished with status passed"
+  }
+]

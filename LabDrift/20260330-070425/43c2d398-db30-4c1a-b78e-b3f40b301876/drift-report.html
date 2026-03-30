@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drift Report - Lab 01 - Manage Microsoft Entra ID Identities</title>
+  <style>
+    :root {
+      --color-passed: #22c55e;
+      --color-drift: #f59e0b;
+      --color-failed: #ef4444;
+      --color-skipped: #8b5cf6;
+      --color-bg: #f8fafc;
+      --color-card: #ffffff;
+      --color-border: #e2e8f0;
+      --color-text: #1e293b;
+      --color-text-muted: #64748b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      margin: 0;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    h1 { margin-top: 0; }
+    .header {
+      background: var(--color-card);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .summary-cards {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .summary-card {
+      background: var(--color-card);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .summary-card .count {
+      font-size: 36px;
+      font-weight: 700;
+    }
+    .summary-card.passed .count { color: var(--color-passed); }
+    .summary-card.drift .count { color: var(--color-drift); }
+    .summary-card.failed .count { color: var(--color-failed); }
+    .summary-card.skipped .count { color: var(--color-skipped); }
+    .step {
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+    .step.status-passed { border-left: 4px solid var(--color-passed); }
+    .step.status-drift { border-left: 4px solid var(--color-drift); }
+    .step.status-failed { border-left: 4px solid var(--color-failed); }
+    .step.status-skipped { border-left: 4px solid var(--color-skipped); }
+    .step-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px;
+      background: var(--color-bg);
+    }
+    .step-icon { font-size: 20px; }
+    .step-id { font-weight: 600; color: var(--color-text-muted); }
+    .step-title { flex: 1; }
+    .step-duration { color: var(--color-text-muted); font-size: 14px; }
+    .retry-info { 
+      color: var(--color-skipped); 
+      font-size: 12px; 
+      margin-left: 8px;
+    }
+    .error-message {
+      background: #fee2e2;
+      color: #991b1b;
+      padding: 12px 16px;
+      font-family: monospace;
+      font-size: 13px;
+    }
+    .skipped-message {
+      background: #ede9fe;
+      color: #5b21b6;
+      padding: 12px 16px;
+      font-size: 13px;
+    }
+    .error-screenshot img {
+      border-color: var(--color-failed);
+      border-width: 2px;
+    }
+    .drift-issues {
+      padding: 16px;
+      background: #fef3c7;
+    }
+    .drift-issues ul { margin: 8px 0; padding-left: 20px; }
+    .drift-issues li { margin-bottom: 12px; }
+    .drift-category {
+      background: #fbbf24;
+      color: #78350f;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .drift-severity {
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      margin-left: 8px;
+    }
+.severity-info { background: #dbeafe; color: #1e40af; }
+.severity-warning { background: #fef3c7; color: #92400e; }
+.severity-blocking { background: #fee2e2; color: #991b1b; }
+    .recommendation {
+      font-style: italic;
+      color: var(--color-text-muted);
+      margin-top: 4px;
+    }
+    .screenshots {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 16px;
+      padding: 16px;
+    }
+    .screenshot img {
+      max-width: 100%;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+    }
+    .footer {
+      text-align: center;
+      color: var(--color-text-muted);
+      font-size: 12px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🔍 Drift Detection Report</h1>
+      <p><strong>Lab:</strong> Lab 01 - Manage Microsoft Entra ID Identities</p>
+      <p><strong>Source:</strong> <a href="https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_01-Manage_Entra_ID_Identities.html" target="_blank">https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_01-Manage_Entra_ID_Identities.html</a></p>
+      <p><strong>Run ID:</strong> <code>43c2d398-db30-4c1a-b78e-b3f40b301876</code></p>
+      <p><strong>Duration:</strong> 10255s</p>
+    </div>
+    
+    <div class="summary-cards">
+      <div class="summary-card">
+        <div class="count">14</div>
+        <div>Total Steps</div>
+      </div>
+      <div class="summary-card passed">
+        <div class="count">12</div>
+        <div>Passed</div>
+      </div>
+      <div class="summary-card drift">
+        <div class="count">2</div>
+        <div>Drift</div>
+      </div>
+      <div class="summary-card failed">
+        <div class="count">0</div>
+        <div>Failed</div>
+      </div>
+      <div class="summary-card skipped">
+        <div class="count">0</div>
+        <div>Skipped</div>
+      </div>
+    </div>
+    
+    <h2>Step Results</h2>
+    
+      <div class="step status-passed">
+        <div class="step-header">
+          <span class="step-icon">✅</span>
+          <span class="step-id">step-1-sign-in-portal</span>
+          <span class="step-title">Sign in to Azure Portal</span>
+          
+          <span class="step-duration">229s</span>
+        </div>
+        
+        
+        
+      <div class="screenshots">
+        
+          <div class="screenshot">
+            <strong>Before:</strong>
+            <img src="screenshots/step-1-sign-in-portal-before.png" alt="Before step-1-sign-in-portal" loading="lazy" />
+          </div>
+        
+        
+          <div class="screenshot">
+            <strong>After:</strong>
+            <img src="screenshots/step-1-sign-in-portal-after.png" alt="After step-1-sign-in-portal" loading="lazy" />
+          </div>
+        
+        
+      </div>
+    
+      </div>
+    
+
+      <div class="step status-passed">
+        <div class="step-header">
+          <span class="step-icon">✅</span>
+          <span class="step-id">step-2-navigate-entra-id</span>
+          <span class="step-title">Navigate to Microsoft Entra ID</span>
+          
+          <span class="step-duration">250s</span>
+        </div>
+        
+        
+        
+      <div class="screenshots">
+        
+          <div class="screenshot">
+            <strong>Before:</strong>
+            <img src="screenshots/step-2-navigate-entra-id-before.png" alt="Before step-2-navigate-entra-id" loading="lazy" />
+          </div>
+        
+        
+          <div class="screenshot">
+            <strong>After:</strong>
+            <img src="screenshots/step-2-navigate-entra-id-after.png" alt="After step-2-navigate-entra-id" loading="lazy" />
+          </div>
+        
+        
+      </div>
+    
+      </div>
+    
+
+      <div class="step status-drift">
+        <div class="step-header">
+          <span class="step-icon">⚠️</span>
+          <span class="step-id">step-3-explore-overview-tenants</span>
+          <span class="step-title">Explore Overview and Manage Tenants</span>
+          
+          <span class="step-duration">372s</span>
+        </div>
+        
+        
+      <div class="drift-issues">
+        <strong>Drift Issues:</strong>
+        <ul>
+          
+            <li>
+              <span class="drift-category">selector_drift</span>
+              <span class="drift-severity severity-warning">warning</span>
+              <p>The lab instructions refer to &quot;Manage tenants tab&quot; but in the current UI it appears as a toolbar button (管理租户) in the command bar alongside &quot;+ Add&quot;, &quot;What's new&quot;, &quot;Preview features&quot;, and &quot;Provide feedback&quot; — not as a content tab next to Overview/Monitoring/Properties/Recommendations/Setup guides.</p>
+              <p class="recommendation">💡 Update lab instructions to reflect new element text/location</p>
+            </li>
+          
+            <li>
+              <span class="drift-category">unexpected_ui</span>
+              <span class="drift-severity severity-info">info</span>
+              <p>A Microsoft feedback popup appeared (&quot;向 Microsoft 提供反馈 — 你对 Microsoft Entra 的满意度如何?&quot;) — informational only, did not block progress.</p>
+              <p class="recommendation">💡 Informational UI element - does not affect lab completion</p>
+            </li>
+          
+        </ul>
+      </div>
+    
+        
+      <div class="screenshots">
+        
+          <div class="screenshot">
+            <strong>Before:</strong>
+            <img src="screenshots/step-3-explore-overview-tenants-before.png" alt="Before step-3-explore-overview-tenants" loading="lazy" />
+          </div>
+        
+        
+          <div class="screenshot">
+            <strong>After:</strong>
+            <img src="screenshots/step-3-explore-overview-tenants-after.png" alt="After step-3-explore-overview-tenants" loading="lazy" />
+          </div>
+        
+        
+      </div>
+    
+      </div>
+    
+
+      <div class="step status-passed">
+        <div class="step-header">
+          <span class="step-icon">✅</span>
+          <span class="step-id">step-4-navigate-users</span>
+          <span class="step-title">Navigate to Users and Create New User</span>
+          <span class="retry-info">(3 retries)</span>
+          <span class="step-duration">3297s</span>
+        </div>
+        
+        
+        
+      <div class="screenshots">
+        
+          <div class="screenshot">
+            <strong>Before:</strong>
+            <img src="screenshots/step-4-navigate-users-before.png" alt="Before step-4-navigate-users" loading="lazy" />
+          </div>
+        
+        
+          <div class="screenshot">
+            <strong>After:</strong>
+            <img src="screenshots/step-4-navigate-users-after.png" alt="After step-4-navigate-users" loading="lazy" />
+          </div>
+        
+        
+      </div>
+    
+      </div>
+    
+
+      <div class="step status-passed">
+        <div class="step-header">
+          <span class="step-icon">✅</span>
+          <span class="step-id">step-5-create-az104-user1</span>
+          <span class="step-title">Configure and Create User az104-user1</span>
+          <span class="retry-info">(3 retries)</span>
+          <span class="step-duration">3429s</span>
+        </div>
+        
+        
+        
+      <div class="screenshots">
+        
+          <div class="screenshot">
+            <strong>Before:</strong>
+            <img src="screenshots/step-5-create-az104-user1-before.png" alt="Before step-5-create-az104-user1" loading="lazy" />
+          </div>
+        
+        
+          <div class="screenshot">
+            <strong>After:</strong>
+            <img src="screenshots/step-5-create-az104-user1-after.png" alt="After step-5-create-az104-user1" loading="lazy" />
+          </div>
+        
+        
+      </div>
+    
+      </div>
+    
+
+      <div class="step status-passed">
+        <div class="step-header">
+          <span class="step-icon">✅</span>
+          <span class="step-id">step-6-verify-user-created</span>
+          <span class="step-title">Verify User Creation</span>
+          
+          <span class="step-duration">76s</span>
+        </div>
+        
+        
+      <div class="drift-issues">
+        <strong>Drift Issues:</strong>
+        <ul>
+          
+            <li>
+              <span class="drift-category">unexpected_ui</span>
+              <span class="drift-severity severity-info">info</span>
+              <p>An informational banner &quot;Azure Active Directory is now Microsoft Entra ID&quot; appears at the top — informational only, does not block progress.</p>
+              <p class="recommendation">💡 Informational UI element - does not affect lab completion</p>
+            </li>
+          
+        </ul>
+      </div>
+    
+        
+      <div class="screenshots">
+        
+          <div class="screenshot">
+            <strong>Before:</strong>
+            <img src="screenshots/step-6-verify-user-created-before.png" alt="Before step-6-verify-user-created" loading="lazy" />
+          </div>
+        
+        
+          <div class="screenshot">
+            <strong>After:</strong>
+            <img src="screenshots/step-6-verify-user-created-after.png" alt="After step-6-verify-user-created" loading="lazy" />
+          </div>
+        
+        
+      </div>
+    
+      </div>
+    
+
+      <div class="step status-drift">
+        <div class="step-header">
+          <span class="step-icon">⚠️</span>
+          <span class="step-id">step-7-invite-external-user</span>
+          <span class="step-title">Invite External User</span>
+          
+          <span class="step-duration">136s</span>
+        </div>
+        
+        
+      <div class="drift-issues">
+        <strong>Drift Issues:</strong>
+        <ul>
+          
+            <li>
+              <span class="drift-category">selector_drift</span>
+              <span class="drift-severity severity-warning">warning</span>
+              <p>The form tabs show &quot;Review + invite&quot; (not &quot;Review + create&quot; as on the create user form). Additional fields visible that aren't mentioned in instructions: Cc recipient, Invite redirect URL (pre-filled with myapplications.microsoft.com). An info banner states &quot;Starting December 2025, B2B invitation emails will be sent from your organization's primary domain instead of Microsoft.com.&quot;</p>
+              <p class="recommendation">💡 Update lab instructions to reflect new element text/location</p>
+            </li>
+          
+            <li>
+              <span class="drift-category">unexpected_ui</span>
+              <span class="drift-severity severity-info">info</span>
+              <p>Info banner about B2B invitation email changes (December 2025) — informational only, does not block progress.</p>
+              <p class="recommendation">💡 Informational UI element - does not affect lab completion</p>
+            </li>
+          
+        </ul>
+      </div>
+    
+        
+      <div class="screenshots">
+        
+          <div class="screenshot">
+            <strong>Before:</strong>
+            <img src="screenshots/step-7-invite-external-user-before.png" alt="Before step-7-invite-external-user" loading="lazy" />
+          </div>
+        
+        
+          <div class="screenshot">
+            <strong>After:</strong>
+            <img src="screenshots/step-7-invite-external-user-after.png" alt="After step-7-invite-external-user" loading="lazy" />
+          </div>
+        
+        
+      </div>
+    
+      </div>
+    
+
+      <div class="step status-passed">
+        <div class="step-header">
+          <span class="step-icon">✅</span>
+          <span class="step-id">step-8-configure-external-user-properties</span>
+          <span class="step-title">Configure External User Properties and Invite</span>
+          
+          <span class="step-duration">189s</span>
+        </div>
+        
+        
+        
+      <div class="screenshots">
+        
+          <div class="screenshot">
+            <strong>Before:</strong>
+            <img src="screenshots/step-8-configure-external-user-properties-before.png" alt="Before step-8-configure-external-user-properties" loading="lazy" />
+          </div>
+        
+        
+          <div class="screenshot">
+            <strong>After:</strong>
+            <img src="screenshots/step-8-configure-external-user-properties-after.png" alt="After step-8-configure-external-user-properties" loading="lazy" />
+          </div>
+        
+        
+      </div>
+    
+      </div>
+    
+
+      <div class="step status-passed">
+        <div class="step-header">
+          <span class="step-icon">✅</span>
+          <span class="step-id">step-9-verify-external-user</span>
+          <span class="step-title">Verify External User Invitation</span>
+          
+          <span class="step-duration">97s</span>
+        </div>
+        
+        
+        
+      <div class="screenshots">
+        
+          <div class="screenshot">
+            <strong>Before:</strong>
+            <img src="screenshots/step-9-verify-external-user-before.png" alt="Before step-9-verify-external-user" loading="lazy" />
+          </div>
+        
+        
+          <div class="screenshot">
+            <strong>After:</strong>
+            <img src="screenshots/step-9-verify-external-user-after.png" alt="After step-9-verify-external-user" loading="lazy" />
+          </div>
+        
+        
+      </div>
+    
+      </div>
+    
+
+      <div class="step status-passed">
+        <div class="step-header">
+          <span class="step-icon">✅</span>
+          <span class="step-id">step-10-navigate-groups</span>
+          <span class="step-title">Navigate to Groups</span>
+          
+          <span class="step-duration">72s</span>
+        </div>
+        
+        
+        
+      <div class="screenshots">
+        
+          <div class="screenshot">
+            <strong>Before:</strong>
+            <img src="screenshots/step-10-navigate-groups-before.png" alt="Before step-10-navigate-groups" loading="lazy" />
+          </div>
+        
+        
+          <div class="screenshot">
+            <strong>After:</strong>
+            <img src="screenshots/step-10-navigate-groups-after.png" alt="After step-10-navigate-groups" loading="lazy" />
+          </div>
+        
+        
+      </div>
+    
+      </div>
+    
+
+      <div class="step status-passed">
+        <div class="step-header">
+          <span class="step-icon">✅</span>
+          <span class="step-id">step-11-create-new-group</span>
+          <span class="step-title">Create New Security Group</span>
+          
+          <span class="step-duration">225s</span>
+        </div>
+        
+        
+        
+      <div class="screenshots">
+        
+          <div class="screenshot">
+            <strong>Before:</strong>
+            <img src="screenshots/step-11-create-new-group-before.png" alt="Before step-11-create-new-group" loading="lazy" />
+          </div>
+        
+        
+          <div class="screenshot">
+            <strong>After:</strong>
+            <img src="screenshots/step-11-create-new-group-after.png" alt="After step-11-create-new-group" loading="lazy" />
+          </div>
+        
+        
+      </div>
+    
+      </div>
+    
+
+      <div class="step status-passed">
+        <div class="step-header">
+          <span class="step-icon">✅</span>
+          <span class="step-id">step-12-add-group-owners</span>
+          <span class="step-title">Add Group Owners</span>
+          
+          <span class="step-duration">190s</span>
+        </div>
+        
+        
+        
+      <div class="screenshots">
+        
+          <div class="screenshot">
+            <strong>Before:</strong>
+            <img src="screenshots/step-12-add-group-owners-before.png" alt="Before step-12-add-group-owners" loading="lazy" />
+          </div>
+        
+        
+          <div class="screenshot">
+            <strong>After:</strong>
+            <img src="screenshots/step-12-add-group-owners-after.png" alt="After step-12-add-group-owners" loading="lazy" />
+          </div>
+        
+        
+      </div>
+    
+      </div>
+    
+
+      <div class="step status-passed">
+        <div class="step-header">
+          <span class="step-icon">✅</span>
+          <span class="step-id">step-13-add-group-members</span>
+          <span class="step-title">Add Group Members and Create Group</span>
+          <span class="retry-info">(1 retries)</span>
+          <span class="step-duration">892s</span>
+        </div>
+        
+        
+        
+      <div class="screenshots">
+        
+          <div class="screenshot">
+            <strong>Before:</strong>
+            <img src="screenshots/step-13-add-group-members-before.png" alt="Before step-13-add-group-members" loading="lazy" />
+          </div>
+        
+        
+          <div class="screenshot">
+            <strong>After:</strong>
+            <img src="screenshots/step-13-add-group-members-after.png" alt="After step-13-add-group-members" loading="lazy" />
+          </div>
+        
+        
+      </div>
+    
+      </div>
+    
+
+      <div class="step status-passed">
+        <div class="step-header">
+          <span class="step-icon">✅</span>
+          <span class="step-id">step-14-verify-group-creation</span>
+          <span class="step-title">Verify Group Creation and Review Members</span>
+          
+          <span class="step-duration">88s</span>
+        </div>
+        
+        
+        
+      <div class="screenshots">
+        
+          <div class="screenshot">
+            <strong>Before:</strong>
+            <img src="screenshots/step-14-verify-group-creation-before.png" alt="Before step-14-verify-group-creation" loading="lazy" />
+          </div>
+        
+        
+          <div class="screenshot">
+            <strong>After:</strong>
+            <img src="screenshots/step-14-verify-group-creation-after.png" alt="After step-14-verify-group-creation" loading="lazy" />
+          </div>
+        
+        
+      </div>
+    
+      </div>
+    
+    
+    <div class="footer">
+      Generated at 2026-03-30T09:56:20.041Z
+    </div>
+  </div>
+</body>
+</html>

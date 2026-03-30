@@ -1,0 +1,14 @@
+Step 6 verified successfully. The screenshot clearly shows:
+
+```
+ACTIONS_TAKEN: Navigated to Entra ID → Users, clicked Refresh button to reload the users list.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES — Refresh button found and clicked.
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: An informational banner "Azure Active Directory is now Microsoft Entra ID" appears at the top — informational only, does not block progress.
+BLOCKING_ISSUES: None
+CURRENT_STATE: Users list showing "2 users found": az104-user1 (az104-user1@Rud..., Member, RudolfZhangoutlook.onmicroso...) and Zhang Rudolf (RudolfZhang_outl..., Member, MicrosoftAccount, Invitation).
+SCREENSHOT_BEFORE: step-6-verify-user-created-before.png
+SCREENSHOT_AFTER: step-6-verify-user-created-after.png
+```

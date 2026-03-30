@@ -1,0 +1,54 @@
+{
+  "attempt": 0,
+  "startedAt": "2026-03-30T09:24:53.013Z",
+  "finishedAt": "2026-03-30T09:26:05.333Z",
+  "status": "passed",
+  "promptPath": "20260330-070425\\43c2d398-db30-4c1a-b78e-b3f40b301876\\steps\\step-10-navigate-groups\\prompt.attempt-0.txt",
+  "responsePath": "20260330-070425\\43c2d398-db30-4c1a-b78e-b3f40b301876\\steps\\step-10-navigate-groups\\agent-response.attempt-0.txt",
+  "screenshotBefore": "screenshots/step-10-navigate-groups-before.png",
+  "screenshotAfter": "screenshots/step-10-navigate-groups-after.png",
+  "timeline": [
+    {
+      "ts": "2026-03-30T09:24:53.013Z",
+      "event": "attempt_started",
+      "detail": "Attempt 0 started"
+    },
+    {
+      "ts": "2026-03-30T09:24:53.014Z",
+      "event": "prompt_saved",
+      "detail": "Prompt saved"
+    },
+    {
+      "ts": "2026-03-30T09:24:53.014Z",
+      "event": "agent_send_started",
+      "detail": "Sending main step prompt"
+    },
+    {
+      "ts": "2026-03-30T09:26:05.332Z",
+      "event": "agent_send_succeeded",
+      "detail": "Agent returned response"
+    },
+    {
+      "ts": "2026-03-30T09:26:05.333Z",
+      "event": "response_saved",
+      "detail": "Response saved"
+    },
+    {
+      "ts": "2026-03-30T09:26:05.333Z",
+      "event": "drift_parsed",
+      "detail": "Parsed 0 drift issues"
+    },
+    {
+      "ts": "2026-03-30T09:26:05.333Z",
+      "event": "attempt_finished",
+      "detail": "Attempt 0 finished with status passed"
+    }
+  ],
+  "timelinePath": "C:\\lab-drift-runner\\20260330-070425\\43c2d398-db30-4c1a-b78e-b3f40b301876\\debug-errors\\step-10-navigate-groups\\attempt-0-timeline.json",
+  "lastKnownState": {
+    "updatedAt": "2026-03-30T09:26:05.333Z",
+    "phase": "attempt_finished",
+    "note": "Attempt 0 finished with status passed",
+    "lastAssistantMessage": "Step 10 completed successfully. The screenshot shows the Groups Overview page.\n\n```\nACTIONS_TAKEN: Navigated to Microsoft Entra ID, clicked \"Groups\" in the left nav under Manage.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES — Groups link found in left nav and clicked.\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: Groups | Overview page displayed. Shows Basic information: Total groups=0, Dynamic groups=0, M365 groups=0, Cloud groups=0, Security groups=0, On-premises groups=0. Toolbar: New group, Download groups, Preview features. Left nav: Overview, All groups, Insights (Preview), Deleted groups, Diagnose and solve problems, Settings, Activity, Troubleshooting + Support. Quick actions: Add group, Download groups. Feature highlights: Access reviews.\nSCREENSHOT_BEFORE: step-10-navigate-groups-before.png\nSCREENSHOT_AFTER: step-10-navigate-groups-after.png\n```"
+  }
+}

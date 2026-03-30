@@ -1,0 +1,14 @@
+Step 10 completed successfully. The screenshot shows the Groups Overview page.
+
+```
+ACTIONS_TAKEN: Navigated to Microsoft Entra ID, clicked "Groups" in the left nav under Manage.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES — Groups link found in left nav and clicked.
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: Groups | Overview page displayed. Shows Basic information: Total groups=0, Dynamic groups=0, M365 groups=0, Cloud groups=0, Security groups=0, On-premises groups=0. Toolbar: New group, Download groups, Preview features. Left nav: Overview, All groups, Insights (Preview), Deleted groups, Diagnose and solve problems, Settings, Activity, Troubleshooting + Support. Quick actions: Add group, Download groups. Feature highlights: Access reviews.
+SCREENSHOT_BEFORE: step-10-navigate-groups-before.png
+SCREENSHOT_AFTER: step-10-navigate-groups-after.png
+```

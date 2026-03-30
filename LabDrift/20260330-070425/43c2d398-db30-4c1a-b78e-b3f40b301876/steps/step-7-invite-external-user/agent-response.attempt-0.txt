@@ -1,0 +1,14 @@
+Step 7 completed successfully. The screenshot confirms the "Invite external user" form is filled correctly:
+
+```
+ACTIONS_TAKEN: Navigated to Users list, clicked "New user" dropdown, selected "Invite external user". Filled form: Email=labuser@outlook.com, Display name=Lab User, Send invite message=checked, Message="Welcome to Azure and our group project".
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES — "New user" dropdown, "Invite external user" option, and all form fields (Email, Display name, Send invite message, Message) found as expected.
+ELEMENT_DIFFERENT: The form tabs show "Review + invite" (not "Review + create" as on the create user form). Additional fields visible that aren't mentioned in instructions: Cc recipient, Invite redirect URL (pre-filled with myapplications.microsoft.com). An info banner states "Starting December 2025, B2B invitation emails will be sent from your organization's primary domain instead of Microsoft.com."
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: Info banner about B2B invitation email changes (December 2025) — informational only, does not block progress.
+BLOCKING_ISSUES: None
+CURRENT_STATE: "Invite external user" form on Basics tab with all fields filled. Tabs: Basics, Properties, Assignments, Review + invite. Bottom bar: Review + invite, Previous, Next: Properties buttons.
+SCREENSHOT_BEFORE: step-7-invite-external-user-before.png
+SCREENSHOT_AFTER: step-7-invite-external-user-after.png
+```

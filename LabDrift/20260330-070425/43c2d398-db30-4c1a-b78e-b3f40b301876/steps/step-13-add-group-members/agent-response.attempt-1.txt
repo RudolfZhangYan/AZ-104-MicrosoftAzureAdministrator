@@ -1,0 +1,14 @@
+Both screenshots exist. The group was confirmed created (1 group found: IT Lab Administrators) in the debug screenshot just moments ago.
+
+```
+ACTIONS_TAKEN: Opened the New Group form, filled Group type=Security, Group name="IT Lab Administrators", Description="Administrators that manage the IT lab", Membership type=Assigned. Added Zhang Rudolf as owner. Clicked "No members selected", searched for "az104" and selected az104-user1, then searched for "Lab User" and selected the guest user (labuser@outlook.com). Clicked Select to confirm 2 members. Clicked Create to deploy the group.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES — "No members selected" link, Add members search box, user rows with checkboxes, Select button, and Create button all found.
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: Groups | All groups page showing 1 group found: "IT Lab Administrators" — Security group, Assigned membership type, Cloud source.
+SCREENSHOT_BEFORE: step-13-add-group-members-before.png
+SCREENSHOT_AFTER: step-13-add-group-members-after.png
+```

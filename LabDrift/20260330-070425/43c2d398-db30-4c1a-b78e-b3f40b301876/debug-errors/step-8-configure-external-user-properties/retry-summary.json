@@ -1,0 +1,66 @@
+{
+  "stepId": "step-8-configure-external-user-properties",
+  "title": "Configure External User Properties and Invite",
+  "stepDir": "C:\\lab-drift-runner\\20260330-070425\\43c2d398-db30-4c1a-b78e-b3f40b301876\\debug-errors\\step-8-configure-external-user-properties",
+  "finalStatus": "passed",
+  "retryCount": 0,
+  "attempts": [
+    {
+      "attempt": 0,
+      "startedAt": "2026-03-30T09:20:06.819Z",
+      "finishedAt": "2026-03-30T09:23:15.940Z",
+      "status": "passed",
+      "promptPath": "20260330-070425\\43c2d398-db30-4c1a-b78e-b3f40b301876\\steps\\step-8-configure-external-user-properties\\prompt.attempt-0.txt",
+      "responsePath": "20260330-070425\\43c2d398-db30-4c1a-b78e-b3f40b301876\\steps\\step-8-configure-external-user-properties\\agent-response.attempt-0.txt",
+      "screenshotBefore": "screenshots/step-8-configure-external-user-properties-before.png",
+      "screenshotAfter": "screenshots/step-8-configure-external-user-properties-after.png",
+      "timeline": [
+        {
+          "ts": "2026-03-30T09:20:06.819Z",
+          "event": "attempt_started",
+          "detail": "Attempt 0 started"
+        },
+        {
+          "ts": "2026-03-30T09:20:06.820Z",
+          "event": "prompt_saved",
+          "detail": "Prompt saved"
+        },
+        {
+          "ts": "2026-03-30T09:20:06.820Z",
+          "event": "agent_send_started",
+          "detail": "Sending main step prompt"
+        },
+        {
+          "ts": "2026-03-30T09:23:15.938Z",
+          "event": "agent_send_succeeded",
+          "detail": "Agent returned response"
+        },
+        {
+          "ts": "2026-03-30T09:23:15.939Z",
+          "event": "response_saved",
+          "detail": "Response saved"
+        },
+        {
+          "ts": "2026-03-30T09:23:15.939Z",
+          "event": "drift_parsed",
+          "detail": "Parsed 0 drift issues"
+        },
+        {
+          "ts": "2026-03-30T09:23:15.939Z",
+          "event": "attempt_finished",
+          "detail": "Attempt 0 finished with status passed"
+        }
+      ],
+      "timelinePath": "C:\\lab-drift-runner\\20260330-070425\\43c2d398-db30-4c1a-b78e-b3f40b301876\\debug-errors\\step-8-configure-external-user-properties\\attempt-0-timeline.json",
+      "lastKnownState": {
+        "updatedAt": "2026-03-30T09:23:15.939Z",
+        "phase": "attempt_finished",
+        "note": "Attempt 0 finished with status passed",
+        "lastAssistantMessage": "Both screenshots confirm the invitation was sent successfully. The review page shows all fields correctly filled, and the \"after\" screenshot shows the Invite button is now greyed out (disabled) with a notification badge (1) appearing — confirming the invite was sent.\n\n```\nACTIONS_TAKEN: Clicked Next: Properties on the invite form. Filled Properties: Job title=IT Lab Administrator, Department=IT, Usage location=United States. Clicked Review + invite to review all settings. Clicked Invite to send the invitation.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES — Properties tab, all fields (Job title, Department, Usage location), Review + invite button, and Invite button all found as expected.\nELEMENT_DIFFERENT: None\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: Review + invite page showing the completed invitation. Basics: Email=labuser@outlook.com, Display name=Lab User, Send invite message=Yes, Message=\"Welcome to Azure and our group project\". Properties: User"
+      },
+      "attemptJsonPath": "C:\\lab-drift-runner\\20260330-070425\\43c2d398-db30-4c1a-b78e-b3f40b301876\\debug-errors\\step-8-configure-external-user-properties\\attempt-0.json"
+    }
+  ],
+  "hadPageStateSnapshots": false,
+  "hadErrorScreenshots": false
+}
