@@ -1,0 +1,16 @@
+Step 10 confirmed. Screenshot shows **2 group members found**:
+- **az104-user1** (User, Member)
+- **az104 Lab Test** (User, Guest, az104-lab-test@outlook.com)
+
+```
+ACTIONS_TAKEN: Navigated to IT Lab Administrators > Members page. Clicked "Add members" toolbar button, searched "az104" in the Add members panel to find both users at once, clicked both rows (az104-user1 and az104 Lab Test) to select them, then clicked Select.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES
+ELEMENT_DIFFERENT: The instructions reference "No members selected" link on the New Group creation form. Since the group was already created, members were added via the group detail page's "Add members" toolbar button. A human following instructions sequentially would use "No members selected" during group creation — functionally identical.
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: IT Lab Administrators | Members page showing 2 direct members: az104-user1 (Member) and az104 Lab Test (Guest)
+SCREENSHOT_BEFORE: step-10-add-group-members-before.png
+SCREENSHOT_AFTER: step-10-add-group-members-after.png
+```

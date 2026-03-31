@@ -1,0 +1,84 @@
+{
+  "attempt": 0,
+  "startedAt": "2026-03-30T23:54:51.489Z",
+  "finishedAt": "2026-03-31T00:07:23.639Z",
+  "status": "retrying",
+  "errorName": "Error",
+  "errorMessage": "Timeout after 420000ms waiting for session.idle",
+  "errorStack": "Error: Timeout after 420000ms waiting for session.idle\n    at Timeout.<anonymous> (file:///C:/lab-drift-runner/node_modules/@github/copilot-sdk/dist/session.js:117:13)\n    at listOnTimeout (node:internal/timers:605:17)\n    at process.processTimers (node:internal/timers:541:7)",
+  "errorRaw": "Error: Timeout after 420000ms waiting for session.idle",
+  "isTransient": true,
+  "isHardFailure": false,
+  "promptPath": "20260330-225000\\f59f3c10-0e19-4dde-8845-914977884b8a\\steps\\step-9-add-group-owners\\prompt.attempt-0.txt",
+  "errorScreenshot": "debug-errors/step-9-add-group-owners/attempt-0-error.png",
+  "pageStatePath": "C:\\lab-drift-runner\\20260330-225000\\f59f3c10-0e19-4dde-8845-914977884b8a\\debug-errors\\step-9-add-group-owners\\attempt-0-page-state.txt",
+  "timeline": [
+    {
+      "ts": "2026-03-30T23:54:51.489Z",
+      "event": "attempt_started",
+      "detail": "Attempt 0 started"
+    },
+    {
+      "ts": "2026-03-30T23:54:51.490Z",
+      "event": "prompt_saved",
+      "detail": "Prompt saved"
+    },
+    {
+      "ts": "2026-03-30T23:54:51.490Z",
+      "event": "agent_send_started",
+      "detail": "Sending main step prompt"
+    },
+    {
+      "ts": "2026-03-31T00:01:51.478Z",
+      "event": "agent_send_failed",
+      "detail": "Timeout after 420000ms waiting for session.idle"
+    },
+    {
+      "ts": "2026-03-31T00:01:51.479Z",
+      "event": "prompt_saved",
+      "detail": "Prompt saved"
+    },
+    {
+      "ts": "2026-03-31T00:01:51.479Z",
+      "event": "page_state_requested",
+      "detail": "Requesting page state snapshot"
+    },
+    {
+      "ts": "2026-03-31T00:01:51.479Z",
+      "event": "agent_send_started",
+      "detail": "Sending page-state inspection prompt"
+    },
+    {
+      "ts": "2026-03-31T00:06:22.233Z",
+      "event": "agent_send_succeeded",
+      "detail": "Page-state inspection response received"
+    },
+    {
+      "ts": "2026-03-31T00:06:22.234Z",
+      "event": "page_state_captured",
+      "detail": "The browser opens fresh to about:blank each time a new persistent context is launched. There is no active page content — the previous session was closed after completing Step 9. The browser retains authentication cookies but does not preserve the last-visited page between script runs.\n```"
+    },
+    {
+      "ts": "2026-03-31T00:06:22.234Z",
+      "event": "error_screenshot_requested",
+      "detail": "Requesting error screenshot"
+    },
+    {
+      "ts": "2026-03-31T00:07:23.638Z",
+      "event": "error_screenshot_captured",
+      "detail": "debug-errors/step-9-add-group-owners/attempt-0-error.png"
+    },
+    {
+      "ts": "2026-03-31T00:07:23.638Z",
+      "event": "attempt_finished",
+      "detail": "Attempt 0 finished with status retrying"
+    }
+  ],
+  "timelinePath": "C:\\lab-drift-runner\\20260330-225000\\f59f3c10-0e19-4dde-8845-914977884b8a\\debug-errors\\step-9-add-group-owners\\attempt-0-timeline.json",
+  "lastKnownState": {
+    "updatedAt": "2026-03-31T00:07:23.638Z",
+    "phase": "attempt_finished",
+    "note": "Attempt 0 finished with status retrying",
+    "lastAssistantMessage": "```\nURL: about:blank\nTITLE: UNKNOWN\nHEADINGS:\n- (none)\n\nSUMMARY: The browser opens fresh to about:blank each time a new persistent context is launched. There is no active page content — the previous session was closed after completing Step 9. The browser retains authentication cookies but does not preserve the last-visited page between script runs.\n```"
+  }
+}

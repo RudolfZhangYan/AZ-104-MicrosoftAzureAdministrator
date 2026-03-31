@@ -1,0 +1,8 @@
+```
+URL: about:blank
+TITLE: UNKNOWN
+HEADINGS:
+- (none)
+
+SUMMARY: The browser opens fresh to about:blank each time a new persistent context is launched. There is no active page content — the previous session was closed after completing Step 9. The browser retains authentication cookies but does not preserve the last-visited page between script runs.
+```

@@ -1,0 +1,16 @@
+
+
+The screenshot confirms the invite was sent successfully! The green notification reads **"Successfully invited user az104 Lab Test"**. All fields are correct in the Review + invite tab.
+
+```
+ACTIONS_TAKEN: Navigated to Users > All Users. Clicked "New user" dropdown, selected "Invite external user". Filled Basics: Email "az104-lab-test@outlook.com", Display name "az104 Lab Test", Send invite message (checked by default), Message "Welcome to Azure and our group project". Switched to Properties tab: filled Job title "IT Lab Administrator", Department "IT", scrolled down and set Usage location "United States". Clicked "Review + invite", then clicked "Invite". Success notification confirmed.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES
+ELEMENT_DIFFERENT: The button/tab label is "Review + invite" (not "Review + create" as used for new users). This matches the invite workflow correctly — the instructions say "Review + invite" which is accurate.
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: "Invite external user" Review + invite tab showing successful invitation. Green toast notification: "Successfully invited user az104 Lab Test". Review shows: Email az104-lab-test@outlook.com, Display name az104 Lab Test, Send invite message Yes, Message "Welcome to Azure and our group project", User type Guest, Job title IT Lab Administrator, Department IT, Usage location United States.
+SCREENSHOT_BEFORE: step-6-invite-external-user-before.png
+SCREENSHOT_AFTER: step-6-invite-external-user-after.png
+```

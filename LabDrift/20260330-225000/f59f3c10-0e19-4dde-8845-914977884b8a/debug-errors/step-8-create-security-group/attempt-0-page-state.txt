@@ -1,0 +1,8 @@
+```
+URL: https://portal.azure.com/#home
+TITLE: Home - Microsoft Azure
+HEADINGS:
+- [H1] Microsoft Azure
+
+SUMMARY: The Azure portal home page is displayed, signed in as RudolfZhang@outlook.com (tenant: 默认目录 / RUDOLFZHANGOUTLOOK.ONMICROSOFT.COM). Shows "Welcome to Azure!" with three cards: "Start with an Azure free trial", "Manage Microsoft Entra ID" (with View button), and "Azure for Students". No active subscription. Copilot icon visible in top bar. Portal is fully loaded and ready.
+```

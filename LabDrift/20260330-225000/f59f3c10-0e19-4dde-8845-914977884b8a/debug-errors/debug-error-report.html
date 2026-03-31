@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Debug Error Report</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; background: #f7f7f9; color: #222; }
+    .card { background: #fff; border-radius: 8px; padding: 16px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+    .step { background: #fff; border-left: 4px solid #666; border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+    .attempt { background: #fafafa; border: 1px solid #ddd; border-radius: 6px; padding: 12px; margin-top: 12px; }
+    code { background: #f1f1f1; padding: 2px 4px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Debug Error Report</h1>
+    <p><strong>Run ID:</strong> f59f3c10-0e19-4dde-8845-914977884b8a</p>
+    <p><strong>Lab:</strong> Manage Microsoft Entra ID Identities</p>
+    <p><strong>Generated:</strong> 2026-03-31T00:24:08.400Z</p>
+    <p><strong>Directory:</strong> <code>C:\lab-drift-runner\20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\debug-errors</code></p>
+    <p>
+      <strong>Total Steps:</strong> 11 |
+      <strong>Steps With Retries:</strong> 4 |
+      <strong>Steps With Errors:</strong> 4 |
+      <strong>Total Attempts:</strong> 15 |
+      <strong>Transient Errors:</strong> 4 |
+      <strong>Hard Failures:</strong> 0
+    </p>
+  </div>
+  
+      <div class="step">
+        <h3>step-1-signin-portal - Sign in to Azure portal</h3>
+        <p><strong>Final Status:</strong> drift | <strong>Retry Count:</strong> 1</p>
+        <p><strong>Debug Dir:</strong> <code>C:\lab-drift-runner\20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\debug-errors\step-1-signin-portal</code></p>
+        
+      <div class="attempt">
+        <h4>Attempt 0</h4>
+        <ul>
+          <li><strong>Status:</strong> retrying</li>
+          <li><strong>Started:</strong> 2026-03-30T22:57:55.124Z</li>
+          <li><strong>Finished:</strong> 2026-03-30T23:13:10.308Z</li>
+          <li><strong>Transient:</strong> yes</li>
+          <li><strong>Hard Failure:</strong> no</li>
+          <li><strong>Error:</strong> <code>Timeout after 420000ms waiting for session.idle</code></li>
+          <li><strong>Prompt:</strong> <code>20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\steps\step-1-signin-portal\prompt.attempt-0.txt</code></li>
+          
+          
+          
+          <li><strong>Error Screenshot:</strong> <code>debug-errors/step-1-signin-portal/attempt-0-error.png</code></li>
+          <li><strong>Attempt JSON:</strong> <code>C:\lab-drift-runner\20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\debug-errors\step-1-signin-portal\attempt-0.json</code></li>
+        </ul>
+      </div>
+    
+      <div class="attempt">
+        <h4>Attempt 1</h4>
+        <ul>
+          <li><strong>Status:</strong> passed</li>
+          <li><strong>Started:</strong> 2026-03-30T23:13:10.309Z</li>
+          <li><strong>Finished:</strong> 2026-03-30T23:14:04.221Z</li>
+          <li><strong>Transient:</strong> no</li>
+          <li><strong>Hard Failure:</strong> no</li>
+          
+          <li><strong>Prompt:</strong> <code>20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\steps\step-1-signin-portal\prompt.attempt-1.txt</code></li>
+          <li><strong>Response:</strong> <code>20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\steps\step-1-signin-portal\agent-response.attempt-1.txt</code></li>
+          <li><strong>Before Screenshot:</strong> <code>screenshots/step-1-signin-portal-before.png</code></li>
+          <li><strong>After Screenshot:</strong> <code>screenshots/step-1-signin-portal-after.png</code></li>
+          
+          <li><strong>Attempt JSON:</strong> <code>C:\lab-drift-runner\20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\debug-errors\step-1-signin-portal\attempt-1.json</code></li>
+        </ul>
+      </div>
+    
+      </div>
+    
+      <div class="step">
+        <h3>step-2-navigate-entra - Navigate to Microsoft Entra ID</h3>
+        <p><strong>Final Status:</strong> passed | <strong>Retry Count:</strong> 0</p>
+        <p><strong>Debug Dir:</strong> <code>C:\lab-drift-runner\20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\debug-errors\step-2-navigate-entra</code></p>
+        
+      <div class="attempt">
+        <h4>Attempt 0</h4>
+        <ul>
+          <li><strong>Status:</strong> passed</li>
+          <li><strong>Started:</strong> 2026-03-30T23:14:04.223Z</li>
+          <li><strong>Finished:</strong> 2026-03-30T23:16:22.650Z</li>
+          <li><strong>Transient:</strong> no</li>
+          <li><strong>Hard Failure:</strong> no</li>
+          
+          <li><strong>Prompt:</strong> <code>20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\steps\step-2-navigate-entra\prompt.attempt-0.txt</code></li>
+          <li><strong>Response:</strong> <code>20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\steps\step-2-navigate-entra\agent-response.attempt-0.txt</code></li>
+          <li><strong>Before Screenshot:</strong> <code>screenshots/step-2-navigate-entra-before.png</code></li>
+          <li><strong>After Screenshot:</strong> <code>screenshots/step-2-navigate-entra-after.png</code></li>
+          
+          <li><strong>Attempt JSON:</strong> <code>C:\lab-drift-runner\20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\debug-errors\step-2-navigate-entra\attempt-0.json</code></li>
+        </ul>
+      </div>
+    
+      </div>
+    
+      <div class="step">
+        <h3>step-3-explore-interface - Explore Entra ID interface</h3>
+        <p><strong>Final Status:</strong> drift | <strong>Retry Count:</strong> 0</p>
+        <p><strong>Debug Dir:</strong> <code>C:\lab-drift-runner\20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\debug-errors\step-3-explore-interface</code></p>
+        
+      <div class="attempt">
+        <h4>Attempt 0</h4>
+        <ul>
+          <li><strong>Status:</strong> passed</li>
+          <li><strong>Started:</strong> 2026-03-30T23:16:22.652Z</li>
+          <li><strong>Finished:</strong> 2026-03-30T23:19:06.097Z</li>
+          <li><strong>Transient:</strong> no</li>
+          <li><strong>Hard Failure:</strong> no</li>
+          
+          <li><strong>Prompt:</strong> <code>20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\steps\step-3-explore-interface\prompt.attempt-0.txt</code></li>
+          <li><strong>Response:</strong> <code>20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\steps\step-3-explore-interface\agent-response.attempt-0.txt</code></li>
+          <li><strong>Before Screenshot:</strong> <code>screenshots/step-3-explore-interface-before.png</code></li>
+          <li><strong>After Screenshot:</strong> <code>screenshots/step-3-explore-interface-after.png</code></li>
+          
+          <li><strong>Attempt JSON:</strong> <code>C:\lab-drift-runner\20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\debug-errors\step-3-explore-interface\attempt-0.json</code></li>
+        </ul>
+      </div>
+    
+      </div>
+    
+      <div class="step">
+        <h3>step-4-navigate-users - Navigate to Users section</h3>
+        <p><strong>Final Status:</strong> passed | <strong>Retry Count:</strong> 0</p>
+        <p><strong>Debug Dir:</strong> <code>C:\lab-drift-runner\20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\debug-errors\step-4-navigate-users</code></p>
+        
+      <div class="attempt">
+        <h4>Attempt 0</h4>
+        <ul>
+          <li><strong>Status:</strong> passed</li>
+          <li><strong>Started:</strong> 2026-03-30T23:19:06.099Z</li>
+          <li><strong>Finished:</strong> 2026-03-30T23:21:02.424Z</li>
+          <li><strong>Transient:</strong> no</li>
+          <li><strong>Hard Failure:</strong> no</li>
+          
+          <li><strong>Prompt:</strong> <code>20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\steps\step-4-navigate-users\prompt.attempt-0.txt</code></li>
+          <li><strong>Response:</strong> <code>20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\steps\step-4-navigate-users\agent-response.attempt-0.txt</code></li>
+          <li><strong>Before Screenshot:</strong> <code>screenshots/step-4-navigate-users-before.png</code></li>
+          <li><strong>After Screenshot:</strong> <code>screenshots/step-4-navigate-users-after.png</code></li>
+          
+          <li><strong>Attempt JSON:</strong> <code>C:\lab-drift-runner\20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\debug-errors\step-4-navigate-users\attempt-0.json</code></li>
+        </ul>
+      </div>
+    
+      </div>
+    
+      <div class="step">
+        <h3>step-5-create-user1 - Create az104-user1 with properties</h3>
+        <p><strong>Final Status:</strong> passed | <strong>Retry Count:</strong> 1</p>
+        <p><strong>Debug Dir:</strong> <code>C:\lab-drift-runner\20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\debug-errors\step-5-create-user1</code></p>
+        
+      <div class="attempt">
+        <h4>Attempt 0</h4>
+        <ul>
+          <li><strong>Status:</strong> retrying</li>
+          <li><strong>Started:</strong> 2026-03-30T23:21:02.426Z</li>
+          <li><strong>Finished:</strong> 2026-03-30T23:36:54.188Z</li>
+          <li><strong>Transient:</strong> yes</li>
+          <li><strong>Hard Failure:</strong> no</li>
+          <li><strong>Error:</strong> <code>Timeout after 420000ms waiting for session.idle</code></li>
+          <li><strong>Prompt:</strong> <code>20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\steps\step-5-create-user1\prompt.attempt-0.txt</code></li>
+          
+          
+          
+          <li><strong>Error Screenshot:</strong> <code>debug-errors/step-5-create-user1/attempt-0-error.png</code></li>
+          <li><strong>Attempt JSON:</strong> <code>C:\lab-drift-runner\20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\debug-errors\step-5-create-user1\attempt-0.json</code></li>
+        </ul>
+      </div>
+    
+      <div class="attempt">
+        <h4>Attempt 1</h4>
+        <ul>
+          <li><strong>Status:</strong> passed</li>
+          <li><strong>Started:</strong> 2026-03-30T23:36:54.189Z</li>
+          <li><strong>Finished:</strong> 2026-03-30T23:38:25.460Z</li>
+          <li><strong>Transient:</strong> no</li>
+          <li><strong>Hard Failure:</strong> no</li>
+          
+          <li><strong>Prompt:</strong> <code>20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\steps\step-5-create-user1\prompt.attempt-1.txt</code></li>
+          <li><strong>Response:</strong> <code>20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\steps\step-5-create-user1\agent-response.attempt-1.txt</code></li>
+          <li><strong>Before Screenshot:</strong> <code>screenshots/step-5-create-user1-before.png</code></li>
+          <li><strong>After Screenshot:</strong> <code>screenshots/step-5-create-user1-after.png</code></li>
+          
+          <li><strong>Attempt JSON:</strong> <code>C:\lab-drift-runner\20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\debug-errors\step-5-create-user1\attempt-1.json</code></li>
+        </ul>
+      </div>
+    
+      </div>
+    
+      <div class="step">
+        <h3>step-6-invite-external-user - Invite external user</h3>
+        <p><strong>Final Status:</strong> drift | <strong>Retry Count:</strong> 0</p>
+        <p><strong>Debug Dir:</strong> <code>C:\lab-drift-runner\20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\debug-errors\step-6-invite-external-user</code></p>
+        
+      <div class="attempt">
+        <h4>Attempt 0</h4>
+        <ul>
+          <li><strong>Status:</strong> passed</li>
+          <li><strong>Started:</strong> 2026-03-30T23:38:25.462Z</li>
+          <li><strong>Finished:</strong> 2026-03-30T23:42:42.608Z</li>
+          <li><strong>Transient:</strong> no</li>
+          <li><strong>Hard Failure:</strong> no</li>
+          
+          <li><strong>Prompt:</strong> <code>20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\steps\step-6-invite-external-user\prompt.attempt-0.txt</code></li>
+          <li><strong>Response:</strong> <code>20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\steps\step-6-invite-external-user\agent-response.attempt-0.txt</code></li>
+          <li><strong>Before Screenshot:</strong> <code>screenshots/step-6-invite-external-user-before.png</code></li>
+          <li><strong>After Screenshot:</strong> <code>screenshots/step-6-invite-external-user-after.png</code></li>
+          
+          <li><strong>Attempt JSON:</strong> <code>C:\lab-drift-runner\20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\debug-errors\step-6-invite-external-user\attempt-0.json</code></li>
+        </ul>
+      </div>
+    
+      </div>
+    
+      <div class="step">
+        <h3>step-7-navigate-groups - Navigate to Groups section</h3>
+        <p><strong>Final Status:</strong> passed | <strong>Retry Count:</strong> 0</p>
+        <p><strong>Debug Dir:</strong> <code>C:\lab-drift-runner\20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\debug-errors\step-7-navigate-groups</code></p>
+        
+      <div class="attempt">
+        <h4>Attempt 0</h4>
+        <ul>
+          <li><strong>Status:</strong> passed</li>
+          <li><strong>Started:</strong> 2026-03-30T23:42:42.610Z</li>
+          <li><strong>Finished:</strong> 2026-03-30T23:44:31.918Z</li>
+          <li><strong>Transient:</strong> no</li>
+          <li><strong>Hard Failure:</strong> no</li>
+          
+          <li><strong>Prompt:</strong> <code>20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\steps\step-7-navigate-groups\prompt.attempt-0.txt</code></li>
+          <li><strong>Response:</strong> <code>20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\steps\step-7-navigate-groups\agent-response.attempt-0.txt</code></li>
+          <li><strong>Before Screenshot:</strong> <code>screenshots/step-7-navigate-groups-before.png</code></li>
+          <li><strong>After Screenshot:</strong> <code>screenshots/step-7-navigate-groups-after.png</code></li>
+          
+          <li><strong>Attempt JSON:</strong> <code>C:\lab-drift-runner\20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\debug-errors\step-7-navigate-groups\attempt-0.json</code></li>
+        </ul>
+      </div>
+    
+      </div>
+    
+      <div class="step">
+        <h3>step-8-create-security-group - Create IT Lab Administrators group</h3>
+        <p><strong>Final Status:</strong> passed | <strong>Retry Count:</strong> 1</p>
+        <p><strong>Debug Dir:</strong> <code>C:\lab-drift-runner\20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\debug-errors\step-8-create-security-group</code></p>
+        
+      <div class="attempt">
+        <h4>Attempt 0</h4>
+        <ul>
+          <li><strong>Status:</strong> retrying</li>
+          <li><strong>Started:</strong> 2026-03-30T23:44:31.920Z</li>
+          <li><strong>Finished:</strong> 2026-03-30T23:53:49.937Z</li>
+          <li><strong>Transient:</strong> yes</li>
+          <li><strong>Hard Failure:</strong> no</li>
+          <li><strong>Error:</strong> <code>Timeout after 420000ms waiting for session.idle</code></li>
+          <li><strong>Prompt:</strong> <code>20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\steps\step-8-create-security-group\prompt.attempt-0.txt</code></li>
+          
+          
+          
+          <li><strong>Error Screenshot:</strong> <code>debug-errors/step-8-create-security-group/attempt-0-error.png</code></li>
+          <li><strong>Attempt JSON:</strong> <code>C:\lab-drift-runner\20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\debug-errors\step-8-create-security-group\attempt-0.json</code></li>
+        </ul>
+      </div>
+    
+      <div class="attempt">
+        <h4>Attempt 1</h4>
+        <ul>
+          <li><strong>Status:</strong> passed</li>
+          <li><strong>Started:</strong> 2026-03-30T23:53:49.937Z</li>
+          <li><strong>Finished:</strong> 2026-03-30T23:54:51.487Z</li>
+          <li><strong>Transient:</strong> no</li>
+          <li><strong>Hard Failure:</strong> no</li>
+          
+          <li><strong>Prompt:</strong> <code>20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\steps\step-8-create-security-group\prompt.attempt-1.txt</code></li>
+          <li><strong>Response:</strong> <code>20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\steps\step-8-create-security-group\agent-response.attempt-1.txt</code></li>
+          <li><strong>Before Screenshot:</strong> <code>screenshots/step-8-create-security-group-before.png</code></li>
+          <li><strong>After Screenshot:</strong> <code>screenshots/step-8-create-security-group-after.png</code></li>
+          
+          <li><strong>Attempt JSON:</strong> <code>C:\lab-drift-runner\20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\debug-errors\step-8-create-security-group\attempt-1.json</code></li>
+        </ul>
+      </div>
+    
+      </div>
+    
+      <div class="step">
+        <h3>step-9-add-group-owners - Add group owners</h3>
+        <p><strong>Final Status:</strong> drift | <strong>Retry Count:</strong> 1</p>
+        <p><strong>Debug Dir:</strong> <code>C:\lab-drift-runner\20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\debug-errors\step-9-add-group-owners</code></p>
+        
+      <div class="attempt">
+        <h4>Attempt 0</h4>
+        <ul>
+          <li><strong>Status:</strong> retrying</li>
+          <li><strong>Started:</strong> 2026-03-30T23:54:51.489Z</li>
+          <li><strong>Finished:</strong> 2026-03-31T00:07:23.639Z</li>
+          <li><strong>Transient:</strong> yes</li>
+          <li><strong>Hard Failure:</strong> no</li>
+          <li><strong>Error:</strong> <code>Timeout after 420000ms waiting for session.idle</code></li>
+          <li><strong>Prompt:</strong> <code>20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\steps\step-9-add-group-owners\prompt.attempt-0.txt</code></li>
+          
+          
+          
+          <li><strong>Error Screenshot:</strong> <code>debug-errors/step-9-add-group-owners/attempt-0-error.png</code></li>
+          <li><strong>Attempt JSON:</strong> <code>C:\lab-drift-runner\20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\debug-errors\step-9-add-group-owners\attempt-0.json</code></li>
+        </ul>
+      </div>
+    
+      <div class="attempt">
+        <h4>Attempt 1</h4>
+        <ul>
+          <li><strong>Status:</strong> passed</li>
+          <li><strong>Started:</strong> 2026-03-31T00:07:23.640Z</li>
+          <li><strong>Finished:</strong> 2026-03-31T00:08:58.041Z</li>
+          <li><strong>Transient:</strong> no</li>
+          <li><strong>Hard Failure:</strong> no</li>
+          
+          <li><strong>Prompt:</strong> <code>20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\steps\step-9-add-group-owners\prompt.attempt-1.txt</code></li>
+          <li><strong>Response:</strong> <code>20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\steps\step-9-add-group-owners\agent-response.attempt-1.txt</code></li>
+          <li><strong>Before Screenshot:</strong> <code>screenshots/step-9-add-group-owners-before.png</code></li>
+          <li><strong>After Screenshot:</strong> <code>screenshots/step-9-add-group-owners-after.png</code></li>
+          
+          <li><strong>Attempt JSON:</strong> <code>C:\lab-drift-runner\20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\debug-errors\step-9-add-group-owners\attempt-1.json</code></li>
+        </ul>
+      </div>
+    
+      </div>
+    
+      <div class="step">
+        <h3>step-10-add-group-members - Add group members</h3>
+        <p><strong>Final Status:</strong> drift | <strong>Retry Count:</strong> 0</p>
+        <p><strong>Debug Dir:</strong> <code>C:\lab-drift-runner\20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\debug-errors\step-10-add-group-members</code></p>
+        
+      <div class="attempt">
+        <h4>Attempt 0</h4>
+        <ul>
+          <li><strong>Status:</strong> passed</li>
+          <li><strong>Started:</strong> 2026-03-31T00:08:58.042Z</li>
+          <li><strong>Finished:</strong> 2026-03-31T00:14:56.258Z</li>
+          <li><strong>Transient:</strong> no</li>
+          <li><strong>Hard Failure:</strong> no</li>
+          
+          <li><strong>Prompt:</strong> <code>20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\steps\step-10-add-group-members\prompt.attempt-0.txt</code></li>
+          <li><strong>Response:</strong> <code>20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\steps\step-10-add-group-members\agent-response.attempt-0.txt</code></li>
+          <li><strong>Before Screenshot:</strong> <code>screenshots/step-10-add-group-members-before.png</code></li>
+          <li><strong>After Screenshot:</strong> <code>screenshots/step-10-add-group-members-after.png</code></li>
+          
+          <li><strong>Attempt JSON:</strong> <code>C:\lab-drift-runner\20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\debug-errors\step-10-add-group-members\attempt-0.json</code></li>
+        </ul>
+      </div>
+    
+      </div>
+    
+      <div class="step">
+        <h3>step-11-create-and-verify-group - Create and verify group</h3>
+        <p><strong>Final Status:</strong> drift | <strong>Retry Count:</strong> 0</p>
+        <p><strong>Debug Dir:</strong> <code>C:\lab-drift-runner\20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\debug-errors\step-11-create-and-verify-group</code></p>
+        
+      <div class="attempt">
+        <h4>Attempt 0</h4>
+        <ul>
+          <li><strong>Status:</strong> passed</li>
+          <li><strong>Started:</strong> 2026-03-31T00:14:56.260Z</li>
+          <li><strong>Finished:</strong> 2026-03-31T00:17:08.413Z</li>
+          <li><strong>Transient:</strong> no</li>
+          <li><strong>Hard Failure:</strong> no</li>
+          
+          <li><strong>Prompt:</strong> <code>20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\steps\step-11-create-and-verify-group\prompt.attempt-0.txt</code></li>
+          <li><strong>Response:</strong> <code>20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\steps\step-11-create-and-verify-group\agent-response.attempt-0.txt</code></li>
+          <li><strong>Before Screenshot:</strong> <code>screenshots/step-11-create-and-verify-group-before.png</code></li>
+          <li><strong>After Screenshot:</strong> <code>screenshots/step-11-create-and-verify-group-after.png</code></li>
+          
+          <li><strong>Attempt JSON:</strong> <code>C:\lab-drift-runner\20260330-225000\f59f3c10-0e19-4dde-8845-914977884b8a\debug-errors\step-11-create-and-verify-group\attempt-0.json</code></li>
+        </ul>
+      </div>
+    
+      </div>
+    
+</body>
+</html>

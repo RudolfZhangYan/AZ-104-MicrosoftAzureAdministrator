@@ -1,0 +1,16 @@
+
+
+Step 2 completed successfully. The screenshot confirms we're on the **Manage tenants** view showing the tenant details.
+
+```
+ACTIONS_TAKEN: Navigated to portal.azure.com, searched for Microsoft Entra ID (search bar didn't capture keyboard input so used direct URL navigation to Entra ID Overview), then clicked "Manage tenants" tab to view tenant information.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: Microsoft Entra ID "Manage tenants" view showing 1 tenant: 默认目录 (Default), domain RudolfZhangoutlook.onmicrosoft.com, type "Microsoft Entra ID", Organization ID dc57358e-0219-4d18-86ff-7b81b4d21318. Breadcrumb shows Home > 默认目录 | Overview.
+SCREENSHOT_BEFORE: step-2-navigate-entra-before.png
+SCREENSHOT_AFTER: step-2-navigate-entra-after.png
+```

@@ -1,0 +1,54 @@
+{
+  "attempt": 0,
+  "startedAt": "2026-03-30T23:38:25.462Z",
+  "finishedAt": "2026-03-30T23:42:42.608Z",
+  "status": "passed",
+  "promptPath": "20260330-225000\\f59f3c10-0e19-4dde-8845-914977884b8a\\steps\\step-6-invite-external-user\\prompt.attempt-0.txt",
+  "responsePath": "20260330-225000\\f59f3c10-0e19-4dde-8845-914977884b8a\\steps\\step-6-invite-external-user\\agent-response.attempt-0.txt",
+  "screenshotBefore": "screenshots/step-6-invite-external-user-before.png",
+  "screenshotAfter": "screenshots/step-6-invite-external-user-after.png",
+  "timeline": [
+    {
+      "ts": "2026-03-30T23:38:25.462Z",
+      "event": "attempt_started",
+      "detail": "Attempt 0 started"
+    },
+    {
+      "ts": "2026-03-30T23:38:25.463Z",
+      "event": "prompt_saved",
+      "detail": "Prompt saved"
+    },
+    {
+      "ts": "2026-03-30T23:38:25.463Z",
+      "event": "agent_send_started",
+      "detail": "Sending main step prompt"
+    },
+    {
+      "ts": "2026-03-30T23:42:42.606Z",
+      "event": "agent_send_succeeded",
+      "detail": "Agent returned response"
+    },
+    {
+      "ts": "2026-03-30T23:42:42.607Z",
+      "event": "response_saved",
+      "detail": "Response saved"
+    },
+    {
+      "ts": "2026-03-30T23:42:42.607Z",
+      "event": "drift_parsed",
+      "detail": "Parsed 1 drift issues"
+    },
+    {
+      "ts": "2026-03-30T23:42:42.607Z",
+      "event": "attempt_finished",
+      "detail": "Attempt 0 finished with status drift"
+    }
+  ],
+  "timelinePath": "C:\\lab-drift-runner\\20260330-225000\\f59f3c10-0e19-4dde-8845-914977884b8a\\debug-errors\\step-6-invite-external-user\\attempt-0-timeline.json",
+  "lastKnownState": {
+    "updatedAt": "2026-03-30T23:42:42.607Z",
+    "phase": "attempt_finished",
+    "note": "Attempt 0 finished with status drift",
+    "lastAssistantMessage": "\n\nThe screenshot confirms the invite was sent successfully! The green notification reads **\"Successfully invited user az104 Lab Test\"**. All fields are correct in the Review + invite tab.\n\n```\nACTIONS_TAKEN: Navigated to Users > All Users. Clicked \"New user\" dropdown, selected \"Invite external user\". Filled Basics: Email \"az104-lab-test@outlook.com\", Display name \"az104 Lab Test\", Send invite message (checked by default), Message \"Welcome to Azure and our group project\". Switched to Properties tab: filled Job title \"IT Lab Administrator\", Department \"IT\", scrolled down and set Usage location \"United States\". Clicked \"Review + invite\", then clicked \"Invite\". Success notification confirmed.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES\nELEMENT_DIFFERENT: The button/tab label is \"Review + invite\" (not \"Review + create\" as used for new users). This matches the invite workflow correctly — the instructions say \"Review + invite\" which is accurate.\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKIN"
+  }
+}

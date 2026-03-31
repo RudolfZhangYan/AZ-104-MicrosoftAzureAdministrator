@@ -1,0 +1,77 @@
+{
+  "attempt": 0,
+  "startedAt": "2026-03-30T22:57:55.124Z",
+  "finishedAt": "2026-03-30T23:13:10.308Z",
+  "status": "retrying",
+  "errorName": "Error",
+  "errorMessage": "Timeout after 420000ms waiting for session.idle",
+  "errorStack": "Error: Timeout after 420000ms waiting for session.idle\n    at Timeout.<anonymous> (file:///C:/lab-drift-runner/node_modules/@github/copilot-sdk/dist/session.js:117:13)\n    at listOnTimeout (node:internal/timers:605:17)\n    at process.processTimers (node:internal/timers:541:7)",
+  "errorRaw": "Error: Timeout after 420000ms waiting for session.idle",
+  "isTransient": true,
+  "isHardFailure": false,
+  "promptPath": "20260330-225000\\f59f3c10-0e19-4dde-8845-914977884b8a\\steps\\step-1-signin-portal\\prompt.attempt-0.txt",
+  "errorScreenshot": "debug-errors/step-1-signin-portal/attempt-0-error.png",
+  "timeline": [
+    {
+      "ts": "2026-03-30T22:57:55.124Z",
+      "event": "attempt_started",
+      "detail": "Attempt 0 started"
+    },
+    {
+      "ts": "2026-03-30T22:57:55.125Z",
+      "event": "prompt_saved",
+      "detail": "Prompt saved"
+    },
+    {
+      "ts": "2026-03-30T22:57:55.125Z",
+      "event": "agent_send_started",
+      "detail": "Sending main step prompt"
+    },
+    {
+      "ts": "2026-03-30T23:04:55.123Z",
+      "event": "agent_send_failed",
+      "detail": "Timeout after 420000ms waiting for session.idle"
+    },
+    {
+      "ts": "2026-03-30T23:04:55.125Z",
+      "event": "prompt_saved",
+      "detail": "Prompt saved"
+    },
+    {
+      "ts": "2026-03-30T23:04:55.125Z",
+      "event": "page_state_requested",
+      "detail": "Requesting page state snapshot"
+    },
+    {
+      "ts": "2026-03-30T23:04:55.125Z",
+      "event": "agent_send_started",
+      "detail": "Sending page-state inspection prompt"
+    },
+    {
+      "ts": "2026-03-30T23:11:55.117Z",
+      "event": "page_state_captured",
+      "detail": "Failed to capture page state: Timeout after 420000ms waiting for session.idle"
+    },
+    {
+      "ts": "2026-03-30T23:11:55.117Z",
+      "event": "error_screenshot_requested",
+      "detail": "Requesting error screenshot"
+    },
+    {
+      "ts": "2026-03-30T23:13:10.307Z",
+      "event": "error_screenshot_captured",
+      "detail": "debug-errors/step-1-signin-portal/attempt-0-error.png"
+    },
+    {
+      "ts": "2026-03-30T23:13:10.307Z",
+      "event": "attempt_finished",
+      "detail": "Attempt 0 finished with status retrying"
+    }
+  ],
+  "timelinePath": "C:\\lab-drift-runner\\20260330-225000\\f59f3c10-0e19-4dde-8845-914977884b8a\\debug-errors\\step-1-signin-portal\\attempt-0-timeline.json",
+  "lastKnownState": {
+    "updatedAt": "2026-03-30T23:13:10.307Z",
+    "phase": "attempt_finished",
+    "note": "Attempt 0 finished with status retrying"
+  }
+}

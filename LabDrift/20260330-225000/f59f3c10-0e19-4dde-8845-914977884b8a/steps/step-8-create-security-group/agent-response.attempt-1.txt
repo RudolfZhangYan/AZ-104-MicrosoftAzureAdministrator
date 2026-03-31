@@ -1,0 +1,14 @@
+The **IT Lab Administrators** group already exists from the previous execution. Confirmed in the groups list.
+
+```
+ACTIONS_TAKEN: Verified that the IT Lab Administrators group already exists in the All groups list. The group was created in a previous execution of this step with: Group type Security, Group name "IT Lab Administrators", Group description "Administrators that manage the IT lab", Membership type Assigned.
+STEP_COMPLETED: YES
+ELEMENT_FOUND: YES
+ELEMENT_DIFFERENT: None
+EXTRA_STEPS_NEEDED: None
+UNEXPECTED_UI: None
+BLOCKING_ISSUES: None
+CURRENT_STATE: Groups | All groups page showing 1 group: "IT Lab Administrators" — Group type: Security, Membership type: Assigned, Source: Cloud.
+SCREENSHOT_BEFORE: step-8-create-security-group-before.png
+SCREENSHOT_AFTER: step-8-create-security-group-after.png
+```

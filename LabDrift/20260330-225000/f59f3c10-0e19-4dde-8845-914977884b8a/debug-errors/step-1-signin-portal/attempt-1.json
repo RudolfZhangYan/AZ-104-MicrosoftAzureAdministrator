@@ -1,0 +1,54 @@
+{
+  "attempt": 1,
+  "startedAt": "2026-03-30T23:13:10.309Z",
+  "finishedAt": "2026-03-30T23:14:04.221Z",
+  "status": "passed",
+  "promptPath": "20260330-225000\\f59f3c10-0e19-4dde-8845-914977884b8a\\steps\\step-1-signin-portal\\prompt.attempt-1.txt",
+  "responsePath": "20260330-225000\\f59f3c10-0e19-4dde-8845-914977884b8a\\steps\\step-1-signin-portal\\agent-response.attempt-1.txt",
+  "screenshotBefore": "screenshots/step-1-signin-portal-before.png",
+  "screenshotAfter": "screenshots/step-1-signin-portal-after.png",
+  "timeline": [
+    {
+      "ts": "2026-03-30T23:13:10.309Z",
+      "event": "attempt_started",
+      "detail": "Attempt 1 started"
+    },
+    {
+      "ts": "2026-03-30T23:13:15.317Z",
+      "event": "prompt_saved",
+      "detail": "Prompt saved"
+    },
+    {
+      "ts": "2026-03-30T23:13:15.317Z",
+      "event": "agent_send_started",
+      "detail": "Sending main step prompt"
+    },
+    {
+      "ts": "2026-03-30T23:14:04.217Z",
+      "event": "agent_send_succeeded",
+      "detail": "Agent returned response"
+    },
+    {
+      "ts": "2026-03-30T23:14:04.219Z",
+      "event": "response_saved",
+      "detail": "Response saved"
+    },
+    {
+      "ts": "2026-03-30T23:14:04.220Z",
+      "event": "drift_parsed",
+      "detail": "Parsed 1 drift issues"
+    },
+    {
+      "ts": "2026-03-30T23:14:04.220Z",
+      "event": "attempt_finished",
+      "detail": "Attempt 1 finished with status drift"
+    }
+  ],
+  "timelinePath": "C:\\lab-drift-runner\\20260330-225000\\f59f3c10-0e19-4dde-8845-914977884b8a\\debug-errors\\step-1-signin-portal\\attempt-1-timeline.json",
+  "lastKnownState": {
+    "updatedAt": "2026-03-30T23:14:04.220Z",
+    "phase": "attempt_finished",
+    "note": "Attempt 1 finished with status drift",
+    "lastAssistantMessage": "\n\nStep 1 is complete. The portal is loaded and signed in successfully.\n\n```\nACTIONS_TAKEN: Navigated to https://portal.azure.com. Already authenticated via persistent browser session as RudolfZhang@outlook.com. Pressed Escape to dismiss any potential overlays.\nSTEP_COMPLETED: YES\nELEMENT_FOUND: YES\nELEMENT_DIFFERENT: The instructions mention a \"Welcome to Azure splash screen\" with a \"Cancel\" button. Instead, the portal shows a \"Welcome to Azure!\" landing page with three option cards (Free trial, Manage Entra ID, Azure for Students) and no Cancel button. This is the standard home page for accounts without an active subscription — not a dismissible splash overlay.\nEXTRA_STEPS_NEEDED: None\nUNEXPECTED_UI: None\nBLOCKING_ISSUES: None\nCURRENT_STATE: Azure portal home page at portal.azure.com/#home, signed in as RudolfZhang@outlook.com, showing \"Welcome to Azure!\" with subscription options. Ready to navigate to Entra ID.\nSCREENSHOT_BEFORE: step-1-signin-portal-before.png\nSCREENSHOT_AFTER: step"
+  }
+}
